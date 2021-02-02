@@ -1,0 +1,15 @@
+from os.path import join as pjoin
+
+
+def cnf(name, val):
+    globals()[name] = config.setdefault(name, val)
+
+cnf("WORK", "work")
+cnf("COVIDMARCH", pjoin(WORK, "covidmarch.jsonl.zstd"))
+
+
+rule get_covid_march:
+    output:
+        COVIDMARCH
+    shell:
+        "python covidmarch.py | zstd -14 -f - -o {output}"
