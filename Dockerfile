@@ -1,4 +1,4 @@
-FROM python:3.9.1-slim-buster
+FROM quay.io/bitnami/python:3.8.7-prod
 
 RUN apt-get install -y zstd
 
