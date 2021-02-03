@@ -5,7 +5,7 @@ description = ""
 authors = ["Frankie Robertson <frankie@robertson.name>"]
 
 [tool.poetry.dependencies]
-python = ">=3.7"
+python = ">=3.7.1"
 # stream format
 jsonlines = "^2.0.0"
 # fast json encoding
@@ -17,6 +17,8 @@ loky = "^2.9.0"
 # missing requirement from news-please
 cchardet = "^2.1.7"
 snakemake = "^5.32.0"
+# needed by snakemake slurm profile
+pandas = "^1.2.1"
 
 [tool.poetry.dev-dependencies]
 
