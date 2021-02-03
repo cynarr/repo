@@ -1,7 +1,7 @@
-FROM quay.io/bitnami/python:3.8.7-prod
+FROM quay.io/jitesoft/debian:10-slim
 
 RUN apt-get update && \
-    apt-get install -y zstd && \
+    apt-get install -y zstd git python3 python3-dev python3-pip build-essential && \
     rm -rf /var/lib/apt/lists/*
 
 RUN python3 -m pip install --upgrade \
@@ -11,10 +11,10 @@ RUN python3 -m pip install --upgrade \
 
 WORKDIR /opt/coviddash
 
-COPY pyproject.toml poetry.lock ./
+COPY pyproject.toml poetry.lock install_rest.sh ./
 
 RUN poetry export \
-      --without-hashes | \
+      --without-hashes > requirements.txt && \
     python3 -m pip install -r requirements.txt && \
     rm requirements.txt && \
     ./install_rest.sh && \
@@ -23,4 +23,4 @@ RUN poetry export \
 COPY . /opt/coviddash
 
 RUN echo "/opt/coviddash" > \
-    /usr/local/lib/python3.9/dist-packages/coviddash.pth
+    /usr/local/lib/python3.7/dist-packages/coviddash.pth
