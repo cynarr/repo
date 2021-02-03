@@ -14,7 +14,7 @@ COPY pyproject.toml poetry.lock ./
 RUN poetry export \
       --without-hashes | \
     python3 -m pip install -r requirements.txt && \
-    rm requirements.txt &&
+    rm requirements.txt && \
     ./install_rest.sh && \
     rm -rf /root/.cache
 
