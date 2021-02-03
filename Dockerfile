@@ -1,6 +1,8 @@
 FROM quay.io/bitnami/python:3.8.7-prod
 
-RUN apt-get install -y zstd
+RUN apt-get update && \
+    apt-get install -y zstd && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN python3 -m pip install --upgrade \
     pip==20.2.4 \
