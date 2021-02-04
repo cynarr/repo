@@ -1,12 +1,11 @@
 import sys
 import orjson
 from loky import cpu_count
-from threading import Thread
 import logging
 
 from newsplease.crawler import commoncrawl_crawler
 from newsplease.crawler.commoncrawl_extractor import CommonCrawlExtractor
-from multiprocessing import JoinableQueue, Pool
+from multiprocessing import JoinableQueue, Pool, Process
 
 
 FINISHED_PRODUCING = object()
@@ -125,13 +124,7 @@ class CommonCrawlProcessor:
             f"WARCs processed: {counter_warc_processed}"
         )
 
-    def crawl(self):
-        warc_download_urls = get_download_urls(self.warc_files_start_date)
-        print("warc_download_urls", warc_download_urls, file=sys.stderr)
-
-        thread = Thread(target=self.print_from_queue, args=())
-        thread.start()
-
+    def crawl_urls(self, warc_download_urls):
         with Pool(self.number_of_extraction_processes) as pool:
             for _ in pool.imap_unordered(
                 self,
@@ -140,13 +133,21 @@ class CommonCrawlProcessor:
             ):
                 pass
 
-        thread.join()
+    def crawl(self):
+        warc_download_urls = get_download_urls(self.warc_files_start_date)
+        print("warc_download_urls", file=sys.stderr)
+        for warc_url in warc_download_urls:
+            print(warc_url, file=sys.stderr)
+
+        process = Process(target=self.crawl_urls, args=(warc_download_urls,))
+        process.start()
+        self.print_from_queue()
+        process.join()
 
     def print_from_queue(self):
         while 1:
             lines = self.queue.get()
-            sys.stderr.write("Got " + repr(lines) + "\n")
-            sys.stderr.flush()
+            print("Got ", lines, file=sys.stderr)
             if lines is FINISHED_PRODUCING:
                 return
             else:
