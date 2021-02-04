@@ -18,7 +18,7 @@ env:
   IMAGE_NAME: image
 
 jobs:
-  push:
+  build_publish_containers:
     runs-on: ubuntu-latest
     env:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
