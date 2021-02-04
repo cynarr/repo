@@ -46,6 +46,9 @@ modify the paths as necessary and then run:
 
     $ nohup ./run.sh &
 
+Note you CWD must not contain any symlinks when running Singularity. To be safe
+you should run e.g. `cd $(realpath .)` first.
+
 ## Dashboard
 
 ### Manual setup
