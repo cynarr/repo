@@ -1,0 +1,14 @@
+{
+    "__default__": {
+        "mail-user" : "frankie@robertson.name",
+        "time" : "05:00:00",
+        "nodes" : 1,
+        "account": "project_2003933",
+	"partition": "small"
+    },
+    "get_covid_march": {
+        "time" : "2-00:00:00",
+        "cpus-per-task": 40,
+        "nodes" : 1
+    }
+}
