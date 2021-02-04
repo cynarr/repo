@@ -39,7 +39,7 @@ Manually you can run:
 On CSC you copy the files in `contrib/csc` into a working directory and modify
 the paths as necessary and then run:
 
-    $ ./run.sh
+    $ nohup ./run.sh
 
 ## Dashboard
 
