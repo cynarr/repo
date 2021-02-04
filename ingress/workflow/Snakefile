@@ -10,15 +10,23 @@ cnf("COVIDMARCH", pjoin(WORK, "covidmarch.jsonl.zstd"))
 
 rule get_use_news_2019:
     output:
-        pjoin(WORK, "usenews.2019.RData")
+        pjoin(WORK, "usenews.2019.RData.xz")
     shell:
         "wget -O {output} https://files.de-1.osf.io/v1/resources/uzca3/providers/osfstorage/5fabf6e81b9cb2005a6d3aa5?action=download&direct&version=2"
 
 rule get_use_news_2020:
     output:
-        pjoin(WORK, "usenews.2020.RData")
+        pjoin(WORK, "usenews.2020.RData.xz")
     shell:
         "wget -O {output} https://files.de-1.osf.io/v1/resources/uzca3/providers/osfstorage/5fabfce00ec26c00618057c8?action=download&direct&version=2"
+
+rule extract_rdata:
+    input:
+        pjoin(WORK, "{base}.RData.xz")
+    output:
+        pjoin(WORK, "{base}.RData")
+    shell:
+        "xz -dk -T0 {input}"
 
 rule get_covid_march:
     output:
