@@ -1,2 +1,6 @@
+#!/bin/bash
+
+set -x trace -euo pipefail
+
 poetry install
-./install_rest.sh
+poetry run ./install_rest.sh
