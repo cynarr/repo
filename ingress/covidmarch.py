@@ -47,7 +47,7 @@ class KeywordFilterCommonCrawl(CommonCrawlExtractor):
 
 
 def main():
-    from mynewsplease import newsplease
+    from ingress.mynewsplease import newsplease
     newsplease(
         local_download_dir_warc="/tmp/newscrawlcovid202003",
         start_date=datetime(2021, 3, 1),
