@@ -1,5 +1,7 @@
 FROM quay.io/jitesoft/debian:10-slim
 
+LABEL org.opencontainers.image.source https://github.com/mood-mapping-muppets/repo
+
 RUN apt-get update && \
     apt-get install -y zstd git python3 python3-dev python3-pip build-essential && \
     rm -rf /var/lib/apt/lists/*
