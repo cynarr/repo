@@ -12,4 +12,4 @@ rule get_covid_march:
     output:
         COVIDMARCH
     shell:
-        "python covidmarch.py | zstd -14 -f - -o {output}"
+        "python -m ingress.covidmarch | zstd -14 -f - -o {output}"

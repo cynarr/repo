@@ -4,6 +4,10 @@ version = "0.1.0"
 description = ""
 authors = ["Frankie Robertson <frankie@robertson.name>"]
 
+packages = [
+    { include = "ingress" },
+]
+
 [tool.poetry.dependencies]
 python = ">=3.7.1"
 # stream format
