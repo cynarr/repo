@@ -4,35 +4,47 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
-import plotly.express as px
 import pandas as pd
+import dash_bootstrap_components as dbc
+import plotly.express as px
 
-default_layout = {
-    'autosize': True,
-    'xaxis': {'title': None},
-    'yaxis': {'title': None},
-    'margin': {'l': 40, 'r': 20, 't': 40, 'b': 10},
-    'paper_bgcolor': '#303030',
-    'plot_bgcolor': '#303030',
-    'hovermode': 'x',
-}
-
-external_stylesheets = [
-    'https://codepen.io/chriddyp/pen/bWLwgP.css',
-    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css',
-]
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+app = dash.Dash(
+    __name__,
+    external_stylesheets=[
+        dbc.themes.SLATE,
+        "https://use.fontawesome.com/releases/v5.9.0/css/all.css", ],
+    meta_tags=[{
+        "name": "description",
+        "content": "COVID-19 European news dashboard"},
+        {"name": "viewport", "content": "width=device-width, initial-scale=1.0"}])
 
 df = pd.DataFrame({
-    "Date, 2020": ["March 1", "March 2", "March 3", "March 4", "March 5", "March 6"],
-    "Number of articles": [600, 100, 55, 3000, 500, 1000],
-    "Sentiment": ["Positive", "Negative", "Negative", "Positive", "Positive", "Neutral"]
+    "Number of articles": [602, 100, 55, 3444, 500, 1000, 600, 100, 55, 3000, 500, 2654, 600, 100, 89, 2987, 500, 1345,
+                           600, 100, 55, 3212, 500, 1000, 55, 100, 55, 3222, 500, 899, 600],
+    "Sentiment": ["Positive", "Negative", "Positive", "Negative", "Positive", "Negative", "Positive", "Negative",
+    "Positive", "Negative", "Positive", "Negative", "Positive", "Negative", "Positive", "Negative", "Positive", "Negative",
+    "Positive", "Negative", "Positive", "Negative", "Positive", "Negative", "Positive", "Negative", "Positive", "Negative",
+    "Positive", "Negative", "Positive"]
 })
+x = ["2020-03-01", "2020-03-02","2020-03-03","2020-03-04","2020-03-05","2020-03-06","2020-03-07","2020-03-08","2020-03-09",
+      "2020-03-10","2020-03-11","2020-03-12","2020-03-13","2020-03-14","2020-03-15","2020-03-16","2020-03-17","2020-03-18",
+      "2020-03-19","2020-03-20","2020-03-21","2020-03-22","2020-03-23","2020-03-24","2020-03-25","2020-03-26","2020-03-27",
+      "2020-03-28","2020-03-29","2020-03-30","2020-03-31"]
 
-fig_timeline = px.bar(df, x="Date, 2020", y="Number of articles", color="Sentiment", barmode="group")
+fig_timeline = px.histogram(df, x=x, y="Number of articles", color="Sentiment", barmode="stack",
+                            title="News sentiment on the COVID-19 pandemic in March 2020", nbins=31)
+
+fig_timeline.update_layout(
+    xaxis=dict(
+        title='Date',
+        tickmode='linear'),
+    yaxis=dict(
+        title="Number of news articles",
+    )
+)
+
 fig_map = px.choropleth(locations=["UK", "Finland", "Sweden"], locationmode="ISO-3", scope="europe",
                         width=1000, height=1000, color_continuous_scale="Blues")
-fig_map.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 
 app.layout = html.Div(children=[
     html.H1(children='COVID-19 European news dashboard'),
