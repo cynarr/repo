@@ -1,3 +1,4 @@
+import os
 from urllib.parse import urlsplit
 from typing import List
 from datetime import datetime
@@ -48,8 +49,12 @@ class KeywordFilterCommonCrawl(CommonCrawlExtractor):
 
 def main():
     from ingress.mynewsplease import newsplease
+    warc_dir = os.path.join(
+        os.environ.get("TMPDIR", "/tmp/"),
+        "newscrawlcovid202003"
+    )
     newsplease(
-        local_download_dir_warc="/tmp/newscrawlcovid202003",
+        local_download_dir_warc=warc_dir,
         start_date=datetime(2021, 3, 1),
         end_date=datetime(2021, 3, 31, 23, 59, 59),
         extractor_cls=KeywordFilterCommonCrawl,
