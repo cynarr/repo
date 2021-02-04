@@ -36,8 +36,13 @@ Manually you can run:
     $ cd ingress
     $ poetry run snakemake get_covid_march
 
-On CSC you copy the files in `contrib/csc` into a working directory and modify
-the paths as necessary and then run:
+On CSC you first need to get [singslurm2](https://github.com/frankier/singslurm2):
+
+    $ cd /projappl/project_2003933
+    $ git clone --recursive https://github.com/frankier/singslurm2.git
+
+You can then copy the files in `contrib/csc` into a working directory and
+modify the paths as necessary and then run:
 
     $ nohup ./run.sh
 
