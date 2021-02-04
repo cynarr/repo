@@ -12,7 +12,7 @@ from multiprocessing import JoinableQueue, Pool
 FINISHED_PRODUCING = object()
 
 
-LINE_CHUNK_SIZE = 1
+LINE_CHUNK_SIZE = 256
 MAP_CHUNK_SIZE = 1
 
 
@@ -127,6 +127,7 @@ class CommonCrawlProcessor:
 
     def crawl(self):
         warc_download_urls = get_download_urls(self.warc_files_start_date)
+        print("warc_download_urls", warc_download_urls, file=sys.stderr)
 
         thread = Thread(target=self.print_from_queue, args=())
         thread.start()
