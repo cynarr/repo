@@ -24,3 +24,5 @@ COPY . /opt/coviddash
 
 RUN echo "/opt/coviddash" > \
     /usr/local/lib/python3.7/dist-packages/coviddash.pth
+
+RUN ln -sf /usr/bin/python3.7 /usr/bin/python
