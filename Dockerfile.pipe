@@ -18,7 +18,7 @@ WORKDIR /opt/coviddash
 
 COPY pyproject.toml poetry.lock install_rest.sh ./
 
-RUN poetry export \
+RUN poetry export -E usenews \
       --without-hashes > requirements.txt && \
     python3 -m pip install -r requirements.txt && \
     rm requirements.txt && \
