@@ -157,6 +157,7 @@ class CommonCrawlProcessor:
         )
 
     def crawl_urls(self, warc_download_urls):
+        quiet_mode()
         with Pool(self.number_of_extraction_processes) as pool:
             for _ in pool.imap_unordered(
                 self,
