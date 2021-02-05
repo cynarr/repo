@@ -9,7 +9,7 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.7.1"
+python = "^3.7.1"
 # stream format
 jsonlines = "^2.0.0"
 # fast json encoding
@@ -25,6 +25,7 @@ snakemake = "^5.32.0"
 pandas = "^1.2.1"
 # for converting usenews
 rpy2 = { version = "^3.4.2", optional = true }
+awscli = "^1.19.2"
 
 [tool.poetry.extras]
 usenews = ["rpy2"]
