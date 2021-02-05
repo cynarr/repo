@@ -2,6 +2,7 @@ import os
 from urllib.parse import urlsplit
 from typing import List
 from datetime import datetime
+from newsplease import NewsPlease
 
 from newsplease.crawler.commoncrawl_extractor import CommonCrawlExtractor
 
@@ -18,7 +19,7 @@ class BertPreproc:
         self.tokenizer.normalizer = BertNormalizer()
 
     def __call__(self, inp: str) -> List[str]:
-        return tokenizer.encode(inp)
+        return self.tokenizer.encode(inp)
 
 
 preproc = BertPreproc()
