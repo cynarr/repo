@@ -208,6 +208,7 @@ class CommonCrawlProcessor:
 
 
 def newsplease(**kwargs):
+    kwargs["warc_files_start_date"] = kwargs.get("warc_files_start_date", kwargs.get("start_date"))
     number_of_extraction_processes = kwargs.pop(
         "number_of_extraction_processes",
         cpu_count()
