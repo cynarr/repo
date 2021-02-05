@@ -7,9 +7,14 @@ import dash_html_components as html
 import pandas as pd
 import dash_bootstrap_components as dbc
 import plotly.express as px
+import flask
+
+flask_app = flask.Flask(__name__)
 
 app = dash.Dash(
     __name__,
+    server=flask_app,
+    url_base_pathname="/",
     external_stylesheets=[
         dbc.themes.SLATE,
         "https://use.fontawesome.com/releases/v5.9.0/css/all.css", ],
