@@ -4,7 +4,7 @@ from loky import cpu_count
 import logging
 from w3lib.url import canonicalize_url
 
-from newsplease import NewsPlease
+import newsplease
 from newsplease.NewsArticle import NewsArticle
 from newsplease.crawler import commoncrawl_crawler
 from newsplease.crawler import commoncrawl_extractor
@@ -31,10 +31,13 @@ class CanonNewsArticle(NewsArticle):
         return d
 
 
-class MyNewsPlease(NewsPlease):
+OriginalNewsPlease = newsplease.NewsPlease
+
+
+class MyNewsPlease(OriginalNewsPlease):
     @staticmethod
     def from_html(html, url=None, download_date=None):
-        article = NewsPlease.from_html(
+        article = OriginalNewsPlease.from_html(
             html,
             url=url,
             download_date=download_date
@@ -44,6 +47,7 @@ class MyNewsPlease(NewsPlease):
         return article
 
 
+newsplease.NewsPlease = MyNewsPlease
 commoncrawl_extractor.NewsPlease = MyNewsPlease
 
 
@@ -186,6 +190,7 @@ class CommonCrawlProcessor:
             else:
                 for line in lines:
                     sys.stdout.buffer.write(line)
+                    sys.stdout.buffer.write(b"\n")
                 sys.stdout.buffer.flush()
 
     def __call__(self, warc_download_url):
@@ -207,7 +212,7 @@ class CommonCrawlProcessor:
         )
 
 
-def newsplease(**kwargs):
+def mynewsplease(**kwargs):
     kwargs["warc_files_start_date"] = kwargs.get("warc_files_start_date", kwargs.get("start_date"))
     number_of_extraction_processes = kwargs.pop(
         "number_of_extraction_processes",

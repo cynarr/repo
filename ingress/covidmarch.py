@@ -2,7 +2,7 @@ import os
 from urllib.parse import urlsplit
 from typing import List
 from datetime import datetime
-from newsplease import NewsPlease
+from ingress.mynewsplease import mynewsplease, MyNewsPlease
 
 from newsplease.crawler.commoncrawl_extractor import CommonCrawlExtractor
 
@@ -37,24 +37,27 @@ class KeywordFilterCommonCrawl(CommonCrawlExtractor):
             return False, article
         # We definitely need the full article object now
         if article is None:
-            article = NewsPlease.from_warc(warc_record)
+            article = MyNewsPlease.from_warc(warc_record)
         # Filter by language XXX: stub
         if article.language not in ("fi", "et", "en", "es", "fr", "de", "sv"):
-            return
-        # Keywords XXX: stub
-        bits = article.text
-        if "korona" not in bits and "covid" not in bits:
             return False, article
+        # Keywords XXX: stub
+        text = article.maintext
+        if text is None:
+            return False, article
+        bits = preproc(text)
+        if "korona" not in bits and "covid" not in bits and not "coronavirus" not in bits:
+            # XXX: Just returning anyway for now
+            return True, article
         return True, article
 
 
 def main():
-    from ingress.mynewsplease import newsplease
     warc_dir = os.path.join(
         os.environ.get("TMPDIR", "/tmp/"),
         "newscrawlcovid202003"
     )
-    newsplease(
+    mynewsplease(
         local_download_dir_warc=warc_dir,
         start_date=datetime(2020, 3, 1),
         end_date=datetime(2020, 3, 31, 23, 59, 59),
