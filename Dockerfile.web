@@ -12,6 +12,7 @@ RUN python3 -m pip install --upgrade \
     pip==20.2.4 \
     setuptools==50.3.2 \
     poetry==1.1.4 \
+    poetry-core==1.0.0 \
     uwsgi
 
 RUN ln -sf /usr/bin/python3.7 /usr/bin/python
