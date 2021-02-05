@@ -4,11 +4,17 @@
         "time" : "05:00:00",
         "nodes" : 1,
         "account": "project_2003933",
-	"partition": "small"
+        "partition": "small"
     },
     "get_covid_march": {
         "time" : "2-00:00:00",
         "cpus-per-task": 40,
         "nodes" : 1
+    },
+    "extract_rdata": {
+        "cpus-per-task": 4,
+    },
+    "convert_rdata": {
+        "mem": "32G",
     }
 }
