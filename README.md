@@ -14,6 +14,12 @@ Install:
 
     $ ./install.sh
 
+If you want to run the usenews extraction you also need to install R, including
+development packages (`r-base` and `r-base-dev` on Debian-oids) and the usenews
+extra:
+
+    $ ./install.sh -E usenews
+
 ### Docker/Singularity
 
 Containers use [GitHub Container
