@@ -56,8 +56,8 @@ def main():
     )
     newsplease(
         local_download_dir_warc=warc_dir,
-        start_date=datetime(2021, 3, 1),
-        end_date=datetime(2021, 3, 31, 23, 59, 59),
+        start_date=datetime(2020, 3, 1),
+        end_date=datetime(2020, 3, 31, 23, 59, 59),
         extractor_cls=KeywordFilterCommonCrawl,
     )
 
