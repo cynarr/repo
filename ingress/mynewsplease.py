@@ -4,8 +4,6 @@ from loky import cpu_count
 import logging
 from w3lib.url import canonicalize_url
 
-import newsplease
-from newsplease.NewsArticle import NewsArticle
 from newsplease.crawler import commoncrawl_crawler
 from newsplease.crawler import commoncrawl_extractor
 from multiprocessing import JoinableQueue, Pool, Process
@@ -16,39 +14,6 @@ FINISHED_PRODUCING = object()
 
 LINE_CHUNK_SIZE = 256
 MAP_CHUNK_SIZE = 1
-
-
-class CanonNewsArticle(NewsArticle):
-    """
-    Class representing a single news article containing all the information
-    that news-please can extract.
-    """
-    canon_url = None
-
-    def get_dict(self):
-        d = super().get_dict()
-        d["canon_url"] = self.canon_url
-        return d
-
-
-OriginalNewsPlease = newsplease.NewsPlease
-
-
-class MyNewsPlease(OriginalNewsPlease):
-    @staticmethod
-    def from_html(html, url=None, download_date=None):
-        article = OriginalNewsPlease.from_html(
-            html,
-            url=url,
-            download_date=download_date
-        )
-        article.__class__ = CanonNewsArticle
-        article.canon_url = canonicalize_url(article.url)
-        return article
-
-
-newsplease.NewsPlease = MyNewsPlease
-commoncrawl_extractor.NewsPlease = MyNewsPlease
 
 
 class ChunkingQueue:
@@ -146,7 +111,9 @@ class CommonCrawlProcessor:
         self.extractor_cls = extractor_cls
 
     def on_valid_article_extracted(self, article):
-        self.queue.put(orjson.dumps(article.get_dict()))
+        article = article.get_dict()
+        article["canon_url"] = canonicalize_url(article["url"])
+        self.queue.put(orjson.dumps(article))
 
     def callback_on_warc_completed(
         self, warc_path, counter_article_passed, counter_article_discarded,

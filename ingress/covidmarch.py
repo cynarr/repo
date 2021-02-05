@@ -2,8 +2,9 @@ import os
 from urllib.parse import urlsplit
 from typing import List
 from datetime import datetime
-from ingress.mynewsplease import mynewsplease, MyNewsPlease
+from ingress.mynewsplease import mynewsplease
 
+from newsplease import NewsPlease
 from newsplease.crawler.commoncrawl_extractor import CommonCrawlExtractor
 
 
@@ -37,7 +38,7 @@ class KeywordFilterCommonCrawl(CommonCrawlExtractor):
             return False, article
         # We definitely need the full article object now
         if article is None:
-            article = MyNewsPlease.from_warc(warc_record)
+            article = NewsPlease.from_warc(warc_record)
         # Filter by language XXX: stub
         if article.language not in ("fi", "et", "en", "es", "fr", "de", "sv"):
             return False, article
