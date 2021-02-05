@@ -23,6 +23,11 @@ cchardet = "^2.1.7"
 snakemake = "^5.32.0"
 # needed by snakemake slurm profile
 pandas = "^1.2.1"
+# for converting usenews
+rpy2 = { version = "^3.4.2", optional = true }
+
+[tool.poetry.extras]
+usenews = ["rpy2"]
 
 [tool.poetry.dev-dependencies]
 
