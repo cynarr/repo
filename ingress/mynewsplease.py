@@ -2,9 +2,12 @@ import sys
 import orjson
 from loky import cpu_count
 import logging
+from w3lib.url import canonicalize_url
 
+from newsplease import NewsPlease
+from newsplease.NewsArticle import NewsArticle
 from newsplease.crawler import commoncrawl_crawler
-from newsplease.crawler.commoncrawl_extractor import CommonCrawlExtractor
+from newsplease.crawler import commoncrawl_extractor
 from multiprocessing import JoinableQueue, Pool, Process
 
 
@@ -13,6 +16,35 @@ FINISHED_PRODUCING = object()
 
 LINE_CHUNK_SIZE = 256
 MAP_CHUNK_SIZE = 1
+
+
+class CanonNewsArticle(NewsArticle):
+    """
+    Class representing a single news article containing all the information
+    that news-please can extract.
+    """
+    canon_url = None
+
+    def get_dict(self):
+        d = super().get_dict()
+        d["canon_url"] = self.canon_url
+        return d
+
+
+class MyNewsPlease(NewsPlease):
+    @staticmethod
+    def from_html(html, url=None, download_date=None):
+        article = NewsPlease.from_html(
+            html,
+            url=url,
+            download_date=download_date
+        )
+        article.__class__ = CanonNewsArticle
+        article.canon_url = canonicalize_url(article.url)
+        return article
+
+
+commoncrawl_extractor.NewsPlease = MyNewsPlease
 
 
 class ChunkingQueue:
@@ -89,7 +121,7 @@ class CommonCrawlProcessor:
         number_of_extraction_processes=4,
         log_level=logging.ERROR,
         delete_warc_after_extraction=True,
-        extractor_cls=CommonCrawlExtractor,
+        extractor_cls=commoncrawl_extractor.CommonCrawlExtractor,
     ):
         self.queue = ChunkingQueue(
             LINE_CHUNK_SIZE,
