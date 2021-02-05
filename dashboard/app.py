@@ -7,13 +7,11 @@ import dash_html_components as html
 import pandas as pd
 import dash_bootstrap_components as dbc
 import plotly.express as px
-import flask
 
-flask_app = flask.Flask(__name__)
+__all__ = ["server"]
 
 app = dash.Dash(
     __name__,
-    server=flask_app,
     url_base_pathname="/",
     external_stylesheets=[
         dbc.themes.SLATE,
@@ -22,6 +20,8 @@ app = dash.Dash(
         "name": "description",
         "content": "COVID-19 European news dashboard"},
         {"name": "viewport", "content": "width=device-width, initial-scale=1.0"}])
+
+server = app.server
 
 df = pd.DataFrame({
     "Number of articles": [602, 100, 55, 3444, 500, 1000, 600, 100, 55, 3000, 500, 2654, 600, 100, 89, 2987, 500, 1345,
