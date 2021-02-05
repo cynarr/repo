@@ -33,13 +33,13 @@ class KeywordFilterCommonCrawl(CommonCrawlExtractor):
         url = warc_record.rec_headers.get_header('WARC-Target-URI')
         netloc = urlsplit(url).netloc
         # TLD filtering XXX: stub
-        if netloc.strip(".").rsplit(".", 1)[-1] != "fi":
+        if netloc.strip(".").rsplit(".", 1)[-1] not in ("fi", "ee", "uk", "ie", "es", "fr", "de", "se"):
             return False, article
         # We definitely need the full article object now
         if article is None:
             article = NewsPlease.from_warc(warc_record)
         # Filter by language XXX: stub
-        if article.language != "fi":
+        if article.language not in ("fi", "et", "en", "es", "fr", "de", "sv"):
             return
         # Keywords XXX: stub
         bits = article.text
