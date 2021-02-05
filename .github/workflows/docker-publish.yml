@@ -84,7 +84,9 @@ jobs:
           docker push $IMAGE_ID:$VERSION
 
       - name: Log into Rahti Container Registry
-        run: docker login -p ${{ secrets.RAHTI_KEY }} -u unused docker-registry.rahti.csc.fi
+        run: |
+          oc login https://rahti.csc.fi:8443 --token=${{ secrets.RAHTI_KEY }}
+          docker login -p $(oc whoami -t) -u unused docker-registry.rahti.csc.fi
 
       - name: Push web to Rahti
         run: |
