@@ -19,7 +19,7 @@ class BertPreproc:
         self.tokenizer.normalizer = BertNormalizer()
 
     def __call__(self, inp: str) -> List[str]:
-        return self.tokenizer.encode(inp)
+        return self.tokenizer.encode(inp).tokens
 
 
 preproc = BertPreproc()
