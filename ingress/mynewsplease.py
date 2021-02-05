@@ -6,7 +6,8 @@ from w3lib.url import canonicalize_url
 
 from newsplease.crawler import commoncrawl_crawler
 from newsplease.crawler import commoncrawl_extractor
-from multiprocessing import JoinableQueue, Pool, Process
+from multiprocessing import Queue, Pool, Process
+import queue
 
 
 FINISHED_PRODUCING = object()
@@ -14,10 +15,12 @@ FINISHED_PRODUCING = object()
 
 LINE_CHUNK_SIZE = 256
 MAP_CHUNK_SIZE = 1
+QUEUE_SIZE = 64
+GET_TIMEOUT = 5 * 60
 
 
 class ChunkingQueue:
-    _global_queue = JoinableQueue()
+    _global_queue = Queue(QUEUE_SIZE)
 
     def __init__(self, chunk_size, num_producers):
         self._local_queue = []
@@ -32,7 +35,11 @@ class ChunkingQueue:
 
     def get(self):
         while 1:
-            result = self._global_queue.get()
+            try:
+                result = self._global_queue.get(True, GET_TIMEOUT)
+            except queue.Empty:
+                print("Timeout out waiting for lines", file=sys.stderr)
+                sys.exit(-1)
             if result is FINISHED_PRODUCING:
                 self.num_producers -= 1
                 if self.num_producers == 0:
@@ -44,12 +51,7 @@ class ChunkingQueue:
         if self._local_queue:
             self._global_queue.put(self._local_queue)
         self._global_queue.put(FINISHED_PRODUCING)
-
-    def task_done(self):
-        self._global_queue.task_done()
-
-    def consumer_done(self):
-        self._global_queue.join()
+        self._global_queue.close()
 
 
 def quiet_mode():
