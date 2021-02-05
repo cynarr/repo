@@ -25,7 +25,7 @@ RUN poetry export \
     ./install_rest.sh && \
     rm -rf /root/.cache
 
-COPY . /opt/coviddash
+COPY dashboard data ingress ./
 
 RUN echo "/opt/coviddash" > \
     /usr/local/lib/python3.7/dist-packages/coviddash.pth
