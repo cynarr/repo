@@ -183,8 +183,8 @@ class CommonCrawlProcessor:
 
 
 def default_cpus():
-    if "NEWSPLEASE_WORKERS" in os.environ:
-        return int(os.environ["NEWSPLEASE_WORKERS"])
+    if "NEWS_PLEASE_WORKERS" in os.environ:
+        return int(os.environ["NEWS_PLEASE_WORKERS"])
     else:
         return cpu_count()
 
