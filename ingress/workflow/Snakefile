@@ -6,6 +6,7 @@ def cnf(name, val):
 
 cnf("WORK", "work")
 cnf("COVIDMARCH", pjoin(WORK, "covidmarch.jsonl.zstd"))
+cnf("USENEWS_FULLTEXT", pjoin(WORK, "usenews.fulltext.jsonl.zstd"))
 
 
 rule all:
@@ -42,8 +43,31 @@ rule convert_rdata:
     shell:
         "python -m ingress.usenews_to_pickles {input} {output}"
 
+rule save_use_news_urls:
+    input:
+        pjoin(WORK, "usenews.{year}.pickles/crowdtangle{year}.pkl")
+    output:
+        pjoin(WORK, "usenews.{year}.urls.txt")
+    shell:
+        "python -m ingress.save_usenews_urls {input} {output}"
+
+rule cat_use_news_urls:
+    input:
+        urls19 = pjoin(WORK, "usenews.2019.urls.txt"),
+        urls20 = pjoin(WORK, "usenews.2020.urls.txt")
+    output:
+        pjoin(WORK, "usenews.urls.txt")
+    shell:
+        "cat {input.urls19} {input.urls20} > {output}"
+
 rule get_covid_march:
     output:
         COVIDMARCH
     shell:
         "python -m ingress.covidmarch | zstd -T0 -14 -f - -o {output}"
+
+rule get_use_news_fulltext:
+    output:
+        USENEWS_FULLTEXT
+    shell:
+        "python -m ingress.usenews_fulltext urls.txt | zstd -T0 -14 -f - -o {output}"
