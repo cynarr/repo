@@ -2,6 +2,11 @@ import json
 import numpy as np
 import io
 from collections import defaultdict
+import sys
+import os.path
+from os import path
+import pickle
+import scipy.linalg
 
 
 def load_vec(emb_path, nmax=50000):
@@ -9,7 +14,7 @@ def load_vec(emb_path, nmax=50000):
     word2id = {}
     with io.open(emb_path, 'r', encoding='utf-8', newline='\n', errors='ignore') as f:
         next(f)
-        for i, line in enumerate(f):
+        for _, line in enumerate(f):
             word, vect = line.rstrip().split(' ', 1)
             vect = np.fromstring(vect, sep=' ')
             assert word not in word2id, 'word found twice'
@@ -41,12 +46,12 @@ def tokenize(text):
     tokens = text.split()
     return tokens
 
-def encode(tokens, src_emb, src_word2id):   # Covariance matric representation
+def encode(tokens, src_emb, src_word2id):   # Covariance matrix representation
     enc = np.array([src_emb[src_word2id[t]] for t in tokens if t in src_word2id])
     return np.cov(enc.T)
 
 def multilingual_encode(tokens, src_emb, src_word2id, tgt_emb, tgt_word2id):
-    """Encoder using multilingual embeddings"""
+    """Encoder using multilingual aligned embeddings"""
 
     word_embs = [src_emb[src_word2id[t]] for t in tokens if t in src_word2id]
     enc = []
@@ -62,33 +67,50 @@ def frobenius_cosine(A, B):
 
     return np.sum(A * B, axis=(1, 2)) / (np.sqrt(np.sum(A * A, axis=(1, 2))) * np.sqrt(np.sum(B * B, axis=(1, 2))))
 
+def bures_distance(A, B):
+    """Computes Bures-Wasserstein distance that should match to word movers distance
+    
+    Implemented following https://arxiv.org/pdf/1712.01504.pdf. Seems to be numerically instabile
+    """
+    
+    A_sqrt = scipy.linalg.sqrtm(A)
+    AB_sqrt = scipy.linalg.sqrtm(A_sqrt @ B @ A_sqrt)
+    distance = np.sqrt(np.trace(A) + np.trace(B) - 2 * np.trace(AB_sqrt))
 
-nmax = 50000
-language_code = "de"
+    return np.real(distance)
 
-# Get multilingual embeddings from https://github.com/facebookresearch/MUSE
+if __name__ == '__main__':
+    vocab_count = 50000
+    language_code = "de"
 
-src_embeddings, src_id2word, src_word2id = load_vec("data/wiki.multi.en.vec", nmax)
-tgt_embeddings, tgt_id2word, tgt_word2id = load_vec(f"data/wiki.multi.{language_code}.vec", nmax)
+    # Get multilingual embeddings from https://github.com/facebookresearch/MUSE
+    src_embeddings, src_id2word, src_word2id = load_vec("data/wiki.multi.en.vec", vocab_count)
+    tgt_embeddings, tgt_id2word, tgt_word2id = load_vec(f"data/wiki.multi.{language_code}.vec", vocab_count)
 
+    # Get MFT dictionary from https://osf.io/whjt2/
+    mft_dict, mft_cat = load_mft_dictionary("data/mfd2.0.dic")
+    moral_docs = {}
 
-# Get MFT dictionary from https://osf.io/whjt2/
-mft_dict, mft_cat = load_mft_dictionary("data/mfd2.0.dic")
+    if path.exists(".tmp/moral_doc_cache.pkl"):
+        with open(".tmp/moral_doc_cache.pkl", "rb") as fp:
+            moral_docs = pickle.load(fp)
+    else:
+        for moral_id in mft_dict:
+            moral_docs[moral_id] = multilingual_encode(mft_dict[moral_id], src_embeddings, src_word2id, tgt_embeddings, tgt_word2id)
+        if not path.exists(".tmp/"):
+            os.mkdir(".tmp")
+        with open(".tmp/moral_doc_cache.pkl", "wb") as fp:
+            pickle.dump(moral_docs, fp)   
 
-moral_docs = {}
-for moral_id in mft_dict:
-    moral_docs[moral_id] = multilingual_encode(mft_dict[moral_id], src_embeddings, src_word2id, tgt_embeddings, tgt_word2id)
-
-with open("data/covidmarch.jsonl", encoding="utf-8") as fp:
-    docs = [json.loads(jline) for jline in fp.read().splitlines()]
-    enc_docs = []
-    for doc in docs:
+    for line in sys.stdin:
+        doc = json.loads(line.strip()) 
         if doc["language"] == language_code:
-            enc_docs.append(encode(tokenize(doc["maintext"]), src_embeddings, src_word2id))
+            enc_doc = encode(tokenize(doc["maintext"]), src_embeddings, src_word2id)
+            
+            print(f'Document {doc["canon_url"]}')
+            for moral_id in moral_docs:
+                sentiment_score = frobenius_cosine(moral_docs[moral_id][None], enc_doc[None])[0]
+                bures_sentiment_score = bures_distance(moral_docs[moral_id], enc_doc)
 
-enc_docs = np.array(enc_docs)
-
-moral_sentiments = {}
-for moral_id in moral_docs:
-    print(f"Scoring {mft_cat[moral_id]}...")
-    moral_sentiments[moral_id] = frobenius_cosine(moral_docs[moral_id][None], enc_docs)
+                print(f"{mft_cat[moral_id]} F: {sentiment_score:.3f} B: {bures_sentiment_score:.3f}", end=" ")
+            print("\n")
