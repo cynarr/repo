@@ -1,3 +1,4 @@
+import os
 import sys
 import orjson
 from loky import cpu_count
@@ -181,11 +182,18 @@ class CommonCrawlProcessor:
         )
 
 
+def default_cpus():
+    if "NEWSPLEASE_WORKERS" in os.environ:
+        return int(os.environ["NEWSPLEASE_WORKERS"])
+    else:
+        return cpu_count()
+
+
 def mynewsplease(**kwargs):
     kwargs["warc_files_start_date"] = kwargs.get("warc_files_start_date", kwargs.get("start_date"))
     number_of_extraction_processes = kwargs.pop(
         "number_of_extraction_processes",
-        cpu_count()
+        default_cpus()
     )
     quiet_mode()
     CommonCrawlProcessor(
