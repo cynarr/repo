@@ -15,7 +15,7 @@ class BertPreproc:
         from tokenizers.normalizers import BertNormalizer
         from tokenizers.models import WordLevel
 
-        self.tokenizer = Tokenizer(WordLevel({"UNK": 0}, "UNK"))
+        self.tokenizer = Tokenizer(WordLevel({"UNK": 0}, unk_token="UNK"))
         self.tokenizer.pre_tokenizer = BertPreTokenizer()
         self.tokenizer.normalizer = BertNormalizer()
 
