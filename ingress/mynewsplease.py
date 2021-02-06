@@ -195,8 +195,13 @@ def mynewsplease(**kwargs):
         "number_of_extraction_processes",
         default_cpus()
     )
+    ignore_unicode_errors = kwargs.pop(
+        "ignore_unicode_errors",
+        True
+    )
     quiet_mode()
     CommonCrawlProcessor(
         number_of_extraction_processes=number_of_extraction_processes,
+        ignore_unicode_errors=ignore_unicode_errors,
         **kwargs
     ).crawl()
