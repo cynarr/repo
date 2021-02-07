@@ -66,7 +66,9 @@ rule get_covid_march:
         "python -m ingress.covidmarch | zstd -T0 -14 -f - -o {output}"
 
 rule get_use_news_fulltext:
+    input:
+        pjoin(WORK, "usenews.urls.txt")
     output:
         USENEWS_FULLTEXT
     shell:
-        "python -m ingress.usenews_fulltext urls.txt | zstd -T0 -14 -f - -o {output}"
+        "python -m ingress.usenews_fulltext {input} | zstd -T0 -14 -f - -o {output}"
