@@ -89,6 +89,7 @@ class CommonCrawlProcessor:
         reuse_previously_downloaded_files=True,
         local_download_dir_warc=None,
         continue_after_error=True,
+        ignore_unicode_errors=True,
         show_download_progress=False,
         number_of_extraction_processes=4,
         log_level=logging.ERROR,
@@ -107,6 +108,7 @@ class CommonCrawlProcessor:
         self.reuse_previously_downloaded_files = reuse_previously_downloaded_files
         self.local_download_dir_warc = local_download_dir_warc
         self.continue_after_error = continue_after_error
+        self.ignore_unicode_errors = ignore_unicode_errors
         self.show_download_progress = show_download_progress
         self.number_of_extraction_processes = number_of_extraction_processes
         self.log_level = log_level
@@ -176,6 +178,7 @@ class CommonCrawlProcessor:
             reuse_previously_downloaded_files=self.reuse_previously_downloaded_files,
             local_download_dir_warc=self.local_download_dir_warc,
             continue_after_error=self.continue_after_error,
+            ignore_unicode_errors=self.ignore_unicode_errors,
             show_download_progress=self.show_download_progress,
             log_level=self.log_level,
             delete_warc_after_extraction=self.delete_warc_after_extraction
