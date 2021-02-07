@@ -7,4 +7,4 @@ ct = pickle.load(open(sys.argv[1], "rb"))
 for link in ct.link:
     if link is None:
         continue
-    print(canonicalize_url)
+    print(canonicalize_url(link))
