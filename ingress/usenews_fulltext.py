@@ -1,6 +1,5 @@
 import os
-from urllib.parse import urlsplit
-from typing import List
+import sys
 from datetime import datetime
 from ingress.mynewsplease import mynewsplease
 
