@@ -29,6 +29,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - uses: textbook/git-checkout-submodule-action@master
 
       - name: Build pipe image
         run: docker build . --file Dockerfile.pipe --tag $PIPE_IMAGE_NAME
