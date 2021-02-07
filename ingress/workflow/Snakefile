@@ -48,7 +48,7 @@ rule save_usenews_urls:
     output:
         pjoin(WORK, "usenews.{year}.urls.txt")
     shell:
-        "python -m ingress.save_usenews_urls {input} {output}"
+        "python -m ingress.save_usenews_urls {input} > {output}"
 
 rule cat_usenews_urls:
     input:
