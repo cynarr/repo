@@ -14,13 +14,13 @@ rule all:
         COVIDMARCH,
         USENEWS_FULLTEXT
 
-rule get_use_news_2019:
+rule get_usenews_2019:
     output:
         pjoin(WORK, "usenews.2019.RData.xz")
     shell:
         "wget -nv -O {output} 'https://files.de-1.osf.io/v1/resources/uzca3/providers/osfstorage/5fabf6e81b9cb2005a6d3aa5?action=download&direct&version=2'"
 
-rule get_use_news_2020:
+rule get_usenews_2020:
     output:
         pjoin(WORK, "usenews.2020.RData.xz")
     shell:
@@ -42,7 +42,7 @@ rule convert_rdata:
     shell:
         "python -m ingress.usenews_to_pickles {input} {output}"
 
-rule save_use_news_urls:
+rule save_usenews_urls:
     input:
         pjoin(WORK, "usenews.{year}.pickles/crowdtangle{year}.pkl")
     output:
@@ -50,7 +50,7 @@ rule save_use_news_urls:
     shell:
         "python -m ingress.save_usenews_urls {input} {output}"
 
-rule cat_use_news_urls:
+rule cat_usenews_urls:
     input:
         urls19 = pjoin(WORK, "usenews.2019.urls.txt"),
         urls20 = pjoin(WORK, "usenews.2020.urls.txt")
@@ -65,7 +65,7 @@ rule get_covid_march:
     shell:
         "python -m ingress.covidmarch | zstd -T0 -14 -f - -o {output}"
 
-rule get_use_news_fulltext:
+rule get_usenews_fulltext:
     input:
         pjoin(WORK, "usenews.urls.txt")
     output:
