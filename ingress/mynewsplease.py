@@ -156,7 +156,6 @@ class CommonCrawlProcessor:
     def print_from_queue(self):
         while 1:
             lines = self.queue.get()
-            print("Got ", lines, file=sys.stderr)
             if lines is FINISHED_PRODUCING:
                 return
             else:
