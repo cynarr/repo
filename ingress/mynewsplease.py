@@ -122,14 +122,13 @@ class CommonCrawlProcessor:
 
     def callback_on_warc_completed(
         self, warc_path, counter_article_passed, counter_article_discarded,
-        counter_article_error, counter_article_total, counter_warc_processed
+        counter_article_error, counter_article_total,
     ):
         self.queue.producer_done()
         sys.stderr.write(
             f"Passed: {counter_article_passed}\t"
             f"Discarded: {counter_article_discarded}\t"
             f"Error: {counter_article_error}\tTotal: {counter_article_total}\t"
-            f"WARCs processed: {counter_warc_processed}"
         )
 
     def crawl_urls(self, warc_download_urls):
