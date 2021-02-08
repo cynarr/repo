@@ -16,12 +16,16 @@ FINISHED_PRODUCING = object()
 
 LINE_CHUNK_SIZE = 256
 MAP_CHUNK_SIZE = 1
-QUEUE_SIZE = 64
+QUEUE_SIZE_PER_PROCESS = 16
 GET_TIMEOUT = 5 * 60
 
 
 class ChunkingQueue:
-    _global_queue = Queue(QUEUE_SIZE)
+    _global_queue = None
+
+    @classmethod
+    def init_global_queue(cls, queue_size):
+        cls._global_queue = Queue(queue_size)
 
     def __init__(self, chunk_size, num_producers):
         self._local_queue = []
@@ -35,24 +39,20 @@ class ChunkingQueue:
             self._local_queue = []
 
     def get(self):
-        while 1:
-            try:
-                result = self._global_queue.get(True, GET_TIMEOUT)
-            except queue.Empty:
-                print("Timeout out waiting for lines", file=sys.stderr)
-                sys.exit(-1)
-            if result is FINISHED_PRODUCING:
-                self.num_producers -= 1
-                if self.num_producers == 0:
-                    return FINISHED_PRODUCING
-            else:
-                return result
+        try:
+            result = self._global_queue.get(True, GET_TIMEOUT)
+        except queue.Empty:
+            print("Timeout out waiting for lines", file=sys.stderr)
+            sys.exit(-1)
+        return result
 
-    def producer_done(self):
+    def item_done(self):
         if self._local_queue:
             self._global_queue.put(self._local_queue)
+            self._local_queue = []
+
+    def all_producers_done(self):
         self._global_queue.put(FINISHED_PRODUCING)
-        self._global_queue.close()
 
 
 def quiet_mode():
@@ -124,7 +124,7 @@ class CommonCrawlProcessor:
         self, warc_path, counter_article_passed, counter_article_discarded,
         counter_article_error, counter_article_total,
     ):
-        self.queue.producer_done()
+        self.queue.item_done()
         sys.stderr.write(
             f"Passed: {counter_article_passed}\t"
             f"Discarded: {counter_article_discarded}\t"
@@ -140,6 +140,7 @@ class CommonCrawlProcessor:
                 chunksize=MAP_CHUNK_SIZE
             ):
                 pass
+        self.queue.all_producers_done()
 
     def crawl(self):
         warc_download_urls = get_download_urls(self.warc_files_start_date)
@@ -196,6 +197,7 @@ def mynewsplease(**kwargs):
         "number_of_extraction_processes",
         default_cpus()
     )
+    ChunkingQueue.init_global_queue(number_of_extraction_processes * QUEUE_SIZE_PER_PROCESS)
     ignore_unicode_errors = kwargs.pop(
         "ignore_unicode_errors",
         True
