@@ -32,7 +32,7 @@ class ChunkingQueue:
         self._local_queue.append(item)
         if len(self._local_queue) == self.chunk_size:
             self._global_queue.put(self._local_queue)
-            self._global_queue = []
+            self._local_queue = []
 
     def get(self):
         while 1:
