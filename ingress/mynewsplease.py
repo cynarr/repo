@@ -116,9 +116,10 @@ class CommonCrawlProcessor:
         self.extractor_cls = extractor_cls
 
     def on_valid_article_extracted(self, article):
-        article = article.get_dict()
-        article["canon_url"] = canonicalize_url(article["url"])
-        self.queue.put(orjson.dumps(article))
+        article_dict = article.get_dict()
+        article_dict["country"] = article.country
+        article_dict["canon_url"] = canonicalize_url(article_dict["url"])
+        self.queue.put(orjson.dumps(article_dict))
 
     def callback_on_warc_completed(
         self, warc_path, counter_article_passed, counter_article_discarded,

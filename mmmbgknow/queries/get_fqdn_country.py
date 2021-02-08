@@ -1,15 +1,10 @@
-from SPARQLWrapper import SPARQLWrapper, JSON, __agent__ as __sparqlwrapper_agent__
 import tldextract
 
-__agent__ = (
-    "Mood Mapping Muppet's Covid Mood Map/0.0 " +
-    "(https://github.com/mood-mapping-muppets/repo/) " +
-    __sparqlwrapper_agent__
-)
+from ..utils.wikidata import Wikidata
 
-sparql = SPARQLWrapper("https://query.wikidata.org/sparql", agent=__agent__)
+wikidata = Wikidata()
 
-sparql.setQuery("""
+QUERY = """
 SELECT ?website ?cc
 WHERE
 {
@@ -21,13 +16,11 @@ WHERE
   ?country wdt:P30 wd:Q46 .
   ?country wdt:P297 ?cc
 }
-""")
-sparql.setReturnFormat(JSON)
-results = sparql.query().convert()
+"""
 
 
 print("domain,cc2")
-for row in results['results']['bindings']:
+for row in wikidata.query(QUERY):
     url = row["website"]["value"]
     url_parts = tldextract.extract(url)
     domain = url_parts.registered_domain

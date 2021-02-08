@@ -28,6 +28,7 @@ rpy2 = { version = "^3.4.2", optional = true }
 awscli = "^1.19.2"
 transformers = "^4.2.2"
 SPARQLWrapper = "^1.8.5"
+pycountry-convert = "^0.7.2"
 
 [tool.poetry.extras]
 usenews = ["rpy2"]

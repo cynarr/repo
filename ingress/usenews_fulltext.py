@@ -5,6 +5,7 @@ from ingress.mynewsplease import mynewsplease
 
 from newsplease import NewsPlease
 from newsplease.crawler.commoncrawl_extractor import CommonCrawlExtractor
+from w3lib.url import canonicalize_url
 
 
 all_urls = set()
@@ -14,7 +15,8 @@ class UrlFilter(CommonCrawlExtractor):
     def filter_record(self, warc_record, article=None):
         passed_filters, article = super().filter_record(warc_record, article)
         url = warc_record.rec_headers.get_header('WARC-Target-URI')
-        if url not in all_urls:
+        canon_url = canonicalize_url(url)
+        if canon_url not in all_urls:
             return False, article
         if article is None:
             article = NewsPlease.from_warc(warc_record)

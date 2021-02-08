@@ -6,6 +6,7 @@ from ingress.mynewsplease import mynewsplease
 
 from newsplease import NewsPlease
 from newsplease.crawler.commoncrawl_extractor import CommonCrawlExtractor
+from mmmbgknow.country_detect import detect_country, is_european
 
 
 class BertPreproc:
@@ -32,24 +33,18 @@ class KeywordFilterCommonCrawl(CommonCrawlExtractor):
         if not passed_filters:
             return False, article
         url = warc_record.rec_headers.get_header('WARC-Target-URI')
-        netloc = urlsplit(url).netloc
-        # TLD filtering XXX: stub
-        if netloc.strip(".").rsplit(".", 1)[-1] not in ("fi", "ee", "uk", "ie", "es", "fr", "de", "se"):
+
+        def get_lang():
+            nonlocal article
+            if article is None:
+                article = NewsPlease.from_warc(warc_record)
+            return article.language
+        country = detect_country(url, get_lang)
+        if not country or not is_european(country):
             return False, article
-        # We definitely need the full article object now
-        if article is None:
-            article = NewsPlease.from_warc(warc_record)
-        # Filter by language XXX: stub
-        if article.language not in ("fi", "et", "en", "es", "fr", "de", "sv"):
-            return False, article
-        # Keywords XXX: stub
-        text = article.maintext
-        if text is None:
-            return False, article
-        bits = preproc(text)
-        if "korona" not in bits and "covid" not in bits and not "coronavirus" not in bits:
-            # XXX: Just returning anyway for now
-            return True, article
+        article.country = country
+        # TODO: Filter by European language
+        # TODO: Find COVID-19 mention
         return True, article
 
 
