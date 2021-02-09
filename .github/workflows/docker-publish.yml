@@ -33,7 +33,7 @@ jobs:
         uses: frankier/docker-build-with-cache-action@already_authenticated
         with:
           registry: ghcr.io
-          image_name: pipe
+          image_name: mood-mapping-muppets/pipe
           dockerfile: Dockerfile.pipe
           already_authenticated: true
 
@@ -41,7 +41,7 @@ jobs:
         uses: frankier/docker-build-with-cache-action@already_authenticated
         with:
           registry: ghcr.io
-          image_name: web
+          image_name: mood-mapping-muppets/web
           dockerfile: Dockerfile.web
           already_authenticated: true
 
