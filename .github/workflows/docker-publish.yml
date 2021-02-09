@@ -13,11 +13,6 @@ on:
   # Run tests for any PRs.
   pull_request:
 
-env:
-  # TODO: Change variable to your image's name.
-  PIPE_IMAGE_NAME: pipe
-  WEB_IMAGE_NAME: web
-
 jobs:
   build_publish_containers:
     runs-on: ubuntu-latest
@@ -38,14 +33,14 @@ jobs:
         uses: whoan/docker-build-with-cache-action@v5
         with:
           registry: ghcr.io
-          image_name: $PIPE_IMAGE_NAME
+          image_name: pipe
           dockerfile: Dockerfile.pipe
 
       - name: Build/push web
         uses: whoan/docker-build-with-cache-action@v5
         with:
           registry: ghcr.io
-          image_name: $WEB_IMAGE_NAME
+          image_name: web
           dockerfile: Dockerfile.web
 
       - name: Trigger build on Rahti
