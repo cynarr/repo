@@ -1,4 +1,7 @@
-from SPARQLWrapper import SPARQLWrapper, JSON, __agent__ as __sparqlwrapper_agent__
+from SPARQLWrapper import (
+    SPARQLWrapper,
+    JSON, __agent__ as __sparqlwrapper_agent__
+)
 
 
 class Wikidata:
@@ -9,10 +12,17 @@ class Wikidata:
     )
 
     def __init__(self):
-        self.sparql = SPARQLWrapper("https://query.wikidata.org/sparql", agent=self.__agent__)
+        self.sparql = SPARQLWrapper(
+            "https://query.wikidata.org/sparql",
+            agent=self.__agent__
+        )
 
     def query(self, query_str):
         self.sparql.setQuery(query_str)
         self.sparql.setReturnFormat(JSON)
         results = self.sparql.query().convert()
         return results['results']['bindings']
+
+    def query_tpl(self, query_str, *cols):
+        for row in self.query(query_str):
+            yield tuple((row[col]["value"] for col in cols))
