@@ -40,9 +40,14 @@ def compute_moral_dimensions(word_pair_dict, src_emb, src_word2id, tgt_emb, tgt_
 
                 pos = get_approx_translated_word(w1, src_emb, src_word2id, tgt_emb, tgt_word2id)
                 neg = get_approx_translated_word(w2, src_emb, src_word2id, tgt_emb, tgt_word2id)
+
                 vecs.append(pos - neg)
         moral_vectors[sent] = np.array(vecs).sum(0)
+        moral_vectors[sent] = moral_vectors[sent] / np.linalg.norm(moral_vectors[sent]) # Normalize to unit length so that all moral dimensions are equal
     return moral_vectors
+
+def project_document_to_moral_dim(doc, moral_vector): # Assumes moral vector are normalized to unit length
+    return (moral_vector[None] @ doc.T).sum() # TODO: Possibly should be mean, so that the document length does not affect the score
 
 def load_mft_dictionary(path):
     with open(path, "r") as fp:
@@ -64,9 +69,11 @@ def tokenize(text):
     tokens = text.split()
     return tokens
 
-def encode(tokens, src_emb, src_word2id):   # Covariance matrix representation
-    enc = np.array([src_emb[src_word2id[t]] for t in tokens if t in src_word2id])
-    return np.cov(enc.T)
+def create_doc_matrix(tokens, src_emb, src_word2id):
+    return np.array([src_emb[src_word2id[t]] for t in tokens if t in src_word2id])
+
+def encode(doc_matrix, src_emb, src_word2id):   # Covariance matrix representation
+    return np.cov(doc_matrix.T)
 
 def get_approx_translated_word(word_emb, src_emb, src_word2id, tgt_emb, tgt_word2id):
     scores = (tgt_emb / np.linalg.norm(tgt_emb, 2, 1)[:, None]).dot(word_emb / np.linalg.norm(word_emb))
@@ -108,10 +115,12 @@ if __name__ == '__main__':
     src_embeddings, src_id2word, src_word2id = load_vec("data/wiki.multi.en.vec", vocab_count)
     tgt_embeddings, tgt_id2word, tgt_word2id = load_vec(f"data/wiki.multi.{language_code}.vec", vocab_count)
 
-    # Computer moral dimensions
+    # Compute moral dimensions
     with open("data/mft_sentiment_word_pairs.pkl", "rb") as fp:
         moral_word_pairs = pickle.load(fp)
         moral_dims = compute_moral_dimensions(moral_word_pairs, src_embeddings, src_word2id, tgt_embeddings, tgt_word2id)
+
+    #project_document_to_moral_dim(np.random.randn(123,300), moral_dims['care'])
 
     # Get MFT dictionary from https://osf.io/whjt2/
     mft_dict, mft_cat = load_mft_dictionary("data/mfd2.0.dic")
@@ -136,14 +145,19 @@ if __name__ == '__main__':
             json_obj["canon_url"] = doc["canon_url"]
             json_obj["bures_sentiment"] = {}
             json_obj["frob_sentiment"] = {}
-
-            enc_doc = encode(tokenize(doc["maintext"]), src_embeddings, src_word2id)
+            json_obj["proj_sentiment"] = {}
+            
+            doc_matrix = create_doc_matrix(tokenize(doc["maintext"]), src_embeddings, src_word2id)
+            enc_doc = encode(doc_matrix, src_embeddings, src_word2id)
             
             for moral_id in moral_docs:
                 sentiment_score = frobenius_cosine(moral_docs[moral_id][None], enc_doc[None])[0]
                 bures_sentiment_score = bures_distance(moral_docs[moral_id], enc_doc)
                 json_obj["frob_sentiment"][mft_cat[moral_id]] = sentiment_score
                 json_obj["bures_sentiment"][mft_cat[moral_id]] = bures_sentiment_score
+            
+            for moral_dim in moral_dims:
+                json_obj["proj_sentiment"][moral_dim] = project_document_to_moral_dim(doc_matrix, moral_dims[moral_dim])
             
             print(json.dumps(json_obj))
 
