@@ -28,6 +28,8 @@ def load_vec(emb_path, nmax=50000):
     return embeddings, id2word, word2id
 
 def compute_moral_dimensions(word_pair_dict, src_emb, src_word2id, tgt_emb, tgt_word2id):
+    # Following the idea introduced here: https://journals.sagepub.com/doi/full/10.1177/0003122419877135
+
     moral_vectors = {}
     for sent in word_pair_dict:
         vecs = []
@@ -110,8 +112,6 @@ if __name__ == '__main__':
     with open("data/mft_sentiment_word_pairs.pkl", "rb") as fp:
         moral_word_pairs = pickle.load(fp)
         moral_dims = compute_moral_dimensions(moral_word_pairs, src_embeddings, src_word2id, tgt_embeddings, tgt_word2id)
-    print(moral_dims)
-    exit()
 
     # Get MFT dictionary from https://osf.io/whjt2/
     mft_dict, mft_cat = load_mft_dictionary("data/mfd2.0.dic")
@@ -128,15 +128,22 @@ if __name__ == '__main__':
         with open(".tmp/moral_doc_cache.pkl", "wb") as fp:
             pickle.dump(moral_docs, fp)   
 
+
     for line in sys.stdin:
-        doc = json.loads(line.strip()) 
+        doc = json.loads(line.strip())
+        json_obj = {}        
         if doc["language"] == language_code:
+            json_obj["canon_url"] = doc["canon_url"]
+            json_obj["bures_sentiment"] = {}
+            json_obj["frob_sentiment"] = {}
+
             enc_doc = encode(tokenize(doc["maintext"]), src_embeddings, src_word2id)
             
-            print(f'Document {doc["canon_url"]}')
             for moral_id in moral_docs:
                 sentiment_score = frobenius_cosine(moral_docs[moral_id][None], enc_doc[None])[0]
                 bures_sentiment_score = bures_distance(moral_docs[moral_id], enc_doc)
+                json_obj["frob_sentiment"][mft_cat[moral_id]] = sentiment_score
+                json_obj["bures_sentiment"][mft_cat[moral_id]] = bures_sentiment_score
+            
+            print(json.dumps(json_obj))
 
-                print(f"{mft_cat[moral_id]} F: {sentiment_score:.3f} B: {bures_sentiment_score:.3f}", end=" ")
-            print("\n")
