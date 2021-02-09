@@ -7,7 +7,7 @@ from w3lib.url import canonicalize_url
 
 from newsplease.crawler import commoncrawl_crawler
 from newsplease.crawler import commoncrawl_extractor
-from multiprocessing import Queue, Pool, Process
+from multiprocessing import Queue, Pool, Process, active_children
 import queue
 
 
@@ -17,7 +17,17 @@ FINISHED_PRODUCING = object()
 LINE_CHUNK_SIZE = 256
 MAP_CHUNK_SIZE = 1
 QUEUE_SIZE_PER_PROCESS = 16
-GET_TIMEOUT = 5 * 60
+GET_TIMEOUT = 60 * 60 # 1 hour
+
+
+def die_all():
+    import time
+    for child in active_children():
+        child.kill()
+    time.sleep(5)
+    for child in active_children():
+        child.terminate()
+    sys.exit(-1)
 
 
 class ChunkingQueue:
@@ -43,7 +53,7 @@ class ChunkingQueue:
             result = self._global_queue.get(True, GET_TIMEOUT)
         except queue.Empty:
             print("Timeout out waiting for lines", file=sys.stderr)
-            sys.exit(-1)
+            die_all()
         return result
 
     def item_done(self):
