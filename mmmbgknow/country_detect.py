@@ -1,21 +1,12 @@
 import os
 from os.path import join as pjoin
+from .utils.csv import read_csv_map
 
 
-dir_path = os.path.dirname(os.path.realpath(__file__))
-
-
-def read_csv_map(filename):
-    import csv
-
-    with open(filename, mode='r') as infile:
-        reader = csv.reader(infile)
-        return {rows[0]: rows[1] for rows in reader}
-
-
-FQDN_COUNTRY = read_csv_map(pjoin(dir_path, "data/fqdn_country.csv"))
-TLD_COUNTRY = read_csv_map(pjoin(dir_path, "data/tld_country.csv"))
-LANG_COUNTRY = read_csv_map(pjoin(dir_path, "data/lang_country.csv"))
+DIR_PATH = os.path.dirname(os.path.realpath(__file__))
+FQDN_COUNTRY = read_csv_map(pjoin(DIR_PATH, "data/fqdn_country.csv"))
+TLD_COUNTRY = read_csv_map(pjoin(DIR_PATH, "data/tld_country.csv"))
+LANG_COUNTRY = read_csv_map(pjoin(DIR_PATH, "data/lang_country.csv"))
 
 
 def get_country_known_domain(url_parts):
@@ -43,9 +34,3 @@ def detect_country(url: str, get_lang):
         return res
     lang = get_lang()
     return get_country_from_language(lang)
-
-
-def is_european(country_code: str):
-    from pycountry_convert import country_alpha2_to_continent_code
-
-    return country_alpha2_to_continent_code(country_code) == "EU"

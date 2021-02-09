@@ -6,7 +6,9 @@ from ingress.mynewsplease import mynewsplease
 
 from newsplease import NewsPlease
 from newsplease.crawler.commoncrawl_extractor import CommonCrawlExtractor
-from mmmbgknow.country_detect import detect_country, is_european
+from mmmbgknow.country_detect import detect_country
+from mmmbgknow.european import is_european_cc, is_european_langcode
+
 
 
 class BertPreproc:
@@ -40,10 +42,14 @@ class KeywordFilterCommonCrawl(CommonCrawlExtractor):
                 article = NewsPlease.from_warc(warc_record)
             return article.language
         country = detect_country(url, get_lang)
-        if not country or not is_european(country):
+        if not country or not is_european_cc(country):
             return False, article
         article.country = country
-        # TODO: Filter by European language
+        if article is None:
+            article = NewsPlease.from_warc(warc_record)
+        lang = article.language
+        if not lang or not is_european_langcode(lang):
+            return False, article
         # TODO: Find COVID-19 mention
         return True, article
 
