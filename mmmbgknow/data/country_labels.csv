@@ -1,24 +1,3 @@
-QUERY 
-SELECT ?langcode ?cc2 ?lab
-WHERE
-{
-  # has 2-letter country code
-  ?country wdt:P297 ?cc2 .
-  # cc2 in my set of values
-  VALUES ?cc2 { "CZ" "PT" "EE" "BY" "MC" "HR" "MK" "BE" "DE" "MT" "SK" "GE" "AZ" "FO" "BA" "IT" "BG" "PL" "UA" "ME" "RU" "AD" "FR" "VA" "CY" "LI" "TR" "ES" "KZ" "AT" "AM" "CH" "IE" "NL" "FI" "LU" "LV" "MD" "SM" "LT" "RS" "AL" "GR" "SI" "HU" "RO" "GB" "SE" "NO" "DK" "IS" } .
-  # langcode in my set of values
-  VALUES ?langcode { "el" "en" "ka" "oc" "lv" "sk" "ru" "no" "hu" "pl" "sl" "de" "ca" "la" "cy" "cv" "av" "is" "pt" "cs" "lb" "sq" "tr" "gl" "eu" "kl" "nb" "bg" "hr" "mk" "sr" "ga" "uk" "lt" "mt" "ro" "nl" "sv" "fr" "fy" "ba" "ce" "tt" "bs" "fo" "yi" "os" "az" "ab" "kk" "es" "et" "nn" "be" "rm" "hy" "kv" "fi" "da" "it" } .
-  {
-      # country has label
-      ?country rdfs:label ?lab
-  } UNION {
-      # or altLabel
-      ?country skos:altLabel ?lab
-  } .
-  # label in language
-  FILTER (lang(?lab) = ?langcode)
-}
-
 langcode,cc2,lab
 ab,AD,Андора
 ab,AL,Арнауыҭтәыла

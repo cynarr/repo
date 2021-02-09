@@ -29,8 +29,9 @@ WHERE
 )
 
 
-print("QUERY", QUERY)
 print("langcode,cc2,lab")
 
-for langcode, cc2, lab in sorted(wikidata.query_tpl(QUERY, "langcode", "cc2", "lab")):
+for langcode, cc2, lab in sorted(
+    wikidata.query_tpl(QUERY, "langcode", "cc2", "lab")
+):
     print(f"{langcode},{cc2},{lab}")
