@@ -30,18 +30,20 @@ jobs:
         run: echo "${{ secrets.CR_PAT }}" | docker login https://ghcr.io -u ${{ github.actor }} --password-stdin
 
       - name: Build/push pipe
-        uses: whoan/docker-build-with-cache-action@v5
+        uses: frankier/docker-build-with-cache-action@already_authenticated
         with:
           registry: ghcr.io
           image_name: pipe
           dockerfile: Dockerfile.pipe
+          already_authenticated: true
 
       - name: Build/push web
-        uses: whoan/docker-build-with-cache-action@v5
+        uses: frankier/docker-build-with-cache-action@already_authenticated
         with:
           registry: ghcr.io
           image_name: web
           dockerfile: Dockerfile.web
+          already_authenticated: true
 
       - name: Trigger build on Rahti
         uses: joelwmale/webhook-action@master
