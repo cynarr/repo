@@ -7,6 +7,7 @@ import os.path
 from os import path
 import pickle
 import scipy.linalg
+import pickle
 
 
 def load_vec(emb_path, nmax=50000):
@@ -25,6 +26,21 @@ def load_vec(emb_path, nmax=50000):
     id2word = {v: k for k, v in word2id.items()}
     embeddings = np.vstack(vectors)
     return embeddings, id2word, word2id
+
+def compute_moral_dimensions(word_pair_dict, src_emb, src_word2id, tgt_emb, tgt_word2id):
+    moral_vectors = {}
+    for sent in word_pair_dict:
+        vecs = []
+        for a,b in word_pair_dict[sent]:
+            if a in src_word2id and b in src_word2id:
+                w1 = src_emb[src_word2id[a]]
+                w2 = src_emb[src_word2id[b]]
+
+                pos = get_approx_translated_word(w1, src_emb, src_word2id, tgt_emb, tgt_word2id)
+                neg = get_approx_translated_word(w2, src_emb, src_word2id, tgt_emb, tgt_word2id)
+                vecs.append(pos - neg)
+        moral_vectors[sent] = np.array(vecs).sum(0)
+    return moral_vectors
 
 def load_mft_dictionary(path):
     with open(path, "r") as fp:
@@ -50,14 +66,17 @@ def encode(tokens, src_emb, src_word2id):   # Covariance matrix representation
     enc = np.array([src_emb[src_word2id[t]] for t in tokens if t in src_word2id])
     return np.cov(enc.T)
 
+def get_approx_translated_word(word_emb, src_emb, src_word2id, tgt_emb, tgt_word2id):
+    scores = (tgt_emb / np.linalg.norm(tgt_emb, 2, 1)[:, None]).dot(word_emb / np.linalg.norm(word_emb))
+    return tgt_emb[scores.argmax()]
+
 def multilingual_encode(tokens, src_emb, src_word2id, tgt_emb, tgt_word2id):
     """Encoder using multilingual aligned embeddings"""
 
     word_embs = [src_emb[src_word2id[t]] for t in tokens if t in src_word2id]
     enc = []
     for word_emb in word_embs:
-        scores = (tgt_emb / np.linalg.norm(tgt_emb, 2, 1)[:, None]).dot(word_emb / np.linalg.norm(word_emb))
-        enc.append(tgt_emb[scores.argmax()])
+        enc.append(get_approx_translated_word(word_emb, src_emb, src_word2id, tgt_emb, tgt_word2id))
 
     enc = np.array(enc)
     return np.cov(enc.T)
@@ -86,6 +105,13 @@ if __name__ == '__main__':
     # Get multilingual embeddings from https://github.com/facebookresearch/MUSE
     src_embeddings, src_id2word, src_word2id = load_vec("data/wiki.multi.en.vec", vocab_count)
     tgt_embeddings, tgt_id2word, tgt_word2id = load_vec(f"data/wiki.multi.{language_code}.vec", vocab_count)
+
+    # Computer moral dimensions
+    with open("data/mft_sentiment_word_pairs.pkl", "rb") as fp:
+        moral_word_pairs = pickle.load(fp)
+        moral_dims = compute_moral_dimensions(moral_word_pairs, src_embeddings, src_word2id, tgt_embeddings, tgt_word2id)
+    print(moral_dims)
+    exit()
 
     # Get MFT dictionary from https://osf.io/whjt2/
     mft_dict, mft_cat = load_mft_dictionary("data/mfd2.0.dic")
