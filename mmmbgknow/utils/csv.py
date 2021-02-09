@@ -3,6 +3,7 @@ def read_csv_map(filename):
 
     with open(filename, mode='r') as infile:
         reader = csv.reader(infile)
+        next(reader)
         return {row[0]: row[1] for row in reader}
 
 
@@ -11,4 +12,5 @@ def read_csv_set(filename):
 
     with open(filename, mode='r') as infile:
         reader = csv.reader(infile)
+        next(reader)
         return {row[0] for row in reader}
