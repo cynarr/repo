@@ -1,0 +1,6139 @@
+QUERY 
+SELECT ?langcode ?cc2 ?lab
+WHERE
+{
+  # has 2-letter country code
+  ?country wdt:P297 ?cc2 .
+  # cc2 in my set of values
+  VALUES ?cc2 { "CZ" "PT" "EE" "BY" "MC" "HR" "MK" "BE" "DE" "MT" "SK" "GE" "AZ" "FO" "BA" "IT" "BG" "PL" "UA" "ME" "RU" "AD" "FR" "VA" "CY" "LI" "TR" "ES" "KZ" "AT" "AM" "CH" "IE" "NL" "FI" "LU" "LV" "MD" "SM" "LT" "RS" "AL" "GR" "SI" "HU" "RO" "GB" "SE" "NO" "DK" "IS" } .
+  # langcode in my set of values
+  VALUES ?langcode { "el" "en" "ka" "oc" "lv" "sk" "ru" "no" "hu" "pl" "sl" "de" "ca" "la" "cy" "cv" "av" "is" "pt" "cs" "lb" "sq" "tr" "gl" "eu" "kl" "nb" "bg" "hr" "mk" "sr" "ga" "uk" "lt" "mt" "ro" "nl" "sv" "fr" "fy" "ba" "ce" "tt" "bs" "fo" "yi" "os" "az" "ab" "kk" "es" "et" "nn" "be" "rm" "hy" "kv" "fi" "da" "it" } .
+  {
+      # country has label
+      ?country rdfs:label ?lab
+  } UNION {
+      # or altLabel
+      ?country skos:altLabel ?lab
+  } .
+  # label in language
+  FILTER (lang(?lab) = ?langcode)
+}
+
+langcode,cc2,lab
+ab,AD,Андора
+ab,AL,Арнауыҭтәыла
+ab,AL,Арнауыҭтәыла Аҳәынҭқарра
+ab,AM,Ермантәыла
+ab,AT,Австриа
+ab,AZ,Азербаиџьан
+ab,BE,Бельгиа
+ab,BG,Былгариа
+ab,BY,Белорустәыла
+ab,CH,CH
+ab,CY,Ҟыбрыс
+ab,CZ,Чехиа
+ab,DE,Германиа
+ab,DK,Даниа
+ab,EE,Естониа
+ab,ES,Испаниа
+ab,FI,Суоми
+ab,FR,Франциа
+ab,GB,Британиа Ду
+ab,GE,Қырҭтәыла
+ab,GR,Бырзентәыла
+ab,HR,Хорватиа
+ab,HU,Мадиартәыла
+ab,IE,Ирландиа
+ab,IS,Исландиа
+ab,IT,Италиа
+ab,KZ,Ҟазахсҭан
+ab,LI,Лихтенштаин
+ab,LT,Литва
+ab,LV,Латвиа
+ab,MC,Монако
+ab,MD,Молдова
+ab,ME,Черногориа
+ab,MK,Аҩадатәи Македониа
+ab,NO,Норвегиа
+ab,PL,POL
+ab,PL,Польша
+ab,PL,🇵🇱
+ab,PT,Португалиа
+ab,RS,Сербиа
+ab,RU,Урыстәыла
+ab,SE,Швециа
+ab,SI,Словениа
+ab,SK,Словакиа
+ab,SM,Сан Марино
+ab,TR,Ҭырқтәыла аҳәынҭқарра
+ab,TR,Ҭырқәтәыла
+ab,UA,Украина
+av,AD,Андорра
+av,AL,Албания
+av,AM,ЦIамухъ
+av,AT,Австрия
+av,AZ,Азарбижан
+av,BA,Босния ва Герцеговина
+av,BE,Бельгия
+av,BG,Болгария
+av,BY,Белоруссия
+av,CH,CH
+av,CH,Швейцария
+av,CY,Кипр
+av,CZ,Чехия
+av,DE,Алмания
+av,DK,Дания
+av,EE,Эстония
+av,ES,Испания
+av,FI,Финляндия
+av,FR,Франсия
+av,GB,КІудабритІания
+av,GE,Гуржи
+av,GR,Греция
+av,HR,Хорватия
+av,HU,Венгрия
+av,IE,Ирландия
+av,IS,Исландия
+av,IT,Италия
+av,KZ,Хъазахъистан
+av,LI,Лихтенштейн
+av,LT,Литва
+av,LU,Люксембург
+av,LV,Латвия
+av,MC,Монако
+av,MD,Молдавия
+av,ME,Чеэраб Меэр
+av,MK,Республика Македония
+av,MT,Мальта
+av,NL,Нидерландал
+av,NO,Норвегия
+av,PL,POL
+av,PL,Польша
+av,PL,🇵🇱
+av,PT,Португалия
+av,RO,Румыния
+av,RS,Сербия
+av,RU,Россиялъул Федерация
+av,SE,Швеция
+av,SI,Словения
+av,SK,Словакия
+av,SM,Сан-Марино
+av,TR,Турция
+av,UA,Украина
+av,VA,Ватикан
+az,AD,Andorra
+az,AL,Albaniya
+az,AL,Albaniya Respublikası
+az,AM,Ermənistan
+az,AM,Ermənistan Respublikası
+az,AT,Avstriya
+az,AZ,Azərbaycan
+az,AZ,Azərbaycan Respublikası
+az,AZ,az
+az,AZ,aze
+az,AZ,🇦🇿
+az,BA,Bosniya və Herseqovina
+az,BE,Belçika
+az,BG,Bolqarıstan
+az,BG,Bolqarıstan Respublikası
+az,BG,Bolqarıstanlı
+az,BY,Belarus
+az,CH,CH
+az,CH,İsveçrə
+az,CY,Kipr Respublikası
+az,CZ,Çexiya
+az,DE,Almaniya
+az,DE,Almaniya Federativ Respublikası
+az,DK,Danimarka
+az,DK,Danimarka
+az,DK,Danimarka krallığı
+az,EE,Estoniya
+az,ES,İspaniya
+az,FI,Finlandiya
+az,FO,Farer adaları
+az,FR,Fransa
+az,GB,Böyük Britaniya
+az,GE,Gürcüstan
+az,GR,Yunanıstan
+az,HR,Xorvatiya
+az,HU,Macarıstan
+az,IE,İrlandiya
+az,IE,İrlandiya Respublikası
+az,IS,İslandiya
+az,IT,İtaliya
+az,KZ,Qazaxıstan
+az,LI,Lixtenşteyn
+az,LT,Litva
+az,LU,Luksemburq
+az,LU,Lyuksemburq
+az,LU,Lüksemburq
+az,LU,Lüksenburq
+az,LV,Latviya
+az,MC,Monako
+az,MD,Moldova
+az,ME,Monteneqro
+az,MK,Makedoniya
+az,MK,Makedoniya Respublikası
+az,MK,Şimali Makedoniya
+az,MK,Şimali Makedoniya Respublikası
+az,MT,Malta
+az,NL,Niderland
+az,NL,Niderland Krallığı
+az,NO,Norveç
+az,PL,Polşa
+az,PL,🇵🇱
+az,PT,Portuqaliya
+az,RO,Rumıniya
+az,RS,Serbiya
+az,RU,Rusiya
+az,SE,İsveç
+az,SI,Sloveniya
+az,SK,Slovakiya
+az,SM,San-Marino
+az,TR,T.C.
+az,TR,TR
+az,TR,TUR
+az,TR,Türkiyə
+az,TR,Türkiyə Cümhuriyyəti
+az,TR,Türkiyə Respublikası
+az,TR,tr
+az,UA,Ukrayna
+az,VA,Vatikan
+ba,AD,Андорра
+ba,AL,Албания
+ba,AL,Албания Республикаһы
+ba,AM,Әрмәнстан
+ba,AT,Австрия
+ba,AZ,Әзербайжан
+ba,BA,Босния һәм Герцеговина
+ba,BE,Бельгия
+ba,BG,Болгария
+ba,BY,Беларусь
+ba,CH,CH
+ba,CH,Швейцария
+ba,CY,Кипр Республикаһы
+ba,CZ,Чехия
+ba,DE,Германия
+ba,DK,Дания
+ba,DK,Дания
+ba,DK,Дания короллеге
+ba,EE,Эстония
+ba,ES,Испания
+ba,FI,Финляндия
+ba,FO,Фарер утрауҙары
+ba,FR,Франция
+ba,GB,Бөйөк Британия
+ba,GE,Грузия
+ba,GR,Греция
+ba,HR,Хорватия
+ba,HU,Венгрия
+ba,IE,Ирландия
+ba,IS,Исландия
+ba,IT,Италия
+ba,KZ,Ҡаҙағстан
+ba,LI,Лихтенштейн
+ba,LT,Литва
+ba,LU,Люксембург
+ba,LV,Латвия
+ba,MC,Монако
+ba,MD,Молдова
+ba,ME,Черногория
+ba,MK,Македония Республикаһы
+ba,MK,Төньяҡ Македония
+ba,MT,Мальта
+ba,NL,Нидерландтар
+ba,NO,Норвегия
+ba,PL,POL
+ba,PL,Польша
+ba,PL,🇵🇱
+ba,PT,Португалия
+ba,RO,Румыния
+ba,RS,Сербия
+ba,RU,Рәсәй
+ba,RU,Рәсәй Федерацияһы
+ba,SE,Швеция
+ba,SI,Словения
+ba,SK,Словакия
+ba,SM,Сан-Марино
+ba,TR,Төркиә
+ba,UA,Украина
+ba,VA,Ватикан
+be,AD,Андора
+be,AL,Албанія
+be,AL,Рэспу́бліка Алба́нія
+be,AM,Арменія
+be,AT,Аўстрыя
+be,AZ,Азербайджан
+be,BA,Боснія і Герцагавіна
+be,BE,Бельгія
+be,BG,Балгарыя
+be,BG,Баўгарыя
+be,BY,Беларуская Рэспубліка
+be,BY,Беларусь
+be,BY,Рэспу́бліка Белару́сь
+be,BY,Рэспубліка Беларусь
+be,CH,CH
+be,CH,Швейцарыя
+be,CY,Кіпр
+be,CZ,Чэхія
+be,CZ,Чэшская Рэспубліка
+be,DE,Германія
+be,DK,Данія
+be,DK,Каралеўства Данія
+be,EE,Эстонія
+be,ES,Іспанія
+be,FI,Фінляндыя
+be,FO,Фарэрскія астравы
+be,FO,Фарэры
+be,FR,Францыя
+be,GB,Вялікабрытанія
+be,GE,Грузія
+be,GR,Грэцыя
+be,HR,Харватыя
+be,HU,Венгрыя
+be,IE,Ірландыя
+be,IE,Рэспубліка Ірландыя
+be,IS,Ísland
+be,IS,Ісландыя
+be,IS,Рэспубліка Ісландыя
+be,IT,Італьянская Рэспубліка
+be,IT,Італія
+be,IT,Рэспубліка Італія
+be,KZ,Казахстан
+be,LI,Ліхтэнштэйн
+be,LT,Літва
+be,LU,Дзяржава Люксембург
+be,LU,Люксембург
+be,LV,Латвія
+be,MC,Манака
+be,MD,Малдова
+be,ME,Чарнагорыя
+be,MK,Македонія
+be,MK,Паўночная Македонія
+be,MK,Рэспубліка Македонія
+be,MT,Мальта
+be,NL,Каралеўства Нідэрландаў
+be,NL,Нідэрланды
+be,NO,Нарвегія
+be,PL,POL
+be,PL,Польшча
+be,PL,🇵🇱
+be,PT,Партугалія
+be,RO,Румынія
+be,RS,Сербія
+be,RU,Расія
+be,SE,Швецыя
+be,SI,Славенія
+be,SK,Славакія
+be,SK,Славацкая Рэспубліка
+be,SK,Славаччына
+be,SM,Сан-Марына
+be,TR,Турцыя
+be,TR,Турэцкая Рэспубліка
+be,TR,Турэччына
+be,UA,Украіна
+be,VA,Ватыкан
+bg,AD,Андора
+bg,AD,Княжество Андора
+bg,AL,Албания
+bg,AL,Република Албания
+bg,AM,Армения
+bg,AT,Австрия
+bg,AT,Република Австрия
+bg,AZ,Азербайджан
+bg,AZ,Република Азербайджан
+bg,BA,Босна и Херцеговина
+bg,BE,Белгия
+bg,BE,Кралство Белгия
+bg,BG,България
+bg,BG,Република България
+bg,BY,Беларус
+bg,BY,Република Беларус
+bg,CH,CH
+bg,CH,Конфедерация Швейцария
+bg,CH,Швейцария
+bg,CY,Кипър
+bg,CY,Република Кипър
+bg,CZ,Република Чехия
+bg,CZ,Чехия
+bg,CZ,Чешка република
+bg,DE,Германия
+bg,DE,ФРГ
+bg,DE,Федерална република Германия
+bg,DK,Дания
+bg,DK,Кралство Дания
+bg,DK,Кралство Дания
+bg,EE,Естония
+bg,ES,Испания
+bg,ES,Кралство Испания
+bg,FI,Република Финландия
+bg,FI,Финландия
+bg,FO,Фарьорски острови
+bg,FO,Фарьорските острови
+bg,FO,Ферьорски острови
+bg,FR,Република Франция
+bg,FR,Франция
+bg,FR,Френска
+bg,FR,Френската република
+bg,FR,Френските
+bg,GB,Британия
+bg,GB,Великобритания
+bg,GB,Обединено кралство Великобритания и Северна Ирландия
+bg,GB,Обединеното кралство
+bg,GE,Грузия
+bg,GE,Република Грузия
+bg,GR,Гърция
+bg,GR,Република Гърция
+bg,HR,Република Хърватия
+bg,HR,Хърватия
+bg,HR,Хърватска
+bg,HU,Унгария
+bg,IE,Ейре
+bg,IE,Ирландия
+bg,IS,Исландия
+bg,IT,Италия
+bg,IT,Република Италия
+bg,KZ,Казахстан
+bg,KZ,Република Казахстан
+bg,LI,Лихтенщайн
+bg,LT,Литва
+bg,LT,Република Литва
+bg,LU,Велико херцогство Люксембург
+bg,LU,Люксембург
+bg,LV,Латвия
+bg,LV,Република Латвия
+bg,MC,Княжество Монако
+bg,MC,Монако
+bg,MD,Молдова
+bg,MD,Република Молдавия
+bg,MD,Република Молдова
+bg,ME,Република Черна гора
+bg,ME,Черна гора
+bg,MK,Бивша югославска република Македония
+bg,MK,РМ
+bg,MK,Република Македония
+bg,MK,Република Северна Македония
+bg,MK,Северна Македония
+bg,MT,Малта
+bg,MT,Република Малта
+bg,NL,Кралство Нидерландия
+bg,NL,Кралство Нидерландия
+bg,NL,Нидерландия
+bg,NL,Холандия
+bg,NO,Кралство Норвегия
+bg,NO,Норвегия
+bg,PL,PL
+bg,PL,POL
+bg,PL,Polska
+bg,PL,Полша
+bg,PL,Република Полша
+bg,PL,🇵🇱
+bg,PT,Португалия
+bg,PT,Република Португалия
+bg,RO,Република Румъния
+bg,RO,Румъния
+bg,RS,Република Сърбия
+bg,RS,Сърбия
+bg,RU,РФ
+bg,RU,Русия
+bg,RU,Руска федерация
+bg,SE,Кралство Швеция
+bg,SE,Швеция
+bg,SI,Република Словения
+bg,SI,Словения
+bg,SK,Република Словакия
+bg,SK,Словакия
+bg,SK,Словашка република
+bg,SM,Република Сан Марино
+bg,SM,Сан Марино
+bg,TR,Република Турция
+bg,TR,Турция
+bg,UA,Украйна
+bg,VA,Ватикан
+bg,VA,Ватикана
+bg,VA,Светия престол
+bs,AD,Andora
+bs,AL,Albanija
+bs,AM,Armenija
+bs,AM,Ermenija
+bs,AM,Jermenija
+bs,AT,Austrija
+bs,AZ,Azerbejdžan
+bs,BA,BH
+bs,BA,BiH
+bs,BA,Bosna
+bs,BA,Bosna i Hercegovina
+bs,BE,Belgija
+bs,BG,Bugarska
+bs,BY,Bjelorusija
+bs,CH,CH
+bs,CH,Švicarska
+bs,CH,Švicarska konferedacija
+bs,CY,Kipar
+bs,CZ,Češka
+bs,DE,Njemačka
+bs,DK,Danska
+bs,DK,Danska
+bs,EE,Estonija
+bs,ES,Španija
+bs,FI,Finska
+bs,FO,Farska ostrva
+bs,FO,Farski otoci
+bs,FO,Ostrva Faro
+bs,FR,Francuska
+bs,GB,GB
+bs,GB,GBR
+bs,GB,UK
+bs,GB,Ujedinjeno Kraljevstvo
+bs,GB,Ujedinjeno Kraljevstvo Velike Britanije i Sjeverne Irske
+bs,GB,VB
+bs,GB,VBR
+bs,GB,Velika Britanija
+bs,GB,🇬🇧
+bs,GE,Gruzija
+bs,GR,Grčka
+bs,HR,Hrvatska
+bs,HU,Mađarska
+bs,IE,Irska
+bs,IE,Republika Irska
+bs,IE,Éire
+bs,IE,🇮🇪
+bs,IS,Island
+bs,IT,Italija
+bs,KZ,Kazahstan
+bs,LI,Lihtenštajn
+bs,LT,Litvanija
+bs,LU,Luksemburg
+bs,LV,Latvija
+bs,LV,Letonija
+bs,MC,Monako
+bs,MD,Moldavija
+bs,ME,Crna Gora
+bs,MK,Republika Makedonija
+bs,MK,Republika Sjeverna Makedonija
+bs,MK,Sjeverna Makedonija
+bs,MT,Malta
+bs,NL,Holandija
+bs,NL,Kraljevina Holandija
+bs,NL,Nizozemska
+bs,NO,Norveška
+bs,PL,POL
+bs,PL,Poljska
+bs,PL,Polska
+bs,PL,🇵🇱
+bs,PT,Portugal
+bs,RO,Rumunija
+bs,RS,Srbija
+bs,RU,Rusija
+bs,SE,Švedska
+bs,SI,Slovenija
+bs,SK,Slovačka
+bs,SM,San Marino
+bs,TR,Turska
+bs,UA,Ukrajina
+bs,VA,Vatikan
+ca,AD,Andorra
+ca,AD,Principat d'Andorra
+ca,AD,Valls d'Andorra
+ca,AD,el país dels Pirineus
+ca,AD,les Valls d'Andorra
+ca,AL,Albània
+ca,AM,Armènia
+ca,AT,Austria
+ca,AT,Ostalriche
+ca,AT,República Federal d'Àustria
+ca,AT,República d'Àustria
+ca,AT,Segona República d'Àustria
+ca,AT,Àustria
+ca,AZ,Azerbaidjan
+ca,AZ,República de l'Azerbaidjan
+ca,AZ,l'Azerbaidjan
+ca,BA,Bòsnia i Hercegovina
+ca,BE,België
+ca,BE,Bèlgica
+ca,BE,Bélgica
+ca,BE,Estat belga
+ca,BE,Regne de Bèlgica
+ca,BG,Bulgaria
+ca,BG,Bulgària
+ca,BG,Burdjan
+ca,BG,Búlgara
+ca,BG,Búlgars
+ca,BG,República de Bulgària
+ca,BY,Belarús
+ca,BY,Bielorússia
+ca,BY,República de Belarús
+ca,CH,CH
+ca,CH,Confederació Helvètica
+ca,CH,Confederació Suïssa
+ca,CH,Suissa
+ca,CH,Suïssa
+ca,CY,República de Xipre
+ca,CY,Xipre
+ca,CZ,República Txeca
+ca,CZ,Txèquia
+ca,DE,Alemanya
+ca,DK,Dinamarca
+ca,DK,Regne de Dinamarca
+ca,DK,Regne de Dinamarca
+ca,EE,Estònia
+ca,ES,ES
+ca,ES,ESP
+ca,ES,Espanya
+ca,ES,Estat espanyol
+ca,ES,Regne d'Espanya
+ca,ES,🇪🇸
+ca,FI,Finlandia
+ca,FI,Finlàndia
+ca,FI,República de Finlàndia
+ca,FO,Faeroes
+ca,FO,Fer-Oer
+ca,FO,Feroe
+ca,FO,Fèroe
+ca,FO,Illes Faroe
+ca,FO,Illes Fer-Oer
+ca,FO,Illes Feroe
+ca,FO,illes Fèroe
+ca,FR,France
+ca,FR,França
+ca,FR,França Metropolitana
+ca,FR,República Francesa
+ca,FR,República de França
+ca,FR,estat francès
+ca,GB,Regne Unit
+ca,GB,Regne Unit De La Gran Bretanya I Irlanda Del Nord
+ca,GB,Reialme Unit
+ca,GB,Reialme Unit de la Gran Bretanya i Irlanda del Nord
+ca,GB,UK
+ca,GB,United Kingdom
+ca,GE,Geòrgia
+ca,GR,Elláda
+ca,GR,Grècia
+ca,GR,Hellás
+ca,GR,República Hel·lènica
+ca,HR,Croàcia
+ca,HU,Hongria
+ca,HU,Hungria
+ca,IE,Eire
+ca,IE,Irlanda
+ca,IE,República d'Irlanda
+ca,IE,República d’Irlanda
+ca,IE,Éire
+ca,IS,Islàndia
+ca,IT,Estat Italià
+ca,IT,Itàlia
+ca,IT,República Italiana
+ca,KZ,Kazakhstan
+ca,LI,Liechtenstein
+ca,LT,Lituania
+ca,LT,Lituània
+ca,LT,República de Lituània
+ca,LU,Gran Ducat De Luxemburg
+ca,LU,Gran Ducat de Luxemburg
+ca,LU,Luxembourg
+ca,LU,Luxemburg
+ca,LV,Letònia
+ca,MC,Mònaco
+ca,MD,Moldàvia
+ca,MD,República de Moldàvia
+ca,ME,Montenegro
+ca,MK,Antiga República Iugoslava de Macedònia
+ca,MK,Macedònia del Nord
+ca,MK,República de Macedònia
+ca,MK,República de Macedònia del Nord
+ca,MK,mk
+ca,MT,Malta
+ca,MT,República de Malta
+ca,NL,Holanda
+ca,NL,Països Baixos
+ca,NL,Regne dels Països Baixos
+ca,NO,Noruega
+ca,NO,Norvègia
+ca,NO,Regne de Noruega
+ca,PL,Polonia
+ca,PL,Polònia
+ca,PL,República de Polònia
+ca,PL,🇵🇱
+ca,PT,Portugal
+ca,PT,República Portuguesa
+ca,PT,República de Portugal
+ca,RO,Romania
+ca,RS,Sèrbia
+ca,RU,Federació Russa
+ca,RU,Federació de Rússia
+ca,RU,Rússia
+ca,SE,Regne de Suècia
+ca,SE,Suècia
+ca,SI,Eslovènia
+ca,SK,Eslovàquia
+ca,SM,San Marino
+ca,TR,República Turca
+ca,TR,República de Turquia
+ca,TR,Turquia
+ca,TR,Türkiye
+ca,TR,🇹🇷
+ca,UA,Ucraïna
+ca,VA,Ciutat del Vaticà
+ca,VA,Estat de la Ciutat del Vaticà
+ca,VA,Vaticà
+ce,AD,Андорра
+ce,AL,Албани
+ce,AM,Эрмалойчоь
+ce,AT,Австри
+ce,AZ,Азербайджан
+ce,BA,Босни а Герцеговина
+ce,BE,Бельги
+ce,BG,Болгаре
+ce,BG,Болгари
+ce,BG,Болгарий
+ce,BY,Белорусси
+ce,CH,CH
+ce,CH,Швейцари
+ce,CY,Кипр
+ce,CZ,Чехи
+ce,DE,Германи
+ce,DK,Дани
+ce,EE,Эстони
+ce,ES,Испани
+ce,FI,Финлянди
+ce,FO,Фарерийн гІайренаш
+ce,FR,Франци
+ce,GB,Йоккха Британи
+ce,GE,Гуьржийчоь
+ce,GR,Желтойчоь
+ce,HR,Хорвати
+ce,HU,Венгри
+ce,IE,Ирланди
+ce,IE,Ирландий
+ce,IS,Исланди
+ce,IT,Итали
+ce,KZ,Кхазакхстан
+ce,LI,Лихтенштейн
+ce,LT,Литва
+ce,LU,Люксембург
+ce,LV,Латви
+ce,MC,Монако
+ce,MD,Молдави
+ce,ME,Ӏаьржаламанхойчоь
+ce,MK,Къилбаседа Македони
+ce,MT,Мальта
+ce,NL,Нидерландаш
+ce,NO,Норвеги
+ce,PL,Польша
+ce,PL,🇵🇱
+ce,PT,Португали
+ce,RO,Румыни
+ce,RS,Серби
+ce,RU,Росси
+ce,SE,Швеци
+ce,SI,Словени
+ce,SK,Словаки
+ce,SM,Сан-Марино
+ce,TR,Туркойчоь
+ce,UA,Украина
+ce,VA,Ватикан
+cs,AD,Andorra
+cs,AD,Andorrské knížectví
+cs,AL,Albánie
+cs,AL,Albánská republika
+cs,AM,Arménie
+cs,AT,Rakousko
+cs,AZ,Ázerbájdžán
+cs,BA,BaH
+cs,BA,BiH
+cs,BA,Bosna a Hercegovina
+cs,BA,Bosna a Herzegovina
+cs,BE,Belgie
+cs,BG,Bulharsko
+cs,BG,Bulharská republika
+cs,BY,Bělorusko
+cs,CH,CH
+cs,CH,Švýcarsko
+cs,CY,Kypr
+cs,CZ,cz
+cs,CZ,cze
+cs,CZ,ČR
+cs,CZ,Česko
+cs,CZ,Česká republika
+cs,DE,BRD
+cs,DE,NSR
+cs,DE,Německo
+cs,DE,SRN
+cs,DE,Spolková republika Německo
+cs,DK,Dánsko
+cs,DK,Dánské království
+cs,DK,Dánské království
+cs,DK,Spojené království Dánska
+cs,EE,Estonsko
+cs,ES,Španělsko
+cs,ES,Španělské království
+cs,FI,Finsko
+cs,FO,Faerské ostrovy
+cs,FR,Francie
+cs,GB,Británie
+cs,GB,Spojené království
+cs,GB,Spojené království Velké Británie a Severního Irska
+cs,GB,Velká Británie
+cs,GE,Gruzie
+cs,GR,Řecko
+cs,HR,Chorvatsko
+cs,HU,Maďarsko
+cs,IE,Ireland
+cs,IE,Irsko
+cs,IE,Irská republika
+cs,IE,Poblacht na hÉireann
+cs,IE,Republic of Ireland
+cs,IE,Éire
+cs,IS,Island
+cs,IT,Itálie
+cs,KZ,Kazachstán
+cs,LI,Lichtenštejnsko
+cs,LT,Litva
+cs,LU,Lucembursko
+cs,LU,Lucemburské hrabství
+cs,LU,Lucemburské velkovévodství
+cs,LU,Velkovévodství lucemburské
+cs,LV,Lotyšsko
+cs,MC,Monako
+cs,MD,Moldavsko
+cs,ME,Černá Hora
+cs,MK,Makedonie
+cs,MK,Makedonská republika
+cs,MK,Republika Makedonie
+cs,MK,Republika Severní Makedonie
+cs,MK,Severní Makedonie
+cs,MK,mk
+cs,MT,Malta
+cs,NL,Nizozemsko
+cs,NL,Nizozemské království
+cs,NO,Norsko
+cs,PL,Polsko
+cs,PL,🇵🇱
+cs,PT,Portugalsko
+cs,RO,Rumunsko
+cs,RS,Srbsko
+cs,RU,Rusko
+cs,RU,Ruská federace
+cs,SE,Švédsko
+cs,SI,Slovinsko
+cs,SK,Slovensko
+cs,SK,Slovenská republika
+cs,SK,Slovenský štát
+cs,SM,San Marino
+cs,TR,Turecko
+cs,UA,Malorusko
+cs,UA,Malá Rus
+cs,UA,Ukrajina
+cs,VA,Vatikán
+cv,AD,Андорра
+cv,AL,Албани
+cv,AL,Албани республики
+cv,AM,Эрмени
+cv,AT,Австри
+cv,AZ,Азербайджан
+cv,BA,Босни тата Герцеговина
+cv,BE,Бельги
+cv,BG,Болгари
+cv,BG,Тăнай Пăлхарĕ
+cv,BG,Тăнайçи Пăлхарĕ
+cv,BY,Беларуç
+cv,CH,CH
+cv,CH,Швейцари
+cv,CY,Кипр Республики
+cv,CZ,Чех Республики
+cv,DE,Германи
+cv,DK,Дани
+cv,EE,Эстони
+cv,ES,Испани
+cv,FI,Финлянди
+cv,FR,Франци
+cv,GB,Аслă Британи
+cv,GE,Грузи
+cv,GR,Греци
+cv,HR,Хорвати
+cv,HU,Венгри
+cv,IE,Ирланди
+cv,IE,Ирланди Республики
+cv,IS,Исланди
+cv,IT,Итали
+cv,KZ,Казахстан
+cv,LI,Лихтенштейн
+cv,LT,Литва
+cv,LU,Люксембург
+cv,LV,Латви
+cv,MC,Монако
+cv,MD,Молдави
+cv,ME,Черногори
+cv,MK,Çурçĕр Македони
+cv,MK,Македони Республики
+cv,MT,Мальта
+cv,NL,Нидерландсем
+cv,NO,Норвеги
+cv,PL,PL
+cv,PL,Польша
+cv,PL,🇵🇱
+cv,PT,Португали
+cv,RO,Румыни
+cv,RS,Серби
+cv,RU,Раççей Патшалăхĕ
+cv,SE,Швеци
+cv,SI,Словени
+cv,SK,Словаки
+cv,SM,Сан-Марино
+cv,TR,Турци
+cv,UA,Украина
+cv,VA,Ватикан
+cy,AD,Andorra
+cy,AL,Albania
+cy,AM,Armenia
+cy,AM,Gweriniaeth Armenia
+cy,AT,Awstria
+cy,AZ,Azerbaijan
+cy,BA,Bosna a Hertsegofina
+cy,BA,Bosnia a Hercegovina
+cy,BA,Bosnia-Hercegovina
+cy,BE,Gwlad Belg
+cy,BG,Bulgaria
+cy,BG,Bwlgaria
+cy,BY,Belarws
+cy,CH,CH
+cy,CH,Y Swistir
+cy,CY,Ciprus
+cy,CY,Cyprus
+cy,CY,cy
+cy,CY,🇨🇾
+cy,CZ,CZR
+cy,CZ,Gweriniaeth Tsiec
+cy,CZ,Y Weriniaeth Tsiec
+cy,DE,Gweriniaeth Ffederal yr Almaen
+cy,DE,Yr Almaen
+cy,DK,Brenhiniaeth Denmarc
+cy,DK,Denmarc
+cy,EE,Estonia
+cy,ES,Sbaen
+cy,FI,Y Ffindir
+cy,FO,Faeroes
+cy,FO,Foroyar
+cy,FO,Føroyar
+cy,FO,Ynysoedd Faroe
+cy,FO,Ynysoedd Ffaro
+cy,FO,Ynysoedd Ffaroe
+cy,FO,Ynysoedd Ffarö
+cy,FO,Ynysoedd Ffaröe
+cy,FO,Ynysoedd y Ffaroe
+cy,FR,Ffrainc
+cy,FR,Ffrengig
+cy,FR,France
+cy,FR,Gweriniaeth Ffrainc
+cy,GB,DG
+cy,GB,DU
+cy,GB,Gwledydd Prydain
+cy,GB,Prydain
+cy,GB,Teyrnas Gyfunol
+cy,GB,Teyrnas Gyfunol Prydain Fawr a Gogledd Iwerddon
+cy,GB,Teyrnas Unedig
+cy,GB,Teyrnas Unedig Prydain Fawr a Gogledd Iwerddon
+cy,GB,y DG
+cy,GB,y DU
+cy,GB,y Deyrnas Unedig
+cy,GE,Georgia
+cy,GR,Gwlad Groeg
+cy,HR,Croatia
+cy,HU,Hwngari
+cy,IE,Iwerddon
+cy,IE,Iwerddon Rydd
+cy,IE,Éire
+cy,IS,Gwlad yr Iâ
+cy,IS,is
+cy,IT,Yr Eidal
+cy,KZ,Casachstan
+cy,LI,Liechtenstein
+cy,LT,Gweriniaeth Lithwania
+cy,LT,Lithwania
+cy,LT,Llethaw
+cy,LU,Luxembourg
+cy,LU,Lwcsembourg
+cy,LU,Lwcsembwrg
+cy,LV,Gweriniaeth Latfia
+cy,LV,Latfia
+cy,MC,Monaco
+cy,MD,Besarabia
+cy,MD,Moldofa
+cy,ME,Montenegro
+cy,MK,Gogledd Macedonia
+cy,MK,Gweriniaeth Gogledd Macedonia
+cy,MK,Gweriniaeth Macedonia
+cy,MK,mk
+cy,MT,Malta
+cy,NL,Brenhiniaeth yr Iseldiroedd
+cy,NL,Netherlands
+cy,NL,Yr Iseldiroedd
+cy,NO,Norwy
+cy,PL,Gwlad Pwyl
+cy,PL,PL
+cy,PL,POL
+cy,PL,🇵🇱
+cy,PT,Portiwgal
+cy,RO,Rwmania
+cy,RS,Serbia
+cy,RU,Rwsia
+cy,SE,Sweden
+cy,SI,Slofenia
+cy,SK,Slofacia
+cy,SM,San Marino
+cy,TR,Twrci
+cy,UA,Wcrain
+cy,UA,Wcráin
+cy,VA,Y Fatican
+da,AD,Andorra
+da,AL,Albanien
+da,AL,Republikken Albanien
+da,AM,Armenien
+da,AT,Østrig
+da,AZ,Aserbajdsjan
+da,BA,Bosnien-Hercegovina
+da,BE,Belgien
+da,BE,Belgique
+da,BE,België
+da,BE,Kongeriget Belgien
+da,BE,Koninkrijk België
+da,BE,Royaume de Belgique
+da,BG,Bulgarien
+da,BG,Republikken Bulgarien
+da,BY,Hviderusland
+da,CH,CH
+da,CH,Schweiz
+da,CH,Svejts
+da,CY,Cypern
+da,CY,Republikken Cypern
+da,CZ,Tjekkiet
+da,DE,Tyskland
+da,DK,DK
+da,DK,Danmark
+da,DK,Danmark
+da,DK,Danmarks Rige
+da,DK,Danmarks Rige
+da,DK,Kongeriget
+da,DK,Kongeriget Danmark
+da,DK,Kongeriget Danmark
+da,DK,dk
+da,EE,Estland
+da,ES,Spanien
+da,FI,Finland
+da,FI,Republikken Finland
+da,FO,Færø
+da,FO,Færøerne
+da,FO,Føroyar
+da,FR,Frankrig
+da,GB,Det Forenede Kongerige
+da,GB,Storbritannien
+da,GB,United Kingdom
+da,GE,Georgien
+da,GR,Grækenland
+da,HR,KRO
+da,HR,Kroatien
+da,HR,Republikken Kroatien
+da,HU,Ungarn
+da,IE,Irland
+da,IS,Island
+da,IT,Italien
+da,KZ,Kasakhstan
+da,KZ,Republikken Kasakhstan
+da,LI,Liechtenstein
+da,LT,Litauen
+da,LU,Luxembourg
+da,LV,Letland
+da,MC,Monaco
+da,MD,Moldova
+da,ME,Montenegro
+da,MK,Makedonien
+da,MK,Nordmakedonien
+da,MK,Republikken Nordmakedonien
+da,MK,mk
+da,MT,Malta
+da,NL,Holland
+da,NL,Kongeriget Nederlandene
+da,NL,Koninkrijk der Nederlanden
+da,NL,NED
+da,NL,NL
+da,NL,Nederland
+da,NL,Nederlandene
+da,NL,nl
+da,NO,Norge
+da,PL,Den tredje polske republik
+da,PL,PL
+da,PL,Polen
+da,PL,Polska
+da,PL,Republikken Polen
+da,PL,🇵🇱
+da,PT,Portugal
+da,RO,Rumænien
+da,RS,Serbien
+da,RU,Rusland
+da,SE,Kongeriget Sverige
+da,SE,Sverige
+da,SI,Slovenien
+da,SK,Slovakiet
+da,SM,San Marino
+da,TR,Tyrkiet
+da,UA,Ukraine
+da,VA,Vatikanstaten
+de,AD,Andorra
+de,AL,Albanien
+de,AL,Republik Albanien
+de,AM,Armenien
+de,AM,🇦🇲
+de,AT,Republik Österreich
+de,AT,Österreich
+de,AZ,Aserbaidschan
+de,BA,BiH
+de,BA,Bosnien und Herzegowina
+de,BA,Bosnien-Herzegowina
+de,BE,Belgien
+de,BE,🇧🇪
+de,BG,Bulgarien
+de,BY,Belarus
+de,BY,Belorussland
+de,BY,Belorußland
+de,BY,Republik Belarus
+de,BY,Weißrussland
+de,BY,Weißruthenien
+de,CH,CH
+de,CH,CHE
+de,CH,Confoederatio Helvetica
+de,CH,Eidgenossenschaft
+de,CH,SUI
+de,CH,Schweiz
+de,CH,Schweizerische Eidgenossenschaft
+de,CY,Republik Zypern
+de,CY,Südzypern
+de,CY,Zypern
+de,CY,cy
+de,CY,🇨🇾
+de,CZ,Czechia
+de,CZ,Tschechien
+de,CZ,Tschechische Republik
+de,DE,BR Deutschland
+de,DE,BRD
+de,DE,Bundesrepublik Deutschland
+de,DE,Deutschland
+de,DE,GER
+de,DE,de
+de,DK,Dänemark
+de,DK,Königreich Dänemark
+de,EE,Estland
+de,EE,Republik Estland
+de,ES,Königreich Spanien
+de,ES,Spanien
+de,FI,Finland
+de,FI,Finnland
+de,FI,Republik Finnland
+de,FI,Republiken Finland
+de,FI,Suomen tasavalta
+de,FI,Suomi
+de,FO,Faeröerne
+de,FO,Faroer
+de,FO,Färöer
+de,FO,Färöer-Inseln
+de,FO,Färöerinseln
+de,FO,Färöische Inseln
+de,FO,Færøerne
+de,FO,Föroyar
+de,FO,Føroyar
+de,FO,Schafsinseln
+de,FO,Suðuroyar sýsla
+de,FR,Frankreich
+de,FR,Französische Republik
+de,FR,Republik Frankreich
+de,FR,fr
+de,GB,G B
+de,GB,G B R
+de,GB,G. B.
+de,GB,G. B. R.
+de,GB,G.B.
+de,GB,G.B.R.
+de,GB,GB
+de,GB,GBR
+de,GB,Großbritannien
+de,GB,U K
+de,GB,U. K.
+de,GB,U.K.
+de,GB,UK
+de,GB,Vereinigtes Königreich
+de,GB,Vereinigtes Königreich Großbritannien und Nordirland
+de,GB,🇬🇧
+de,GE,Georgien
+de,GE,Grusien
+de,GE,Grusinien
+de,GR,Griechenland
+de,GR,Hellas
+de,GR,Hellenische Republik
+de,HR,Kroatien
+de,HR,Republik Kroatien
+de,HU,Ungarn
+de,IE,Irland
+de,IE,Republik Irland
+de,IE,🇮🇪
+de,IS,Island
+de,IT,Italien
+de,IT,Italienische Republik
+de,KZ,Kasachstan
+de,LI,Fürstentum Lichtenstein
+de,LI,Fürstentum Liechtenstein
+de,LI,Liechtenstein
+de,LT,Litauen
+de,LT,Republik Litauen
+de,LU,Grand-Duché de Luxembourg
+de,LU,Groussherzogtum Lëtzebuerg
+de,LU,Luxemburg
+de,LV,Lettland
+de,MC,Monaco
+de,MD,Moldau
+de,MD,Moldawien
+de,MD,Republik Moldau
+de,ME,Montenegro
+de,MK,Ehemalige Jugoslawische Republik Mazedonien
+de,MK,FYROM
+de,MK,Makedonien
+de,MK,Mazedonien
+de,MK,Nordmazedonien
+de,MK,Republik Mazedonien
+de,MK,Republik Nordmazedonien
+de,MK,mk
+de,MT,Malta
+de,NL,Holland
+de,NL,Königreich der Niederlande
+de,NL,NED
+de,NL,NL
+de,NL,NL
+de,NL,Niederlande
+de,NL,Niederlande
+de,NL,die Niederlande
+de,NO,Königreich Norwegen
+de,NO,Norwegen
+de,PL,PL
+de,PL,POL
+de,PL,Polen
+de,PL,Polska
+de,PL,Republik Polen
+de,PL,🇵🇱
+de,PT,Portugal
+de,RO,Rumänien
+de,RS,Serbien
+de,RU,Russische Föderation
+de,RU,Russland
+de,RU,Russländische Föderation
+de,RU,Rußische Föderation
+de,RU,Rußland
+de,RU,Rußländische Föderation
+de,SE,Königreich Schweden
+de,SE,Schweden
+de,SI,Republik Slowenien
+de,SI,Slowenien
+de,SK,Slowakei
+de,SK,Slowakien
+de,SK,Slowakische Republik
+de,SM,Republik San Marino
+de,SM,San Marino
+de,TR,Republik Turkei
+de,TR,Türkei
+de,UA,Ukraine
+de,VA,Staat Vatikanstadt
+de,VA,Staat der Vatikanstadt
+de,VA,Vatikan
+de,VA,Vatikanstadt
+de,VA,🇻🇦
+el,AD,Ανδόρρα
+el,AL,Αλβανία
+el,AM,Αρμενία
+el,AT,Αυστρία
+el,AT,Δημοκρατία της Αυστρίας
+el,AZ,Αζερμπαϊτζάν
+el,BA,Βοσνία και Ερζεγοβίνη
+el,BE,Βέλγιο
+el,BE,Βασίλειο του Βελγίου
+el,BG,BUL
+el,BG,Boύλγαροι
+el,BG,Βουλγαρία
+el,BY,Δημοκρατία της Λευκορωσίας
+el,BY,Λευκορωσία
+el,CH,CH
+el,CH,Ελβετία
+el,CH,Ελβετική Συνομοσπονδία
+el,CY,Κυπριακή Δημοκρατία
+el,CY,Κύπρος
+el,CZ,Τσεχία
+el,CZ,Τσεχική Δημοκρατία
+el,DE,Γερμανία
+el,DE,Ομοσπονδιακή Δημοκρατία της Γερμανίας
+el,DK,Βασίλειο της Δανίας
+el,DK,Βασίλειο της Δανίας
+el,DK,Δανία
+el,DK,Δανιμαρκία
+el,EE,Εσθονία
+el,ES,Βασίλειο της Ισπανίας
+el,ES,Ισπανία
+el,FI,Δημοκρατία της Φινλανδίας
+el,FI,Φινλανδία
+el,FO,Νήσοι Φερόε
+el,FO,Νήσοι Φερόες
+el,FO,Νησιά Φαρόε
+el,FO,Νησιά Φερόε
+el,FO,Νησιά Φερόες
+el,FO,Φαιρόες
+el,FO,Φαρόε
+el,FO,Φερόε
+el,FO,Φερόε Νήσοι
+el,FO,Φερόες
+el,FR,Γαλλία
+el,FR,Γαλλική Δημοκρατία
+el,GB,Ηνωμένο Βασίλειο
+el,GE,Γεωργία
+el,GR,Δημοκρατία της Ελλάδας
+el,GR,Δημοκρατία της Ελλάδος
+el,GR,Ελλάδα
+el,GR,Ελλάς
+el,GR,Ελληνική Δημοκρατία
+el,HR,Κροατία
+el,HU,Ουγγαρία
+el,IE,Έιρε
+el,IE,Δημοκρατία της Ιρλανδίας
+el,IE,Ιρλανδική Δημοκρατία
+el,IS,Δημοκρατία της Ισλανδίας
+el,IS,Ισλανδία
+el,IT,Ιταλία
+el,IT,Ιταλική Δημοκρατία
+el,KZ,Καζακστάν
+el,LI,Λίχτενσταϊν
+el,LT,Λιθουανία
+el,LU,Λουξεμβούργο
+el,LU,Μέγα Δουκάτο του Λουξεμβούργου
+el,LV,Λετονία
+el,MC,Μονακό
+el,MD,Δημοκρατία της Μολδαβίας
+el,MD,Μολδαβία
+el,ME,Μαυροβούνιο
+el,ME,Μοντενέγκρο
+el,MK,Βόρεια Μακεδονία
+el,MK,Δημοκρατία της Βόρειας Μακεδονίας
+el,MK,Δημοκρατία της Μακεδονίας
+el,MK,Μακεδονία
+el,MK,ΠΓΔΜ
+el,MK,Πρώην Γιουγκοσλαβική Δημοκρατία της Μακεδονίας
+el,MT,Δημοκρατία της Μάλτας
+el,MT,Μάλτα
+el,NL,Βασίλειο της Ολλανδίας
+el,NL,Βασίλειο των Κάτω Χωρών
+el,NL,Κάτω Χώρες
+el,NL,Ολλανδία
+el,NO,Βασίλειο της Νορβηγίας
+el,NO,Νορβηγία
+el,PL,Δημοκρατία της Πολωνίας
+el,PL,Πολωνία
+el,PL,🇵🇱
+el,PT,Πορτογαλία
+el,PT,Πορτογαλική Δημοκρατία
+el,RO,Ρουμανία
+el,RS,Σερβία
+el,RU,Ρωσία
+el,RU,Ρωσική Ομοσπονδία
+el,RU,Ρωσσία
+el,SE,Βασίλειο της Σουηδίας
+el,SE,Σουηδία
+el,SI,Σλοβενία
+el,SK,Δημοκρατία της Σλοβακίας
+el,SK,Σλοβακία
+el,SM,Άγιος Μαρίνος
+el,TR,Τουρκία
+el,TR,Τουρκική Δημοκρατία
+el,UA,Ουκρανία
+el,VA,Βατικανό
+en,AD,AND
+en,AD,Andorra
+en,AD,Principality of Andorra
+en,AD,Principality of the Valleys of Andorra
+en,AD,ad
+en,AD,🇦🇩
+en,AL,ALB
+en,AL,Albania
+en,AL,Republic of Albania
+en,AL,Republika e Shqipërisë
+en,AL,Shqipërisë
+en,AL,al
+en,AL,🇦🇱
+en,AM,ARM
+en,AM,Armenia
+en,AM,Republic of Armenia
+en,AM,🇦🇲
+en,AT,AT
+en,AT,AUT
+en,AT,Austria
+en,AT,Republic of Austria
+en,AT,Republik Österreich
+en,AT,at
+en,AT,aut
+en,AT,Österreich
+en,AT,🇦🇹
+en,AZ,AZE
+en,AZ,Azerbaijan
+en,AZ,Republic of Azerbaijan
+en,AZ,az
+en,AZ,🇦🇿
+en,BA,B&H
+en,BA,BIH
+en,BA,BiH
+en,BA,Bosnia
+en,BA,Bosnia & Herzegovina
+en,BA,Bosnia and Herzegovina
+en,BA,Bosnia-Herzegovina
+en,BA,ba
+en,BA,🇧🇦
+en,BE,BE
+en,BE,BEL
+en,BE,Belgium
+en,BE,Kingdom of Belgium
+en,BE,be
+en,BE,🇧🇪
+en,BG,BGR
+en,BG,BUL
+en,BG,Bulgaria
+en,BG,Republic of Bulgaria
+en,BG,bg
+en,BG,🇧🇬
+en,BY,BLR
+en,BY,Belarus
+en,BY,Belorussia
+en,BY,Bielorussia
+en,BY,Byeloruss
+en,BY,Byelorussia
+en,BY,Republic of Belarus
+en,BY,White Russia
+en,BY,White Ruthenia
+en,BY,by
+en,BY,🇧🇾
+en,CH,CH
+en,CH,CHE
+en,CH,Confoederatio Helvetica
+en,CH,SUI
+en,CH,Schweiz
+en,CH,Suisse
+en,CH,Svizzera
+en,CH,Swiss
+en,CH,Swiss Confederation
+en,CH,Switzerland
+en,CY,Cyprus
+en,CY,Greek Administration of Southern Cyprus
+en,CY,Greek Cypriot State
+en,CY,Republic of Cyprus
+en,CY,cy
+en,CY,🇨🇾
+en,CZ,CZE
+en,CZ,CZR
+en,CZ,Czech Republic
+en,CZ,Czechia
+en,CZ,cz
+en,CZ,cze
+en,CZ,ČR
+en,CZ,Česko
+en,CZ,Česká republika
+en,DE,BR Deutschland
+en,DE,BRD
+en,DE,Bundesrepublik Deutschland
+en,DE,DE
+en,DE,Deutschland
+en,DE,FRG
+en,DE,Federal Republic of Germany
+en,DE,GER
+en,DE,Germany
+en,DE,de
+en,DK,DEK
+en,DK,DEN
+en,DK,DK
+en,DK,DNK
+en,DK,Danish Realm
+en,DK,Danmark
+en,DK,Denmark
+en,DK,Denmark proper
+en,DK,Kingdom of Denmark
+en,DK,Kingdom of Denmark
+en,DK,Realm of Denmark
+en,DK,Realm of Denmark
+en,DK,TAN
+en,DK,dk
+en,DK,metropolitan Denmark
+en,DK,🇩🇰
+en,EE,EST
+en,EE,Eesti
+en,EE,Estland
+en,EE,Estonia
+en,EE,Republic of Estonia
+en,EE,ee
+en,EE,🇪🇪
+en,ES,ES
+en,ES,ESP
+en,ES,España
+en,ES,Kingdom of Spain
+en,ES,Spain
+en,ES,🇪🇸
+en,FI,FIN
+en,FI,Finland
+en,FI,Finnia
+en,FI,Land of Thousand Lakes
+en,FI,Republic of Finland
+en,FI,Republiken Finland
+en,FI,Suomen tasavalta
+en,FI,Suomi
+en,FI,fi
+en,FI,🇫🇮
+en,FO,Atlantic/Faroe
+en,FO,Faer Oer
+en,FO,Faeroe Is
+en,FO,Faeroe Islands
+en,FO,Faeroe Isles
+en,FO,Faeroer
+en,FO,Faeroerne
+en,FO,Faeroes
+en,FO,Faeroyene
+en,FO,Far Oer
+en,FO,Fareo islands
+en,FO,Faroe Island
+en,FO,Faroe Islands
+en,FO,Faroe Isles
+en,FO,Faroer
+en,FO,Faroes
+en,FO,Faroese Islands
+en,FO,Faröe Islands
+en,FO,Foroyar
+en,FO,Färöer
+en,FO,Fær Øer
+en,FO,Færeyjar
+en,FO,Færoes
+en,FO,Færøer
+en,FO,Færøerne
+en,FO,Færøyene
+en,FO,Føroyar
+en,FO,Sheep Islands
+en,FO,The Faeroe Islands
+en,FO,The Faroe Islands
+en,FO,fo
+en,FO,🇫🇴
+en,FR,FR
+en,FR,FRA
+en,FR,France
+en,FR,French Republic
+en,FR,La France
+en,FR,Republic of France
+en,FR,République française
+en,FR,fr
+en,FR,the Hexagon
+en,GB,G B
+en,GB,G B R
+en,GB,G. B.
+en,GB,G. B. R.
+en,GB,G.B.
+en,GB,G.B.R.
+en,GB,GB
+en,GB,GBR
+en,GB,Great Britain
+en,GB,Marea Britanie
+en,GB,U K
+en,GB,U. K.
+en,GB,U.K.
+en,GB,UK
+en,GB,United Kingdom
+en,GB,United Kingdom of Great Britain and Northern Ireland
+en,GB,🇬🇧
+en,GE,GE
+en,GE,GEO
+en,GE,Georgia
+en,GE,Georgia (country)
+en,GE,Republic of Georgia
+en,GE,🇬🇪
+en,GR,Ellada
+en,GR,GRE
+en,GR,Greece
+en,GR,Greek
+en,GR,Greek Republic
+en,GR,Hellas
+en,GR,Hellenic Republic
+en,GR,el
+en,GR,gr
+en,GR,🇬🇷
+en,HR,CRO
+en,HR,Croatia
+en,HR,HR
+en,HR,HRV
+en,HR,Republic of Croatia
+en,HR,hr
+en,HR,🇭🇷
+en,HU,HUN
+en,HU,Hungary
+en,HU,hu
+en,HU,🇭🇺
+en,IE,Eire
+en,IE,Hibernia
+en,IE,IE
+en,IE,IRL
+en,IE,Ireland
+en,IE,Ireland, Republic of
+en,IE,Republic of Ireland
+en,IE,Southern Ireland
+en,IE,ie
+en,IE,ireland
+en,IE,Éire
+en,IE,🇮🇪
+en,IS,ISL
+en,IS,Iceland
+en,IS,Island
+en,IS,Republic of Iceland
+en,IS,is
+en,IS,🇮🇸
+en,IT,IT
+en,IT,ITA
+en,IT,Italia
+en,IT,Italian Republic
+en,IT,Italy
+en,IT,it
+en,IT,🇮🇹
+en,KZ,KAZ
+en,KZ,Kazakhstan
+en,KZ,Qazaqstan
+en,KZ,Republic of Kazakhstan
+en,KZ,kz
+en,KZ,🇰🇿
+en,LI,FL
+en,LI,LI
+en,LI,LIE
+en,LI,Liechtenstein
+en,LI,Principality of Liechtenstein
+en,LI,li
+en,LI,🇱🇮
+en,LT,LTU
+en,LT,Lietuva
+en,LT,Lithuania
+en,LT,Republic of Lithuania
+en,LT,lt
+en,LT,🇱🇹
+en,LU,Grand Duchy of Luxembourg
+en,LU,LU
+en,LU,LUX
+en,LU,Luxembourg
+en,LU,Luxemburg
+en,LU,lu
+en,LU,🇱🇺
+en,LV,LAT
+en,LV,LVA
+en,LV,Latvia
+en,LV,Latvian Republic
+en,LV,Latvija
+en,LV,Republic of Latvia
+en,LV,lv
+en,LV,🇱🇻
+en,MC,Fort-Hercule
+en,MC,MON
+en,MC,Monaco
+en,MC,Principality and Diocese of Monaco
+en,MC,Principality of Monaco
+en,MC,mc
+en,MC,🇲🇨
+en,MD,MDA
+en,MD,Moldavia
+en,MD,Moldova
+en,MD,Republic of Moldova
+en,MD,Republica Moldova
+en,MD,md
+en,MD,🇲🇩
+en,ME,Crna Gora
+en,ME,MNE
+en,ME,Montenegro
+en,ME,me
+en,ME,🇲🇪
+en,MK,FYR Macedonia
+en,MK,FYROM
+en,MK,Former Yugoslav Republic of Macedonia
+en,MK,MKD
+en,MK,Macedonia
+en,MK,North Macedonia
+en,MK,Republic of Macedonia
+en,MK,Republic of North Macedonia
+en,MK,mk
+en,MK,🇲🇰
+en,MT,MLT
+en,MT,Malta
+en,MT,Republic of Malta
+en,MT,mt
+en,MT,🇲🇹
+en,NL,Holland
+en,NL,Kingdom of the Netherlands
+en,NL,NED
+en,NL,NL
+en,NL,NL
+en,NL,Nederland
+en,NL,Netherlands
+en,NL,Netherlands
+en,NL,Netherlands (after 1945)
+en,NL,nl
+en,NL,the Netherlands
+en,NL,the Netherlands
+en,NL,🇳🇱
+en,NL,🇳🇱
+en,NO,Kingdom of Norway
+en,NO,NO
+en,NO,NOR
+en,NO,Noreg
+en,NO,Norge
+en,NO,Norvège
+en,NO,Norway
+en,NO,Norwegen
+en,NO,no
+en,NO,🇳🇴
+en,PL,PL
+en,PL,POL
+en,PL,Poland
+en,PL,Republic of Poland
+en,PL,🇵🇱
+en,PT,PT
+en,PT,Portugal
+en,PT,Portuguese Republic
+en,PT,pt
+en,PT,🇵🇹
+en,RO,Romania
+en,RO,România
+en,RO,Roumania
+en,RO,Rumania
+en,RO,ro
+en,RO,🇷🇴
+en,RS,Republic of Serbia
+en,RS,Republika Srbija
+en,RS,SRB
+en,RS,Serbia
+en,RS,Srbija
+en,RS,rs
+en,RS,🇷🇸
+en,RU,RF
+en,RU,RU
+en,RU,RUS
+en,RU,Rossija
+en,RU,Rossijskaja Federatsija
+en,RU,Rossiya
+en,RU,Rossiyskaya Federatsiya
+en,RU,Rus
+en,RU,Russia
+en,RU,Russian Federation
+en,RU,ru
+en,SE,Kingdom of Sweden
+en,SE,SE
+en,SE,SWE
+en,SE,Sweden
+en,SE,se
+en,SI,Republic of Slovenia
+en,SI,Republika Slovenija
+en,SI,SLO
+en,SI,Slovenia
+en,SI,Slovenija
+en,SI,si
+en,SI,slo
+en,SI,svn
+en,SI,🇸🇮
+en,SK,SVK
+en,SK,Slovak Republic
+en,SK,Slovakia
+en,SK,sk
+en,SK,🇸🇰
+en,SM,Most Serene Republic of San Marino
+en,SM,SMR
+en,SM,San Marino
+en,SM,sm
+en,SM,🇸🇲
+en,TR,Republic of Turkey
+en,TR,TUR
+en,TR,Turkey
+en,TR,tr
+en,TR,🇹🇷
+en,UA,UA
+en,UA,UKR
+en,UA,Ukraine
+en,UA,Ukrainia
+en,UA,ua
+en,UA,🇺🇦
+en,VA,Città del Vaticano
+en,VA,Civitas Vaticana
+en,VA,Papal State
+en,VA,State of Vatican City
+en,VA,Stato della Città del Vaticano
+en,VA,Status Civitatis Vaticanae
+en,VA,The Vatican
+en,VA,Vatican
+en,VA,Vatican City
+en,VA,Vatican City State
+en,VA,va
+en,VA,vat
+en,VA,🇻🇦
+es,AD,Andorra
+es,AD,Principado de Andorra
+es,AL,Albania
+es,AL,Republica de Albania
+es,AL,República de Albania
+es,AM,Armenia
+es,AM,Republica de Armenia
+es,AM,República de Armenia
+es,AT,Austria
+es,AT,Republica de Austria
+es,AT,República de Austria
+es,AZ,Azerbaiyan
+es,AZ,Azerbaiyán
+es,AZ,Republica de Azerbaiyan
+es,AZ,República de Azerbaiyán
+es,BA,Bosnia
+es,BA,Bosnia y Herzegovina
+es,BA,Bosnia-Herzegovia
+es,BA,Republica de Bosnia
+es,BA,República de Bosnia
+es,BA,ba
+es,BE,BE
+es,BE,Belgica
+es,BE,Bélgica
+es,BE,Reino de Belgica
+es,BE,Reino de Bélgica
+es,BG,Bulgaria
+es,BG,Republica de Bulgaria
+es,BG,República de Bulgaria
+es,BY,Belarus
+es,BY,Belarús
+es,BY,Bielorrusia
+es,BY,Republica de Belarus
+es,BY,República de Belarús
+es,CH,CH
+es,CH,CHE
+es,CH,Confederación Helvética
+es,CH,Confederación Suiza
+es,CH,SUI
+es,CH,Suiza
+es,CY,Chipre
+es,CY,Republica de Chipre
+es,CY,República de Chipre
+es,CY,cy
+es,CY,🇨🇾
+es,CZ,Bohemia
+es,CZ,Chequia
+es,CZ,Republica Checa
+es,CZ,República Checa
+es,DE,Alemania
+es,DE,Republica Federal de Alemania
+es,DE,República Federal de Alemania
+es,DK,Dinamarca
+es,DK,Reino de Dinamarca
+es,DK,Reino de Dinamarca
+es,EE,Estonia
+es,EE,Republica de Estonia
+es,EE,República de Estonia
+es,ES,ES
+es,ES,ESP
+es,ES,España
+es,ES,Estado español
+es,ES,Reino de España
+es,ES,🇪🇸
+es,FI,Finlandia
+es,FI,República de Finlandia
+es,FO,Faeroerne
+es,FO,Feroe
+es,FO,Feroé
+es,FO,Færøerne
+es,FO,Føroyar
+es,FO,Isla feroe
+es,FO,Islas Faroe
+es,FO,Islas Feroe
+es,FO,Islas Feroes
+es,FO,Islas Feroé
+es,FR,Francia
+es,FR,Republica Francesa
+es,FR,República Francesa
+es,GB,GB
+es,GB,GBR
+es,GB,Gran Bretaña
+es,GB,Reino Unido
+es,GB,Reino Unido de Gran Bretaña e Irlanda del Norte
+es,GB,UK
+es,GE,Georgia
+es,GR,Grecia
+es,GR,Hellás
+es,GR,Hélade
+es,GR,Republica Helenica
+es,GR,República Helénica
+es,HR,Croacia
+es,HR,Republica de Croacia
+es,HR,República de Croacia
+es,HU,Hungría
+es,IE,Irlanda
+es,IE,Republica de Irlanda
+es,IE,República de Irlanda
+es,IS,Islandia
+es,IT,Italia
+es,IT,República Italiana
+es,KZ,Kazajastán
+es,KZ,Kazajistán
+es,KZ,Kazakstán
+es,KZ,Qazaqstan
+es,KZ,Republica de Kazajstán
+es,KZ,República de Kazajistán
+es,LI,Liechtenstein
+es,LI,Principado de Liechtenstein
+es,LT,Lituania
+es,LT,Republica de Lituania
+es,LT,República de Lituania
+es,LU,Gran Ducado de Luxemburgo
+es,LU,Luxemburgo
+es,LV,Letonia
+es,LV,Republica de Letonia
+es,LV,República de Letonia
+es,MC,Monaco
+es,MC,Mónaco
+es,MC,Principado de Monaco
+es,MC,Principado de Mónaco
+es,MD,Moldavia
+es,MD,Moldova
+es,MD,Republica de Moldovia
+es,MD,República de Moldovia
+es,ME,Montenegro
+es,MK,Antigua Republica Yugoslava de Macedonia
+es,MK,Antigua República Yugoslava de Macedonia
+es,MK,Ex Republica Yugoslava de Macedonia
+es,MK,Ex República Yugoslava de Macedonia
+es,MK,Macedonia
+es,MK,Macedonia del Norte
+es,MK,Republica de Macedonia
+es,MK,República de Macedonia
+es,MK,República de Macedonia del Norte
+es,MK,mk
+es,MT,Malta
+es,MT,República de Malta
+es,NL,Holanda
+es,NL,Koninkrijk der Nederlanden
+es,NL,Los Paises Bajos
+es,NL,Los Países Bajos
+es,NL,NED
+es,NL,NL
+es,NL,NLD
+es,NL,Paises Bajos
+es,NL,Paises Bajos
+es,NL,Países Bajos
+es,NL,Reino de Los Paises Bajos
+es,NL,Reino de los Países Bajos
+es,NO,Noruega
+es,NO,Reino de Noruega
+es,PL,Polonia
+es,PL,Republica de Polonia
+es,PL,República de Polonia
+es,PL,🇵🇱
+es,PT,Portugal
+es,PT,Republica Portuguesa
+es,PT,Republica de Portugal
+es,PT,República Portuguesa
+es,PT,República de Portugal
+es,RO,Rumania
+es,RO,Rumanía
+es,RS,Republica de Serbia
+es,RS,República de Serbia
+es,RS,Serbia
+es,RU,Federación Rusa
+es,RU,Rusia
+es,SE,Reino de Suecia
+es,SE,Suecia
+es,SI,Eslovenia
+es,SI,Republica de Eslovenia
+es,SI,República de Eslovenia
+es,SK,Eslovaquia
+es,SK,Republica Eslovaca
+es,SK,República Eslovaca
+es,SM,San Marino
+es,SM,Serenisima Republica de San Marino
+es,SM,Serenísima República de San Marino
+es,TR,Republica de Turquia
+es,TR,República de Turquía
+es,TR,Turkey
+es,TR,Turquia
+es,TR,Turquía
+es,UA,Ucrania
+es,VA,Ciudad del Vaticano
+es,VA,Estado de la Ciudad del Vaticano
+es,VA,Vaticano
+es,VA,va
+et,AD,Andorra
+et,AL,Albaania
+et,AL,Albaania Vabariik
+et,AM,Armeenia
+et,AT,Austria
+et,AT,Austria Vabariik
+et,AZ,Aserbaidžaan
+et,BA,Bosnia ja Hertsegoviina
+et,BE,Belgia
+et,BG,BUL
+et,BG,Bulgaaria
+et,BG,Bulgaaria Vabariik
+et,BY,Valgevene
+et,CH,CH
+et,CH,Šveits
+et,CH,Šveitsi Konföderatsioon
+et,CY,Küpros
+et,CZ,Tšehhi
+et,CZ,Tšehhi Vabariik
+et,DE,Saksamaa
+et,DK,Danmarks Rige
+et,DK,Kongeriget Danmark
+et,DK,Taani
+et,DK,Taani Kuningriik
+et,DK,Taani Riik
+et,EE,Eesti
+et,EE,Eesti Vabariik
+et,ES,Hispaania
+et,FI,Soome
+et,FI,Soome Vabariik
+et,FO,Fääri saared
+et,FO,Fäärid
+et,FR,Prantsusmaa
+et,GB,Suurbritannia
+et,GB,Ühendkuningriik
+et,GE,Gruusia
+et,GR,Kreeka
+et,HR,Horvaatia
+et,HU,Ungari
+et,IE,Iiri
+et,IE,Iiri Vabariik
+et,IE,Iirimaa
+et,IS,Island
+et,IT,Itaalia
+et,IT,Itaalia Vabariik
+et,KZ,Kasahstan
+et,LI,Liechtenstein
+et,LT,Leedu
+et,LT,Leedu Vabariik
+et,LU,Luksemburg
+et,LU,Luksemburgi Suurhertsogiriik
+et,LV,Läti
+et,LV,Läti Vabariik
+et,MC,Monaco
+et,MD,Moldova
+et,ME,Montenegro
+et,MK,Põhja-Makedoonia
+et,MK,mk
+et,MT,Malta
+et,NL,Holland
+et,NL,Madalmaade Kuningriik
+et,NO,Norra
+et,NO,Norra Kuningriik
+et,PL,PL
+et,PL,Poola
+et,PL,Poola Vabariik
+et,PL,Poolamaa
+et,PL,🇵🇱
+et,PT,Portugal
+et,PT,Portugali Vabariik
+et,RO,Rumeenia
+et,RS,Serbia
+et,RU,Venemaa
+et,SE,Rootsi
+et,SI,Sloveenia
+et,SK,Slovakkia
+et,SM,San Marino
+et,TR,Türgi
+et,UA,Ukraina
+et,VA,Vatikan
+eu,AD,Andorra
+eu,AL,Albania
+eu,AM,Armenia
+eu,AT,Austria
+eu,AZ,Azerbaijan
+eu,BA,Bosnia-Herzegovina
+eu,BE,Belgika
+eu,BG,Bulgaria
+eu,BY,Bielorrusia
+eu,CH,CH
+eu,CH,Suitza
+eu,CY,Zipre
+eu,CZ,Txekia
+eu,DE,Alemania
+eu,DK,Danimarka
+eu,DK,Danimarka
+eu,EE,Estonia
+eu,ES,ES
+eu,ES,ESP
+eu,ES,Espainia
+eu,ES,Espainiako Erresuma
+eu,FI,Finlandia
+eu,FO,Faroe uharteak
+eu,FO,Faroeak
+eu,FR,Frantzia
+eu,GB,Erresuma Batua
+eu,GE,Georgia
+eu,GR,Grezia
+eu,HR,Kroazia
+eu,HU,Hungaria
+eu,IE,Irlandako Errepublika
+eu,IE,Éire
+eu,IS,Islandia
+eu,IT,Italia
+eu,KZ,Kazakhstan
+eu,LI,Liechtenstein
+eu,LT,Lituania
+eu,LU,Luxemburg
+eu,LU,Luxemburgo
+eu,LU,Luxenbourg
+eu,LU,Luxenburg
+eu,LU,Luxenburgo
+eu,LU,Luxenburgoko Dukerri Handia
+eu,LV,Letonia
+eu,MC,Monako
+eu,MD,Moldavia
+eu,ME,Montenegro
+eu,MK,Ipar Mazedonia
+eu,MK,Ipar Mazedoniako Errepublika
+eu,MK,Jugoslavia Ohiko Mazedoniako Errepublika
+eu,MK,Mazedoniako Errepublika
+eu,MK,mk
+eu,MT,Malta
+eu,NL,Herbehereak
+eu,NL,Herbehereetako Erresuma
+eu,NL,Herbeheretako Erresuma
+eu,NO,Norvegia
+eu,PL,Polonia
+eu,PL,🇵🇱
+eu,PT,Portugal
+eu,RO,Errumania
+eu,RS,Serbia
+eu,RU,Errusia
+eu,SE,Suedia
+eu,SI,Eslovenia
+eu,SK,Eslovakia
+eu,SM,San Marino
+eu,TR,Turkia
+eu,UA,Ukraina
+eu,VA,Vatikano Hiria
+fi,AD,Andorra
+fi,AD,Andorran ruhtinaskunta
+fi,AL,Albania
+fi,AL,Albanian tasavalta
+fi,AL,Republika e Shqipërisë
+fi,AM,Armenia
+fi,AM,Armenian tasavalta
+fi,AT,Itävallan tasavalta
+fi,AT,Itävalta
+fi,AZ,Azerbaidžan
+fi,AZ,Azerbaidžanin tasavalta
+fi,BA,Bosnia ja Hertsegovina
+fi,BA,Bosnia-Hertsegovina
+fi,BE,Belgia
+fi,BE,Belgian kuningaskunta
+fi,BG,Bulgaria
+fi,BG,Bulgarian tasavalta
+fi,BY,Valko-Venäjä
+fi,BY,Valko-Venäjän tasavalta
+fi,CH,Sveitsi
+fi,CH,Sveitsin valaliitto
+fi,CY,Kyproksen tasavalta
+fi,CY,Kypros
+fi,CZ,Tsekki
+fi,CZ,Tshekin tasavalta
+fi,CZ,Tshekinmaa
+fi,CZ,Tshekki
+fi,CZ,Tšekin tasavalta
+fi,CZ,Tšekinmaa
+fi,CZ,Tšekki
+fi,DE,Bundesrepublik Deutschland
+fi,DE,Saksa
+fi,DE,Saksan liittotasavalta
+fi,DK,Tanska
+fi,DK,Tanskan kuningaskunta
+fi,DK,Tanskan valtakunta
+fi,EE,Eesti
+fi,EE,Viro
+fi,EE,Viron tasavalta
+fi,ES,Espanja
+fi,FI,Suomen tasavalta
+fi,FI,Suomi
+fi,FO,FRO
+fi,FO,Fär-saaret
+fi,FO,Färsaaret
+fi,FO,Fäärsaaret
+fi,FR,Ranska
+fi,FR,Ranskan tasavalta
+fi,GB,Britannia
+fi,GB,GB
+fi,GB,Iso-Britannia
+fi,GB,UK
+fi,GB,United Kingdom
+fi,GB,Yhdistynyt kuningaskunta
+fi,GE,Georgia
+fi,GE,Georgian tasavalta
+fi,GE,Gruusia
+fi,GR,Hellas
+fi,GR,Helleenien tasavalta
+fi,GR,Kreikan tasavalta
+fi,GR,Kreikka
+fi,HR,Kroatia
+fi,HR,Kroatian tasavalta
+fi,HU,Unkari
+fi,IE,Irlannin tasavalta
+fi,IE,Irlanti
+fi,IE,Republic of Ireland
+fi,IE,Éire
+fi,IS,Islannin tasavalta
+fi,IS,Islanti
+fi,IT,Italia
+fi,IT,Italian tasavalta
+fi,KZ,Kazakstan
+fi,KZ,Kazakstanin tasavalta
+fi,LI,Liechtenstein
+fi,LI,Liechtensteinin ruhtinaskunta
+fi,LT,Liettua
+fi,LT,Lietuva
+fi,LU,Luxembourg
+fi,LU,Luxemburg
+fi,LU,Luxemburgin suurherttuakunta
+fi,LV,Latvia
+fi,MC,Monaco
+fi,MC,Monacon ruhtinaskunta
+fi,MD,Moldova
+fi,MD,Moldovan tasavalta
+fi,ME,Montenegro
+fi,MK,Makedonia
+fi,MK,Pohjois-Makedonia
+fi,MK,mk
+fi,MT,Malta
+fi,MT,Maltan tasavalta
+fi,MT,Republic of Malta
+fi,NL,Alankomaat
+fi,NL,Alankomaiden kuningaskunta
+fi,NL,Hollanti
+fi,NL,Nederland
+fi,NO,Noreg
+fi,NO,Norge
+fi,NO,Norja
+fi,PL,PL
+fi,PL,POL
+fi,PL,Puola
+fi,PL,Puolan tasavalta
+fi,PT,PT
+fi,PT,Portugali
+fi,PT,Portugalin tasavalta
+fi,PT,República Portuguesa
+fi,RO,Romania
+fi,RS,Serbia
+fi,RU,Venäjä
+fi,RU,Venäjän federaatio
+fi,SE,Ruotsi
+fi,SE,Ruotsin kuningaskunta
+fi,SI,Slovenia
+fi,SI,Slovenian tasavalta
+fi,SK,Slovakia
+fi,SK,Slovakian tasavalta
+fi,SM,San Marino
+fi,SM,San Marinon seesteinen tasavalta
+fi,SM,San Marinon tasavalta
+fi,TR,Turkki
+fi,UA,Ukraina
+fi,VA,Città del Vaticano
+fi,VA,Civitas Vaticana
+fi,VA,Kirkkovaltio
+fi,VA,Stato della Città del Vaticano
+fi,VA,Status Civitatis Vaticanae
+fi,VA,Vatikaani
+fi,VA,Vatikaaninvaltio
+fo,AD,Andorra
+fo,AL,Albania
+fo,AL,Lýðveldið Albaniu
+fo,AM,Armenia
+fo,AT,Eysturríki
+fo,AZ,Aserbadsjan
+fo,BA,Bosnia og Hersegovina
+fo,BE,Belgia
+fo,BG,Bulgaria
+fo,BY,Hvítarussland
+fo,CH,CH
+fo,CH,Sveis
+fo,CY,Kýpros
+fo,CZ,Kekkia
+fo,DE,Týskland
+fo,DK,Danmark
+fo,DK,Danmark
+fo,EE,Estland
+fo,ES,Spania
+fo,FI,Finnland
+fo,FO,Faroe Islands
+fo,FO,Føroya
+fo,FO,Føroyar
+fo,FO,Føroyum
+fo,FR,Frakland
+fo,GB,Stóra Bretland
+fo,GE,Georgia
+fo,GR,Grikkaland
+fo,HR,Kroatia
+fo,HU,Ungarn
+fo,IE,Írland
+fo,IE,Írsk mentan
+fo,IE,Írska Republikkin
+fo,IS,Ísland
+fo,IT,Italia
+fo,KZ,Kasakstan
+fo,LI,Liktinstein
+fo,LT,Litava
+fo,LU,Luksemborg
+fo,LU,Luksemburg
+fo,LV,Lettland
+fo,MC,Monako
+fo,MD,Moldova
+fo,ME,Montenegro
+fo,MK,Lýðveldið Makedónia
+fo,MT,Malta
+fo,NL,Kongsríki Niðurlond
+fo,NL,Niðurlond
+fo,NO,Noreg
+fo,PL,PL
+fo,PL,Pólland
+fo,PL,🇵🇱
+fo,PT,Portugal
+fo,RO,Rumenia
+fo,RS,Serbia
+fo,RU,Russland
+fo,SE,Svøríki
+fo,SI,Slovenia
+fo,SK,Slovakia
+fo,SM,San Marino
+fo,TR,Turkaland
+fo,UA,Ukraina
+fo,VA,Vatikanið
+fr,AD,AD
+fr,AD,Andorre
+fr,AD,Principauté d'Andorre
+fr,AD,la Principauté d’Andorre
+fr,AL,AL
+fr,AL,Albanie
+fr,AL,République d'Albanie
+fr,AL,la République d’Albanie
+fr,AM,AM
+fr,AM,Arménie
+fr,AM,la République d’Arménie
+fr,AM,🇦🇲
+fr,AT,AT
+fr,AT,AUT
+fr,AT,Aut.
+fr,AT,Autr.
+fr,AT,Autriche
+fr,AT,la République d’Autriche
+fr,AZ,AZ
+fr,AZ,Azerbaïdjan
+fr,AZ,la République d’Azerbaïdjan
+fr,BA,BA
+fr,BA,Bosnie et Herzégovine
+fr,BA,Bosnie-Herzégovine
+fr,BA,Bosnie-et-Herzégovine
+fr,BA,Bosnie-herzégovine
+fr,BA,ba
+fr,BA,la Bosnie-Herzégovine
+fr,BE,BE
+fr,BE,Belg.
+fr,BE,Belgique
+fr,BE,Royaume de Belgique
+fr,BE,be
+fr,BE,le Royaume de Belgique
+fr,BE,🇧🇪
+fr,BG,BG
+fr,BG,Bulg.
+fr,BG,Bulgarie
+fr,BG,la République de Bulgarie
+fr,BY,BLR
+fr,BY,BY
+fr,BY,Belarus
+fr,BY,Biélor.
+fr,BY,Biélorussie
+fr,BY,Bélarus
+fr,BY,la République de Biélorussie
+fr,CH,CH
+fr,CH,CHE
+fr,CH,Confédération helvétique
+fr,CH,Confédération suisse
+fr,CH,Helvétie
+fr,CH,SUI
+fr,CH,Suisse
+fr,CH,la Confédération suisse
+fr,CY,Chypre
+fr,CY,Chypre-Sud
+fr,CY,Chypriotes
+fr,CY,République de Chypre
+fr,CY,république de Chypre
+fr,CZ,CZ
+fr,CZ,Rép. tch.
+fr,CZ,République tchèque
+fr,CZ,Tchéquie
+fr,CZ,cz
+fr,CZ,la République tchèque
+fr,DE,All.
+fr,DE,Allemagne
+fr,DE,BR Deutschland
+fr,DE,BRD
+fr,DE,Bundesrepublik Deutschland
+fr,DE,DE
+fr,DE,Deutschland
+fr,DE,GER
+fr,DE,R. F. A.
+fr,DE,RFA
+fr,DE,République fédérale allemande
+fr,DE,République fédérale d'Allemagne
+fr,DE,de
+fr,DE,la République fédérale d’Allemagne
+fr,DK,DK
+fr,DK,Dan.
+fr,DK,Danemark
+fr,DK,Royaume du Danemark
+fr,DK,Royaume du Danemark
+fr,EE,EE
+fr,EE,Esthonie
+fr,EE,Estonie
+fr,EE,République d’Estonie
+fr,EE,la République d’Estonie
+fr,ES,ES
+fr,ES,ESP
+fr,ES,Esp.
+fr,ES,Espagne
+fr,ES,Royaume d'Espagne
+fr,ES,État espagnol
+fr,ES,🇪🇸
+fr,FI,FI
+fr,FI,Fin.
+fr,FI,Finl.
+fr,FI,Finlande
+fr,FI,la République de Finlande
+fr,FO,Færøerne
+fr,FO,Féroé
+fr,FO,Føroyar
+fr,FO,Iles Feroe
+fr,FO,Iles Féroé
+fr,FO,îles Féroé
+fr,FR,FR
+fr,FR,FRA
+fr,FR,Fr.
+fr,FR,France
+fr,FR,La France
+fr,FR,RF
+fr,FR,République française
+fr,FR,fr
+fr,FR,l'Hexagone
+fr,FR,la République française
+fr,GB,GB
+fr,GB,GBR
+fr,GB,Grande-Bretagne
+fr,GB,R.-U.
+fr,GB,R.U.
+fr,GB,Royaume Uni
+fr,GB,Royaume-Uni
+fr,GB,Royaume-Uni de Grande-Bretagne et d’Irlande du Nord
+fr,GB,Royaume-uni
+fr,GB,UK
+fr,GB,le Royaume-Uni de Grande-Bretagne et d’Irlande du Nord
+fr,GB,🇬🇧
+fr,GE,GE
+fr,GE,Géorg.
+fr,GE,Géorgie
+fr,GE,Géorgie (Pays)
+fr,GE,république de Géorgie
+fr,GR,GR
+fr,GR,Grèce
+fr,GR,République hellénique
+fr,HR,Croatie
+fr,HR,HR
+fr,HR,la République de Croatie
+fr,HU,HU
+fr,HU,Hongrie
+fr,HU,la Hongrie
+fr,IE,IE
+fr,IE,Ireland
+fr,IE,Irl.
+fr,IE,Irlande
+fr,IE,République d'Irlande
+fr,IE,l’Irlande
+fr,IE,Éire
+fr,IE,🇮🇪
+fr,IS,IS
+fr,IS,Isl.
+fr,IS,Islande
+fr,IS,République d'Islande
+fr,IS,la République d’Islande
+fr,IT,IT
+fr,IT,ITA
+fr,IT,It.
+fr,IT,Ita.
+fr,IT,Ital.
+fr,IT,Italia
+fr,IT,Italie
+fr,IT,République Italienne
+fr,IT,la République italienne
+fr,KZ,KAZ
+fr,KZ,KZ
+fr,KZ,Kazakh.
+fr,KZ,Kazakhstan
+fr,KZ,Kazakstan
+fr,KZ,Qazaqstan
+fr,KZ,la République du Kazakhstan
+fr,LI,LI
+fr,LI,Liechtenstein
+fr,LI,la Principauté du Liechtenstein
+fr,LI,principauté de Liechtenstein
+fr,LT,LT
+fr,LT,Lithuanie
+fr,LT,Lituanie
+fr,LT,la République de Lituanie
+fr,LU,Grand-Duché de Luxembourg
+fr,LU,Grand-duché de Luxembourg
+fr,LU,LU
+fr,LU,LUX
+fr,LU,Lux.
+fr,LU,Luxembourg
+fr,LU,grand-duché de Luxembourg
+fr,LU,le Grand-Duché de Luxembourg
+fr,LU,🇱🇺
+fr,LV,LV
+fr,LV,Lettonie
+fr,LV,la République de Lettonie
+fr,MC,Fort-Hercule
+fr,MC,MC
+fr,MC,MON
+fr,MC,Monaco
+fr,MC,Monaco (rattachée au District de Menton en 1793)
+fr,MC,Principauté de Monaco
+fr,MC,la Principauté de Monaco
+fr,MC,mc
+fr,MD,MD
+fr,MD,Moldavie
+fr,MD,Moldova
+fr,MD,République de Moldavie
+fr,MD,République de Moldova
+fr,MD,la République de Moldavie
+fr,MD,md
+fr,ME,ME
+fr,ME,Montenegro
+fr,ME,Montén.
+fr,ME,Monténégro
+fr,ME,le Monténégro
+fr,MK,ARYM
+fr,MK,FYROM
+fr,MK,L'Ancienne République yougoslave de Macédoine
+fr,MK,L'ex-République yougoslave de Macédoine
+fr,MK,MK
+fr,MK,Macédoine
+fr,MK,Macédoine Du Nord
+fr,MK,Macédoine du Nord
+fr,MK,République de Macédoine
+fr,MK,la République de Macédoine du Nord
+fr,MK,mk
+fr,MT,MT
+fr,MT,Malte
+fr,MT,la République de Malte
+fr,NL,Hollande
+fr,NL,NED
+fr,NL,NL
+fr,NL,NL
+fr,NL,P.-B.
+fr,NL,P.B.
+fr,NL,Pays-Bas
+fr,NL,Pays-Bas
+fr,NL,Pays-bas
+fr,NL,Royaume des Pays-Bas
+fr,NL,le Royaume des Pays-Bas
+fr,NL,nl
+fr,NL,royaume des Pays Bas
+fr,NL,🇳🇱
+fr,NO,NO
+fr,NO,NOR
+fr,NO,Norv.
+fr,NO,Norvège
+fr,NO,Royaume de Norvège
+fr,NO,le Royaume de Norvège
+fr,NO,🇳🇴
+fr,PL,PL
+fr,PL,POL
+fr,PL,Pol.
+fr,PL,Pologne
+fr,PL,République de Pologne
+fr,PL,République polonaise
+fr,PL,la République de Pologne
+fr,PL,🇵🇱
+fr,PT,PT
+fr,PT,Portugal
+fr,PT,la République portugaise
+fr,RO,RO
+fr,RO,Roum.
+fr,RO,Roumanie
+fr,RO,la Roumanie
+fr,RS,RS
+fr,RS,Serbie
+fr,RS,la République de Serbie
+fr,RU,Fédération de Russie
+fr,RU,RU
+fr,RU,Rus.
+fr,RU,Russie
+fr,RU,ru
+fr,SE,SE
+fr,SE,Suède
+fr,SE,le Royaume de Suède
+fr,SI,République de Slovénie
+fr,SI,SI
+fr,SI,Slovénie
+fr,SI,la République de Slovénie
+fr,SK,République slovaque
+fr,SK,SK
+fr,SK,Slovaquie
+fr,SK,la République slovaque
+fr,SM,République de Saint-Marin
+fr,SM,SM
+fr,SM,Saint-Marin
+fr,SM,Saint-marin
+fr,SM,la République de Saint-Marin
+fr,TR,République de Turquie
+fr,TR,République turque
+fr,TR,TR
+fr,TR,Turq.
+fr,TR,Turquie
+fr,TR,la République de Turquie
+fr,TR,tr
+fr,UA,UA
+fr,UA,Ukr.
+fr,UA,Ukraine
+fr,VA,Cité du Vatican
+fr,VA,VA
+fr,VA,Vatican
+fr,VA,va
+fr,VA,État de la Cité du Vatican
+fr,VA,🇻🇦
+fy,AD,Andorra
+fy,AL,Albaanje
+fy,AM,Armeenje
+fy,AT,Eastenryk
+fy,AZ,Azerbeidzjan
+fy,BA,Bosnje
+fy,BE,Belgje
+fy,BG,Bulgarije
+fy,BY,Wyt-Ruslân
+fy,CH,CH
+fy,CH,Switserlân
+fy,CY,Syprus
+fy,CZ,Tsjechje
+fy,DE,Dútslân
+fy,DK,Denemark
+fy,DK,Denemark
+fy,EE,Estlân
+fy,ES,Spanje
+fy,FI,Finlân
+fy,FO,Faeröer
+fy,FO,Farøer Eilannen
+fy,FR,Frankryk
+fy,GB,Feriene Keninkryk
+fy,GB,Grut-Brittanje
+fy,GE,Geörgje
+fy,GR,Grikelân
+fy,HR,Kroaasje
+fy,HU,Hongarije
+fy,IE,Ierlân
+fy,IS,Yslân
+fy,IT,Itaalje
+fy,KZ,Kazakstan
+fy,LI,Lychtenstein
+fy,LT,Litouwen
+fy,LU,Gruthartochdom Lúksemboarch
+fy,LU,Lúksemboarch
+fy,LV,Letlân
+fy,MC,Monako
+fy,MD,Moldaavje
+fy,ME,Montenegro
+fy,MK,Masedoanje
+fy,MK,Noard-Masedoanje
+fy,MT,Malta
+fy,NL,Hollân
+fy,NL,Keninkryk fan 'e Nederlannen
+fy,NL,Keninkryk fan de Nederlannen
+fy,NL,Nederlân
+fy,NO,Noarwegen
+fy,PL,POL
+fy,PL,Poalen
+fy,PL,🇵🇱
+fy,PT,Portegal
+fy,RO,Roemeenje
+fy,RS,Servje
+fy,RU,Ruslân
+fy,SE,Sweden
+fy,SI,Sloveenje
+fy,SK,Slowakije
+fy,SM,San Marino
+fy,TR,Turkije
+fy,UA,Oekraïne
+fy,VA,Fatikaan
+fy,VA,Fatikaanstêd
+ga,AD,Andóra
+ga,AL,An Albáin
+ga,AM,An Airméin
+ga,AT,An Ostair
+ga,AZ,An Asarbaiseáin
+ga,BA,An Bhoisnia-Heirseagaivéin
+ga,BE,An Bheilg
+ga,BG,An Bhulgáir
+ga,BY,An Bhealarúis
+ga,CH,An Eilvéis
+ga,CH,CH
+ga,CY,An Chipir
+ga,CZ,Poblacht na Seice
+ga,DE,An Ghearmáin
+ga,DK,An Danmhairg
+ga,DK,An Danmhairg
+ga,DK,Ríocht na Danmhairge
+ga,EE,An Eastóin
+ga,ES,An Spáinn
+ga,FI,An Fhionlainn
+ga,FO,Na Scigirí
+ga,FO,Oileáin Fharó
+ga,FR,An Fhrainc
+ga,FR,An Frainc
+ga,FR,Fhrainc
+ga,FR,Frainc
+ga,GB,An RA
+ga,GB,An Ríocht Aontaithe
+ga,GB,Ríocht Aontaithe
+ga,GE,An tSeoirsia
+ga,GR,An Ghréig
+ga,HR,An Chróit
+ga,HU,An Ungáir
+ga,IE,Ireland (sa Bhéarla)
+ga,IE,na 26 chontae
+ga,IE,Éire
+ga,IS,An Íoslainn
+ga,IT,An Iodáil
+ga,KZ,An Chasacstáin
+ga,LI,Lichtinstéin
+ga,LT,An Liotuáin
+ga,LU,An Lucsamburg
+ga,LU,Lucsamburg
+ga,LV,An Laitvia
+ga,MC,Monacó
+ga,MD,An Mholdóiv
+ga,ME,Montainéagró
+ga,MK,An Mhacadóin Thuaidh
+ga,MK,Poblacht na Macadóine
+ga,MK,mk
+ga,MT,Málta
+ga,NL,An Ollainn
+ga,NL,An Ísiltír
+ga,NL,Ríocht na hÍsiltíre
+ga,NL,an Ollainn
+ga,NL,an Ísiltír
+ga,NO,An Iorua
+ga,PL,An Pholainn
+ga,PL,PL
+ga,PL,Polska
+ga,PL,🇵🇱
+ga,PT,An Phortaingéil
+ga,RO,An Rómáin
+ga,RS,An tSeirbia
+ga,RU,An Rúis
+ga,SE,An tSualainn
+ga,SI,An tSlóivéin
+ga,SK,An tSlóvaic
+ga,SM,San Mairíne
+ga,TR,An Tuirc
+ga,UA,An Úcráin
+ga,VA,Cathair na Vatacáine
+gl,AD,Andorra
+gl,AD,Principado de Andorra
+gl,AD,Principat d'Andorra
+gl,AL,Albania
+gl,AM,Armenia
+gl,AT,Austria
+gl,AZ,Acerbaixán
+gl,BA,Bosnia e Hercegovina
+gl,BE,Bélxica
+gl,BG,Bulgaria
+gl,BY,Belarús
+gl,BY,República de Belarús
+gl,CH,CH
+gl,CH,Confederación Helvética
+gl,CH,Confederación Suíza
+gl,CH,Confoederatio Helvetica
+gl,CH,Suíza
+gl,CY,Chipre
+gl,CZ,República Checa
+gl,DE,Alemaña
+gl,DK,Dinamarca
+gl,DK,Dinamarca
+gl,EE,Estonia
+gl,ES,ES
+gl,ES,ESP
+gl,ES,España
+gl,ES,Reino de España
+gl,FI,Finlandia
+gl,FO,Feroe
+gl,FO,Illas Faroe
+gl,FO,Illas Faroé
+gl,FO,Illas Feroe
+gl,FR,Francia
+gl,FR,República Francesa
+gl,GB,Reino Unido
+gl,GB,Reino Unido de Gran Bretaña e Irlanda do Norte
+gl,GE,Xeorxia
+gl,GR,Grecia
+gl,HR,Croacia
+gl,HU,Hungría
+gl,IE,Eire
+gl,IE,Irlanda
+gl,IE,República de Irlanda
+gl,IE,Éire
+gl,IS,Islandia
+gl,IT,Italia
+gl,IT,República Italiana
+gl,KZ,Casaquistán
+gl,LI,Liechtenstein
+gl,LT,Lituania
+gl,LU,Luxemburgo
+gl,LV,Letonia
+gl,MC,Mónaco
+gl,MD,Moldavia
+gl,ME,Montenegro
+gl,MK,Antiga República Iugoslava de Macedonia
+gl,MK,Macedonia do Norte
+gl,MK,República de Macedonia
+gl,MK,República de Macedonia do Norte
+gl,MK,mk
+gl,MT,Malta
+gl,NL,Países Baixos
+gl,NL,Reino dos Países Baixos
+gl,NO,Noruega
+gl,PL,PL
+gl,PL,Polonia
+gl,PL,República de Polonia
+gl,PL,🇵🇱
+gl,PT,PT
+gl,PT,Portugal
+gl,PT,República Portuguesa
+gl,RO,Romanía
+gl,RS,Serbia
+gl,RU,Rusia
+gl,SE,Reino de Suecia
+gl,SE,Suecia
+gl,SI,Eslovenia
+gl,SK,Eslovaquia
+gl,SM,San Marino
+gl,TR,República Turca
+gl,TR,República de Turquia
+gl,TR,Turquía
+gl,UA,Ucraína
+gl,VA,Cidade do Vaticano
+gl,VA,Vaticano
+hr,AD,Andora
+hr,AL,Albanija
+hr,AM,Armenija
+hr,AT,Austrija
+hr,AT,Republika Austrija
+hr,AT,Österreich
+hr,AZ,Azerbajdžan
+hr,BA,BH
+hr,BA,BiH
+hr,BA,Bosna
+hr,BA,Bosna i Hercegovina
+hr,BE,Belgija
+hr,BE,Kraljevina Belgija
+hr,BG,Bugarska
+hr,BG,Republika Bugarska
+hr,BY,Bjelorusija
+hr,CH,CH
+hr,CH,Švicarska
+hr,CH,Švicarska Konfederacija
+hr,CY,Cipar
+hr,CZ,Češka
+hr,DE,Njemačka
+hr,DK,Danska
+hr,DK,Kraljevina Danska
+hr,DK,Kraljevina Danska
+hr,EE,Estonija
+hr,ES,Španjolska
+hr,FI,Finska
+hr,FI,Republika Finska
+hr,FO,Farski otoci
+hr,FO,Farsko otočje
+hr,FO,Ferojski otoci
+hr,FO,Ferski otoci
+hr,FO,Foroyar
+hr,FO,Føroyar
+hr,FO,Ovčji Otoci
+hr,FR,Francuska
+hr,FR,Francuska republika
+hr,FR,Republika Francuska
+hr,FR,République française
+hr,GB,GB
+hr,GB,UK
+hr,GB,Ujedinjeno Kraljevstvo
+hr,GB,Ujedinjeno Kraljevstvo Velike Britanije i Sjeverne Irske
+hr,GB,VB
+hr,GB,Velika Britanija
+hr,GE,Gruzija
+hr,GR,Grčka
+hr,GR,Republika Grčka
+hr,HR,Hrvatska
+hr,HR,Republika Hrvatska
+hr,HU,Madžarska
+hr,HU,Mađarska
+hr,IE,Irska
+hr,IE,Republika Irska
+hr,IS,Island
+hr,IT,Italija
+hr,IT,Republika Italija
+hr,KZ,Kazahstan
+hr,LI,Lihtenštajn
+hr,LT,Litva
+hr,LT,Litvanija
+hr,LT,Republika Litva
+hr,LU,Luksemburg
+hr,LU,Luxemburg
+hr,LU,Veliko Vojvodstvo Luksemburg
+hr,LV,Latvija
+hr,MC,Monako
+hr,MD,Moldavija
+hr,MD,Republika Moldavija
+hr,MD,Republika Moldova
+hr,ME,Crna Gora
+hr,MK,Makedonija
+hr,MK,Sjeverna Makedonija
+hr,MK,mk
+hr,MT,Malta
+hr,NL,Holandija
+hr,NL,Kraljevina Nizozemska
+hr,NL,Nizozemska
+hr,NO,NO
+hr,NO,NOR
+hr,NO,Norveška
+hr,NO,Norveško kraljevstvo
+hr,NO,no
+hr,PL,Poljska
+hr,PL,Polska
+hr,PL,Republika Poljska
+hr,PL,🇵🇱
+hr,PT,Portugal
+hr,PT,Republika Portugal
+hr,RO,Rumunjska
+hr,RS,Srbija
+hr,RU,Rusija
+hr,RU,Ruska Federacija
+hr,SE,Kraljevina Švedska
+hr,SE,Švedska
+hr,SI,Slovenija
+hr,SK,Slovačka
+hr,SM,San Marino
+hr,TR,Republika Turska
+hr,TR,Turska
+hr,UA,Ukrajina
+hr,VA,Vatikan
+hu,AD,Andorra
+hu,AD,Andorrai Fejedelemség
+hu,AD,Andorrai Hercegség
+hu,AD,Andorrai Völgység
+hu,AL,Albán Köztársaság
+hu,AL,Albánia
+hu,AM,Örmény Köztársaság
+hu,AM,Örményország
+hu,AT,Ausztria
+hu,AZ,Azerbajdzsán
+hu,AZ,Azerbajdzsáni Köztársaság
+hu,BA,Bosznia-Hercegovina
+hu,BE,Belgium
+hu,BG,Bolgár Köztársaság
+hu,BG,Bolgár Népköztársaság
+hu,BG,Bulgária
+hu,BY,Belarusz Köztársaság
+hu,BY,Fehéroroszország
+hu,CH,CH
+hu,CH,Svájc
+hu,CY,Ciprus
+hu,CY,Ciprusi Köztársaság
+hu,CZ,Cseh Köztársaság
+hu,CZ,Csehország
+hu,DE,Német Szövetségi Köztársaság
+hu,DE,Németország
+hu,DK,Dán Királyság
+hu,DK,Dánia
+hu,EE,Észt Köztársaság
+hu,EE,Észtország
+hu,ES,Spanyolország
+hu,FI,Finnország
+hu,FO,Feröer
+hu,FO,Feröer szigetek
+hu,FO,Feröer-szigetek
+hu,FR,FRA
+hu,FR,Francia Köztársaság
+hu,FR,Franciaország
+hu,GB,Egyesült Királyság
+hu,GB,Nagy-Britannia
+hu,GB,Nagy-Britannia és Észak-Írország Egyesült Királysága
+hu,GB,UK
+hu,GE,Grúzia
+hu,GR,Görögország
+hu,HR,Horvát Köztársaság
+hu,HR,Horvátország
+hu,HU,Magyar Köztársaság
+hu,HU,Magyarország
+hu,HU,Mo.
+hu,HU,harmadik magyar köztársaság
+hu,HU,hu
+hu,HU,🇭🇺
+hu,IE,Ír Királyság
+hu,IE,Ír Köztársaság
+hu,IE,Írország
+hu,IS,Izland
+hu,IS,Izlandi Köztársaság
+hu,IT,Olaszország
+hu,KZ,Kazah Köztársaság
+hu,KZ,Kazahsztán
+hu,LI,Liechtenstein
+hu,LI,Liechtenstein Hercegség
+hu,LT,Litvánia
+hu,LU,Luxemburg
+hu,LU,Luxemburgi Nagyhercegség
+hu,LV,Lett Köztársaság
+hu,LV,Lettország
+hu,MC,Monaco
+hu,MC,Monacói Hercegség
+hu,MD,Moldova
+hu,MD,Moldovai Köztársaság
+hu,MD,Moldávia
+hu,ME,Montenegró
+hu,MK,Macedón Köztársaság
+hu,MK,Macedónia
+hu,MK,Macedónia Volt Jugoszláv Köztársaság
+hu,MK,mk
+hu,MK,Észak-Macedónia
+hu,MK,Észak-macedón Köztársaság
+hu,MT,Málta
+hu,MT,Máltai Köztársaság
+hu,NL,Holland Királyság
+hu,NL,Hollandia
+hu,NL,Hollandia
+hu,NO,Norvég Királyság
+hu,NO,Norvégia
+hu,PL,Lengyelország
+hu,PL,POL
+hu,PL,Polska
+hu,PL,🇵🇱
+hu,PT,Portugália
+hu,RO,Románia
+hu,RS,Szerbia
+hu,RS,Szerbia Köztársaság
+hu,RU,Oroszország
+hu,RU,Oroszországi Föderáció
+hu,SE,Svéd Királyság
+hu,SE,Svédország
+hu,SI,Szlovén Köztársaság
+hu,SI,Szlovénia
+hu,SK,Felvidék
+hu,SK,Szlovák Köztársaság
+hu,SK,Szlovákia
+hu,SM,San Marino
+hu,SM,San Marino Köztársaság
+hu,TR,Törökország
+hu,UA,Ukrajna
+hu,VA,Vatikán
+hu,VA,Vatikán Állam
+hu,VA,Vatikánváros
+hy,AD,Անդորրա
+hy,AL,Ալբանիա
+hy,AM,ՀՀ
+hy,AM,Հայաստան
+hy,AM,Հայաստանի Հանրապետություն
+hy,AM,Հայք
+hy,AM,🇦🇲
+hy,AT,Ավստրիա
+hy,AZ,Ադրբեջան
+hy,BA,Բոսնիա և Հերցեգովինա
+hy,BE,Բելգիա
+hy,BE,Բելգիայի Թագավորություն
+hy,BG,Բուլղարիա
+hy,BY,Բելառուս
+hy,CH,CH
+hy,CH,Շվեյցարական Համադաշնություն
+hy,CH,Շվեյցարիա
+hy,CH,Շվեյցարիայի Համադաշնություն
+hy,CY,Կիպրոս
+hy,CZ,Չեխիա
+hy,DE,Գերմանիա
+hy,DE,Գերմանիայի Դաշնային Հանրապետություն
+hy,DK,Դանիա
+hy,DK,Դանիա
+hy,EE,Էստոնիա
+hy,ES,Իսպանիա
+hy,ES,Իսպանիայի Թագավորություն
+hy,FI,Ֆինլանդիա
+hy,FI,Ֆինլանդիայի Հանրապետություն
+hy,FO,Ֆարերյան կղզիներ
+hy,FR,France
+hy,FR,Ֆրանսա
+hy,FR,Ֆրանսիա
+hy,FR,Ֆրանսիական
+hy,FR,Ֆրանսիայի հանրապետություն
+hy,GB,Մեծ Բրիտանիա
+hy,GB,Մեծ Բրիտանիայի և Հյուսիսային Իռլանդիայի Միացյալ Թագավորություն
+hy,GB,Միացյալ Թագավորություն
+hy,GE,Վրաստան
+hy,GR,Հունաստան
+hy,HR,Խորվաթիա
+hy,HU,Հունգարիա
+hy,IE,Իռլանդիա
+hy,IE,Իռլանդիայի Հանրապետություն
+hy,IE,Իրլանդիա
+hy,IS,Իսլանդիա
+hy,IT,Իտալական Հանրապետություն
+hy,IT,Իտալիա
+hy,KZ,Ղազախստան
+hy,LI,Լիխտենշտայն
+hy,LT,Լիտվա
+hy,LT,Լիտվայի Հանրապետություն
+hy,LU,Լյուքսեմբուրգ
+hy,LU,Լուքսեմբուրգ
+hy,LV,Լատվիա
+hy,MC,Մոնակո
+hy,MD,Մոլդովա
+hy,ME,Չեռնոգորիա
+hy,MK,Հյուսիսային Մակեդոնիա
+hy,MK,Հյուսիսային Մակեդոնիայի Հանրապետություն
+hy,MT,Մալթա
+hy,NL,Նիդերլանդներ
+hy,NL,Նիդերլանդների Թագավորություն
+hy,NO,Նորվեգիա
+hy,NO,Նորվեգիայի Թագավորություն
+hy,PL,POL
+hy,PL,Polska
+hy,PL,Լեհաստան
+hy,PL,Լեհաստանի Հանրապետություն
+hy,PL,🇵🇱
+hy,PT,Պորտուգալիա
+hy,RO,Ռումինիա
+hy,RS,Սերբիա
+hy,RU,ՌԴ
+hy,RU,Ռուսաստան
+hy,RU,Ռուսաստանի Դաշնություն
+hy,SE,Շվեդիա
+hy,SE,Շվեդիայի Թագավորություն
+hy,SI,Սլովենիա
+hy,SK,Սլովակիա
+hy,SM,Սան Մարինո
+hy,TR,Թուրքիա
+hy,UA,Ուկրաինա
+hy,VA,Վատիկան
+is,AD,Andorra
+is,AL,Albanía
+is,AM,Armenía
+is,AT,Austurríki
+is,AZ,Aserbaídsjan
+is,BA,Bosnía og Hersegóvína
+is,BE,Belgía
+is,BG,Bulgaria
+is,BG,Búlgaría
+is,BY,Hvíta-Rússland
+is,CH,CH
+is,CH,Sviss
+is,CY,Kýpur
+is,CY,cy
+is,CY,🇨🇾
+is,CZ,Tékkland
+is,DE,Þýskaland
+is,DK,Danmörk
+is,DK,Danmörk
+is,DK,Konungsríkið Danmörk
+is,EE,Eistland
+is,ES,Spánn
+is,FI,Finnland
+is,FO,Færeyjar
+is,FO,Føroyar
+is,FR,Frakkland
+is,GB,Bretland
+is,GB,Hið sameinaða konungsríki Stóra-Bretlands og Norður-Írlands
+is,GB,sameinaða konungsríki Stóra-Bretlands og Norður-Írlands
+is,GE,Georgía
+is,GR,Grikkland
+is,HR,Króatía
+is,HU,Ungverjaland
+is,IE,Írska lýðveldið
+is,IS,Lýðveldið Ísland
+is,IS,Ísland
+is,IT,Ítalía
+is,KZ,Kasakstan
+is,LI,Liechtenstein
+is,LT,Litháen
+is,LU,Luxemburg
+is,LU,Lúxemborg
+is,LU,Stórhertogadæmið Lúxemborg
+is,LV,Lettland
+is,MC,Mónakó
+is,MD,Moldóva
+is,ME,Svartfjallaland
+is,MK,Lýðveldið Makedónía
+is,MK,Lýðveldið Norður-Makedónía
+is,MK,Norður-Makedónía
+is,MK,mk
+is,MT,Malta
+is,NL,Holland
+is,NL,Holland
+is,NO,Noregur
+is,PL,POL
+is,PL,Polska
+is,PL,Pólland
+is,PL,🇵🇱
+is,PT,Portúgal
+is,RO,Rúmenía
+is,RS,Serbía
+is,RU,Rússland
+is,SE,Svíþjóð
+is,SI,Slóvenía
+is,SK,Slóvakía
+is,SM,San Marínó
+is,TR,Tyrkland
+is,UA,Úkraína
+is,VA,Vatíkanið
+it,AD,Andorra
+it,AL,Albania
+it,AL,Repubblica d'Albania
+it,AM,Armenia
+it,AM,🇦🇲
+it,AT,Austria
+it,AZ,Azerbaigian
+it,BA,Bosnia ed Erzegovina
+it,BA,Bosnia-Erzegovina
+it,BE,Belgio
+it,BG,Bulgaria
+it,BY,Bielorussia
+it,CH,CH
+it,CH,CHE
+it,CH,Confederazione Elvetica
+it,CH,Confederazione Svizzera
+it,CH,Confoederatio Helvetica
+it,CH,Elvezia
+it,CH,SUI
+it,CH,Svizzera
+it,CY,Cipro
+it,CY,Repubblica di Cipro
+it,CZ,Cechia
+it,CZ,Repubblica Ceca
+it,CZ,🇨🇿
+it,DE,BR Deutschland
+it,DE,BRD
+it,DE,Bundesrepublik Deutschland
+it,DE,DEU
+it,DE,Deutschland
+it,DE,GER
+it,DE,Germania
+it,DE,Repubblica Federale di Germania
+it,DE,de
+it,DK,Danimarca
+it,DK,Regno di Danimarca
+it,EE,Estonia
+it,ES,Regno di Spagna
+it,ES,Spagna
+it,FI,Finlandia
+it,FO,Faer Oer
+it,FO,Faer Øer
+it,FO,Faeroer
+it,FO,Far Oer
+it,FO,Far Øer
+it,FO,Faroe
+it,FO,Faroer
+it,FO,Foroyar
+it,FO,Fær Øer
+it,FO,Isole Faer Oer
+it,FO,Isole Faeroer
+it,FO,Isole Faeröer
+it,FO,Isole Far Oer
+it,FO,Isole Far Öer
+it,FO,Isole Faroe
+it,FO,Isole Faroer
+it,FO,Isole Foroyar
+it,FO,Isole Fær Øer
+it,FR,Francia
+it,GB,GB
+it,GB,GBR
+it,GB,Gran Bretagna
+it,GB,Regno Unito
+it,GB,Regno Unito di Gran Bretagna e Irlanda del Nord
+it,GB,UK
+it,GB,🇬🇧
+it,GE,Georgia
+it,GR,Grecia
+it,HR,Croazia
+it,HR,Repubblica di Croazia
+it,HU,Ungheria
+it,IE,Irlanda
+it,IE,Repubblica d'Irlanda
+it,IE,Éire
+it,IE,🇮🇪
+it,IS,Islanda
+it,IT,Bel Paese
+it,IT,IT
+it,IT,ITA
+it,IT,Italia
+it,IT,Repubblica italiana
+it,IT,it
+it,IT,🇮🇹
+it,KZ,Cazachistan
+it,KZ,Cosacchia
+it,KZ,Cosacchistan
+it,KZ,Kazakhstan
+it,KZ,Kazakistan
+it,LI,Liechtenstein
+it,LT,Lituania
+it,LU,Granducato di Lussemburgo
+it,LU,Lussemburgo
+it,LU,🇱🇺
+it,LV,Lettonia
+it,MC,Monaco
+it,MC,Montecarlo
+it,MC,Principato di Monaco
+it,MD,Moldavia
+it,ME,Montenegro
+it,MK,ERJM
+it,MK,FYROM
+it,MK,Macedonia
+it,MK,Macedonia del Nord
+it,MK,Repubblica di Macedonia
+it,MK,Repubblica di Macedonia del Nord
+it,MK,mk
+it,MT,Malta
+it,MT,Repubblica di Malta
+it,NL,HOL
+it,NL,NED
+it,NL,NL
+it,NL,NLD
+it,NL,Paesi Bassi
+it,NL,Paesi Bassi
+it,NL,Regno dei Paesi Bassi
+it,NL,🇳🇱
+it,NO,Kongeriket Noreg
+it,NO,Kongeriket Norge
+it,NO,Noreg
+it,NO,Norvegia
+it,NO,Regno di Norvegia
+it,PL,PL
+it,PL,Polonia
+it,PL,Repubblica di Polonia
+it,PL,🇵🇱
+it,PT,PRT
+it,PT,Portogallo
+it,RO,ROU
+it,RO,Romania
+it,RO,🇷🇴
+it,RS,Serbia
+it,RU,Federazione Russa
+it,RU,Russia
+it,SE,Konungariket Sverige
+it,SE,Sverige
+it,SE,Svezia
+it,SI,Slovenia
+it,SK,Slovacchia
+it,SM,Repubblica di San Marino
+it,SM,San Marino
+it,SM,Serenissima Repubblica di San Marino
+it,TR,Repubblica Turchia
+it,TR,Turchia
+it,UA,Ucraina
+it,VA,Città del Vaticano
+it,VA,Stato della Città del Vaticano
+it,VA,Vaticano
+it,VA,🇻🇦
+ka,AD,ანდორა
+ka,AL,ალბანეთი
+ka,AL,ალბანეთის რესპუბლიკა
+ka,AM,სომხეთი
+ka,AT,ავსტრია
+ka,AZ,az
+ka,AZ,აზერბაიჯანი
+ka,AZ,აზერბაიჯანის რესპუბლიკა
+ka,AZ,🇦🇿
+ka,BA,ბოსნია და ჰერცეგოვინა
+ka,BE,ბელგია
+ka,BG,ბულგარეთი
+ka,BY,ბელარუსი
+ka,CH,CH
+ka,CH,შვეიცარია
+ka,CY,კვიპროსი
+ka,CZ,ჩეხეთი
+ka,DE,გერმანია
+ka,DE,გერმანიის ფედერაციული რესპუბლიკა
+ka,DK,დანია
+ka,DK,დანიის სამეფო
+ka,EE,ესტონეთი
+ka,ES,ესპანეთი
+ka,FI,ფინეთი
+ka,FO,ფარერები
+ka,FO,ფარერის კუნძულები
+ka,FR,საფრანგეთი
+ka,GB,ბრიტანეთი
+ka,GB,გაერთიანებული სამეფო
+ka,GB,დიდი ბრიტანეთი
+ka,GB,დიდი ბრიტანეთისა და ჩრდილოეთ ირლანდიის გაერთიანებული სამეფო
+ka,GB,ინგლისი
+ka,GE,საქართველო
+ka,GE,საქართველოს რესპუბლიკა
+ka,GR,საბერძნეთი
+ka,HR,ხორვატია
+ka,HR,ხორვატიის რესპუბლიკა
+ka,HU,უნგრეთი
+ka,IE,ირლანდია
+ka,IE,ირლანდიის რესპუბლიკა
+ka,IS,ისლანდია
+ka,IT,იტალია
+ka,KZ,ყაზახეთი
+ka,LI,ლიხტენშტაინი
+ka,LT,ლიტვა
+ka,LU,ლუქსემბურგი
+ka,LU,ლუქსემბურგის დიდი საჰერცოგო
+ka,LV,ლატვია
+ka,MC,მონაკო
+ka,MD,მოლდოვა
+ka,ME,მონტენეგრო
+ka,ME,ჩერნოგორია
+ka,MK,მაკედონია
+ka,MK,ყოფილი იუგოსლავიის მაკედონიის რესპუბლიკა
+ka,MK,ყოფილი იუგოსლავიის რესპუბლიკა მაკედონია
+ka,MK,ჩრდილოეთ მაკედონიის რესპუბლიკა
+ka,MK,ჩრდილოეთი მაკედონია
+ka,MT,მალტა
+ka,NL,ნიდერლანდები
+ka,NL,ნიდერლანდების სამეფო
+ka,NO,ნორვეგია
+ka,NO,ნორვეგიის სამეფო
+ka,PL,Polska
+ka,PL,პოლონეთი
+ka,PL,🇵🇱
+ka,PT,პორტუგალია
+ka,RO,რუმინეთი
+ka,RS,სერბეთი
+ka,RU,რუსეთი
+ka,RU,რუსეთის ფედერაცია
+ka,SE,შვედეთი
+ka,SE,შვედეთის სამეფო
+ka,SI,სლოვენია
+ka,SK,სლოვაკეთი
+ka,SM,სან-მარინო
+ka,TR,tr
+ka,TR,თურ.
+ka,TR,თურქეთი
+ka,TR,თურქეთის რესპუბლიკა
+ka,TR,🇹🇷
+ka,UA,უკრაინა
+ka,VA,ვატიკანი
+kk,AD,Андорра
+kk,AL,Албания
+kk,AL,Албания Республикасы
+kk,AM,Армения
+kk,AT,Аустрия Республикасы
+kk,AZ,Әзірбайжан
+kk,BA,Босния және Герцеговина
+kk,BE,Бельгия
+kk,BG,Болгария
+kk,BG,Бұлғаристан
+kk,BG,Бұлғарстан
+kk,BY,Беларусь
+kk,CH,CH
+kk,CH,Швейцария
+kk,CY,Кипр
+kk,CZ,Чехия
+kk,DE,Германия
+kk,DE,Германия Федеративтік Республикасы
+kk,DK,Дания
+kk,EE,Эстония
+kk,ES,Испания
+kk,FI,Финляндия
+kk,FO,Фарер аралдары
+kk,FO,Фөрөярдар
+kk,FO,Фөрөярлер
+kk,FR,Франция
+kk,GB,Ұлыбритания
+kk,GE,Грузия
+kk,GR,Грекия
+kk,HR,Хорватия
+kk,HU,Мажарстан
+kk,IE,Ейре
+kk,IE,Ирландия
+kk,IE,Ирландия Республикасы
+kk,IS,Исландия
+kk,IT,Италия
+kk,KZ,Қазақстан
+kk,KZ,Қазақстан Республикасы
+kk,KZ,Қазақстан Республикасы '
+kk,LI,Лихтенштейн
+kk,LT,Литва
+kk,LU,Люксембург
+kk,LU,Лүксембор
+kk,LV,Латвия
+kk,MC,Монако
+kk,MD,Молдова
+kk,ME,Черногория
+kk,MK,Македония Республикасы
+kk,MK,Солтүстік Македония
+kk,MT,Мальта
+kk,NL,Нидерланд
+kk,NL,Нидерланд
+kk,NO,Норвегия
+kk,PL,Польша
+kk,PL,🇵🇱
+kk,PT,Португалия
+kk,RO,Румыния
+kk,RS,Сербия
+kk,RU,Ресей
+kk,SE,Швеция
+kk,SI,Словения
+kk,SK,Словакия
+kk,SM,Сан-Марино
+kk,TR,Түркия
+kk,UA,Украина
+kk,VA,Ватикан
+kl,AD,Andorra
+kl,AL,Albania
+kl,AT,Østrigi
+kl,AZ,Aserbajdsjan
+kl,BA,Bosnia-Hercegovina
+kl,BE,Belgia
+kl,BG,Bulgaria
+kl,BG,Bulgarien
+kl,BY,Hvideruslandi
+kl,CH,CH
+kl,CH,Schweizi
+kl,CY,Cyperni
+kl,CZ,Tjekkia
+kl,DE,Tyskland
+kl,DK,Danmarki
+kl,EE,Estlandi
+kl,ES,Spania
+kl,FI,Finlandi
+kl,FO,Færøerne
+kl,FO,Savalimmiut
+kl,FR,Franskit Nunaat
+kl,GB,Tuluit Nunaat
+kl,GE,Georgia
+kl,GR,Grækerit Nunaat
+kl,HR,Kroatia
+kl,HU,Ungarni
+kl,IE,Irland
+kl,IE,Irlandi
+kl,IS,Islandi
+kl,IT,Italia
+kl,KZ,Kasakhstani
+kl,LI,Liechtensteini
+kl,LT,Litaueni
+kl,LU,Luxembourg
+kl,LV,Letlandi
+kl,MC,Monaco
+kl,MD,Moldova
+kl,ME,Montenegro
+kl,MK,Makedonia
+kl,MT,Malta
+kl,NL,Hollandi
+kl,NO,Norge
+kl,PL,PL
+kl,PL,Poleni
+kl,PL,🇵🇱
+kl,PT,Portugal
+kl,RO,Rumænia
+kl,RS,Serbia
+kl,RU,Ruslandi
+kl,SE,Svenskit Nunaat
+kl,SI,Slovenia
+kl,SK,Slovakia
+kl,SM,San Marino
+kl,TR,Tyrkia
+kl,UA,Ukraine
+kl,VA,Vatikani
+kv,AD,Андорра
+kv,AL,Албания
+kv,AM,Армения
+kv,AT,Австрия
+kv,AZ,Азербайджан
+kv,BA,Босния да Герцеговина
+kv,BE,Бельгия
+kv,BG,Болгария
+kv,BY,Беларусь
+kv,CH,CH
+kv,CH,Швейцария
+kv,CY,Кипр
+kv,CZ,Чехия
+kv,DE,Германия
+kv,DK,Дания
+kv,EE,Эстония
+kv,ES,Испания
+kv,FI,Суоми Му
+kv,FO,Фарер діяс
+kv,FR,Франция
+kv,GB,Ыджыд Британия
+kv,GE,Грузия
+kv,GR,Эллада
+kv,HR,Хорватия
+kv,HU,Мадьяр Му
+kv,IE,Ирландия
+kv,IS,Исландия
+kv,IT,Италия
+kv,KZ,Казахстан
+kv,LI,Лихтенштейн
+kv,LT,Литва
+kv,LU,Люксембург
+kv,LV,Латвия
+kv,MC,Монако
+kv,MD,Молдова
+kv,ME,Черногория
+kv,MK,Македония Республика
+kv,MT,Мальта
+kv,NL,Нидерландъяс
+kv,NO,Норвегия
+kv,PL,Polska
+kv,PL,Польша
+kv,PL,🇵🇱
+kv,PT,Португалия
+kv,RO,Румыния
+kv,RS,Сербия
+kv,RU,Рочму
+kv,SE,Швеция
+kv,SI,Словения
+kv,SK,Словакия
+kv,SM,Сан-Марино
+kv,TR,Турция
+kv,UA,Украина
+kv,VA,Ватикан
+la,AD,Andorra
+la,AL,Albania
+la,AM,Armenia
+la,AT,Austria
+la,AZ,Atropatene
+la,BA,Bosnia et Herzegovina
+la,BE,Belgica
+la,BG,Bulgaria
+la,BY,Ruthenia Alba
+la,CH,CH
+la,CH,Confoederatio Helvetica
+la,CH,Helvetia
+la,CY,Cyprus
+la,CZ,Cechia
+la,DE,Germania
+la,DK,Dania
+la,DK,Dania
+la,EE,Estonia
+la,ES,Hispania
+la,FI,Finnia
+la,FO,Faeroae insulae
+la,FO,Insulae Faeroae
+la,FO,Insulae Faroenses
+la,FR,Francia
+la,GB,Britanniarum Regnum
+la,GE,Georgia
+la,GR,Graecia
+la,HR,Croatia
+la,HU,Hungaria
+la,IE,Hibernia
+la,IE,Irlandia
+la,IE,Res publica Hiberniae
+la,IS,Islandia
+la,IT,Italia
+la,KZ,Kazachstania
+la,LI,Lichtenstenum
+la,LT,Lituania
+la,LU,Luciliburgum
+la,LU,Luxemburgia
+la,LU,Luxemburgum
+la,LV,Lettonia
+la,MC,Monoecus
+la,MD,Moldavia
+la,MD,Respublica Moldavica
+la,ME,Mons Niger
+la,MK,Macedonia Septentrionalis
+la,MK,Res publica Macedonia Septentrionalis
+la,MK,Res publica Macedonica
+la,MK,Respublica Macedonica Septentrionalis
+la,MT,Melita
+la,NL,Nederlandia
+la,NL,Regnum Nederlandiae
+la,NO,Norvegia
+la,PL,POL
+la,PL,Polonia
+la,PL,🇵🇱
+la,PT,Lusitania
+la,PT,Portugallia
+la,RO,Romania
+la,RS,Serbia
+la,RU,Foederatio Rossica
+la,RU,Foederatio Russica
+la,RU,Foederatio Ruthenica
+la,RU,Fœderatio Rossica
+la,RU,Fœderatio Russica
+la,RU,Fœderatio Ruthenica
+la,RU,Rossia
+la,RU,Russia
+la,RU,Ruthenia
+la,SE,Suecia
+la,SI,Slovenia
+la,SK,Slovacia
+la,SM,Res publica Sancti Marini
+la,TR,Turcia
+la,UA,Ucraina
+la,VA,Civitas Vaticana
+la,VA,Status Civitatis Vaticanae
+la,VA,Status Civitatis Vaticanæ
+lb,AD,Andorra
+lb,AL,Albanien
+lb,AM,Armenien
+lb,AT,Republik Éisträich
+lb,AT,Éisträich
+lb,AZ,Aserbaidschan
+lb,BA,Bosnien-Herzegowina
+lb,BE,Belsch
+lb,BG,Bulgarien
+lb,BY,Wäissrussland
+lb,CH,CH
+lb,CH,SUI
+lb,CH,Schwäiz
+lb,CY,Zypern
+lb,CZ,Tschechesch Republik
+lb,DE,Däitschland
+lb,DK,Dänemark
+lb,EE,Estland
+lb,ES,Spuenien
+lb,FI,Finnland
+lb,FO,Färöer
+lb,FR,Frankräich
+lb,GB,Vereenegt Kinnekräich
+lb,GE,Georgien
+lb,GR,Griicheland
+lb,HR,Kroatien
+lb,HU,Ungarn
+lb,IE,Irland
+lb,IE,Republik Irland
+lb,IE,Éire
+lb,IS,Island
+lb,IT,Italieenesch Republik
+lb,IT,Italien
+lb,KZ,Kasachstan
+lb,LI,Liechtenstein
+lb,LT,Litauen
+lb,LU,Grand-Duché
+lb,LU,Grand-Duché de Luxembourg
+lb,LU,Groussherzogtum Lëtzebuerg
+lb,LU,Lëtzebuerg
+lb,LU,Lëtzebuerger Land
+lb,LV,Lettland
+lb,MC,Monaco
+lb,MD,Moldawien
+lb,ME,Montenegro
+lb,MK,FYROM
+lb,MK,Former Yugoslav Republic of Macedonia
+lb,MK,Fréier Jugoslawesch Republik Mazedonien
+lb,MK,Mazedonien
+lb,MK,Nordmazedonien
+lb,MK,Republik Makedonien
+lb,MK,Republik Mazedonien
+lb,MK,Republik Nordmazedonien
+lb,MK,Republik Severna-Mazedonien
+lb,MK,Republik Skopje
+lb,MK,Severna-Mazedonien
+lb,MK,mk
+lb,MT,Malta
+lb,NL,Holland
+lb,NO,Norwegen
+lb,PL,Polen
+lb,PL,🇵🇱
+lb,PT,Portugal
+lb,RO,Rumänien
+lb,RS,Serbien
+lb,RU,Rossija
+lb,RU,Russesch Federatioun
+lb,RU,Russesch Federatiounsrepublik
+lb,RU,Russland
+lb,SE,Schweden
+lb,SI,Slowenien
+lb,SK,Slowakei
+lb,SM,San Marino
+lb,TR,Tierkei
+lb,UA,Ukrain
+lb,VA,Vatikanstad
+lt,AD,Andora
+lt,AL,Albanija
+lt,AL,Albanijos Respublika
+lt,AM,Armėnija
+lt,AT,Austrija
+lt,AZ,Azerbaidžanas
+lt,BA,Bosnija ir Hercegovina
+lt,BE,Belgija
+lt,BG,Bulgarija
+lt,BY,Baltarusija
+lt,CH,CH
+lt,CH,Šveicarija
+lt,CH,Šveicarijos Konfederacija
+lt,CY,Kipras
+lt,CZ,Čekija
+lt,DE,Vokietija
+lt,DK,Danija
+lt,DK,Danija
+lt,EE,Estija
+lt,ES,Ispanija
+lt,FI,Suomija
+lt,FO,Farerai
+lt,FO,Farerų Salos
+lt,FR,Prancuzija
+lt,FR,Prancūzija
+lt,FR,Prancūzijos Respublika
+lt,GB,JK
+lt,GB,Jungtinė Karalystė
+lt,GE,Gruzija
+lt,GE,Sakartvelas
+lt,GR,Graikija
+lt,HR,Kroatija
+lt,HU,Vengrija
+lt,IE,Airija
+lt,IE,Airijos Respublika
+lt,IS,Islandija
+lt,IT,Italija
+lt,KZ,Kazachstanas
+lt,LI,Lichtenšteinas
+lt,LT,Lietuva
+lt,LT,Lietuvos Respublika
+lt,LU,Liuksemburgas
+lt,LV,Latvija
+lt,MC,Monakas
+lt,MD,Moldavija
+lt,ME,Juodkalnija
+lt,MK,Makedonija
+lt,MK,Šiaurės Makedonija
+lt,MT,Malta
+lt,NL,Nyderlandai
+lt,NL,Nyderlandai
+lt,NO,Norvegija
+lt,PL,Lenkija
+lt,PL,PL
+lt,PL,🇵🇱
+lt,PT,Portugalija
+lt,RO,Rumunija
+lt,RS,Serbija
+lt,RU,Rusija
+lt,RU,Rusijos Federacija
+lt,SE,Švedija
+lt,SI,Slovėnija
+lt,SK,Slovakija
+lt,SM,San Marinas
+lt,TR,Turkija
+lt,UA,Ukraina
+lt,VA,Vatikanas
+lv,AD,Andora
+lv,AL,Albānija
+lv,AL,Albānijas Republika
+lv,AM,Armēnija
+lv,AT,Austrija
+lv,AZ,Azerbaidžāna
+lv,BA,Bosnija un Hercegovina
+lv,BE,Beļģija
+lv,BG,BGR
+lv,BG,BUL
+lv,BG,Bulgaria
+lv,BG,Bulgārija
+lv,BG,Bulgārijas Republika
+lv,BY,Baltkrievija
+lv,CH,CH
+lv,CH,Šveice
+lv,CY,Kipra
+lv,CZ,Čehija
+lv,DE,Vācija
+lv,DK,Dānija
+lv,DK,Dānijas Karaliste
+lv,DK,Dānijas Karaļvalsts
+lv,EE,Igaunija
+lv,ES,Spānija
+lv,FI,Somija
+lv,FO,FRO
+lv,FO,Farēru Salas
+lv,FO,Fēras
+lv,FO,Fēru Salas
+lv,FO,Fēru salas
+lv,FR,Francija
+lv,FR,Francijas Karaliste
+lv,FR,Francijas Republika
+lv,FR,République française
+lv,GB,Apvienotā Karaliste
+lv,GE,Gruzija
+lv,GR,Grieķija
+lv,HR,Horvātija
+lv,HU,Ungārija
+lv,IE,IRL
+lv,IE,Īrija
+lv,IE,Īrijas republika
+lv,IS,Islande
+lv,IT,Itālija
+lv,KZ,Kazahstāna
+lv,LI,Fürstentum Liechtenstein
+lv,LI,Lihtenšteina
+lv,LI,Lihtenšteinas Firstiste
+lv,LT,Lietuva
+lv,LU,LUX
+lv,LU,Luksemburga
+lv,LU,Luksemburgas Lielhercogiste
+lv,LU,Luxembourg
+lv,LV,LAT
+lv,LV,LVA
+lv,LV,Latvija
+lv,LV,Latvijas Republika
+lv,MC,Monako
+lv,MD,Moldova
+lv,ME,Melnkalne
+lv,MK,Maķedonija
+lv,MK,Ziemeļmaķedonija
+lv,MK,Ziemeļmaķedonijas Republika
+lv,MK,Ziemeļu Maķedonija
+lv,MK,Ziemeļu Maķedonijas Republika
+lv,MT,Malta
+lv,NL,Nīderlande
+lv,NL,Nīderlandes Karaliste
+lv,NO,Norvēģija
+lv,PL,POL
+lv,PL,Polija
+lv,PL,🇵🇱
+lv,PT,Portugāle
+lv,RO,Rumānija
+lv,RS,Serbija
+lv,RS,Serbijas Republika
+lv,RU,Krievija
+lv,SE,Zviedrija
+lv,SI,Slovēnija
+lv,SK,Slovākija
+lv,SM,Sanmarīno
+lv,TR,Turcija
+lv,TR,Turcijas Republika
+lv,UA,Ukraina
+lv,VA,Vatikāns
+mk,AD,Андора
+mk,AL,Албанија
+mk,AL,Република Албанија
+mk,AM,Ерменија
+mk,AT,Австрија
+mk,AZ,Азербејџан
+mk,BA,БиХ
+mk,BA,Босна и Херцеговина
+mk,BE,Белгија
+mk,BE,Кралство Белгија
+mk,BG,Бугарија
+mk,BY,Белорусија
+mk,CH,CH
+mk,CH,Швајцарија
+mk,CY,Кипар
+mk,CZ,Чешка
+mk,DE,Германија
+mk,DK,Данска
+mk,DK,Данска
+mk,EE,Естонија
+mk,ES,Шпанија
+mk,FI,Финска
+mk,FO,Фарски Острови
+mk,FR,Франција
+mk,GB,Британија
+mk,GB,Велика Британија
+mk,GB,Обединето Кралство
+mk,GB,Обединето Кралство на Велика Британија и Северна Ирска
+mk,GE,Грузија
+mk,GR,Грција
+mk,HR,Хрватска
+mk,HU,Унгарија
+mk,IE,Ирска
+mk,IS,Исланд
+mk,IT,Италија
+mk,KZ,Казахстан
+mk,LI,Лихтенштајн
+mk,LT,Литванија
+mk,LU,Луксембург
+mk,LV,Латвија
+mk,MC,Монако
+mk,MD,Молдавија
+mk,ME,Црна Гора
+mk,MK,Македонија
+mk,MK,РМ
+mk,MK,РСМ
+mk,MK,Република Македонија
+mk,MK,Република Северна Македонија
+mk,MK,Северна Македонија
+mk,MT,Малта
+mk,NL,Кралство Холандија
+mk,NL,Холандија
+mk,NO,Норвешка
+mk,PL,Полска
+mk,PL,🇵🇱
+mk,PT,Португалија
+mk,RO,Романија
+mk,RS,Србија
+mk,RU,Русија
+mk,SE,Шведска
+mk,SI,Словенија
+mk,SK,Словачка
+mk,SM,Сан Марино
+mk,TR,Турција
+mk,UA,Украина
+mk,VA,Ватикан
+mt,AD,Andorra
+mt,AL,Albanija
+mt,AL,Repubblika tal-Albanija
+mt,AM,Armenja
+mt,AT,Awstrija
+mt,AZ,Ażerbajġan
+mt,BA,Bożnija u Ħerżegovina
+mt,BE,Belġju
+mt,BG,Bulgarija
+mt,BY,Belarus
+mt,CH,CH
+mt,CH,Żvizzera
+mt,CY,Ċipru
+mt,CZ,Repubblika Ċeka
+mt,DE,Ġermanja
+mt,DK,Danimarka
+mt,DK,Danimarka
+mt,EE,Estonja
+mt,ES,Spanja
+mt,FI,Finlandja
+mt,FO,Gżejjer Faroe
+mt,FR,Franza
+mt,GB,Ir-Renju Unit
+mt,GE,Ġeorġja
+mt,GR,Greċja
+mt,HR,Kroazja
+mt,HU,Ungerija
+mt,IE,Repubblika Irlandiża
+mt,IE,Repubblika ta' l-Irlanda
+mt,IE,Repubblika tal-Irlanda
+mt,IS,Iżlanda
+mt,IT,Italja
+mt,KZ,Każakistan
+mt,LI,Liechtenstein
+mt,LT,Litwanja
+mt,LU,Lussemburgu
+mt,LV,Latvja
+mt,MC,Monako
+mt,MD,Moldova
+mt,ME,Montenegro
+mt,MK,Maċedonja ta' Fuq
+mt,MK,Repubblika tal-Maċedonja
+mt,MK,Repubblika tal-Maċedonja ta' Fuq
+mt,MT,Malta
+mt,NL,Pajjiżi l-Baxxi
+mt,NL,Renju tal-Pajjiżi l-Baxxi
+mt,NO,Norveġja
+mt,PL,POL
+mt,PL,Polonja
+mt,PL,🇵🇱
+mt,PT,Portugall
+mt,RO,Rumanija
+mt,RS,Serbja
+mt,RU,Russja
+mt,SE,Żvezja
+mt,SI,Slovenja
+mt,SK,Slovakkja
+mt,SM,San Marino
+mt,TR,Turkija
+mt,UA,Ukrajna
+mt,VA,Belt tal-Vatikan
+nb,AD,Andorra
+nb,AD,Fyrstedømmet Andorra
+nb,AL,Albania
+nb,AM,Armenia
+nb,AT,Østerrike
+nb,AZ,Aserbajdsjan
+nb,AZ,Republikken Aserbajdsjan
+nb,BA,Bosnia-Hercegovina
+nb,BE,Belgia
+nb,BE,Kongeriket Belgia
+nb,BG,BGR
+nb,BG,Bulgar
+nb,BG,Bulgarar
+nb,BG,Bulgarerne
+nb,BG,Bulgaria
+nb,BG,Republikken Bulgaria
+nb,BY,Hviterussland
+nb,BY,Republikken Hviterussland
+nb,CH,Confœderatio Helvetica
+nb,CH,Det sveitsiske edsforbund
+nb,CH,Konføderasjonen Sveits
+nb,CH,Sveits
+nb,CY,Kypros
+nb,CY,Republikken Kypros
+nb,CZ,Den tsjekkiske republikk
+nb,CZ,Tsjekkia
+nb,DE,Forbundsrepublikken Tyskland
+nb,DE,Tyskland
+nb,DK,Danmark
+nb,DK,Kongeriket Danmark
+nb,DK,Kongeriket Danmark
+nb,EE,Estland
+nb,EE,Republikken Estland
+nb,ES,España
+nb,ES,Estado español
+nb,ES,Reino de España
+nb,ES,Spania
+nb,ES,Spanien
+nb,FI,Finland
+nb,FI,Republikken Finland
+nb,FO,Færøerne
+nb,FO,Færøyane
+nb,FO,Færøyene
+nb,FO,Færøying
+nb,FO,Føroyar
+nb,FR,Frankrike
+nb,FR,Republikken Frankrike
+nb,GB,Det forente kongeriket
+nb,GB,Det forente kongeriket Storbritannia og Nord-Irland
+nb,GB,Storbritannia
+nb,GE,Georgia
+nb,GR,Den hellenske republikk
+nb,GR,Grekenland
+nb,GR,Hellas
+nb,HR,Kroatia
+nb,HR,Republikken Kroatia
+nb,HU,Ungarn
+nb,IE,Irland
+nb,IE,republikken Irland
+nb,IE,Éire
+nb,IS,Island
+nb,IT,Den italienske republikk
+nb,IT,Italia
+nb,KZ,Kasakhstan
+nb,KZ,Republikken Kasakhstan
+nb,LI,Fyrstedømmet Liechtenstein
+nb,LI,Liechtenstein
+nb,LT,Litauen
+nb,LT,Republikken Litauen
+nb,LU,Luxembourg
+nb,LU,Luxemburg
+nb,LV,Latvia
+nb,LV,Lettland
+nb,LV,Republikken Latvia
+nb,MC,Fyrstedømmet Monaco
+nb,MC,Monaco
+nb,MD,Moldova
+nb,MD,Republikken Moldova
+nb,ME,Montenegro
+nb,ME,Republikken Montenegro
+nb,MK,Den tidligere jugoslaviske republikken Makedonia
+nb,MK,FYROM
+nb,MK,Makedonia
+nb,MK,Nord-Makedonia
+nb,MK,Republikken Makedonia
+nb,MK,Republikken Nord-Makedonia
+nb,MK,mk
+nb,MT,Malta
+nb,MT,Republikken Malta
+nb,NL,Holland
+nb,NL,Kongeriket Nederland
+nb,NL,Kongeriket Nederlandene
+nb,NL,NL
+nb,NL,Nederland
+nb,NO,Kongeriket Norge
+nb,NO,Kongeriket Norge/Noreg
+nb,NO,Noreg
+nb,NO,Norge
+nb,PL,PL
+nb,PL,POL
+nb,PL,Polen
+nb,PL,Republikken Polen
+nb,PT,Portugal
+nb,RO,Romania
+nb,RS,Serbia
+nb,RU,Den russiske føderasjon
+nb,RU,Russland
+nb,SE,Kongeriket Sverige
+nb,SE,Sverige
+nb,SI,Republikken Slovenia
+nb,SI,Slovenia
+nb,SK,Den slovakiske republikk
+nb,SK,Slovakia
+nb,SM,Republikken San Marino
+nb,SM,San Marino
+nb,TR,Tyrkia
+nb,UA,Ukraina
+nb,VA,Vatikanet
+nb,VA,Vatikanstaten
+nl,AD,AD
+nl,AD,AND
+nl,AD,Andorra
+nl,AL,AL
+nl,AL,ALB
+nl,AL,Albanie
+nl,AL,Albanië
+nl,AM,AM
+nl,AM,ARM
+nl,AM,Armenie
+nl,AM,Armenië
+nl,AT,AT
+nl,AT,AUT
+nl,AT,Oostenrijk
+nl,AZ,AZ
+nl,AZ,AZE
+nl,AZ,Azerbeidzjan
+nl,BA,BA
+nl,BA,BIH
+nl,BA,Bosnie en Herzegovina
+nl,BA,Bosnië en Herzegovina
+nl,BA,Bosnië-Herzegovina
+nl,BE,BE
+nl,BE,BEL
+nl,BE,Belgenland
+nl,BE,Belgie
+nl,BE,België
+nl,BE,Koninkrijk België
+nl,BE,be
+nl,BE,🇧🇪
+nl,BG,BG
+nl,BG,BGR
+nl,BG,Bulgarije
+nl,BY,BLR
+nl,BY,BY
+nl,BY,Belarus
+nl,BY,Wit-Rusland
+nl,CH,CH
+nl,CH,CHE
+nl,CH,Zwitserland
+nl,CH,Zwitsers Eedgenootschap
+nl,CH,Zwitserse Bondsstaat
+nl,CH,Zwitserse Confederatie
+nl,CY,CY
+nl,CY,CYP
+nl,CY,Cyprus
+nl,CZ,CZ
+nl,CZ,CZE
+nl,CZ,Tsjechie
+nl,CZ,Tsjechische Republiek
+nl,CZ,Tsjechië
+nl,DE,Bondsrepubliek
+nl,DE,Bondsrepubliek Duitsland
+nl,DE,DE
+nl,DE,DEU
+nl,DE,Duitsland
+nl,DK,DK
+nl,DK,DNK
+nl,DK,Denemarken
+nl,DK,Koninkrijk Denemarken
+nl,EE,EE
+nl,EE,EST
+nl,EE,Estland
+nl,ES,ES
+nl,ES,ESP
+nl,ES,Koninkrijk Spanje
+nl,ES,Spanje
+nl,FI,FI
+nl,FI,FIN
+nl,FI,Finland
+nl,FI,Republiek Finland
+nl,FO,FO
+nl,FO,FRO
+nl,FO,Faeroer
+nl,FO,Faeroer Eilanden
+nl,FO,Faeroer-eilanden
+nl,FO,Faeroereilanden
+nl,FO,Faeroerne
+nl,FO,Faeroër
+nl,FO,Faeroër-eilanden
+nl,FO,Faeröer
+nl,FO,Faeröer eilanden
+nl,FO,Faeröer-eilanden
+nl,FO,Faeröereilanden
+nl,FO,Faerøer
+nl,FO,Faerøer Eilanden
+nl,FO,Faerøer-eilanden
+nl,FO,Faerøereilanden
+nl,FO,Faerøerne
+nl,FO,Far Oer
+nl,FO,Fareur
+nl,FO,Faroe Islands
+nl,FO,Faroer
+nl,FO,Faroer Eilanden
+nl,FO,Faröer
+nl,FO,Foroyar
+nl,FO,Färöer
+nl,FO,Færöer
+nl,FO,Færøer
+nl,FO,Færøerne
+nl,FO,Føroyar
+nl,FR,FR
+nl,FR,FRA
+nl,FR,Frankrijk
+nl,FR,Franse Republiek
+nl,GB,GB
+nl,GB,GBR
+nl,GB,UK
+nl,GB,United Kingdom
+nl,GB,United Kingdom of England, Scotland and Wales
+nl,GB,United Kingdom of Great Britain and Northern Ireland
+nl,GB,V.K.
+nl,GB,VK
+nl,GB,Verenigd Koninkrijk
+nl,GB,Verenigd Koninkrijk van Groot-Brittannie en Noord-Ierland
+nl,GB,Verenigd Koninkrijk van Groot-Brittannië en Noord-Ierland
+nl,GB,Verenigd Konkrijk
+nl,GB,Verenigde Koningrijk
+nl,GB,Y Deyrnas Unedig
+nl,GE,GE
+nl,GE,GEO
+nl,GE,Georgie
+nl,GE,Georgië
+nl,GR,GR
+nl,GR,GRC
+nl,GR,Griekenland
+nl,HR,HR
+nl,HR,HRV
+nl,HR,Kroatie
+nl,HR,Kroatië
+nl,HR,Republiek Kroatië
+nl,HU,HU
+nl,HU,HUN
+nl,HU,Hongarije
+nl,IE,IE
+nl,IE,IRL
+nl,IE,Ierland
+nl,IE,Republic of Ireland
+nl,IE,Republiek Ierland
+nl,IE,Éire
+nl,IS,IJsland
+nl,IS,IS
+nl,IS,ISL
+nl,IT,IT
+nl,IT,ITA
+nl,IT,Italiaanse Republiek
+nl,IT,Italie
+nl,IT,Italië
+nl,IT,Republiek Italië
+nl,KZ,KAZ
+nl,KZ,KZ
+nl,KZ,Kazachstan
+nl,KZ,Qazaqstan
+nl,LI,LI
+nl,LI,LIE
+nl,LI,Liechtenstein
+nl,LT,LT
+nl,LT,LTU
+nl,LT,Litouwen
+nl,LU,LU
+nl,LU,LUX
+nl,LU,Luxembourg
+nl,LU,Luxemburg
+nl,LU,Luxemburg (land)
+nl,LV,LV
+nl,LV,LVA
+nl,LV,Letland
+nl,MC,MC
+nl,MC,MCO
+nl,MC,Monaco
+nl,MD,MD
+nl,MD,MDA
+nl,MD,Moldavie
+nl,MD,Moldavië
+nl,ME,ME
+nl,ME,MNE
+nl,ME,Montenegro
+nl,MK,MK
+nl,MK,MKD
+nl,MK,Macedonië
+nl,MK,Noord-Macedonië
+nl,MK,Republiek Macedonië
+nl,MK,Voormalige Joegoslavische Republiek Macedonië
+nl,MK,macedonie
+nl,MK,mk
+nl,MT,MLT
+nl,MT,MT
+nl,MT,Malta
+nl,NL,Holland
+nl,NL,Koninkrijk der Nederlanden
+nl,NL,NED
+nl,NL,NED
+nl,NL,NL
+nl,NL,NL
+nl,NL,NLD
+nl,NL,Nederland
+nl,NL,Nederland
+nl,NL,Q55
+nl,NL,de Nederlanden
+nl,NL,nl
+nl,NL,z,.
+nl,NL,🇳🇱
+nl,NO,NO
+nl,NO,NOR
+nl,NO,Noorwegen
+nl,PL,PL
+nl,PL,POL
+nl,PL,Polen
+nl,PL,Republiek Polen
+nl,PL,🇵🇱
+nl,PT,PRT
+nl,PT,PT
+nl,PT,Portugal
+nl,PT,Portugese Republiek
+nl,RO,RO
+nl,RO,ROU
+nl,RO,Roemenie
+nl,RO,Roemenië
+nl,RS,RS
+nl,RS,SRB
+nl,RS,Servie
+nl,RS,Servië
+nl,RU,RU
+nl,RU,RUS
+nl,RU,Rusland
+nl,RU,Russische Federatie
+nl,SE,SE
+nl,SE,SWE
+nl,SE,Zweden
+nl,SI,Republiek Slovenië
+nl,SI,SI
+nl,SI,SVN
+nl,SI,Slovenie
+nl,SI,Slovenië
+nl,SK,SK
+nl,SK,SVK
+nl,SK,Slowakije
+nl,SM,SM
+nl,SM,SMR
+nl,SM,San Marino
+nl,TR,Republiek Turkije
+nl,TR,TR
+nl,TR,TUR
+nl,TR,Turkije
+nl,UA,Oekraiene
+nl,UA,Oekraine
+nl,UA,Oekraïne
+nl,UA,UA
+nl,UA,UKR
+nl,VA,VA
+nl,VA,VAT
+nl,VA,Vaticaanstad
+nn,AD,Andorra
+nn,AL,Albania
+nn,AM,Armenia
+nn,AT,Austerrike
+nn,AT,Republikken Austerrike
+nn,AZ,Aserbajdsjan
+nn,BA,Bosnia
+nn,BA,Bosnia-Hercegovina
+nn,BE,Belgia
+nn,BG,Bulgaria
+nn,BY,Kviterussland
+nn,CH,CH
+nn,CH,Confœderatio Helvetica
+nn,CH,Det sveitsiske eidsforbundet
+nn,CH,Konføderasjonen Sveits
+nn,CH,Sveits
+nn,CY,Kypros
+nn,CY,Republikken Kypros
+nn,CZ,Tsjekkia
+nn,DE,Forbundsrepublikken Tyskland
+nn,DE,Tyskland
+nn,DK,Danmark
+nn,DK,Kongeriket Danmark
+nn,EE,Estland
+nn,ES,Spania
+nn,FI,Finland
+nn,FO,Färöarna
+nn,FO,Færøene
+nn,FO,Færøerne
+nn,FO,Færøyane
+nn,FO,Færøyene
+nn,FO,Føroyar
+nn,FR,Frankrike
+nn,GB,Det sameinte kongeriket
+nn,GB,Det sameinte kongeriket Storbritannia og Nord-Irland
+nn,GB,Storbritannia
+nn,GE,Georgia
+nn,GR,Hellas
+nn,HR,Kroatia
+nn,HU,Ungarn
+nn,IE,Den irske republikken
+nn,IE,Eire
+nn,IE,Irland
+nn,IS,Island
+nn,IT,Italia
+nn,KZ,Kasakhstan
+nn,LI,Liechtenstein
+nn,LT,Litauen
+nn,LU,Luxembourg
+nn,LV,Latvia
+nn,MC,Monaco
+nn,MD,Moldova
+nn,ME,Montenegro
+nn,MK,Makedonia
+nn,MK,Nord-Makedonia
+nn,MK,Republikken Nord-Makedonia
+nn,MK,mk
+nn,MT,Malta
+nn,NL,Kongeriket Nederlanda
+nn,NL,Nederland
+nn,NO,Kongeriket Noreg
+nn,NO,Noreg
+nn,NO,Norge
+nn,PL,Polen
+nn,PL,🇵🇱
+nn,PT,Portugal
+nn,RO,Romania
+nn,RS,Serbia
+nn,RU,Russland
+nn,SE,Kongedømet Sverige
+nn,SE,Sverige
+nn,SI,Slovenia
+nn,SK,Slovakia
+nn,SM,San Marino
+nn,TR,Tyrkia
+nn,UA,Ukraina
+nn,VA,Vatikanet
+nn,VA,Vatikanstaten
+oc,AD,Andòrra
+oc,AL,Albania
+oc,AM,Armenia
+oc,AT,Àustria
+oc,AZ,Azerbaitjan
+oc,BA,Bòsnia e Ercegovina
+oc,BE,Belgica
+oc,BG,Bulgaria
+oc,BG,Republica de Bulgaria
+oc,BY,Bielorussia
+oc,CH,CH
+oc,CH,Soïssa
+oc,CY,Chipre
+oc,CZ,Republica Chèca
+oc,DE,Alemanha
+oc,DK,Danemarc
+oc,DK,Danemarc
+oc,EE,Estònia
+oc,ES,Espanha
+oc,ES,Estat espanhòl
+oc,FI,Finlàndia
+oc,FO,Illas Feròe
+oc,FR,Estat francés
+oc,FR,França
+oc,FR,Republica francesa
+oc,GB,Reialme Unit
+oc,GE,Georgia
+oc,GR,Grècia
+oc,HR,Croàcia
+oc,HU,Ongria
+oc,IE,Irlanda
+oc,IE,Republica d'Irlanda
+oc,IS,Islàndia
+oc,IT,Estat italian
+oc,IT,Itàlia
+oc,IT,Republica italiana
+oc,KZ,Cazacstan
+oc,LI,Liechtenstein
+oc,LT,Lituània
+oc,LU,Luxemborg
+oc,LV,Letònia
+oc,MC,Mónegue
+oc,MD,Moldàvia
+oc,ME,Montenegro
+oc,MK,Macedònia del Nòrd
+oc,MK,Republica de Macedònia del Nòrd
+oc,MK,mk
+oc,MT,Malta
+oc,NL,Païses Basses
+oc,NL,Reiaume dels Païses Basses
+oc,NO,Norvègia
+oc,PL,Polonha
+oc,PL,🇵🇱
+oc,PT,Portugal
+oc,RO,Romania
+oc,RS,Serbia
+oc,RU,Russia
+oc,SE,Suècia
+oc,SI,Eslovènia
+oc,SK,Eslovaquia
+oc,SM,Sant Marin
+oc,TR,Turquia
+oc,UA,UA
+oc,UA,UKR
+oc,UA,Ucraïna
+oc,UA,🇺🇦
+oc,VA,Vatican
+os,AD,Андоррæ
+os,AL,Албани
+os,AM,Сомих
+os,AT,Австри
+os,AZ,Азербайджан
+os,BA,Босни æмæ Герцеговинæ
+os,BE,Бельги
+os,BG,Болгари
+os,BY,Белорусси
+os,CH,CH
+os,CH,Швейцари
+os,CY,Кипр
+os,CZ,Чехи
+os,DE,Герман
+os,DK,Дани
+os,EE,Эстони
+os,ES,Испани
+os,FI,Финлянди
+os,FO,Фарераг сакъадæхтæ
+os,FO,Фарертæ
+os,FO,Фареры сакъадæхтæ
+os,FR,Франц
+os,FR,Франци
+os,GB,Стыр Британи
+os,GE,Гуырдзыстон
+os,GR,Грекъ
+os,HR,Хорвати
+os,HU,Венгри
+os,IE,Ирланди
+os,IS,Исланди
+os,IT,Итали
+os,KZ,Хъазахстан
+os,LI,Лихтенштейн
+os,LT,Литва
+os,LU,Люксембург
+os,LV,Латви
+os,MC,Монако
+os,MD,Молдави
+os,ME,Черногори
+os,MK,Республикæ Македони
+os,MK,Цæгат Македони
+os,MT,Мальтæ
+os,NL,Нидерландтæ
+os,NO,Норвеги
+os,PL,POL
+os,PL,Польшæ
+os,PL,🇵🇱
+os,PT,Португали
+os,RO,Румыни
+os,RS,Серби
+os,RU,Уæрæсе
+os,SE,Швеци
+os,SI,Словени
+os,SK,Словаки
+os,SM,Сан-Марино
+os,TR,Турк
+os,UA,Украинæ
+os,VA,Ватикан
+pl,AD,Andora
+pl,AD,Księstwo Andory
+pl,AL,Albania
+pl,AM,Armenia
+pl,AT,Austria
+pl,AZ,Azerbejdżan
+pl,BA,Bośnia i Hercegowina
+pl,BE,Belgia
+pl,BE,Królestwo Belgii
+pl,BG,Bułgaria
+pl,BG,Republika Bułgarii
+pl,BY,Biała Ruś
+pl,BY,Białoruś
+pl,BY,Republika Białorusi
+pl,CH,CH
+pl,CH,Confederazione Svizzera
+pl,CH,Confederaziun svizra
+pl,CH,Confédération suisse
+pl,CH,Konfederacja Szwajcarska
+pl,CH,Schweiz
+pl,CH,Schweizerische Eidgenossenschaft
+pl,CH,Svizzera
+pl,CH,Szwajcaria
+pl,CY,Cypr
+pl,CZ,Czechia
+pl,CZ,Czechy
+pl,CZ,Republika Czeska
+pl,CZ,ČR
+pl,CZ,Česko
+pl,CZ,Česká republika
+pl,DE,BR Deutschland
+pl,DE,BRD
+pl,DE,Bundesrepublik Deutschland
+pl,DE,Deutschland
+pl,DE,Niemcy
+pl,DK,Dania
+pl,DK,Królestwo Danii
+pl,EE,EST
+pl,EE,Eesti
+pl,EE,Estonia
+pl,EE,Republika Estonii
+pl,EE,ee
+pl,EE,🇪🇪
+pl,ES,Hiszpania
+pl,FI,Finlandia
+pl,FO,Færøerne
+pl,FO,Føroyar
+pl,FO,Wyspy Owcze
+pl,FR,Francja
+pl,FR,Republika Francji
+pl,FR,Republika Francuska
+pl,GB,Wielka Brytania
+pl,GB,Zjednoczone Królestwo Wielkiej Brytanii i Irlandii Północnej
+pl,GE,Gruzja
+pl,GR,Grecja
+pl,GR,Hellada
+pl,GR,Republika Grecka
+pl,HR,Chorwacja
+pl,HR,Hrvatska
+pl,HR,Republika Chorwacji
+pl,HU,Węgry
+pl,IE,Irlandia
+pl,IS,Islandia
+pl,IT,Włochy
+pl,KZ,Kazachstan
+pl,LI,Księstwo Liechtensteinu
+pl,LI,Liechtenstein
+pl,LT,Litwa
+pl,LT,Litwie
+pl,LU,Luksemburg
+pl,LV,Łotwa
+pl,MC,Monako
+pl,MD,Mołdawia
+pl,ME,Czarnogóra
+pl,MK,Była Jugosłowiańska Republika Macedonii
+pl,MK,FYROM
+pl,MK,Macedonia
+pl,MK,Macedonia Północna
+pl,MK,Republika Macedonii
+pl,MK,Republika Macedonii Północnej
+pl,MK,mk
+pl,MT,Malta
+pl,NL,Holandia
+pl,NL,Holandia
+pl,NL,Koninkrijk der Nederlanden
+pl,NL,Królestwo Niderlandów
+pl,NL,NL
+pl,NL,Nederland
+pl,NL,Niderlandy
+pl,NL,Niderlandy
+pl,NO,Norwegia
+pl,PL,PL
+pl,PL,POL
+pl,PL,Polska
+pl,PL,RP
+pl,PL,Rzeczpospolita Polska
+pl,PL,🇵🇱
+pl,PT,Portugalia
+pl,RO,Rumunia
+pl,RS,Serbia
+pl,RU,Federacja Rosyjska
+pl,RU,Rosja
+pl,SE,Królestwo Szwecji
+pl,SE,Szwecja
+pl,SI,Republika Slovenija
+pl,SI,Republika Słowenii
+pl,SI,Slovenija
+pl,SI,Słowenia
+pl,SI,si
+pl,SI,slo
+pl,SI,svn
+pl,SI,🇸🇮
+pl,SK,Slovensko
+pl,SK,Słowacja
+pl,SM,San Marino
+pl,TR,Turcja
+pl,UA,Ukraina
+pl,UA,Україна
+pl,VA,Watykan
+pt,AD,Andorra
+pt,AL,Albânia
+pt,AL,República da Albânia
+pt,AM,Armenia
+pt,AM,Arménia
+pt,AM,Categoria:Armênia
+pt,AT,República da Áustria
+pt,AT,Áustria
+pt,AZ,Azerbaijão
+pt,BA,Bósnia e Herzegovina
+pt,BE,Bélgica
+pt,BG,Bulgaria
+pt,BG,Bulgária
+pt,BG,República da Bulgária
+pt,BY,Bielorrússia
+pt,BY,Republica da Bielorrussia
+pt,CH,CH
+pt,CH,Confederação Suíça
+pt,CH,Suíça
+pt,CY,Chipre
+pt,CZ,Chéquia
+pt,CZ,República Checa
+pt,CZ,República Tcheca
+pt,CZ,Tchéquia
+pt,DE,Alemanha
+pt,DK,Dinamarca
+pt,DK,Reino da Dinamarca
+pt,DK,Trono dinamarquês
+pt,EE,Eesti
+pt,EE,Eesti Vabariik
+pt,EE,Estonia
+pt,EE,Estónia
+pt,EE,República da Estónia
+pt,ES,Espanha
+pt,ES,Reino da Espanha
+pt,ES,Reino de Espanha
+pt,FI,Finlândia
+pt,FI,República da Finlândia
+pt,FO,Faeroe
+pt,FO,Faeroes
+pt,FO,Faroe
+pt,FO,Faroes
+pt,FO,Faroé
+pt,FO,Feroé
+pt,FO,Féroe
+pt,FO,Féroes
+pt,FO,Ilhas Faeroe
+pt,FO,Ilhas Faeroé
+pt,FO,Ilhas Faroe
+pt,FO,Ilhas Faroes
+pt,FO,Ilhas Faroé
+pt,FO,Ilhas Faroés
+pt,FO,Ilhas Feroe
+pt,FO,Ilhas Feroé
+pt,FO,Ilhas Feroés
+pt,FO,Ilhas Féroe
+pt,FO,Ilhas Féroes
+pt,FR,Franca
+pt,FR,França
+pt,GB,GB
+pt,GB,GBR
+pt,GB,Reino Unido
+pt,GB,Reino Unido da Grã-Bretanha e Irlanda do Norte
+pt,GB,🇬🇧
+pt,GE,Geórgia
+pt,GR,Grécia
+pt,HR,Croacia
+pt,HR,Croácia
+pt,HR,Republica da Croacia
+pt,HU,Hungria
+pt,IE,Irlanda
+pt,IE,República da Irlanda
+pt,IS,Islândia
+pt,IT,Itália
+pt,KZ,Cazaquistao
+pt,KZ,Cazaquistão
+pt,KZ,Republica do Cazaquistao
+pt,KZ,República do Cazaquistão
+pt,LI,Liechtenstein
+pt,LT,Categoria:Lituânia
+pt,LT,Lituânia
+pt,LT,República da Lituânia
+pt,LU,Grão-Ducado de Luxemburgo
+pt,LU,Grão-de-bico do Luxemburgo
+pt,LU,Luxemburgo
+pt,LU,de Luxemburgo
+pt,LV,Letonia
+pt,LV,Letónia
+pt,LV,Republica da Letonia
+pt,LV,República da Letónia
+pt,MC,Monaco
+pt,MC,Mónaco
+pt,MC,Principado do Mónaco
+pt,MD,Moldova
+pt,MD,Moldávia
+pt,MD,Republica Moldova
+pt,MD,Republica da Moldavia
+pt,MD,República Moldova
+pt,ME,Montenegro
+pt,MK,ARIM
+pt,MK,ARJM
+pt,MK,Antiga República iugoslava da Macedônia
+pt,MK,Antiga República jugoslava da Macedónia
+pt,MK,Macedónia
+pt,MK,Macedónia do Norte
+pt,MK,Macedônia do Norte
+pt,MK,República da Macedónia
+pt,MK,República da Macedónia do Norte
+pt,MK,República da Macedônia
+pt,MK,República da Macedônia do Norte
+pt,MK,mk
+pt,MT,Malta
+pt,NL,Holanda
+pt,NL,Holanda
+pt,NL,Países Baixos
+pt,NL,Países Baixos
+pt,NL,Reino dos Países Baixos
+pt,NO,Noruega
+pt,PL,PL
+pt,PL,Polska
+pt,PL,Polónia
+pt,PL,República da Polónia
+pt,PL,🇵🇱
+pt,PT,PT
+pt,PT,Portugal
+pt,PT,República Portuguesa
+pt,PT,pt
+pt,PT,🇵🇹
+pt,RO,România
+pt,RO,Roménia
+pt,RO,Romênia
+pt,RO,🇷🇴
+pt,RS,Sérvia
+pt,RU,Federação Russa
+pt,RU,Rússia
+pt,SE,Suécia
+pt,SI,Eslovenia
+pt,SI,Eslovénia
+pt,SK,Eslováquia
+pt,SM,San Marino
+pt,TR,República da Turquia
+pt,TR,Turquia
+pt,UA,Ucrânia
+pt,VA,Cidade do Vaticano
+pt,VA,Civitas Vaticana
+pt,VA,Estado Pontifício
+pt,VA,Estado da Cidade do Vaticano
+pt,VA,Estado do Vaticano
+pt,VA,Stato della Città del Vaticano
+pt,VA,Vaticano
+rm,AD,Andorra
+rm,AL,Albania
+rm,AM,Armenia
+rm,AT,Austria
+rm,AZ,Aserbeidschan
+rm,BA,Bosnia-Erzegovina
+rm,BE,Belgia
+rm,BG,Bulgaria
+rm,BY,Bielorussia
+rm,CH,CH
+rm,CH,Confederaziun svizra
+rm,CH,Svizra
+rm,CY,Cipra
+rm,CZ,Tschechia
+rm,DE,Germania
+rm,DK,Danemarc
+rm,EE,Estonia
+rm,ES,Spagna
+rm,FI,Finlanda
+rm,FO,Inslas Feroe
+rm,FR,Frantscha
+rm,GB,Reginavel Unì
+rm,GR,Grezia
+rm,HR,Croazia
+rm,HU,Ungaria
+rm,IE,Republica da l'Irlanda
+rm,IS,Islanda
+rm,IT,Italia
+rm,KZ,Kasachstan
+rm,LI,Liechtenstein
+rm,LT,Lituania
+rm,LU,Luxemburg
+rm,LV,Lettonia
+rm,MC,Monaco
+rm,MD,Moldavia
+rm,ME,Montenegro
+rm,MK,Macedonia dal Nord
+rm,MK,mk
+rm,MT,Malta
+rm,NL,Pajais Bass
+rm,NO,Norvegia
+rm,PL,POL
+rm,PL,Pologna
+rm,PL,🇵🇱
+rm,PT,Portugal
+rm,RO,Rumenia
+rm,RS,Serbia
+rm,RU,Russia
+rm,SE,Svezia
+rm,SI,Slovenia
+rm,SK,Slovachia
+rm,SM,San Marino
+rm,TR,Tirchia
+rm,UA,Ucraina
+rm,VA,Citad dal Vatican
+ro,AD,Andorra
+ro,AL,Albania
+ro,AL,Republica Albania
+ro,AM,Armenia
+ro,AT,Austria
+ro,AZ,Azerbaidjan
+ro,BA,Bosnia și Herțegovina
+ro,BE,Belgia
+ro,BG,Bulgaria
+ro,BG,Republica Bulgaria
+ro,BG,Republica Populară Bulgară
+ro,BY,Belarus
+ro,CH,CH
+ro,CH,Confederația Elvețiană
+ro,CH,Elveția
+ro,CY,Cipru
+ro,CZ,Cehia
+ro,DE,Germania
+ro,DE,RFG
+ro,DE,Republica Federală Germania
+ro,DK,Danemarca
+ro,DK,Regatul Danemarcei
+ro,EE,Estonia
+ro,ES,Regatul Spaniei
+ro,ES,Spania
+ro,FI,Finlanda
+ro,FO,Feroe
+ro,FO,Färöer
+ro,FO,Færøerne
+ro,FO,Føroyar
+ro,FO,Insulele Faroe
+ro,FO,Insulele Feroe
+ro,FR,FR
+ro,FR,FRA
+ro,FR,Franța
+ro,FR,Republica Franceză
+ro,FR,Republica Franța
+ro,FR,fr
+ro,FR,🇫🇷
+ro,GB,GBR
+ro,GB,Regatul Unit
+ro,GB,Regatul Unit al Marii Britanii și al Irlandei de Nord
+ro,GB,UK
+ro,GB,🇬🇧
+ro,GE,Georgia
+ro,GR,Grecia
+ro,HR,Croația
+ro,HU,Ungaria
+ro,IE,Irlanda
+ro,IE,Republic of Ireland
+ro,IE,Republica irlanda
+ro,IS,Islanda
+ro,IT,Italia
+ro,IT,Republica Italiană
+ro,KZ,Kazahstan
+ro,LI,Liechtenstein
+ro,LI,Principatul Liechtenstein
+ro,LT,Lituania
+ro,LU,Luxembourg
+ro,LU,Luxemburg
+ro,LU,Marele Ducat al Luxemburgului
+ro,LU,Marele Ducat de Luxemburg
+ro,LV,Letonia
+ro,MC,Monaco
+ro,MD,Moldova
+ro,MD,R. Moldova
+ro,MD,RM
+ro,MD,Rep. Moldova
+ro,MD,Republica Moldova
+ro,ME,Muntenegru
+ro,MK,FYROM
+ro,MK,Fosta Republică Iugoslavă Macedonia
+ro,MK,Macedonia de Nord
+ro,MK,Republica Macedonia
+ro,MK,mk
+ro,MT,Malta
+ro,NL,Netherlands
+ro,NL,Olanda
+ro,NL,Regatul Ţărilor de Jos
+ro,NL,Regatul Țărilor de Jos
+ro,NL,Tarile de Jos
+ro,NL,Ţările de Jos
+ro,NL,Țara Lalelelor
+ro,NL,Țara lalelelor
+ro,NL,Țara morilor de vânt
+ro,NL,Țările de Jos
+ro,NL,Țările de Jos
+ro,NO,Norvegia
+ro,NO,Regatul Norvegiei
+ro,NO,🇳🇴
+ro,PL,PL
+ro,PL,Polonia
+ro,PL,🇵🇱
+ro,PT,Portugalia
+ro,RO,Romania
+ro,RO,România
+ro,RO,ro
+ro,RO,🇷🇴
+ro,RS,Serbia
+ro,RU,Rusia
+ro,SE,Suedia
+ro,SI,Slovenia
+ro,SK,Slovacia
+ro,SM,San Marino
+ro,TR,Turcia
+ro,UA,Ucraina
+ro,VA,Cetatea Vaticanului
+ro,VA,Statul Cetății Vaticanului
+ro,VA,Vatican
+ru,AD,Andorra
+ru,AD,Андорра
+ru,AD,Княжество Андорра
+ru,AL,Албания
+ru,AL,Республика Албания
+ru,AL,Шкиприя
+ru,AM,Армения
+ru,AM,Республика Армения
+ru,AT,Österreich
+ru,AT,Австрийская Республика
+ru,AT,Австрия
+ru,AT,Республика Австрия
+ru,AZ,Азербайджан
+ru,AZ,Азербайджанская Республика
+ru,BA,Bosna i Hercegovina
+ru,BA,БиГ
+ru,BA,Босния
+ru,BA,Босния и Герцеговина
+ru,BE,Belgique
+ru,BE,Бельгия
+ru,BE,Королевство Бельгия
+ru,BG,Болгария
+ru,BG,България
+ru,BG,Республика Болгария
+ru,BY,Беларусь
+ru,BY,Белая Русь
+ru,BY,Белоруссия
+ru,BY,РБ
+ru,BY,Республика Беларусь
+ru,CH,Schweiz
+ru,CH,Suisse
+ru,CH,Svizzera
+ru,CH,Швейцария
+ru,CH,Швейцарская Конфедерация
+ru,CY,Кипр
+ru,CY,Республика Кипр
+ru,CZ,Чехия
+ru,CZ,Чешская Республика
+ru,DE,Bundesrepublik Deutschland
+ru,DE,Deutschland
+ru,DE,Германия
+ru,DE,Дойчланд
+ru,DE,ФРГ
+ru,DE,Федеративная Республика Германия
+ru,DK,Дания
+ru,DK,Дания
+ru,DK,Датское королевство
+ru,DK,Королевство Дании
+ru,DK,Королевство Дания
+ru,EE,Республика Эстония
+ru,EE,Эстония
+ru,EE,Эстонская Республика
+ru,EE,Ээсти
+ru,ES,Испания
+ru,ES,Королевство Испания
+ru,ES,Эспанья
+ru,FI,Suomi
+ru,FI,Суоми
+ru,FI,Финляндия
+ru,FI,Финляндская Республика
+ru,FO,Фарерские о-ва
+ru,FO,Фарерские острова
+ru,FO,Фареры
+ru,FO,Фарёрские острова
+ru,FO,Фарёры
+ru,FR,ФР
+ru,FR,Франция
+ru,FR,Французская Республика
+ru,GB,Британия
+ru,GB,Великобритания
+ru,GB,Соединённое Королевство
+ru,GB,Соединённое Королевство Великобритании и Северной Ирландии
+ru,GB,Туманный Альбион
+ru,GE,Грузия
+ru,GE,Республика Грузия
+ru,GE,Сакартвело
+ru,GR,Греция
+ru,GR,Греческая Республика
+ru,HR,Республика Хорватия
+ru,HR,Хорватия
+ru,HU,Magyarország
+ru,HU,Венгрия
+ru,IE,Ирландия
+ru,IE,Республика Ирландия
+ru,IS,Исландия
+ru,IS,Республика Исландия
+ru,IT,Италия
+ru,IT,Итальянская Республика
+ru,KZ,Казахстан
+ru,KZ,РК
+ru,KZ,Республика Казахстан
+ru,LI,Liechtenstein
+ru,LI,Княжество Лихтенштейн
+ru,LI,Лихтенштейн
+ru,LT,Литва
+ru,LT,Литовская Республика
+ru,LU,Luxembourg
+ru,LU,Lëtzebuerg
+ru,LU,Великое Герцогство
+ru,LU,Великое Герцогство Люксембург
+ru,LU,Люксембург
+ru,LV,Latvija
+ru,LV,Латвийская Республика
+ru,LV,Латвия
+ru,LV,Республика Латвия
+ru,MC,Княжество Монако
+ru,MC,Монако
+ru,MD,Молдавия
+ru,MD,Молдова
+ru,MD,Республика Молдавия
+ru,MD,Республика Молдова
+ru,ME,Crna Gora
+ru,ME,Montenegro
+ru,ME,Црна Гора
+ru,ME,Черногория
+ru,MK,БЮРМ
+ru,MK,Бывшая Югославская Республика Македония
+ru,MK,Вардарская Македония
+ru,MK,Македония
+ru,MK,Македонија
+ru,MK,Республика Македония
+ru,MK,Республика Северная Македония
+ru,MK,Республика Скопье
+ru,MK,Северная Македония
+ru,MT,Malta
+ru,MT,Мальта
+ru,MT,Республика Мальта
+ru,NL,Nederland
+ru,NL,Голландия
+ru,NL,Голландия
+ru,NL,Королевство Нидерландов
+ru,NL,Нидерланды
+ru,NL,Нидерланды
+ru,NO,Kongeriket Noreg
+ru,NO,Kongeriket Norge
+ru,NO,Noreg
+ru,NO,Norge
+ru,NO,Norway
+ru,NO,Королевство Норвегия
+ru,NO,Название Норвегии
+ru,NO,Норвегия
+ru,NO,Языки Норвегии
+ru,PL,Польша
+ru,PL,Республика Польша
+ru,PL,🇵🇱
+ru,PT,Portugal
+ru,PT,Португалия
+ru,PT,Португальская Республика
+ru,RO,România
+ru,RO,Румыния
+ru,RS,Республика Сербия
+ru,RS,Сербия
+ru,RU,РФ
+ru,RU,Российская Федерация
+ru,RU,Россия
+ru,RU,Русь
+ru,SE,Sverige
+ru,SE,Королевство Швеция
+ru,SE,Швеция
+ru,SI,Республика Словения
+ru,SI,Словения
+ru,SK,Slovensko
+ru,SK,Словакия
+ru,SK,Словацкая Республика
+ru,SK,Словенско
+ru,SM,San Marino
+ru,SM,Республика Сан-Марино
+ru,SM,Сан-Марино
+ru,SM,Светлейшая Республика Сан-Марино
+ru,TR,Турецкая Республика
+ru,TR,Турция
+ru,UA,Украина
+ru,VA,Città del Vaticano
+ru,VA,Civitas Vaticana
+ru,VA,Ватикан
+ru,VA,Государство-город Ватикан
+sk,AD,Andorra
+sk,AL,Albánsko
+sk,AM,Arménsko
+sk,AT,Rakúsko
+sk,AZ,Azerbajdžan
+sk,BA,Bosna a Hercegovina
+sk,BE,Belgicko
+sk,BG,Bulharsko
+sk,BG,Bulharská republika
+sk,BY,Bielorusko
+sk,CH,CH
+sk,CH,Švajčiarsko
+sk,CY,Cyprus
+sk,CZ,Česko
+sk,CZ,Česká republika
+sk,DE,Nemecko
+sk,DK,Dánsko
+sk,DK,Dánsko
+sk,EE,Estónsko
+sk,ES,Španielsko
+sk,FI,Fínsko
+sk,FI,Krajina tisícich jazier
+sk,FI,Suomi
+sk,FO,Faerské ostrovy
+sk,FR,Francúzska republika
+sk,FR,Francúzsko
+sk,GB,Spojené kráľovstvo
+sk,GE,Gruzínsko
+sk,GR,Grécko
+sk,HR,Chorvátsko
+sk,HU,Maďarsko
+sk,IE,Írska republika
+sk,IE,Írsko
+sk,IS,Island
+sk,IT,Taliansko
+sk,KZ,Kazachstan
+sk,LI,Lichtenštajnsko
+sk,LT,Litva
+sk,LU,Luxembursko
+sk,LV,Lotyšsko
+sk,MC,Monako
+sk,MD,Moldavsko
+sk,ME,Čierna Hora
+sk,MK,Macedónsko
+sk,MK,Severné Macedónsko
+sk,MK,mk
+sk,MT,Malta
+sk,NL,Holandsko
+sk,NL,Holandské kráľovstvo
+sk,NO,Nórsko
+sk,PL,PL
+sk,PL,Poľsko
+sk,PL,🇵🇱
+sk,PT,Portugalsko
+sk,RO,Rumunsko
+sk,RS,Srbsko
+sk,RU,Rusko
+sk,SE,Švédsko
+sk,SI,Slovinsko
+sk,SK,Slovensko
+sk,SK,Slovenská republika
+sk,SM,San Maríno
+sk,TR,Turecko
+sk,UA,Ukrajina
+sk,VA,Vatikán
+sl,AD,Andora
+sl,AL,Albanija
+sl,AM,Armenija
+sl,AT,Avstrija
+sl,AZ,Azerbajdžan
+sl,BA,BiH
+sl,BA,Bosna i Hercegovina
+sl,BA,Bosna in Hercegovina
+sl,BA,🇧🇦
+sl,BE,Belgija
+sl,BG,Bolgarija
+sl,BG,Bulgaria
+sl,BG,Bulgarija
+sl,BG,Republika Bolgarija
+sl,BY,Belorusija
+sl,CH,CH
+sl,CH,Švica
+sl,CY,Ciper
+sl,CZ,Češka
+sl,DE,Nemčija
+sl,DK,Danska
+sl,DK,Danska
+sl,EE,Estonija
+sl,ES,Španija
+sl,FI,Finska
+sl,FO,Farski otoki
+sl,FO,Ferski otoki
+sl,FR,Francija
+sl,GB,Združeno kraljestvo
+sl,GB,Združeno kraljestvo Velike Britanije in Severne Irske
+sl,GE,Gruzija
+sl,GR,Grčija
+sl,HR,Hrvaška
+sl,HU,Madžarska
+sl,IE,Irska
+sl,IE,Republika Irska
+sl,IS,Islandija
+sl,IT,Italija
+sl,KZ,Kazahstan
+sl,LI,Lihtenštajn
+sl,LT,Litva
+sl,LU,Luksemburg
+sl,LU,Luxembourg
+sl,LU,Veliko vojvodstvo Luksemburg
+sl,LV,Latvija
+sl,MC,Monako
+sl,MD,Moldavija
+sl,ME,Črna gora
+sl,MK,Makedonija
+sl,MK,Severna Makedonija
+sl,MK,mk
+sl,MT,Malta
+sl,NL,Holandija
+sl,NL,Kraljevina Nizozemska
+sl,NL,Nizozemska
+sl,NO,Norveška
+sl,PL,Poljska
+sl,PL,🇵🇱
+sl,PT,Portugalska
+sl,RO,Romunija
+sl,RS,Srbija
+sl,RU,Rusija
+sl,RU,Ruska federacija
+sl,SE,Švedska
+sl,SI,Republika Slovenija
+sl,SI,Slovenija
+sl,SK,Slovaška
+sl,SM,San Marino
+sl,TR,Turčija
+sl,UA,Ukrajina
+sl,VA,Vatikan
+sq,AD,Andorra
+sq,AL,Republika e Shqipërisë
+sq,AL,Shqipëri
+sq,AL,Shqipëria
+sq,AM,Armenia
+sq,AT,Austria
+sq,AZ,Azerbajxhani
+sq,BA,Bosnja dhe Hercegovina
+sq,BE,Belgjika
+sq,BG,Bulgaria
+sq,BG,Bullgari
+sq,BG,Bullgaria
+sq,BG,Bullgarisë
+sq,BY,Bjellorusia
+sq,CH,CH
+sq,CH,Konfederata Zvicerane
+sq,CH,Zvicra
+sq,CH,Zvicër
+sq,CY,Qiproja
+sq,CZ,Republika Çeke
+sq,DE,Gjermania
+sq,DK,Danimarka
+sq,DK,Danimarka
+sq,EE,Estonia
+sq,ES,Spanja
+sq,FI,Finlanda
+sq,FO,Faroe Islands, Danimarke
+sq,FO,Ishujt Faroe
+sq,FR,FR
+sq,FR,FRA
+sq,FR,Francë
+sq,FR,Republika e Francës
+sq,FR,Republika franceze
+sq,FR,fr
+sq,GB,Britania e Madhe
+sq,GE,Gjeorgjia
+sq,GR,Greqia
+sq,HR,Kroacia
+sq,HU,Hungaria
+sq,IE,Ireland
+sq,IE,Irland
+sq,IE,Republika e Irlandës
+sq,IS,Islanda
+sq,IT,Italia
+sq,KZ,Kazakistani
+sq,LI,Lihtenshtajni
+sq,LT,Lituania
+sq,LU,Luksemburg
+sq,LU,Luksemburgu
+sq,LU,Luxembourg
+sq,LV,Letonia
+sq,MC,Monako
+sq,MD,Moldavia
+sq,ME,Mali i Zi
+sq,MK,IRJM
+sq,MK,Ish Republika Jugosllave e Maqedonisë
+sq,MK,Maqedonia
+sq,MK,Maqedonia e Veriut
+sq,MK,Republika e Maqedonisë së Veriut
+sq,MT,Malta
+sq,NL,Holanda
+sq,NO,Norvegjia
+sq,PL,Polonia
+sq,PL,Polska
+sq,PL,🇵🇱
+sq,PT,Portugalia
+sq,RO,Rumania
+sq,RS,Republika e Serbisë
+sq,RS,Serbia
+sq,RU,Rusia
+sq,SE,Suedia
+sq,SI,Sllovenia
+sq,SK,Sllovakia
+sq,SM,San Marino
+sq,TR,Turqia
+sq,UA,Ukraina
+sq,VA,Vatikani
+sr,AD,Андора
+sr,AD,Кнежевина Андора
+sr,AL,Албанија
+sr,AL,Република Албанија
+sr,AM,Јерменија
+sr,AT,Аустрија
+sr,AZ,az
+sr,AZ,Азербајџан
+sr,AZ,Азербејџан
+sr,AZ,Република Азербејџан
+sr,AZ,🇦🇿
+sr,BA,B&H
+sr,BA,ba
+sr,BA,БХ
+sr,BA,БиХ
+sr,BA,Босна
+sr,BA,Босна и Херцеговина
+sr,BA,🇧🇦
+sr,BE,Белгија
+sr,BG,Bulgaria
+sr,BG,Бугарска
+sr,BG,Бугарска држава
+sr,BG,Република Бугарска
+sr,BY,Белорусија
+sr,CH,CH
+sr,CH,SUI
+sr,CH,Schweiz
+sr,CH,Suisse
+sr,CH,Svizzera
+sr,CH,Швајцарска
+sr,CH,Швајцарска Конфедерација
+sr,CH,Швица
+sr,CH,Швицарска
+sr,CH,🇨🇭
+sr,CY,Кипар
+sr,CY,Република Кипар
+sr,CZ,CZR
+sr,CZ,cz
+sr,CZ,cze
+sr,CZ,ЧР
+sr,CZ,Чекија
+sr,CZ,Ческо
+sr,CZ,Чехија
+sr,CZ,Чешка
+sr,CZ,Чешка Република
+sr,CZ,🇨🇿
+sr,DE,BRD
+sr,DE,Deutschland
+sr,DE,FRG
+sr,DE,de
+sr,DE,Њемачка
+sr,DE,Германија
+sr,DE,Дојчланд
+sr,DE,Немачка
+sr,DE,Савезна Република Њемачка
+sr,DE,🇩🇪
+sr,DK,Данска
+sr,DK,Краљевина Данска
+sr,EE,Естонија
+sr,ES,ES
+sr,ES,ESP
+sr,ES,Еспања
+sr,ES,Краљевина Шпанија
+sr,ES,Шпанија
+sr,ES,Шпанско Краљевство
+sr,ES,Шпањолска
+sr,ES,🇪🇸
+sr,FI,Финска
+sr,FO,Овчија острва
+sr,FO,Фарска Острва
+sr,FO,Ферјарска Острва
+sr,FR,FR
+sr,FR,France
+sr,FR,fr
+sr,FR,Данашња Француска
+sr,FR,Ла Франс
+sr,FR,Република Француска
+sr,FR,Франција
+sr,FR,Француска
+sr,FR,Француска Република
+sr,FR,🇫🇷
+sr,GB,Уједињено Краљевство
+sr,GE,Грузија
+sr,GE,Република Грузија
+sr,GR,Грчка
+sr,HR,Република Хрватска
+sr,HR,Хрватска
+sr,HU,hu
+sr,HU,Мађарска
+sr,HU,Маџарска
+sr,HU,Хунгарија
+sr,HU,🇭🇺
+sr,IE,Eire
+sr,IE,IE
+sr,IE,IRL
+sr,IE,Irska
+sr,IE,Republic of Ireland
+sr,IE,ie
+sr,IE,ireland
+sr,IE,Éire
+sr,IE,Јужна Ирска
+sr,IE,Ибернија
+sr,IE,Ирска
+sr,IE,Република Ирска
+sr,IE,Хибернија
+sr,IE,🇮🇪
+sr,IS,Исланд
+sr,IT,Италија
+sr,KZ,Казахстан
+sr,KZ,Република Казахстан
+sr,LI,Кнежевина Лихтенштајн
+sr,LI,Лихтенштајн
+sr,LT,Литванија
+sr,LU,Luxembourg
+sr,LU,Luxemburg
+sr,LU,Lëtzebuerg
+sr,LU,Велико војводство Луксембург
+sr,LU,Луксембург
+sr,LV,Летонија
+sr,MC,Кнежевина Монако
+sr,MC,Монако
+sr,MD,Молдавија
+sr,ME,MNE
+sr,ME,me
+sr,ME,Монтенегро
+sr,ME,Црна Гора
+sr,ME,🇲🇪
+sr,MK,БЈР Македонија
+sr,MK,БЈРМ
+sr,MK,Бивша Југословенска Република Македонија
+sr,MK,Македонија
+sr,MK,Република Македонија
+sr,MK,Република Северна Македонија
+sr,MK,Северна Македонија
+sr,MT,Малта
+sr,MT,Република Малта
+sr,NL,Краљевина Холандија
+sr,NL,Холандија
+sr,NO,NO
+sr,NO,NOR
+sr,NO,Noreg
+sr,NO,no
+sr,NO,Краљевина Норвешка
+sr,NO,Норвеге
+sr,NO,Норвеген
+sr,NO,Норвешка
+sr,NO,Норвешко Краљевство
+sr,NO,Норге
+sr,NO,🇳🇴
+sr,PL,Пољска
+sr,PL,🇵🇱
+sr,PT,Португал
+sr,PT,Португалија
+sr,RO,Румунија
+sr,RS,Republika Srbija
+sr,RS,rs
+sr,RS,Република Србија
+sr,RS,Србија
+sr,RU,RU
+sr,RU,ru
+sr,RU,Росискаја
+sr,RU,Росија
+sr,RU,Росијскаја Федерација
+sr,RU,Рус
+sr,RU,Русија
+sr,RU,Руска
+sr,RU,Руска Федерација
+sr,RU,Русланд
+sr,RU,Русја
+sr,RU,Руше
+sr,SE,Шведска
+sr,SI,Република Словенија
+sr,SI,Словенија
+sr,SK,SVK
+sr,SK,sk
+sr,SK,Република Словачка
+sr,SK,Словачка
+sr,SK,Словачка Република
+sr,SK,🇸🇰
+sr,SM,Сан Марино
+sr,TR,Турска
+sr,UA,Украјина
+sr,VA,Ватикан
+sv,AD,Andorra
+sv,AD,Furstendömet Andorra
+sv,AL,Albanien
+sv,AL,Republika e Shqipërisë
+sv,AL,Republiken Albanien
+sv,AL,Shqipërisë
+sv,AM,Armenien
+sv,AM,Republiken Armenien
+sv,AT,Österreich
+sv,AT,Österrike
+sv,AZ,Azerbajdzjan
+sv,BA,Bosnien och Hercegovina
+sv,BE,Belgien
+sv,BG,Bulgaria
+sv,BG,Bulgarien
+sv,BY,Belarus
+sv,BY,Republiken Belarus
+sv,BY,Vitryssland
+sv,CH,Schweiz
+sv,CY,Cypern
+sv,CZ,Republiken Tjeckien
+sv,CZ,Tjeckien
+sv,CZ,Tjeckiska republiken
+sv,DE,Förbundsrepubliken Tyskland
+sv,DE,Tyskland
+sv,DK,DK
+sv,DK,Danmark
+sv,DK,Danska kungadömet
+sv,DK,Danska kungariket
+sv,DK,Kongeriget Danmark
+sv,DK,Konungariket Danmark
+sv,DK,Kungadömet Danmark
+sv,DK,Kungariket Danmark
+sv,DK,Kungariket Danmark
+sv,EE,Estland
+sv,EE,Republiken Estland
+sv,ES,España
+sv,ES,Spanien
+sv,FI,Finland
+sv,FI,Republiken Finland
+sv,FO,Färöarna
+sv,FR,FR
+sv,FR,France
+sv,FR,Frankrike
+sv,FR,Franska republiken
+sv,FR,La France
+sv,FR,Republiken Frankrike
+sv,FR,République française
+sv,GB,Förenade konungariket Storbritannien och Nordirland
+sv,GB,Förenade kungariket
+sv,GB,GB
+sv,GB,GBR
+sv,GB,Stor-Britannien
+sv,GB,Stor-Britannien och Nord-Irland
+sv,GB,Stor-Britannien och Nordirland
+sv,GB,Stora Britannien
+sv,GB,Storbritannien
+sv,GB,Storbritannien och Nordirland
+sv,GB,UK
+sv,GE,Georgien
+sv,GR,Grekland
+sv,GR,Hellas
+sv,GR,Hellenska republiken
+sv,GR,Republiken Grekland
+sv,HR,Kroatien
+sv,HR,Republiken Kroatien
+sv,HU,Ungern
+sv,IE,IE
+sv,IE,IRL
+sv,IE,Irland
+sv,IE,Republic of Ireland
+sv,IE,Republiken Irland
+sv,IE,Éire
+sv,IS,Island
+sv,IT,Italia
+sv,IT,Italien
+sv,IT,Republiken Italien
+sv,KZ,Kazakstan
+sv,KZ,Qazaqstan
+sv,KZ,Republiken Kazakstan
+sv,LI,Furstendömet Liechtenstein
+sv,LI,Liechtenstein
+sv,LT,Lietuva
+sv,LT,Litauen
+sv,LU,Luxembourg
+sv,LU,Luxemburg
+sv,LU,Luxemburgare
+sv,LU,Luxemburgsk
+sv,LU,Luxenburg
+sv,LU,Lëtzebuerg
+sv,LU,Storhertigdömet Luxemburg
+sv,LV,Latvia
+sv,LV,Latvija
+sv,LV,Lettland
+sv,MC,Furstendömet Monaco
+sv,MC,Monaco
+sv,MD,Moldavien
+sv,MD,Moldova
+sv,MD,Republiken Moldavien
+sv,ME,Montenegro
+sv,MK,Makedonien
+sv,MK,Nordmakedonien
+sv,MK,Republiken Makedonien
+sv,MK,mk
+sv,MT,Malta
+sv,MT,Republic of Malta
+sv,MT,Republiken Malta
+sv,NL,Konungariket Nederländerna
+sv,NL,Kungariket Nederländerna
+sv,NL,Nederland
+sv,NL,Nederländerna
+sv,NO,Norge
+sv,PL,POL
+sv,PL,Polen
+sv,PL,Republiken Polen
+sv,PT,Portugal
+sv,RO,Rumänien
+sv,RS,Republika Srbija
+sv,RS,Republiken Serbien
+sv,RS,Serbien
+sv,RS,Srbija
+sv,RU,RUS
+sv,RU,Rossija
+sv,RU,Rossijskaja Federatsija
+sv,RU,Ryska federationen
+sv,RU,Ryssland
+sv,RU,ru
+sv,SE,Konungariket Sverige
+sv,SE,Kungadömet Sverige
+sv,SE,Kungariket Sverige
+sv,SE,SE
+sv,SE,SWE
+sv,SE,Sverige
+sv,SI,Republika Slovenija
+sv,SI,Republiken Slovenien
+sv,SI,Slovenien
+sv,SI,Slovenija
+sv,SK,Republiken Slovakien
+sv,SK,Slovakien
+sv,SK,Slovakiska republiken
+sv,SM,Republiken San Marino
+sv,SM,San Marino
+sv,TR,Turkiet
+sv,UA,Ukraina
+sv,VA,Città del Vaticano
+sv,VA,Civitas Vaticana
+sv,VA,Stato della Città del Vaticano
+sv,VA,Status Civitatis Vaticanae
+sv,VA,Vatikanen
+sv,VA,Vatikanstaten
+tr,AD,Andorra
+tr,AL,Arnavutluk
+tr,AL,Arnavutluk Cumhuriyeti
+tr,AM,Ermenistan
+tr,AT,Avusturya
+tr,AT,Avusturya Cumhuriyeti
+tr,AZ,Azerbaycan
+tr,BA,Bosna
+tr,BA,Bosna Hersek
+tr,BA,Bosna-Hersek
+tr,BE,Belçika
+tr,BE,Belçika Krallığı
+tr,BG,Bulgaristan
+tr,BG,Bulgaristan Cumhuriyeti
+tr,BY,Belarus
+tr,BY,Beyaz Rusya
+tr,CH,CH
+tr,CH,İsviçre
+tr,CH,İsviçre Konfederasyonu
+tr,CY,Güney Kıbrıs
+tr,CY,Güney Kıbrıs Rum Cumhuriyeti
+tr,CY,Güney Kıbrıs Rum Yönetimi
+tr,CY,Kıbrıs Cumhuriyeti
+tr,CY,Kıbrıs Rum Kesimi
+tr,CZ,Çek Cumhuriyeti
+tr,CZ,Çekya
+tr,DE,Almanya
+tr,DE,Almanya Federal Cumhuriyeti
+tr,DK,Danimarka
+tr,DK,Danimarka
+tr,DK,Danimarka Krallığı
+tr,DK,Danimarka Krallığı
+tr,EE,EST
+tr,EE,Estonya
+tr,EE,Estonya Cumhuriyeti
+tr,EE,ee
+tr,EE,🇪🇪
+tr,ES,İspanya
+tr,ES,İspanya Krallığı
+tr,FI,Finlandiya
+tr,FI,Finlandiya Cumhuriyeti
+tr,FO,Faroe Adaları
+tr,FO,Faroe Islands
+tr,FR,Fransa
+tr,FR,Fransa Cumhuriyeti
+tr,FR,Fransız Cumhuriyeti
+tr,GB,Birleşik Krallık
+tr,GE,Gürcistan
+tr,GR,Helen Cumhuriyeti
+tr,GR,Yunanistan
+tr,GR,Yunanistan Cumhuriyeti
+tr,HR,Hırvatistan
+tr,HU,Macaristan
+tr,IE,İrlanda
+tr,IE,İrlanda Cumhuriyeti
+tr,IS,İzlanda
+tr,IT,İtalya
+tr,IT,İtalyan Cumhuriyeti
+tr,KZ,Kazakistan
+tr,LI,Lihtenştayn
+tr,LT,Litvanya
+tr,LT,Litvanya Cumhuriyeti
+tr,LU,Lüksemburg
+tr,LU,Lüksemburg Büyük Dükalığı
+tr,LV,Letonya
+tr,MC,Monako
+tr,MC,Monako Prensliği
+tr,MD,Moldova
+tr,ME,Karadağ
+tr,ME,Çernogorya
+tr,MK,Kuzey Makedonya
+tr,MK,Kuzey Makedonya Cumhuriyeti
+tr,MK,Makedonya
+tr,MK,Makedonya Cumhuriyeti
+tr,MK,mk
+tr,MT,Malta
+tr,NL,Hollanda
+tr,NL,Hollanda
+tr,NL,Hollanda Krallığı
+tr,NO,Norveç
+tr,NO,Norveç Krallığı
+tr,PL,PL
+tr,PL,Polonya
+tr,PL,Polonya Cumhuriyeti
+tr,PL,🇵🇱
+tr,PT,Portekiz
+tr,PT,Portekiz Cumhuriyeti
+tr,RO,Romanya
+tr,RS,Sırbistan
+tr,RU,Rusya
+tr,SE,İsveç
+tr,SE,İsveç Krallığı
+tr,SI,Slovenya
+tr,SK,Slovakya
+tr,SM,San Marino
+tr,TR,T. C.
+tr,TR,T.C.
+tr,TR,TC
+tr,TR,TUR
+tr,TR,Türkiye
+tr,TR,Türkiye Cumhuriyeti
+tr,TR,tr
+tr,TR,🇹🇷
+tr,UA,Ukrayna
+tr,VA,Vatikan
+tt,AD,Андорра
+tt,AL,Албания
+tt,AM,Әрмәнстан
+tt,AT,Австрия
+tt,AZ,Азәрбайҗан
+tt,BA,Бүснә-Һәрсәк
+tt,BE,Билгия
+tt,BG,Болгария
+tt,BG,Болгария Республикасы
+tt,BG,Болгария Җөмһүрияте
+tt,BY,Акрусия
+tt,BY,Беларус
+tt,BY,Беларус Республикасы
+tt,BY,Беларус Җөмһүрияте
+tt,BY,Беларусия
+tt,CH,Эсвичрә
+tt,CY,Кипр
+tt,CY,Кипр Республикасы
+tt,CZ,Чехия
+tt,DE,АФР
+tt,DE,Алман Федератив Республикасы
+tt,DE,Алман иле
+tt,DE,Алмания
+tt,DE,Алмания Федератив Җөмһүрияте
+tt,DE,Алманиә
+tt,DE,Герман иле
+tt,DE,Германия
+tt,DE,Германиә
+tt,DE,Федератив Герман Республикасы
+tt,DK,Дания
+tt,DK,Дания кыйраллыгы
+tt,EE,Эстония
+tt,ES,Испания
+tt,FI,Finlyandiya
+tt,FI,Finlândiä
+tt,FI,Финляндия
+tt,FO,Фарер утраулары
+tt,FR,Франция
+tt,GB,Англия
+tt,GB,Берләшкән Патшалык
+tt,GB,Британия
+tt,GB,Бөекбритания
+tt,GB,Бөекбритания һәм Төньяк Ирландия Берләшкән Патшалыгы
+tt,GE,Гөрҗистан
+tt,GR,Греция
+tt,HR,Хорватия
+tt,HU,Маҗарстан
+tt,IE,Ирландия
+tt,IE,Ирландия Җөмһүрияте
+tt,IE,Республика Ирландия
+tt,IS,Исландия
+tt,IT,Италия
+tt,KZ,Казакъстан
+tt,KZ,Казакъстан Республикасы
+tt,KZ,Казакъстан Җөмһүрияте
+tt,LI,Лихтенштейн
+tt,LT,Литва
+tt,LU,Лүксимбур
+tt,LV,Латвия
+tt,MC,Монако
+tt,MD,Молдавия
+tt,ME,Каратау
+tt,ME,Монтенегро
+tt,MK,Македония Җөмһүрияте
+tt,MK,Төньяк Македония
+tt,MT,Мальта
+tt,NL,Нидирлан
+tt,NL,Нидирлан кыйраллыгы
+tt,NO,Норвегия
+tt,PL,Polska
+tt,PL,Польша
+tt,PL,Польша Җөмһүрияте
+tt,PL,🇵🇱
+tt,PT,Португалия
+tt,RO,Румыния
+tt,RS,Сербия
+tt,RU,РФ
+tt,RU,Россия
+tt,RU,Россия Федерациясе
+tt,RU,Русия Федерациясе
+tt,RU,Рәсәй
+tt,RU,Рәсәй Федерациясе
+tt,SE,Швеция
+tt,SI,Словения
+tt,SK,Словакия
+tt,SM,Сан-Марино
+tt,TR,Төркия
+tt,UA,Украина
+tt,VA,Ватикан
+uk,AD,Андорра
+uk,AL,Албанія
+uk,AL,Республіка Албанія
+uk,AM,Вірменія
+uk,AT,Австрійська республіка
+uk,AT,Австрія
+uk,AT,Республіка Австрія
+uk,AZ,Азербайджан
+uk,BA,Боснія й Герцеґовина
+uk,BA,Боснія та Герцеговина
+uk,BA,Боснія та Герцеґовина
+uk,BA,Боснія та Герцоговина
+uk,BA,Боснія і Герцеговина
+uk,BA,Боснія і Герцеґовина
+uk,BA,Боснія і Герцоговина
+uk,BA,БіГ
+uk,BA,Федерація Боснії і Герцеговини
+uk,BE,Бельгія
+uk,BE,Королівство Бельгія
+uk,BG,Болгарщина
+uk,BG,Болгарія
+uk,BG,Республіка Болгарія
+uk,BY,Білорусь
+uk,BY,РБ
+uk,BY,Республіка Білорусь
+uk,CH,CH
+uk,CH,Confœderatio Helvetica
+uk,CH,SUI
+uk,CH,Schweiz
+uk,CH,Suisse
+uk,CH,Svizra
+uk,CH,Svizzera
+uk,CH,Гельветійська Конфедерація
+uk,CH,Гельвеція
+uk,CH,Конфедерація Гельвеція
+uk,CH,Швайцарська Конфедерація
+uk,CH,Швайцарія
+uk,CH,Швейцарська Конфедерація
+uk,CH,Швейцарія
+uk,CH,🇨🇭
+uk,CY,Кіпр
+uk,CZ,Республіка Чехія
+uk,CZ,Чехія
+uk,CZ,Чешська Республіка
+uk,DE,Німеччина
+uk,DE,ФРН
+uk,DE,Федеративна Республіка Німеччина
+uk,DK,Данське королівство
+uk,DK,Данія
+uk,DK,Данія (Королівство)
+uk,DK,Королівство Данія
+uk,EE,Естонія
+uk,ES,Іспанія
+uk,ES,Еспанія
+uk,ES,Королівство Іспанія
+uk,FI,Фінляндія
+uk,FO,Фарери
+uk,FO,Фарерські острови
+uk,FR,Французька республіка
+uk,FR,Франція
+uk,FR,республіка Франція
+uk,GB,Велика Британія
+uk,GB,Сполучене Королівство
+uk,GB,Сполучене Королівство Великої Британії та Північної Ірландії
+uk,GE,Грузія
+uk,GR,Греція
+uk,HR,Хорватія
+uk,HU,Мадярщина
+uk,HU,Угорщина
+uk,IE,Ірландська Республіка
+uk,IE,Ірландія
+uk,IE,Ірляндія
+uk,IE,Республіка Ірландія
+uk,IS,Ісландія
+uk,IT,Італія
+uk,KZ,Казахстан
+uk,LI,Ліхтенштейн
+uk,LT,Литва
+uk,LU,Велике герцогство Люксембург
+uk,LU,Люксембург
+uk,LU,Люксембурґ
+uk,LV,Латвія
+uk,MC,Монако
+uk,MD,Молдова
+uk,ME,Чорногорія
+uk,MK,Колишня Югославська Республіка Македонія
+uk,MK,Македонія
+uk,MK,Північна Македонія
+uk,MK,Республіка Македонія
+uk,MK,Республіка Північна Македонія
+uk,MT,Мальта
+uk,NL,Голландія
+uk,NL,Королівство Нідерландів
+uk,NL,Нідерланди
+uk,NO,Королівство Норвегія
+uk,NO,Норвегія
+uk,PL,POL
+uk,PL,Польща
+uk,PL,🇵🇱
+uk,PT,Португальська Республіка
+uk,PT,Португалія
+uk,RO,Румунія
+uk,RS,Сербія
+uk,RU,РФ
+uk,RU,Російська Федерація
+uk,RU,Росія
+uk,SE,Королівство Швеція
+uk,SE,Швеція
+uk,SI,Словенія
+uk,SK,Словаччина
+uk,SM,Найсвітліша республіка Сан-Марино
+uk,SM,Сан-Марино
+uk,TR,Турецька Республіка
+uk,TR,Туреччина
+uk,TR,Турція
+uk,UA,Ukraina
+uk,UA,ua
+uk,UA,Вкраїна
+uk,UA,Україна
+uk,UA,🇺🇦
+uk,VA,Status Civitatis Vaticanae
+uk,VA,Апо́стольська Столиця
+uk,VA,Ватикан
+uk,VA,Ватікан
+uk,VA,Престол Святого Петра
+uk,VA,Святі́йший Престі́л
+yi,AD,אנדארע
+yi,AL,אלבאניע
+yi,AM,ארמעניע
+yi,AT,עסטרייך
+yi,AZ,אזערביידזשאן
+yi,BA,באסניע און הערצעגאווינע
+yi,BE,בעלגיע
+yi,BG,בולגאַריע
+yi,BG,בולגאריע
+yi,BY,בעלארוס
+yi,CH,CH
+yi,CH,שווייץ
+yi,CY,קיפראס
+yi,CZ,טשעכיי
+yi,DE,דייטשלאנד
+yi,DK,דענמארק
+yi,EE,עסטלאנד
+yi,ES,שפאניע
+yi,FI,פינלאנד
+yi,FR,פֿֿראַנקרײַך
+yi,FR,פֿראַנקרײַך
+yi,FR,פראנקרייך
+yi,GB,פאראייניגטע קעניגרייך
+yi,GE,גרוזיע
+yi,GR,גריכנלאנד
+yi,HR,קראאטיע
+yi,HU,אונגארן
+yi,IE,איירלענד
+yi,IE,אירלאַנד
+yi,IE,אירלאנד
+yi,IE,אירענלאנד
+yi,IS,איסלאנד
+yi,IT,איטאליע
+yi,KZ,קאזאכסטאן
+yi,LI,ליכטנשטיין
+yi,LT,ליטע
+yi,LU,לוקסעמבורג
+yi,LV,לעטלאנד
+yi,MC,מאנאקא
+yi,MD,מאלדאווע
+yi,ME,מאנטענעגרא
+yi,MK,צפון-מאקעדאניע
+yi,MK,רעפובליק פון מאקעדאניע
+yi,MT,מאלטא
+yi,NL,האלאנד
+yi,NO,נארוועגיע
+yi,PL,פוילן
+yi,PL,🇵🇱
+yi,PT,פארטוגאל
+yi,RO,רומעניע
+yi,RS,סערביע
+yi,RU,רוסלאנד
+yi,SE,שוועדן
+yi,SI,סלאוועניע
+yi,SK,סלאוואקיי
+yi,SM,סאן מארינא
+yi,TR,טערקיי
+yi,UA,אוקראינע
+yi,VA,וואטיקאן
