@@ -84,15 +84,10 @@ jobs:
           docker tag $WEB_IMAGE_NAME $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
 
-      - name: Log into Rahti Container Registry
-        run: |
-          oc login https://rahti.csc.fi:8443 --token=${{ secrets.RAHTI_KEY }}
-          docker login -p $(oc whoami -t) -u unused docker-registry.rahti.csc.fi
-
-      - name: Push web to Rahti
-        run: |
-          docker tag $WEB_IMAGE_NAME docker-registry.rahti.csc.fi/mmmweb/web:latest
-          docker push docker-registry.rahti.csc.fi/mmmweb/web:latest
+      - name: Trigger build on Rahti
+        uses: joelwmale/webhook-action@master
+        with:
+          url: ${{ secrets.RAHTI_WEBHOOK_URL }}
 
       - uses: act10ns/slack@v1
         with:
