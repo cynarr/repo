@@ -47,7 +47,7 @@ class KeywordFilterCommonCrawl(CommonCrawlExtractor):
 
         def match(key):
             return searcher.match(
-                (getattr(article, key) or "").encode("utf-8")
+                (getattr(article, key) or "").lower().encode("utf-8")
             )
         if match("title"):
             return True, article
