@@ -1,6 +1,4 @@
 import os
-from urllib.parse import urlsplit
-from typing import List
 from datetime import datetime
 from ingress.mynewsplease import mynewsplease
 
@@ -8,25 +6,17 @@ from newsplease import NewsPlease
 from newsplease.crawler.commoncrawl_extractor import CommonCrawlExtractor
 from mmmbgknow.country_detect import detect_country
 from mmmbgknow.european import is_european_cc, is_european_langcode
+from mmmbgknow.pickled_searchers import get_covid
 
 
-
-class BertPreproc:
-    def __init__(self):
-        from tokenizers import Tokenizer
-        from tokenizers.pre_tokenizers import BertPreTokenizer
-        from tokenizers.normalizers import BertNormalizer
-        from tokenizers.models import WordLevel
-
-        self.tokenizer = Tokenizer(WordLevel({"UNK": 0}, unk_token="UNK"))
-        self.tokenizer.pre_tokenizer = BertPreTokenizer()
-        self.tokenizer.normalizer = BertNormalizer()
-
-    def __call__(self, inp: str) -> List[str]:
-        return self.tokenizer.encode(inp).tokens
+_covid_searchers = None
 
 
-preproc = BertPreproc()
+def get_covid_searchers():
+    global _covid_searchers
+    if _covid_searchers is None:
+        _covid_searchers = get_covid()
+    return _covid_searchers
 
 
 class KeywordFilterCommonCrawl(CommonCrawlExtractor):
@@ -51,6 +41,18 @@ class KeywordFilterCommonCrawl(CommonCrawlExtractor):
         if not lang or not is_european_langcode(lang):
             return False, article
         # TODO: Find COVID-19 mention
+        searcher = get_covid_searchers().get(lang)
+        if searcher is None:
+            return False, article
+
+        def match(key):
+            return searcher.match(
+                (getattr(article, key) or "").encode("utf-8")
+            )
+        if match("title"):
+            return True, article
+        if match("maintext"):
+            return True, article
         return True, article
 
 

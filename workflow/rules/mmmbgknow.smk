@@ -6,7 +6,9 @@ rule mmmbgknow_all:
         "mmmbgknow/data/euro_language.csv",
         "mmmbgknow/data/euro_country.csv",
         "mmmbgknow/data/country_labels.csv",
-        "mmmbgknow/data/covid_labels.csv"
+        "mmmbgknow/data/covid_labels.csv",
+        "mmmbgknow/data/country_search.pkl",
+        "mmmbgknow/data/covid_search.pkl"
 
 rule get_fqdn_country:
     output:
@@ -49,3 +51,19 @@ rule get_covid_labels:
         "mmmbgknow/data/covid_labels.csv"
     shell:
         "python -m mmmbgknow.queries.get_covid_labels > {output}"
+
+rule get_country_search_pkl:
+    input:
+        "mmmbgknow/data/country_labels.csv"
+    output:
+        "mmmbgknow/data/country_search.pkl"
+    shell:
+        "python -m mmmbgknow.searchers.country {output}"
+
+rule get_covid_search_pkl:
+    input:
+        "mmmbgknow/data/covid_labels.csv"
+    output:
+        "mmmbgknow/data/covid_search.pkl"
+    shell:
+        "python -m mmmbgknow.searchers.covid {output}"

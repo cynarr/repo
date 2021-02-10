@@ -29,6 +29,8 @@ awscli = "^1.19.2"
 transformers = "^4.2.2"
 SPARQLWrapper = "^1.8.5"
 pycountry-convert = "^0.7.2"
+pyre2 = "^0.3.3"
+sentencepiece = "^0.1.95"
 
 [tool.poetry.extras]
 usenews = ["rpy2"]
