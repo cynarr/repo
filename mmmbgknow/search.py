@@ -62,7 +62,7 @@ def keyword_stem_regex(tokenizer, keyword, name=None):
 
 
 class MatchSearcher:
-    def __init__(self, keywords):
+    def __init__(self, keywords, extra_patterns=None):
         tokenizer = get_tokenizer()
         re_bits = []
         for keyword in keywords:
@@ -70,6 +70,8 @@ class MatchSearcher:
             if pattern is None:
                 continue
             re_bits.append(pattern)
+        if extra_patterns is not None:
+            re_bits.extend(extra_patterns)
         regex = br"(\A|(\s+))(" + b"|".join(re_bits) + br")(\z|(\s+))"
         self.matcher = re2.compile(regex)
 
