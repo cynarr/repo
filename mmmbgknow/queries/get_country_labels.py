@@ -53,4 +53,6 @@ results.sort()
 print("langcode,cc2,lab")
 
 for langcode, cc2, lab in results:
+    if len(lab) <= 3:
+        continue
     print(f"{langcode},{cc2},{lab}")

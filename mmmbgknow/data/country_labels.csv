@@ -8,7 +8,6 @@ ab,AZ,Азербаиџьан
 ab,BE,Бельгиа
 ab,BG,Былгариа
 ab,BY,Белорустәыла
-ab,CH,CH
 ab,CY,Ҟыбрыс
 ab,CZ,Чехиа
 ab,DE,Германиа
@@ -35,9 +34,7 @@ ab,MD,Молдова
 ab,ME,Черногориа
 ab,MK,Аҩадатәи Македониа
 ab,NO,Норвегиа
-ab,PL,POL
 ab,PL,Польша
-ab,PL,🇵🇱
 ab,PT,Португалиа
 ab,RS,Сербиа
 ab,RU,Урыстәыла
@@ -57,7 +54,6 @@ av,BA,Босния ва Герцеговина
 av,BE,Бельгия
 av,BG,Болгария
 av,BY,Белоруссия
-av,CH,CH
 av,CH,Швейцария
 av,CY,Кипр
 av,CZ,Чехия
@@ -87,9 +83,7 @@ av,MK,Республика Македония
 av,MT,Мальта
 av,NL,Нидерландал
 av,NO,Норвегия
-av,PL,POL
 av,PL,Польша
-av,PL,🇵🇱
 av,PT,Португалия
 av,RO,Румыния
 av,RS,Сербия
@@ -109,16 +103,12 @@ az,AM,Ermənistan Respublikası
 az,AT,Avstriya
 az,AZ,Azərbaycan
 az,AZ,Azərbaycan Respublikası
-az,AZ,az
-az,AZ,aze
-az,AZ,🇦🇿
 az,BA,Bosniya və Herseqovina
 az,BE,Belçika
 az,BG,Bolqarıstan
 az,BG,Bolqarıstan Respublikası
 az,BG,Bolqarıstanlı
 az,BY,Belarus
-az,CH,CH
 az,CH,İsveçrə
 az,CY,Kipr Respublikası
 az,CZ,Çexiya
@@ -170,7 +160,6 @@ az,NL,Niderland Krallığı
 az,NL,Sint-Marten
 az,NO,Norveç
 az,PL,Polşa
-az,PL,🇵🇱
 az,PT,Portuqaliya
 az,RO,Rumıniya
 az,RS,Serbiya
@@ -180,12 +169,9 @@ az,SI,Sloveniya
 az,SK,Slovakiya
 az,SM,San-Marino
 az,TR,T.C.
-az,TR,TR
-az,TR,TUR
 az,TR,Türkiyə
 az,TR,Türkiyə Cümhuriyyəti
 az,TR,Türkiyə Respublikası
-az,TR,tr
 az,UA,Ukrayna
 az,VA,Vatikan
 ba,AD,Андорра
@@ -198,7 +184,6 @@ ba,BA,Босния һәм Герцеговина
 ba,BE,Бельгия
 ba,BG,Болгария
 ba,BY,Беларусь
-ba,CH,CH
 ba,CH,Швейцария
 ba,CY,Кипр Республикаһы
 ba,CZ,Чехия
@@ -241,9 +226,7 @@ ba,NL,Кюрасао
 ba,NL,Нидерландтар
 ba,NL,Синт-Мартен
 ba,NO,Норвегия
-ba,PL,POL
 ba,PL,Польша
-ba,PL,🇵🇱
 ba,PT,Португалия
 ba,RO,Румыния
 ba,RS,Сербия
@@ -270,7 +253,6 @@ be,BY,Беларуская Рэспубліка
 be,BY,Беларусь
 be,BY,Рэспу́бліка Белару́сь
 be,BY,Рэспубліка Беларусь
-be,CH,CH
 be,CH,Швейцарыя
 be,CY,Кіпр
 be,CZ,Чэхія
@@ -325,9 +307,7 @@ be,NL,Кюрасаа
 be,NL,Нідэрланды
 be,NL,Сінт-Мартэн
 be,NO,Нарвегія
-be,PL,POL
 be,PL,Польшча
-be,PL,🇵🇱
 be,PT,Партугалія
 be,RO,Румынія
 be,RS,Сербія
@@ -359,7 +339,6 @@ bg,BG,България
 bg,BG,Република България
 bg,BY,Беларус
 bg,BY,Република Беларус
-bg,CH,CH
 bg,CH,Конфедерация Швейцария
 bg,CH,Швейцария
 bg,CY,Кипър
@@ -368,7 +347,6 @@ bg,CZ,Република Чехия
 bg,CZ,Чехия
 bg,CZ,Чешка република
 bg,DE,Германия
-bg,DE,ФРГ
 bg,DE,Федерална република Германия
 bg,DK,Гренландия
 bg,DK,Дания
@@ -428,7 +406,6 @@ bg,MD,Република Молдова
 bg,ME,Република Черна гора
 bg,ME,Черна гора
 bg,MK,Бивша югославска република Македония
-bg,MK,РМ
 bg,MK,Република Македония
 bg,MK,Република Северна Македония
 bg,MK,Северна Македония
@@ -443,19 +420,15 @@ bg,NL,Синт Мартен
 bg,NL,Холандия
 bg,NO,Кралство Норвегия
 bg,NO,Норвегия
-bg,PL,PL
-bg,PL,POL
 bg,PL,Polska
 bg,PL,Полша
 bg,PL,Република Полша
-bg,PL,🇵🇱
 bg,PT,Португалия
 bg,PT,Република Португалия
 bg,RO,Република Румъния
 bg,RO,Румъния
 bg,RS,Република Сърбия
 bg,RS,Сърбия
-bg,RU,РФ
 bg,RU,Русия
 bg,RU,Руска федерация
 bg,SE,Кралство Швеция
@@ -480,14 +453,11 @@ bs,AM,Ermenija
 bs,AM,Jermenija
 bs,AT,Austrija
 bs,AZ,Azerbejdžan
-bs,BA,BH
-bs,BA,BiH
 bs,BA,Bosna
 bs,BA,Bosna i Hercegovina
 bs,BE,Belgija
 bs,BG,Bugarska
 bs,BY,Bjelorusija
-bs,CH,CH
 bs,CH,Švicarska
 bs,CH,Švicarska konferedacija
 bs,CY,Kipar
@@ -508,17 +478,11 @@ bs,FO,Farski otoci
 bs,FO,Ostrva Faro
 bs,FR,Francuska
 bs,GB,Engleska
-bs,GB,GB
-bs,GB,GBR
 bs,GB,Sjeverna Irska
-bs,GB,UK
 bs,GB,Ujedinjeno Kraljevstvo
 bs,GB,Ujedinjeno Kraljevstvo Velike Britanije i Sjeverne Irske
-bs,GB,VB
-bs,GB,VBR
 bs,GB,Velika Britanija
 bs,GB,Vels
-bs,GB,🇬🇧
 bs,GE,Gruzija
 bs,GR,Grčka
 bs,HR,Hrvatska
@@ -526,7 +490,6 @@ bs,HU,Mađarska
 bs,IE,Irska
 bs,IE,Republika Irska
 bs,IE,Éire
-bs,IE,🇮🇪
 bs,IS,Island
 bs,IT,Italija
 bs,KZ,Kazahstan
@@ -549,10 +512,8 @@ bs,NL,Kraljevina Holandija
 bs,NL,Nizozemska
 bs,NL,Sint Maarten
 bs,NO,Norveška
-bs,PL,POL
 bs,PL,Poljska
 bs,PL,Polska
-bs,PL,🇵🇱
 bs,PT,Portugal
 bs,RO,Rumunija
 bs,RS,Srbija
@@ -595,7 +556,6 @@ ca,BG,República de Bulgària
 ca,BY,Belarús
 ca,BY,Bielorússia
 ca,BY,República de Belarús
-ca,CH,CH
 ca,CH,Confederació Helvètica
 ca,CH,Confederació Suïssa
 ca,CH,Suissa
@@ -620,12 +580,9 @@ ca,DK,illes Fèroe
 ca,EE,Estònia
 ca,ES,Catalunya
 ca,ES,Comunitat Autònoma de Catalunya
-ca,ES,ES
-ca,ES,ESP
 ca,ES,Espanya
 ca,ES,Estat espanyol
 ca,ES,Regne d'Espanya
-ca,ES,🇪🇸
 ca,FI,Finlandia
 ca,FI,Finlàndia
 ca,FI,República de Finlàndia
@@ -655,7 +612,6 @@ ca,GB,Regne Unit
 ca,GB,Regne Unit De La Gran Bretanya I Irlanda Del Nord
 ca,GB,Reialme Unit
 ca,GB,Reialme Unit de la Gran Bretanya i Irlanda del Nord
-ca,GB,UK
 ca,GB,Ulster
 ca,GB,United Kingdom
 ca,GB,Wales
@@ -694,7 +650,6 @@ ca,MK,Antiga República Iugoslava de Macedònia
 ca,MK,Macedònia del Nord
 ca,MK,República de Macedònia
 ca,MK,República de Macedònia del Nord
-ca,MK,mk
 ca,MT,Malta
 ca,MT,República de Malta
 ca,NL,Aruba
@@ -710,7 +665,6 @@ ca,NO,Regne de Noruega
 ca,PL,Polonia
 ca,PL,Polònia
 ca,PL,República de Polònia
-ca,PL,🇵🇱
 ca,PT,Portugal
 ca,PT,República Portuguesa
 ca,PT,República de Portugal
@@ -728,7 +682,6 @@ ca,TR,República Turca
 ca,TR,República de Turquia
 ca,TR,Turquia
 ca,TR,Türkiye
-ca,TR,🇹🇷
 ca,UA,Ucraïna
 ca,VA,Ciutat del Vaticà
 ca,VA,Estat de la Ciutat del Vaticà
@@ -744,7 +697,6 @@ ce,BG,Болгаре
 ce,BG,Болгари
 ce,BG,Болгарий
 ce,BY,Белорусси
-ce,CH,CH
 ce,CH,Швейцари
 ce,CY,Кипр
 ce,CZ,Чехи
@@ -784,7 +736,6 @@ ce,NL,Аруба
 ce,NL,Нидерландаш
 ce,NO,Норвеги
 ce,PL,Польша
-ce,PL,🇵🇱
 ce,PT,Португали
 ce,RO,Румыни
 ce,RS,Серби
@@ -803,26 +754,17 @@ cs,AL,Albánská republika
 cs,AM,Arménie
 cs,AT,Rakousko
 cs,AZ,Ázerbájdžán
-cs,BA,BaH
-cs,BA,BiH
 cs,BA,Bosna a Hercegovina
 cs,BA,Bosna a Herzegovina
 cs,BE,Belgie
 cs,BG,Bulharsko
 cs,BG,Bulharská republika
 cs,BY,Bělorusko
-cs,CH,CH
 cs,CH,Švýcarsko
 cs,CY,Kypr
-cs,CZ,cz
-cs,CZ,cze
-cs,CZ,ČR
 cs,CZ,Česko
 cs,CZ,Česká republika
-cs,DE,BRD
-cs,DE,NSR
 cs,DE,Německo
-cs,DE,SRN
 cs,DE,Spolková republika Německo
 cs,DK,Dánsko
 cs,DK,Dánské království
@@ -872,7 +814,6 @@ cs,MK,Makedonská republika
 cs,MK,Republika Makedonie
 cs,MK,Republika Severní Makedonie
 cs,MK,Severní Makedonie
-cs,MK,mk
 cs,MT,Malta
 cs,NL,Aruba
 cs,NL,Curacao
@@ -883,7 +824,6 @@ cs,NL,Sint Maarten
 cs,NL,Svatý Martin
 cs,NO,Norsko
 cs,PL,Polsko
-cs,PL,🇵🇱
 cs,PT,Portugalsko
 cs,RO,Rumunsko
 cs,RS,Srbsko
@@ -912,7 +852,6 @@ cv,BG,Болгари
 cv,BG,Тăнай Пăлхарĕ
 cv,BG,Тăнайçи Пăлхарĕ
 cv,BY,Беларуç
-cv,CH,CH
 cv,CH,Швейцари
 cv,CY,Кипр Республики
 cv,CZ,Чех Республики
@@ -949,9 +888,7 @@ cv,MT,Мальта
 cv,NL,Аруба
 cv,NL,Нидерландсем
 cv,NO,Норвеги
-cv,PL,PL
 cv,PL,Польша
-cv,PL,🇵🇱
 cv,PT,Португали
 cv,RO,Румыни
 cv,RS,Серби
@@ -976,13 +913,9 @@ cy,BE,Gwlad Belg
 cy,BG,Bulgaria
 cy,BG,Bwlgaria
 cy,BY,Belarws
-cy,CH,CH
 cy,CH,Y Swistir
 cy,CY,Ciprus
 cy,CY,Cyprus
-cy,CY,cy
-cy,CY,🇨🇾
-cy,CZ,CZR
 cy,CZ,Gweriniaeth Tsiec
 cy,CZ,Y Weriniaeth Tsiec
 cy,DE,Gweriniaeth Ffederal yr Almaen
@@ -1021,8 +954,6 @@ cy,FR,Ffrengig
 cy,FR,France
 cy,FR,Gweriniaeth Ffrainc
 cy,GB,Cymru
-cy,GB,DG
-cy,GB,DU
 cy,GB,Gogledd Iwerddon
 cy,GB,Gwales
 cy,GB,Gwalia
@@ -1033,7 +964,6 @@ cy,GB,Teyrnas Gyfunol
 cy,GB,Teyrnas Gyfunol Prydain Fawr a Gogledd Iwerddon
 cy,GB,Teyrnas Unedig
 cy,GB,Teyrnas Unedig Prydain Fawr a Gogledd Iwerddon
-cy,GB,cym
 cy,GB,y DG
 cy,GB,y DU
 cy,GB,y Deyrnas Unedig
@@ -1045,7 +975,6 @@ cy,IE,Iwerddon
 cy,IE,Iwerddon Rydd
 cy,IE,Éire
 cy,IS,Gwlad yr Iâ
-cy,IS,is
 cy,IT,Yr Eidal
 cy,KZ,Casachstan
 cy,LI,Liechtenstein
@@ -1064,7 +993,6 @@ cy,ME,Montenegro
 cy,MK,Gogledd Macedonia
 cy,MK,Gweriniaeth Gogledd Macedonia
 cy,MK,Gweriniaeth Macedonia
-cy,MK,mk
 cy,MT,Malta
 cy,NL,Aruba
 cy,NL,Arwba
@@ -1076,9 +1004,6 @@ cy,NL,Ynys Aruba
 cy,NL,Yr Iseldiroedd
 cy,NO,Norwy
 cy,PL,Gwlad Pwyl
-cy,PL,PL
-cy,PL,POL
-cy,PL,🇵🇱
 cy,PT,Portiwgal
 cy,RO,Rwmania
 cy,RS,Serbia
@@ -1107,14 +1032,12 @@ da,BE,Royaume de Belgique
 da,BG,Bulgarien
 da,BG,Republikken Bulgarien
 da,BY,Hviderusland
-da,CH,CH
 da,CH,Schweiz
 da,CH,Svejts
 da,CY,Cypern
 da,CY,Republikken Cypern
 da,CZ,Tjekkiet
 da,DE,Tyskland
-da,DK,DK
 da,DK,Danmark
 da,DK,Danmarks Rige
 da,DK,Færø
@@ -1123,7 +1046,6 @@ da,DK,Føroyar
 da,DK,Grønland
 da,DK,Kongeriget
 da,DK,Kongeriget Danmark
-da,DK,dk
 da,EE,Estland
 da,ES,Catalonien
 da,ES,Catalunya
@@ -1142,7 +1064,6 @@ da,GB,United Kingdom
 da,GB,Wales
 da,GE,Georgien
 da,GR,Grækenland
-da,HR,KRO
 da,HR,Kroatien
 da,HR,Republikken Kroatien
 da,HU,Ungarn
@@ -1161,7 +1082,6 @@ da,ME,Montenegro
 da,MK,Makedonien
 da,MK,Nordmakedonien
 da,MK,Republikken Nordmakedonien
-da,MK,mk
 da,MT,Malta
 da,NL,Aruba
 da,NL,Curacao
@@ -1169,19 +1089,14 @@ da,NL,Curaçao
 da,NL,Holland
 da,NL,Kongeriget Nederlandene
 da,NL,Koninkrijk der Nederlanden
-da,NL,NED
-da,NL,NL
 da,NL,Nederland
 da,NL,Nederlandene
 da,NL,Sint Maarten
-da,NL,nl
 da,NO,Norge
 da,PL,Den tredje polske republik
-da,PL,PL
 da,PL,Polen
 da,PL,Polska
 da,PL,Republikken Polen
-da,PL,🇵🇱
 da,PT,Portugal
 da,RO,Rumænien
 da,RS,Serbien
@@ -1198,15 +1113,12 @@ de,AD,Andorra
 de,AL,Albanien
 de,AL,Republik Albanien
 de,AM,Armenien
-de,AM,🇦🇲
 de,AT,Republik Österreich
 de,AT,Österreich
 de,AZ,Aserbaidschan
-de,BA,BiH
 de,BA,Bosnien und Herzegowina
 de,BA,Bosnien-Herzegowina
 de,BE,Belgien
-de,BE,🇧🇪
 de,BG,Bulgarien
 de,BY,Belarus
 de,BY,Belorussland
@@ -1214,27 +1126,19 @@ de,BY,Belorußland
 de,BY,Republik Belarus
 de,BY,Weißrussland
 de,BY,Weißruthenien
-de,CH,CH
-de,CH,CHE
 de,CH,Confoederatio Helvetica
 de,CH,Eidgenossenschaft
-de,CH,SUI
 de,CH,Schweiz
 de,CH,Schweizerische Eidgenossenschaft
 de,CY,Republik Zypern
 de,CY,Südzypern
 de,CY,Zypern
-de,CY,cy
-de,CY,🇨🇾
 de,CZ,Czechia
 de,CZ,Tschechien
 de,CZ,Tschechische Republik
 de,DE,BR Deutschland
-de,DE,BRD
 de,DE,Bundesrepublik Deutschland
 de,DE,Deutschland
-de,DE,GER
-de,DE,de
 de,DK,Dänemark
 de,DK,Faeröerne
 de,DK,Faroer
@@ -1276,26 +1180,19 @@ de,FO,Suðuroyar sýsla
 de,FR,Frankreich
 de,FR,Französische Republik
 de,FR,Republik Frankreich
-de,FR,fr
 de,GB,England
-de,GB,G B
 de,GB,G B R
 de,GB,G. B.
 de,GB,G. B. R.
 de,GB,G.B.
 de,GB,G.B.R.
-de,GB,GB
-de,GB,GBR
 de,GB,Großbritannien
 de,GB,Nordirland
-de,GB,U K
 de,GB,U. K.
 de,GB,U.K.
-de,GB,UK
 de,GB,Vereinigtes Königreich
 de,GB,Vereinigtes Königreich Großbritannien und Nordirland
 de,GB,Wales
-de,GB,🇬🇧
 de,GE,Georgien
 de,GE,Grusien
 de,GE,Grusinien
@@ -1307,7 +1204,6 @@ de,HR,Republik Kroatien
 de,HU,Ungarn
 de,IE,Irland
 de,IE,Republik Irland
-de,IE,🇮🇪
 de,IS,Island
 de,IT,Italien
 de,IT,Italienische Republik
@@ -1333,7 +1229,6 @@ de,MK,Mazedonien
 de,MK,Nordmazedonien
 de,MK,Republik Mazedonien
 de,MK,Republik Nordmazedonien
-de,MK,mk
 de,MT,Malta
 de,NL,Aruba
 de,NL,Curacao
@@ -1343,20 +1238,15 @@ de,NL,Holland
 de,NL,Korsou
 de,NL,Kòrsou
 de,NL,Königreich der Niederlande
-de,NL,NED
-de,NL,NL
 de,NL,Niederlande
 de,NL,Sint Maarten
 de,NL,St. Maarten
 de,NL,die Niederlande
 de,NO,Königreich Norwegen
 de,NO,Norwegen
-de,PL,PL
-de,PL,POL
 de,PL,Polen
 de,PL,Polska
 de,PL,Republik Polen
-de,PL,🇵🇱
 de,PT,Portugal
 de,RO,Rumänien
 de,RS,Serbien
@@ -1382,7 +1272,6 @@ de,VA,Staat Vatikanstadt
 de,VA,Staat der Vatikanstadt
 de,VA,Vatikan
 de,VA,Vatikanstadt
-de,VA,🇻🇦
 el,AD,Ανδόρρα
 el,AL,Αλβανία
 el,AM,Αρμενία
@@ -1392,12 +1281,10 @@ el,AZ,Αζερμπαϊτζάν
 el,BA,Βοσνία και Ερζεγοβίνη
 el,BE,Βέλγιο
 el,BE,Βασίλειο του Βελγίου
-el,BG,BUL
 el,BG,Boύλγαροι
 el,BG,Βουλγαρία
 el,BY,Δημοκρατία της Λευκορωσίας
 el,BY,Λευκορωσία
-el,CH,CH
 el,CH,Ελβετία
 el,CH,Ελβετική Συνομοσπονδία
 el,CY,Κυπριακή Δημοκρατία
@@ -1477,7 +1364,6 @@ el,MK,ΠΓΔΜ
 el,MK,Πρώην Γιουγκοσλαβική Δημοκρατία της Μακεδονίας
 el,MT,Δημοκρατία της Μάλτας
 el,MT,Μάλτα
-el,NL,ARU
 el,NL,Άγιος Μαρτίνος
 el,NL,Αρούμπα
 el,NL,Βασίλειο της Ολλανδίας
@@ -1489,7 +1375,6 @@ el,NO,Βασίλειο της Νορβηγίας
 el,NO,Νορβηγία
 el,PL,Δημοκρατία της Πολωνίας
 el,PL,Πολωνία
-el,PL,🇵🇱
 el,PT,Πορτογαλία
 el,PT,Πορτογαλική Δημοκρατία
 el,RO,Ρουμανία
@@ -1507,59 +1392,29 @@ el,TR,Τουρκία
 el,TR,Τουρκική Δημοκρατία
 el,UA,Ουκρανία
 el,VA,Βατικανό
-en,AD,AND
 en,AD,Andorra
 en,AD,Principality of Andorra
 en,AD,Principality of the Valleys of Andorra
-en,AD,ad
-en,AD,🇦🇩
-en,AL,ALB
 en,AL,Albania
 en,AL,Republic of Albania
 en,AL,Republika e Shqipërisë
 en,AL,Shqipërisë
-en,AL,al
-en,AL,🇦🇱
-en,AM,ARM
 en,AM,Armenia
 en,AM,Republic of Armenia
-en,AM,🇦🇲
-en,AT,AT
-en,AT,AUT
 en,AT,Austria
 en,AT,Republic of Austria
 en,AT,Republik Österreich
-en,AT,at
-en,AT,aut
 en,AT,Österreich
-en,AT,🇦🇹
-en,AZ,AZE
 en,AZ,Azerbaijan
 en,AZ,Republic of Azerbaijan
-en,AZ,az
-en,AZ,🇦🇿
-en,BA,B&H
-en,BA,BIH
-en,BA,BiH
 en,BA,Bosnia
 en,BA,Bosnia & Herzegovina
 en,BA,Bosnia and Herzegovina
 en,BA,Bosnia-Herzegovina
-en,BA,ba
-en,BA,🇧🇦
-en,BE,BE
-en,BE,BEL
 en,BE,Belgium
 en,BE,Kingdom of Belgium
-en,BE,be
-en,BE,🇧🇪
-en,BG,BGR
-en,BG,BUL
 en,BG,Bulgaria
 en,BG,Republic of Bulgaria
-en,BG,bg
-en,BG,🇧🇬
-en,BY,BLR
 en,BY,Belarus
 en,BY,Belorussia
 en,BY,Bielorussia
@@ -1568,12 +1423,7 @@ en,BY,Byelorussia
 en,BY,Republic of Belarus
 en,BY,White Russia
 en,BY,White Ruthenia
-en,BY,by
-en,BY,🇧🇾
-en,CH,CH
-en,CH,CHE
 en,CH,Confoederatio Helvetica
-en,CH,SUI
 en,CH,Schweiz
 en,CH,Suisse
 en,CH,Svizzera
@@ -1584,32 +1434,16 @@ en,CY,Cyprus
 en,CY,Greek Administration of Southern Cyprus
 en,CY,Greek Cypriot State
 en,CY,Republic of Cyprus
-en,CY,cy
-en,CY,🇨🇾
-en,CZ,CZE
-en,CZ,CZR
 en,CZ,Czech Republic
 en,CZ,Czechia
-en,CZ,cz
-en,CZ,cze
-en,CZ,ČR
 en,CZ,Česko
 en,CZ,Česká republika
 en,DE,BR Deutschland
-en,DE,BRD
 en,DE,Bundesrepublik Deutschland
-en,DE,DE
 en,DE,Deutschland
-en,DE,FRG
 en,DE,Federal Republic of Germany
-en,DE,GER
 en,DE,Germany
-en,DE,de
 en,DK,Atlantic/Faroe
-en,DK,DEK
-en,DK,DEN
-en,DK,DK
-en,DK,DNK
 en,DK,Danish Realm
 en,DK,Danmark
 en,DK,Denmark
@@ -1644,35 +1478,21 @@ en,DK,Greenland
 en,DK,Kingdom of Denmark
 en,DK,Realm of Denmark
 en,DK,Sheep Islands
-en,DK,TAN
 en,DK,The Faeroe Islands
 en,DK,The Faroe Islands
-en,DK,dk
-en,DK,fo
-en,DK,gl
 en,DK,metropolitan Denmark
-en,DK,🇩🇰
-en,DK,🇫🇴
-en,DK,🇬🇱
-en,EE,EST
 en,EE,Eesti
 en,EE,Estland
 en,EE,Estonia
 en,EE,Republic of Estonia
-en,EE,ee
-en,EE,🇪🇪
 en,ES,Autonomous community of Catalonia
 en,ES,Catalonha
 en,ES,Catalonia
 en,ES,Catalunya
 en,ES,Cataluña
-en,ES,ES
-en,ES,ESP
 en,ES,España
 en,ES,Kingdom of Spain
 en,ES,Spain
-en,ES,🇪🇸
-en,FI,FIN
 en,FI,Finland
 en,FI,Finnia
 en,FI,Land of Thousand Lakes
@@ -1680,8 +1500,6 @@ en,FI,Republic of Finland
 en,FI,Republiken Finland
 en,FI,Suomen tasavalta
 en,FI,Suomi
-en,FI,fi
-en,FI,🇫🇮
 en,FO,Atlantic/Faroe
 en,FO,Faer Oer
 en,FO,Faeroe Is
@@ -1712,169 +1530,91 @@ en,FO,Føroyar
 en,FO,Sheep Islands
 en,FO,The Faeroe Islands
 en,FO,The Faroe Islands
-en,FO,fo
-en,FO,🇫🇴
-en,FR,FR
-en,FR,FRA
 en,FR,France
 en,FR,French Republic
 en,FR,La France
 en,FR,Republic of France
 en,FR,République française
-en,FR,fr
 en,FR,the Hexagon
 en,GB,Cymru
 en,GB,England
-en,GB,G B
 en,GB,G B R
 en,GB,G. B.
 en,GB,G. B. R.
 en,GB,G.B.
 en,GB,G.B.R.
-en,GB,GB
-en,GB,GBR
 en,GB,Great Britain
 en,GB,Marea Britanie
 en,GB,N. Ireland
-en,GB,NIR
 en,GB,North Ireland
 en,GB,Northern Ireland
-en,GB,U K
 en,GB,U. K.
 en,GB,U.K.
-en,GB,UK
-en,GB,UKN
 en,GB,United Kingdom
 en,GB,United Kingdom of Great Britain and Northern Ireland
-en,GB,WAL
-en,GB,WLS
 en,GB,Wales
-en,GB,🇬🇧
-en,GE,GE
-en,GE,GEO
 en,GE,Georgia
 en,GE,Georgia (country)
 en,GE,Republic of Georgia
-en,GE,🇬🇪
 en,GR,Ellada
-en,GR,GRE
 en,GR,Greece
 en,GR,Greek
 en,GR,Greek Republic
 en,GR,Hellas
 en,GR,Hellenic Republic
-en,GR,el
-en,GR,gr
-en,GR,🇬🇷
-en,HR,CRO
 en,HR,Croatia
-en,HR,HR
-en,HR,HRV
 en,HR,Republic of Croatia
-en,HR,hr
-en,HR,🇭🇷
-en,HU,HUN
 en,HU,Hungary
-en,HU,hu
-en,HU,🇭🇺
 en,IE,Eire
 en,IE,Hibernia
-en,IE,IE
-en,IE,IRL
 en,IE,Ireland
 en,IE,Ireland, Republic of
 en,IE,Republic of Ireland
 en,IE,Southern Ireland
-en,IE,ie
 en,IE,ireland
 en,IE,Éire
-en,IE,🇮🇪
-en,IS,ISL
 en,IS,Iceland
 en,IS,Island
 en,IS,Republic of Iceland
-en,IS,is
-en,IS,🇮🇸
-en,IT,IT
-en,IT,ITA
 en,IT,Italia
 en,IT,Italian Republic
 en,IT,Italy
-en,IT,it
-en,IT,🇮🇹
-en,KZ,KAZ
 en,KZ,Kazakhstan
 en,KZ,Qazaqstan
 en,KZ,Republic of Kazakhstan
-en,KZ,kz
-en,KZ,🇰🇿
-en,LI,FL
-en,LI,LI
-en,LI,LIE
 en,LI,Liechtenstein
 en,LI,Principality of Liechtenstein
-en,LI,li
-en,LI,🇱🇮
-en,LT,LTU
 en,LT,Lietuva
 en,LT,Lithuania
 en,LT,Republic of Lithuania
-en,LT,lt
-en,LT,🇱🇹
 en,LU,Grand Duchy of Luxembourg
-en,LU,LU
-en,LU,LUX
 en,LU,Luxembourg
 en,LU,Luxemburg
-en,LU,lu
-en,LU,🇱🇺
-en,LV,LAT
-en,LV,LVA
 en,LV,Latvia
 en,LV,Latvian Republic
 en,LV,Latvija
 en,LV,Republic of Latvia
-en,LV,lv
-en,LV,🇱🇻
 en,MC,Fort-Hercule
-en,MC,MON
 en,MC,Monaco
 en,MC,Principality and Diocese of Monaco
 en,MC,Principality of Monaco
-en,MC,mc
-en,MC,🇲🇨
-en,MD,MDA
 en,MD,Moldavia
 en,MD,Moldova
 en,MD,Republic of Moldova
 en,MD,Republica Moldova
-en,MD,md
-en,MD,🇲🇩
 en,ME,Crna Gora
-en,ME,MNE
 en,ME,Montenegro
-en,ME,me
-en,ME,🇲🇪
 en,MK,FYR Macedonia
 en,MK,FYROM
 en,MK,Former Yugoslav Republic of Macedonia
-en,MK,MKD
 en,MK,Macedonia
 en,MK,North Macedonia
 en,MK,Republic of Macedonia
 en,MK,Republic of North Macedonia
-en,MK,mk
-en,MK,🇲🇰
-en,MT,MLT
 en,MT,Malta
 en,MT,Republic of Malta
-en,MT,mt
-en,MT,🇲🇹
-en,NL,ARU
 en,NL,America/Aruba
 en,NL,Aruba
-en,NL,CUW
-en,NL,CW
 en,NL,Country of Curaçao
 en,NL,Curacao
 en,NL,Curacau
@@ -1891,105 +1631,55 @@ en,NL,Island of Aruba
 en,NL,Kingdom of the Netherlands
 en,NL,Korsou
 en,NL,Kòrsou
-en,NL,NED
-en,NL,NL
 en,NL,NL-SX
 en,NL,Nederland
 en,NL,Netherlands
 en,NL,Netherlands (after 1945)
-en,NL,SX
 en,NL,Saint Martin
 en,NL,Saint Martin (Dutch part)
 en,NL,Sint Maarten
 en,NL,Sint Maarten (Dutch part)
 en,NL,St Martin
 en,NL,St. Maarten
-en,NL,aw
-en,NL,nl
 en,NL,the Netherlands
-en,NL,🇦🇼
-en,NL,🇨🇼
-en,NL,🇳🇱
-en,NL,🇸🇽
 en,NO,Kingdom of Norway
-en,NO,NO
-en,NO,NOR
 en,NO,Noreg
 en,NO,Norge
 en,NO,Norvège
 en,NO,Norway
 en,NO,Norwegen
-en,NO,no
-en,NO,🇳🇴
-en,PL,PL
-en,PL,POL
 en,PL,Poland
 en,PL,Republic of Poland
-en,PL,🇵🇱
-en,PT,PT
 en,PT,Portugal
 en,PT,Portuguese Republic
-en,PT,pt
-en,PT,🇵🇹
 en,RO,Romania
 en,RO,România
 en,RO,Roumania
 en,RO,Rumania
-en,RO,ro
-en,RO,🇷🇴
 en,RS,Republic of Serbia
 en,RS,Republika Srbija
-en,RS,SRB
 en,RS,Serbia
 en,RS,Srbija
-en,RS,rs
-en,RS,🇷🇸
-en,RU,RF
-en,RU,RU
-en,RU,RUS
 en,RU,Rossija
 en,RU,Rossijskaja Federatsija
 en,RU,Rossiya
 en,RU,Rossiyskaya Federatsiya
-en,RU,Rus
 en,RU,Russia
 en,RU,Russian Federation
-en,RU,ru
 en,SE,Kingdom of Sweden
-en,SE,SE
-en,SE,SWE
 en,SE,Sweden
-en,SE,se
 en,SI,Republic of Slovenia
 en,SI,Republika Slovenija
-en,SI,SLO
 en,SI,Slovenia
 en,SI,Slovenija
-en,SI,si
-en,SI,slo
-en,SI,svn
-en,SI,🇸🇮
-en,SK,SVK
 en,SK,Slovak Republic
 en,SK,Slovakia
-en,SK,sk
-en,SK,🇸🇰
 en,SM,Most Serene Republic of San Marino
-en,SM,SMR
 en,SM,San Marino
-en,SM,sm
-en,SM,🇸🇲
 en,TR,Republic of Turkey
-en,TR,TUR
 en,TR,Turkey
-en,TR,tr
-en,TR,🇹🇷
-en,UA,UA
-en,UA,UKR
 en,UA,Ukraine
 en,UA,Ukrainia
-en,UA,ua
-en,UA,🇺🇦
 en,VA,Città del Vaticano
 en,VA,Civitas Vaticana
 en,VA,Papal State
@@ -2000,9 +1690,6 @@ en,VA,The Vatican
 en,VA,Vatican
 en,VA,Vatican City
 en,VA,Vatican City State
-en,VA,va
-en,VA,vat
-en,VA,🇻🇦
 es,AD,Andorra
 es,AD,Principado de Andorra
 es,AL,Albania
@@ -2023,8 +1710,6 @@ es,BA,Bosnia y Herzegovina
 es,BA,Bosnia-Herzegovia
 es,BA,Republica de Bosnia
 es,BA,República de Bosnia
-es,BA,ba
-es,BE,BE
 es,BE,Belgica
 es,BE,Bélgica
 es,BE,Reino de Belgica
@@ -2037,17 +1722,12 @@ es,BY,Belarús
 es,BY,Bielorrusia
 es,BY,Republica de Belarus
 es,BY,República de Belarús
-es,CH,CH
-es,CH,CHE
 es,CH,Confederación Helvética
 es,CH,Confederación Suiza
-es,CH,SUI
 es,CH,Suiza
 es,CY,Chipre
 es,CY,Republica de Chipre
 es,CY,República de Chipre
-es,CY,cy
-es,CY,🇨🇾
 es,CZ,Bohemia
 es,CZ,Chequia
 es,CZ,Republica Checa
@@ -2068,19 +1748,15 @@ es,DK,Islas Feroe
 es,DK,Islas Feroes
 es,DK,Islas Feroé
 es,DK,Reino de Dinamarca
-es,DK,gl
 es,EE,Estonia
 es,EE,Republica de Estonia
 es,EE,República de Estonia
 es,ES,Catalunya
 es,ES,Cataluña
 es,ES,Comunidad Autónoma de Cataluña
-es,ES,ES
-es,ES,ESP
 es,ES,España
 es,ES,Estado español
 es,ES,Reino de España
-es,ES,🇪🇸
 es,FI,Finlandia
 es,FI,República de Finlandia
 es,FO,Faeroerne
@@ -2096,15 +1772,12 @@ es,FO,Islas Feroé
 es,FR,Francia
 es,FR,Republica Francesa
 es,FR,República Francesa
-es,GB,GB
-es,GB,GBR
 es,GB,Gales
 es,GB,Gran Bretaña
 es,GB,Inglaterra
 es,GB,Irlanda del Norte
 es,GB,Reino Unido
 es,GB,Reino Unido de Gran Bretaña e Irlanda del Norte
-es,GB,UK
 es,GE,Georgia
 es,GR,Grecia
 es,GR,Hellás
@@ -2155,7 +1828,6 @@ es,MK,Macedonia del Norte
 es,MK,Republica de Macedonia
 es,MK,República de Macedonia
 es,MK,República de Macedonia del Norte
-es,MK,mk
 es,MT,Malta
 es,MT,República de Malta
 es,NL,Aruba
@@ -2173,9 +1845,6 @@ es,NL,Korsou
 es,NL,Kòrsou
 es,NL,Los Paises Bajos
 es,NL,Los Países Bajos
-es,NL,NED
-es,NL,NL
-es,NL,NLD
 es,NL,Paises Bajos
 es,NL,Países Bajos
 es,NL,Reino de Los Paises Bajos
@@ -2188,7 +1857,6 @@ es,NO,Reino de Noruega
 es,PL,Polonia
 es,PL,Republica de Polonia
 es,PL,República de Polonia
-es,PL,🇵🇱
 es,PT,Portugal
 es,PT,Republica Portuguesa
 es,PT,Republica de Portugal
@@ -2221,7 +1889,6 @@ es,UA,Ucrania
 es,VA,Ciudad del Vaticano
 es,VA,Estado de la Ciudad del Vaticano
 es,VA,Vaticano
-es,VA,va
 et,AD,Andorra
 et,AL,Albaania
 et,AL,Albaania Vabariik
@@ -2231,11 +1898,9 @@ et,AT,Austria Vabariik
 et,AZ,Aserbaidžaan
 et,BA,Bosnia ja Hertsegoviina
 et,BE,Belgia
-et,BG,BUL
 et,BG,Bulgaaria
 et,BG,Bulgaaria Vabariik
 et,BY,Valgevene
-et,CH,CH
 et,CH,Šveits
 et,CH,Šveitsi Konföderatsioon
 et,CY,Küpros
@@ -2287,9 +1952,7 @@ et,MC,Monaco
 et,MD,Moldova
 et,ME,Montenegro
 et,MK,Põhja-Makedoonia
-et,MK,mk
 et,MT,Malta
-et,NL,ARU
 et,NL,Aruba
 et,NL,Curacao
 et,NL,Curaçao
@@ -2298,11 +1961,9 @@ et,NL,Madalmaade Kuningriik
 et,NL,Sint Maarten
 et,NO,Norra
 et,NO,Norra Kuningriik
-et,PL,PL
 et,PL,Poola
 et,PL,Poola Vabariik
 et,PL,Poolamaa
-et,PL,🇵🇱
 et,PT,Portugal
 et,PT,Portugali Vabariik
 et,RO,Rumeenia
@@ -2324,7 +1985,6 @@ eu,BA,Bosnia-Herzegovina
 eu,BE,Belgika
 eu,BG,Bulgaria
 eu,BY,Bielorrusia
-eu,CH,CH
 eu,CH,Suitza
 eu,CY,Zipre
 eu,CZ,Txekia
@@ -2335,8 +1995,6 @@ eu,DK,Faroeak
 eu,DK,Groenlandia
 eu,EE,Estonia
 eu,ES,Catalunya
-eu,ES,ES
-eu,ES,ESP
 eu,ES,Espainia
 eu,ES,Espainiako Erresuma
 eu,ES,Katalunia
@@ -2373,7 +2031,6 @@ eu,MK,Ipar Mazedonia
 eu,MK,Ipar Mazedoniako Errepublika
 eu,MK,Jugoslavia Ohiko Mazedoniako Errepublika
 eu,MK,Mazedoniako Errepublika
-eu,MK,mk
 eu,MT,Malta
 eu,NL,Aruba
 eu,NL,Curazao
@@ -2386,7 +2043,6 @@ eu,NL,Saint Maarten
 eu,NL,Sint Maarten
 eu,NO,Norvegia
 eu,PL,Polonia
-eu,PL,🇵🇱
 eu,PT,Portugal
 eu,RO,Errumania
 eu,RS,Serbia
@@ -2431,7 +2087,6 @@ fi,CZ,Tšekki
 fi,DE,Bundesrepublik Deutschland
 fi,DE,Saksa
 fi,DE,Saksan liittotasavalta
-fi,DK,FRO
 fi,DK,Fär-saaret
 fi,DK,Färsaaret
 fi,DK,Fäärsaaret
@@ -2450,7 +2105,6 @@ fi,ES,Espanja
 fi,ES,Katalonia
 fi,FI,Suomen tasavalta
 fi,FI,Suomi
-fi,FO,FRO
 fi,FO,Fär-saaret
 fi,FO,Färsaaret
 fi,FO,Fäärsaaret
@@ -2458,10 +2112,8 @@ fi,FR,Ranska
 fi,FR,Ranskan tasavalta
 fi,GB,Britannia
 fi,GB,Englanti
-fi,GB,GB
 fi,GB,Iso-Britannia
 fi,GB,Pohjois-Irlanti
-fi,GB,UK
 fi,GB,United Kingdom
 fi,GB,Wales
 fi,GB,Yhdistynyt kuningaskunta
@@ -2500,11 +2152,9 @@ fi,MD,Moldovan tasavalta
 fi,ME,Montenegro
 fi,MK,Makedonia
 fi,MK,Pohjois-Makedonia
-fi,MK,mk
 fi,MT,Malta
 fi,MT,Maltan tasavalta
 fi,MT,Republic of Malta
-fi,NL,ABW
 fi,NL,Alankomaat
 fi,NL,Alankomaiden kuningaskunta
 fi,NL,Aruba
@@ -2516,11 +2166,8 @@ fi,NL,Sint Maarten
 fi,NO,Noreg
 fi,NO,Norge
 fi,NO,Norja
-fi,PL,PL
-fi,PL,POL
 fi,PL,Puola
 fi,PL,Puolan tasavalta
-fi,PT,PT
 fi,PT,Portugali
 fi,PT,Portugalin tasavalta
 fi,PT,República Portuguesa
@@ -2556,7 +2203,6 @@ fo,BA,Bosnia og Hersegovina
 fo,BE,Belgia
 fo,BG,Bulgaria
 fo,BY,Hvítarussland
-fo,CH,CH
 fo,CH,Sveis
 fo,CY,Kýpros
 fo,CZ,Kekkia
@@ -2606,9 +2252,7 @@ fo,NL,Kongsríki Niðurlond
 fo,NL,Niðurlond
 fo,NL,Sint Maarten
 fo,NO,Noreg
-fo,PL,PL
 fo,PL,Pólland
-fo,PL,🇵🇱
 fo,PT,Portugal
 fo,RO,Rumenia
 fo,RS,Serbia
@@ -2620,58 +2264,40 @@ fo,SM,San Marino
 fo,TR,Turkaland
 fo,UA,Ukraina
 fo,VA,Vatikanið
-fr,AD,AD
 fr,AD,Andorre
 fr,AD,Principauté d'Andorre
 fr,AD,la Principauté d’Andorre
-fr,AL,AL
 fr,AL,Albanie
 fr,AL,République d'Albanie
 fr,AL,la République d’Albanie
-fr,AM,AM
 fr,AM,Arménie
 fr,AM,la République d’Arménie
-fr,AM,🇦🇲
-fr,AT,AT
-fr,AT,AUT
 fr,AT,Aut.
 fr,AT,Autr.
 fr,AT,Autriche
 fr,AT,la République d’Autriche
-fr,AZ,AZ
 fr,AZ,Azerbaïdjan
 fr,AZ,la République d’Azerbaïdjan
-fr,BA,BA
 fr,BA,Bosnie et Herzégovine
 fr,BA,Bosnie-Herzégovine
 fr,BA,Bosnie-et-Herzégovine
 fr,BA,Bosnie-herzégovine
-fr,BA,ba
 fr,BA,la Bosnie-Herzégovine
-fr,BE,BE
 fr,BE,Belg.
 fr,BE,Belgique
 fr,BE,Royaume de Belgique
-fr,BE,be
 fr,BE,le Royaume de Belgique
-fr,BE,🇧🇪
-fr,BG,BG
 fr,BG,Bulg.
 fr,BG,Bulgarie
 fr,BG,la République de Bulgarie
-fr,BY,BLR
-fr,BY,BY
 fr,BY,Belarus
 fr,BY,Biélor.
 fr,BY,Biélorussie
 fr,BY,Bélarus
 fr,BY,la République de Biélorussie
-fr,CH,CH
-fr,CH,CHE
 fr,CH,Confédération helvétique
 fr,CH,Confédération suisse
 fr,CH,Helvétie
-fr,CH,SUI
 fr,CH,Suisse
 fr,CH,la Confédération suisse
 fr,CY,Chypre
@@ -2679,27 +2305,19 @@ fr,CY,Chypre-Sud
 fr,CY,Chypriotes
 fr,CY,République de Chypre
 fr,CY,république de Chypre
-fr,CZ,CZ
 fr,CZ,Rép. tch.
 fr,CZ,République tchèque
 fr,CZ,Tchéquie
-fr,CZ,cz
 fr,CZ,la République tchèque
 fr,DE,All.
 fr,DE,Allemagne
 fr,DE,BR Deutschland
-fr,DE,BRD
 fr,DE,Bundesrepublik Deutschland
-fr,DE,DE
 fr,DE,Deutschland
-fr,DE,GER
 fr,DE,R. F. A.
-fr,DE,RFA
 fr,DE,République fédérale allemande
 fr,DE,République fédérale d'Allemagne
-fr,DE,de
 fr,DE,la République fédérale d’Allemagne
-fr,DK,DK
 fr,DK,Dan.
 fr,DK,Danemark
 fr,DK,Færøerne
@@ -2711,7 +2329,6 @@ fr,DK,Iles Feroe
 fr,DK,Iles Féroé
 fr,DK,Royaume du Danemark
 fr,DK,îles Féroé
-fr,EE,EE
 fr,EE,Esthonie
 fr,EE,Estonie
 fr,EE,République d’Estonie
@@ -2720,14 +2337,10 @@ fr,ES,Cat.
 fr,ES,Catal.
 fr,ES,Catalogne
 fr,ES,Catalunya
-fr,ES,ES
-fr,ES,ESP
 fr,ES,Esp.
 fr,ES,Espagne
 fr,ES,Royaume d'Espagne
 fr,ES,État espagnol
-fr,ES,🇪🇸
-fr,FI,FI
 fr,FI,Fin.
 fr,FI,Finl.
 fr,FI,Finlande
@@ -2738,20 +2351,13 @@ fr,FO,Føroyar
 fr,FO,Iles Feroe
 fr,FO,Iles Féroé
 fr,FO,îles Féroé
-fr,FR,FR
-fr,FR,FRA
-fr,FR,Fr.
 fr,FR,France
 fr,FR,La France
-fr,FR,RF
 fr,FR,République française
-fr,FR,fr
 fr,FR,l'Hexagone
 fr,FR,la République française
 fr,GB,Ang.
 fr,GB,Angleterre
-fr,GB,GB
-fr,GB,GBR
 fr,GB,Galles
 fr,GB,Grande-Bretagne
 fr,GB,Irlande du Nord
@@ -2761,89 +2367,63 @@ fr,GB,Royaume Uni
 fr,GB,Royaume-Uni
 fr,GB,Royaume-Uni de Grande-Bretagne et d’Irlande du Nord
 fr,GB,Royaume-uni
-fr,GB,UK
 fr,GB,le Royaume-Uni de Grande-Bretagne et d’Irlande du Nord
 fr,GB,pays de Galles
-fr,GB,🇬🇧
-fr,GE,GE
 fr,GE,Géorg.
 fr,GE,Géorgie
 fr,GE,Géorgie (Pays)
 fr,GE,république de Géorgie
-fr,GR,GR
 fr,GR,Grèce
 fr,GR,République hellénique
 fr,HR,Croatie
-fr,HR,HR
 fr,HR,la République de Croatie
-fr,HU,HU
 fr,HU,Hongrie
 fr,HU,la Hongrie
-fr,IE,IE
 fr,IE,Ireland
 fr,IE,Irl.
 fr,IE,Irlande
 fr,IE,République d'Irlande
 fr,IE,l’Irlande
 fr,IE,Éire
-fr,IE,🇮🇪
-fr,IS,IS
 fr,IS,Isl.
 fr,IS,Islande
 fr,IS,République d'Islande
 fr,IS,la République d’Islande
-fr,IT,IT
-fr,IT,ITA
-fr,IT,It.
 fr,IT,Ita.
 fr,IT,Ital.
 fr,IT,Italia
 fr,IT,Italie
 fr,IT,République Italienne
 fr,IT,la République italienne
-fr,KZ,KAZ
-fr,KZ,KZ
 fr,KZ,Kazakh.
 fr,KZ,Kazakhstan
 fr,KZ,Kazakstan
 fr,KZ,Qazaqstan
 fr,KZ,la République du Kazakhstan
-fr,LI,LI
 fr,LI,Liechtenstein
 fr,LI,la Principauté du Liechtenstein
 fr,LI,principauté de Liechtenstein
-fr,LT,LT
 fr,LT,Lithuanie
 fr,LT,Lituanie
 fr,LT,la République de Lituanie
 fr,LU,Grand-Duché de Luxembourg
 fr,LU,Grand-duché de Luxembourg
-fr,LU,LU
-fr,LU,LUX
 fr,LU,Lux.
 fr,LU,Luxembourg
 fr,LU,grand-duché de Luxembourg
 fr,LU,le Grand-Duché de Luxembourg
-fr,LU,🇱🇺
-fr,LV,LV
 fr,LV,Lettonie
 fr,LV,la République de Lettonie
 fr,MC,Fort-Hercule
-fr,MC,MC
-fr,MC,MON
 fr,MC,Monaco
 fr,MC,Monaco (rattachée au District de Menton en 1793)
 fr,MC,Principauté de Monaco
 fr,MC,la Principauté de Monaco
-fr,MC,mc
-fr,MD,MD
 fr,MD,Moldavie
 fr,MD,Moldova
 fr,MD,République de Moldavie
 fr,MD,République de Moldova
 fr,MD,la République de Moldavie
-fr,MD,md
-fr,ME,ME
 fr,ME,Montenegro
 fr,ME,Montén.
 fr,ME,Monténégro
@@ -2852,29 +2432,23 @@ fr,MK,ARYM
 fr,MK,FYROM
 fr,MK,L'Ancienne République yougoslave de Macédoine
 fr,MK,L'ex-République yougoslave de Macédoine
-fr,MK,MK
 fr,MK,Macédoine
 fr,MK,Macédoine Du Nord
 fr,MK,Macédoine du Nord
 fr,MK,République de Macédoine
 fr,MK,la République de Macédoine du Nord
-fr,MK,mk
-fr,MT,MT
 fr,MT,Malte
 fr,MT,la République de Malte
 fr,NL,Aruba
 fr,NL,Curaçao
 fr,NL,Hollande
 fr,NL,Land Sint Maarten
-fr,NL,NED
-fr,NL,NL
 fr,NL,NL-SX
 fr,NL,P.-B.
 fr,NL,P.B.
 fr,NL,Pays-Bas
 fr,NL,Pays-bas
 fr,NL,Royaume des Pays-Bas
-fr,NL,SX
 fr,NL,Saint Martin
 fr,NL,Saint Martin (partie néerlandaise)
 fr,NL,Saint-Martin
@@ -2885,75 +2459,51 @@ fr,NL,Sint Maarten (partie néerlandaise)
 fr,NL,Sint-Maarten
 fr,NL,St Maarten
 fr,NL,le Royaume des Pays-Bas
-fr,NL,nl
 fr,NL,royaume des Pays Bas
 fr,NL,État de Saint Martin
 fr,NL,État de Saint-Martin
 fr,NL,État de Sint Maarten
-fr,NL,🇳🇱
-fr,NL,🇸🇽
-fr,NO,NO
-fr,NO,NOR
 fr,NO,Norv.
 fr,NO,Norvège
 fr,NO,Royaume de Norvège
 fr,NO,le Royaume de Norvège
-fr,NO,🇳🇴
-fr,PL,PL
-fr,PL,POL
 fr,PL,Pol.
 fr,PL,Pologne
 fr,PL,République de Pologne
 fr,PL,République polonaise
 fr,PL,la République de Pologne
-fr,PL,🇵🇱
-fr,PT,PT
 fr,PT,Portugal
 fr,PT,la République portugaise
-fr,RO,RO
 fr,RO,Roum.
 fr,RO,Roumanie
 fr,RO,la Roumanie
-fr,RS,RS
 fr,RS,Serbie
 fr,RS,la République de Serbie
 fr,RU,Fédération de Russie
-fr,RU,RU
 fr,RU,Rus.
 fr,RU,Russie
-fr,RU,ru
-fr,SE,SE
 fr,SE,Suède
 fr,SE,le Royaume de Suède
 fr,SI,République de Slovénie
-fr,SI,SI
 fr,SI,Slovénie
 fr,SI,la République de Slovénie
 fr,SK,République slovaque
-fr,SK,SK
 fr,SK,Slovaquie
 fr,SK,la République slovaque
 fr,SM,République de Saint-Marin
-fr,SM,SM
 fr,SM,Saint-Marin
 fr,SM,Saint-marin
 fr,SM,la République de Saint-Marin
 fr,TR,République de Turquie
 fr,TR,République turque
-fr,TR,TR
 fr,TR,Turq.
 fr,TR,Turquie
 fr,TR,la République de Turquie
-fr,TR,tr
-fr,UA,UA
 fr,UA,Ukr.
 fr,UA,Ukraine
 fr,VA,Cité du Vatican
-fr,VA,VA
 fr,VA,Vatican
-fr,VA,va
 fr,VA,État de la Cité du Vatican
-fr,VA,🇻🇦
 fy,AD,Andorra
 fy,AL,Albaanje
 fy,AM,Armeenje
@@ -2963,7 +2513,6 @@ fy,BA,Bosnje
 fy,BE,Belgje
 fy,BG,Bulgarije
 fy,BY,Wyt-Ruslân
-fy,CH,CH
 fy,CH,Switserlân
 fy,CY,Syprus
 fy,CZ,Tsjechje
@@ -3014,9 +2563,7 @@ fy,NL,Nederlân
 fy,NL,Sint Maarten
 fy,NL,Sint Marten
 fy,NO,Noarwegen
-fy,PL,POL
 fy,PL,Poalen
-fy,PL,🇵🇱
 fy,PT,Portegal
 fy,RO,Roemeenje
 fy,RS,Servje
@@ -3039,7 +2586,6 @@ ga,BE,An Bheilg
 ga,BG,An Bhulgáir
 ga,BY,An Bhealarúis
 ga,CH,An Eilvéis
-ga,CH,CH
 ga,CY,An Chipir
 ga,CZ,Poblacht na Seice
 ga,DE,An Ghearmáin
@@ -3084,7 +2630,6 @@ ga,MD,An Mholdóiv
 ga,ME,Montainéagró
 ga,MK,An Mhacadóin Thuaidh
 ga,MK,Poblacht na Macadóine
-ga,MK,mk
 ga,MT,Málta
 ga,NL,An Ollainn
 ga,NL,An Ísiltír
@@ -3096,9 +2641,7 @@ ga,NL,an Ollainn
 ga,NL,an Ísiltír
 ga,NO,An Iorua
 ga,PL,An Pholainn
-ga,PL,PL
 ga,PL,Polska
-ga,PL,🇵🇱
 ga,PT,An Phortaingéil
 ga,RO,An Rómáin
 ga,RS,An tSeirbia
@@ -3122,7 +2665,6 @@ gl,BE,Bélxica
 gl,BG,Bulgaria
 gl,BY,Belarús
 gl,BY,República de Belarús
-gl,CH,CH
 gl,CH,Confederación Helvética
 gl,CH,Confederación Suíza
 gl,CH,Confoederatio Helvetica
@@ -3138,8 +2680,6 @@ gl,DK,Illas Faroé
 gl,DK,Illas Feroe
 gl,EE,Estonia
 gl,ES,Cataluña
-gl,ES,ES
-gl,ES,ESP
 gl,ES,España
 gl,ES,Reino de España
 gl,FI,Finlandia
@@ -3177,7 +2717,6 @@ gl,MK,Antiga República Iugoslava de Macedonia
 gl,MK,Macedonia do Norte
 gl,MK,República de Macedonia
 gl,MK,República de Macedonia do Norte
-gl,MK,mk
 gl,MT,Malta
 gl,NL,Aruba
 gl,NL,Curazao
@@ -3186,11 +2725,8 @@ gl,NL,Países Baixos
 gl,NL,Reino dos Países Baixos
 gl,NL,Sint Maarten
 gl,NO,Noruega
-gl,PL,PL
 gl,PL,Polonia
 gl,PL,República de Polonia
-gl,PL,🇵🇱
-gl,PT,PT
 gl,PT,Portugal
 gl,PT,República Portuguesa
 gl,RO,Romanía
@@ -3214,8 +2750,6 @@ hr,AT,Austrija
 hr,AT,Republika Austrija
 hr,AT,Österreich
 hr,AZ,Azerbajdžan
-hr,BA,BH
-hr,BA,BiH
 hr,BA,Bosna
 hr,BA,Bosna i Hercegovina
 hr,BE,Belgija
@@ -3223,7 +2757,6 @@ hr,BE,Kraljevina Belgija
 hr,BG,Bugarska
 hr,BG,Republika Bugarska
 hr,BY,Bjelorusija
-hr,CH,CH
 hr,CH,Švicarska
 hr,CH,Švicarska Konfederacija
 hr,CY,Cipar
@@ -3256,17 +2789,11 @@ hr,FR,Francuska republika
 hr,FR,Republika Francuska
 hr,FR,République française
 hr,GB,Cymru
-hr,GB,ENG
 hr,GB,Engleska
-hr,GB,GB
 hr,GB,Sjeverna Irska
-hr,GB,UK
 hr,GB,Ujedinjeno Kraljevstvo
 hr,GB,Ujedinjeno Kraljevstvo Velike Britanije i Sjeverne Irske
-hr,GB,VB
 hr,GB,Velika Britanija
-hr,GB,WAL
-hr,GB,WLS
 hr,GB,Wales
 hr,GE,Gruzija
 hr,GR,Grčka
@@ -3296,7 +2823,6 @@ hr,MD,Republika Moldova
 hr,ME,Crna Gora
 hr,MK,Makedonija
 hr,MK,Sjeverna Makedonija
-hr,MK,mk
 hr,MT,Malta
 hr,NL,Aruba
 hr,NL,Curacao
@@ -3305,15 +2831,11 @@ hr,NL,Holandija
 hr,NL,Kraljevina Nizozemska
 hr,NL,Nizozemska
 hr,NL,Sveti Martin (otok)
-hr,NO,NO
-hr,NO,NOR
 hr,NO,Norveška
 hr,NO,Norveško kraljevstvo
-hr,NO,no
 hr,PL,Poljska
 hr,PL,Polska
 hr,PL,Republika Poljska
-hr,PL,🇵🇱
 hr,PT,Portugal
 hr,PT,Republika Portugal
 hr,RO,Rumunjska
@@ -3347,7 +2869,6 @@ hu,BG,Bolgár Népköztársaság
 hu,BG,Bulgária
 hu,BY,Belarusz Köztársaság
 hu,BY,Fehéroroszország
-hu,CH,CH
 hu,CH,Svájc
 hu,CY,Ciprus
 hu,CY,Ciprusi Köztársaság
@@ -3370,14 +2891,12 @@ hu,FI,Finnország
 hu,FO,Feröer
 hu,FO,Feröer szigetek
 hu,FO,Feröer-szigetek
-hu,FR,FRA
 hu,FR,Francia Köztársaság
 hu,FR,Franciaország
 hu,GB,Anglia
 hu,GB,Egyesült Királyság
 hu,GB,Nagy-Britannia
 hu,GB,Nagy-Britannia és Észak-Írország Egyesült Királysága
-hu,GB,UK
 hu,GB,Wales
 hu,GB,Észak-Írország
 hu,GE,Grúzia
@@ -3386,10 +2905,7 @@ hu,HR,Horvát Köztársaság
 hu,HR,Horvátország
 hu,HU,Magyar Köztársaság
 hu,HU,Magyarország
-hu,HU,Mo.
 hu,HU,harmadik magyar köztársaság
-hu,HU,hu
-hu,HU,🇭🇺
 hu,IE,Ír Királyság
 hu,IE,Ír Köztársaság
 hu,IE,Írország
@@ -3414,7 +2930,6 @@ hu,ME,Montenegró
 hu,MK,Macedón Köztársaság
 hu,MK,Macedónia
 hu,MK,Macedónia Volt Jugoszláv Köztársaság
-hu,MK,mk
 hu,MK,Észak-Macedónia
 hu,MK,Észak-macedón Köztársaság
 hu,MT,Málta
@@ -3428,9 +2943,7 @@ hu,NL,Sint Maarten
 hu,NO,Norvég Királyság
 hu,NO,Norvégia
 hu,PL,Lengyelország
-hu,PL,POL
 hu,PL,Polska
-hu,PL,🇵🇱
 hu,PT,Portugália
 hu,RO,Románia
 hu,RS,Szerbia
@@ -3453,11 +2966,9 @@ hu,VA,Vatikán Állam
 hu,VA,Vatikánváros
 hy,AD,Անդորրա
 hy,AL,Ալբանիա
-hy,AM,ՀՀ
 hy,AM,Հայաստան
 hy,AM,Հայաստանի Հանրապետություն
 hy,AM,Հայք
-hy,AM,🇦🇲
 hy,AT,Ավստրիա
 hy,AZ,Ադրբեջան
 hy,BA,Բոսնիա և Հերցեգովինա
@@ -3465,7 +2976,6 @@ hy,BE,Բելգիա
 hy,BE,Բելգիայի Թագավորություն
 hy,BG,Բուլղարիա
 hy,BY,Բելառուս
-hy,CH,CH
 hy,CH,Շվեյցարական Համադաշնություն
 hy,CH,Շվեյցարիա
 hy,CH,Շվեյցարիայի Համադաշնություն
@@ -3525,15 +3035,12 @@ hy,NL,Նիդերլանդների Թագավորություն
 hy,NL,Սինտ Մաարտեն
 hy,NO,Նորվեգիա
 hy,NO,Նորվեգիայի Թագավորություն
-hy,PL,POL
 hy,PL,Polska
 hy,PL,Լեհաստան
 hy,PL,Լեհաստանի Հանրապետություն
-hy,PL,🇵🇱
 hy,PT,Պորտուգալիա
 hy,RO,Ռումինիա
 hy,RS,Սերբիա
-hy,RU,ՌԴ
 hy,RU,Ռուսաստան
 hy,RU,Ռուսաստանի Դաշնություն
 hy,SE,Շվեդիա
@@ -3554,11 +3061,8 @@ is,BE,Belgía
 is,BG,Bulgaria
 is,BG,Búlgaría
 is,BY,Hvíta-Rússland
-is,CH,CH
 is,CH,Sviss
 is,CY,Kýpur
-is,CY,cy
-is,CY,🇨🇾
 is,CZ,Tékkland
 is,DE,Þýskaland
 is,DK,Danmörk
@@ -3600,7 +3104,6 @@ is,ME,Svartfjallaland
 is,MK,Lýðveldið Makedónía
 is,MK,Lýðveldið Norður-Makedónía
 is,MK,Norður-Makedónía
-is,MK,mk
 is,MT,Malta
 is,NL,Aruba
 is,NL,Arúba
@@ -3608,10 +3111,8 @@ is,NL,Curaçao
 is,NL,Holland
 is,NL,Sint Maarten
 is,NO,Noregur
-is,PL,POL
 is,PL,Polska
 is,PL,Pólland
-is,PL,🇵🇱
 is,PT,Portúgal
 is,RO,Rúmenía
 is,RS,Serbía
@@ -3627,7 +3128,6 @@ it,AD,Andorra
 it,AL,Albania
 it,AL,Repubblica d'Albania
 it,AM,Armenia
-it,AM,🇦🇲
 it,AT,Austria
 it,AZ,Azerbaigian
 it,BA,Bosnia ed Erzegovina
@@ -3635,28 +3135,20 @@ it,BA,Bosnia-Erzegovina
 it,BE,Belgio
 it,BG,Bulgaria
 it,BY,Bielorussia
-it,CH,CH
-it,CH,CHE
 it,CH,Confederazione Elvetica
 it,CH,Confederazione Svizzera
 it,CH,Confoederatio Helvetica
 it,CH,Elvezia
-it,CH,SUI
 it,CH,Svizzera
 it,CY,Cipro
 it,CY,Repubblica di Cipro
 it,CZ,Cechia
 it,CZ,Repubblica Ceca
-it,CZ,🇨🇿
 it,DE,BR Deutschland
-it,DE,BRD
 it,DE,Bundesrepublik Deutschland
-it,DE,DEU
 it,DE,Deutschland
-it,DE,GER
 it,DE,Germania
 it,DE,Repubblica Federale di Germania
-it,DE,de
 it,DK,Danimarca
 it,DK,Faer Oer
 it,DK,Faer Øer
@@ -3703,17 +3195,12 @@ it,FO,Isole Faroer
 it,FO,Isole Foroyar
 it,FO,Isole Fær Øer
 it,FR,Francia
-it,GB,ENG
-it,GB,GB
-it,GB,GBR
 it,GB,Galles
 it,GB,Gran Bretagna
 it,GB,Inghilterra
 it,GB,Irlanda del Nord
 it,GB,Regno Unito
 it,GB,Regno Unito di Gran Bretagna e Irlanda del Nord
-it,GB,UK
-it,GB,🇬🇧
 it,GE,Georgia
 it,GR,Grecia
 it,HR,Croazia
@@ -3722,15 +3209,10 @@ it,HU,Ungheria
 it,IE,Irlanda
 it,IE,Repubblica d'Irlanda
 it,IE,Éire
-it,IE,🇮🇪
 it,IS,Islanda
 it,IT,Bel Paese
-it,IT,IT
-it,IT,ITA
 it,IT,Italia
 it,IT,Repubblica italiana
-it,IT,it
-it,IT,🇮🇹
 it,KZ,Cazachistan
 it,KZ,Cosacchia
 it,KZ,Cosacchistan
@@ -3740,7 +3222,6 @@ it,LI,Liechtenstein
 it,LT,Lituania
 it,LU,Granducato di Lussemburgo
 it,LU,Lussemburgo
-it,LU,🇱🇺
 it,LV,Lettonia
 it,MC,Monaco
 it,MC,Montecarlo
@@ -3753,37 +3234,26 @@ it,MK,Macedonia
 it,MK,Macedonia del Nord
 it,MK,Repubblica di Macedonia
 it,MK,Repubblica di Macedonia del Nord
-it,MK,mk
 it,MT,Malta
 it,MT,Repubblica di Malta
 it,NL,Aruba
 it,NL,Arubano
 it,NL,Curacao
 it,NL,Curaçao
-it,NL,HOL
-it,NL,NED
-it,NL,NL
-it,NL,NLD
 it,NL,Paesi Bassi
 it,NL,Regno dei Paesi Bassi
 it,NL,Sint Maarten
 it,NL,Sint-Maarten
 it,NL,St. Maarten
-it,NL,🇳🇱
 it,NO,Kongeriket Noreg
 it,NO,Kongeriket Norge
 it,NO,Noreg
 it,NO,Norvegia
 it,NO,Regno di Norvegia
-it,PL,PL
 it,PL,Polonia
 it,PL,Repubblica di Polonia
-it,PL,🇵🇱
-it,PT,PRT
 it,PT,Portogallo
-it,RO,ROU
 it,RO,Romania
-it,RO,🇷🇴
 it,RS,Serbia
 it,RU,Federazione Russa
 it,RU,Russia
@@ -3801,21 +3271,17 @@ it,UA,Ucraina
 it,VA,Città del Vaticano
 it,VA,Stato della Città del Vaticano
 it,VA,Vaticano
-it,VA,🇻🇦
 ka,AD,ანდორა
 ka,AL,ალბანეთი
 ka,AL,ალბანეთის რესპუბლიკა
 ka,AM,სომხეთი
 ka,AT,ავსტრია
-ka,AZ,az
 ka,AZ,აზერბაიჯანი
 ka,AZ,აზერბაიჯანის რესპუბლიკა
-ka,AZ,🇦🇿
 ka,BA,ბოსნია და ჰერცეგოვინა
 ka,BE,ბელგია
 ka,BG,ბულგარეთი
 ka,BY,ბელარუსი
-ka,CH,CH
 ka,CH,შვეიცარია
 ka,CY,კვიპროსი
 ka,CZ,ჩეხეთი
@@ -3876,7 +3342,6 @@ ka,NO,ნორვეგია
 ka,NO,ნორვეგიის სამეფო
 ka,PL,Polska
 ka,PL,პოლონეთი
-ka,PL,🇵🇱
 ka,PT,პორტუგალია
 ka,RO,რუმინეთი
 ka,RS,სერბეთი
@@ -3887,11 +3352,9 @@ ka,SE,შვედეთის სამეფო
 ka,SI,სლოვენია
 ka,SK,სლოვაკეთი
 ka,SM,სან-მარინო
-ka,TR,tr
 ka,TR,თურ.
 ka,TR,თურქეთი
 ka,TR,თურქეთის რესპუბლიკა
-ka,TR,🇹🇷
 ka,UA,უკრაინა
 ka,VA,ვატიკანი
 kk,AD,Андорра
@@ -3906,7 +3369,6 @@ kk,BG,Болгария
 kk,BG,Бұлғаристан
 kk,BG,Бұлғарстан
 kk,BY,Беларусь
-kk,CH,CH
 kk,CH,Швейцария
 kk,CY,Кипр
 kk,CZ,Чехия
@@ -3957,7 +3419,6 @@ kk,NL,Кюрасао
 kk,NL,Нидерланд
 kk,NO,Норвегия
 kk,PL,Польша
-kk,PL,🇵🇱
 kk,PT,Португалия
 kk,RO,Румыния
 kk,RS,Сербия
@@ -3978,7 +3439,6 @@ kl,BE,Belgia
 kl,BG,Bulgaria
 kl,BG,Bulgarien
 kl,BY,Hvideruslandi
-kl,CH,CH
 kl,CH,Schweizi
 kl,CY,Cyperni
 kl,CZ,Tjekkia
@@ -4014,9 +3474,7 @@ kl,MK,Makedonia
 kl,MT,Malta
 kl,NL,Hollandi
 kl,NO,Norge
-kl,PL,PL
 kl,PL,Poleni
-kl,PL,🇵🇱
 kl,PT,Portugal
 kl,RO,Rumænia
 kl,RS,Serbia
@@ -4037,7 +3495,6 @@ kv,BA,Босния да Герцеговина
 kv,BE,Бельгия
 kv,BG,Болгария
 kv,BY,Беларусь
-kv,CH,CH
 kv,CH,Швейцария
 kv,CY,Кипр
 kv,CZ,Чехия
@@ -4072,7 +3529,6 @@ kv,NL,Нидерландъяс
 kv,NO,Норвегия
 kv,PL,Polska
 kv,PL,Польша
-kv,PL,🇵🇱
 kv,PT,Португалия
 kv,RO,Румыния
 kv,RS,Сербия
@@ -4093,7 +3549,6 @@ la,BA,Bosnia et Herzegovina
 la,BE,Belgica
 la,BG,Bulgaria
 la,BY,Ruthenia Alba
-la,CH,CH
 la,CH,Confoederatio Helvetica
 la,CH,Helvetia
 la,CY,Cyprus
@@ -4147,9 +3602,7 @@ la,NL,Insula Curacensis
 la,NL,Nederlandia
 la,NL,Regnum Nederlandiae
 la,NO,Norvegia
-la,PL,POL
 la,PL,Polonia
-la,PL,🇵🇱
 la,PT,Lusitania
 la,PT,Portugallia
 la,RO,Romania
@@ -4182,8 +3635,6 @@ lb,BA,Bosnien-Herzegowina
 lb,BE,Belsch
 lb,BG,Bulgarien
 lb,BY,Wäissrussland
-lb,CH,CH
-lb,CH,SUI
 lb,CH,Schwäiz
 lb,CY,Zypern
 lb,CZ,Tschechesch Republik
@@ -4234,14 +3685,12 @@ lb,MK,Republik Nordmazedonien
 lb,MK,Republik Severna-Mazedonien
 lb,MK,Republik Skopje
 lb,MK,Severna-Mazedonien
-lb,MK,mk
 lb,MT,Malta
 lb,NL,Aruba
 lb,NL,Curaçao
 lb,NL,Holland
 lb,NO,Norwegen
 lb,PL,Polen
-lb,PL,🇵🇱
 lb,PT,Portugal
 lb,RO,Rumänien
 lb,RS,Serbien
@@ -4266,7 +3715,6 @@ lt,BA,Bosnija ir Hercegovina
 lt,BE,Belgija
 lt,BG,Bulgarija
 lt,BY,Baltarusija
-lt,CH,CH
 lt,CH,Šveicarija
 lt,CH,Šveicarijos Konfederacija
 lt,CY,Kipras
@@ -4286,7 +3734,6 @@ lt,FR,Prancuzija
 lt,FR,Prancūzija
 lt,FR,Prancūzijos Respublika
 lt,GB,Anglija
-lt,GB,JK
 lt,GB,Jungtinė Karalystė
 lt,GB,Velsas
 lt,GB,Šiaurės Airija
@@ -4318,8 +3765,6 @@ lt,NL,Sent Martinas
 lt,NL,Sint Martenas
 lt,NO,Norvegija
 lt,PL,Lenkija
-lt,PL,PL
-lt,PL,🇵🇱
 lt,PT,Portugalija
 lt,RO,Rumunija
 lt,RS,Serbija
@@ -4340,13 +3785,10 @@ lv,AT,Austrija
 lv,AZ,Azerbaidžāna
 lv,BA,Bosnija un Hercegovina
 lv,BE,Beļģija
-lv,BG,BGR
-lv,BG,BUL
 lv,BG,Bulgaria
 lv,BG,Bulgārija
 lv,BG,Bulgārijas Republika
 lv,BY,Baltkrievija
-lv,CH,CH
 lv,CH,Šveice
 lv,CY,Kipra
 lv,CZ,Čehija
@@ -4354,7 +3796,6 @@ lv,DE,Vācija
 lv,DK,Dānija
 lv,DK,Dānijas Karaliste
 lv,DK,Dānijas Karaļvalsts
-lv,DK,FRO
 lv,DK,Farēru Salas
 lv,DK,Fēras
 lv,DK,Fēru Salas
@@ -4364,7 +3805,6 @@ lv,EE,Igaunija
 lv,ES,Katalonija
 lv,ES,Spānija
 lv,FI,Somija
-lv,FO,FRO
 lv,FO,Farēru Salas
 lv,FO,Fēras
 lv,FO,Fēru Salas
@@ -4381,7 +3821,6 @@ lv,GE,Gruzija
 lv,GR,Grieķija
 lv,HR,Horvātija
 lv,HU,Ungārija
-lv,IE,IRL
 lv,IE,Īrija
 lv,IE,Īrijas republika
 lv,IS,Islande
@@ -4391,12 +3830,9 @@ lv,LI,Fürstentum Liechtenstein
 lv,LI,Lihtenšteina
 lv,LI,Lihtenšteinas Firstiste
 lv,LT,Lietuva
-lv,LU,LUX
 lv,LU,Luksemburga
 lv,LU,Luksemburgas Lielhercogiste
 lv,LU,Luxembourg
-lv,LV,LAT
-lv,LV,LVA
 lv,LV,Latvija
 lv,LV,Latvijas Republika
 lv,MC,Monako
@@ -4408,8 +3844,6 @@ lv,MK,Ziemeļmaķedonijas Republika
 lv,MK,Ziemeļu Maķedonija
 lv,MK,Ziemeļu Maķedonijas Republika
 lv,MT,Malta
-lv,NL,ABW
-lv,NL,ARU
 lv,NL,Aruba
 lv,NL,Curaçao
 lv,NL,Kirasao
@@ -4418,9 +3852,7 @@ lv,NL,Nīderlande
 lv,NL,Nīderlandes Karaliste
 lv,NL,Sintmārtena
 lv,NO,Norvēģija
-lv,PL,POL
 lv,PL,Polija
-lv,PL,🇵🇱
 lv,PT,Portugāle
 lv,RO,Rumānija
 lv,RS,Serbija
@@ -4440,13 +3872,11 @@ mk,AL,Република Албанија
 mk,AM,Ерменија
 mk,AT,Австрија
 mk,AZ,Азербејџан
-mk,BA,БиХ
 mk,BA,Босна и Херцеговина
 mk,BE,Белгија
 mk,BE,Кралство Белгија
 mk,BG,Бугарија
 mk,BY,Белорусија
-mk,CH,CH
 mk,CH,Швајцарија
 mk,CY,Кипар
 mk,CZ,Чешка
@@ -4483,8 +3913,6 @@ mk,MC,Монако
 mk,MD,Молдавија
 mk,ME,Црна Гора
 mk,MK,Македонија
-mk,MK,РМ
-mk,MK,РСМ
 mk,MK,Република Македонија
 mk,MK,Република Северна Македонија
 mk,MK,Северна Македонија
@@ -4516,14 +3944,9 @@ mk,NL,ಅರುಬಾ
 mk,NL,อารูบา
 mk,NL,ཨ་རུ་བ།
 mk,NL,არუბა
-mk,NL,アルバ
-mk,NL,阿魯巴
 mk,NL,阿魯巴島
-mk,NL,阿鲁巴
-mk,NL,아루바
 mk,NO,Норвешка
 mk,PL,Полска
-mk,PL,🇵🇱
 mk,PT,Португалија
 mk,RO,Романија
 mk,RS,Србија
@@ -4545,7 +3968,6 @@ mt,BA,Bożnija u Ħerżegovina
 mt,BE,Belġju
 mt,BG,Bulgarija
 mt,BY,Belarus
-mt,CH,CH
 mt,CH,Żvizzera
 mt,CY,Ċipru
 mt,CZ,Repubblika Ċeka
@@ -4588,9 +4010,7 @@ mt,NL,Pajjiżi l-Baxxi
 mt,NL,Renju tal-Pajjiżi l-Baxxi
 mt,NL,Sint Maarten
 mt,NO,Norveġja
-mt,PL,POL
 mt,PL,Polonja
-mt,PL,🇵🇱
 mt,PT,Portugall
 mt,RO,Rumanija
 mt,RS,Serbja
@@ -4612,7 +4032,6 @@ nb,AZ,Republikken Aserbajdsjan
 nb,BA,Bosnia-Hercegovina
 nb,BE,Belgia
 nb,BE,Kongeriket Belgia
-nb,BG,BGR
 nb,BG,Bulgar
 nb,BG,Bulgarar
 nb,BG,Bulgarerne
@@ -4697,18 +4116,14 @@ nb,MK,Makedonia
 nb,MK,Nord-Makedonia
 nb,MK,Republikken Makedonia
 nb,MK,Republikken Nord-Makedonia
-nb,MK,mk
 nb,MT,Malta
 nb,MT,Republikken Malta
-nb,NL,ABW
 nb,NL,Aruba
-nb,NL,CUW
 nb,NL,Curacao
 nb,NL,Curaçao
 nb,NL,Holland
 nb,NL,Kongeriket Nederland
 nb,NL,Kongeriket Nederlandene
-nb,NL,NL
 nb,NL,Nederland
 nb,NL,Sint Maarten
 nb,NL,Sint-Maarten
@@ -4717,8 +4132,6 @@ nb,NO,Kongeriket Norge
 nb,NO,Kongeriket Norge/Noreg
 nb,NO,Noreg
 nb,NO,Norge
-nb,PL,PL
-nb,PL,POL
 nb,PL,Polen
 nb,PL,Republikken Polen
 nb,PT,Portugal
@@ -4738,67 +4151,35 @@ nb,TR,Tyrkia
 nb,UA,Ukraina
 nb,VA,Vatikanet
 nb,VA,Vatikanstaten
-nl,AD,AD
-nl,AD,AND
 nl,AD,Andorra
-nl,AL,AL
-nl,AL,ALB
 nl,AL,Albanie
 nl,AL,Albanië
-nl,AM,AM
-nl,AM,ARM
 nl,AM,Armenie
 nl,AM,Armenië
-nl,AT,AT
-nl,AT,AUT
 nl,AT,Oostenrijk
-nl,AZ,AZ
-nl,AZ,AZE
 nl,AZ,Azerbeidzjan
-nl,BA,BA
-nl,BA,BIH
 nl,BA,Bosnie en Herzegovina
 nl,BA,Bosnië en Herzegovina
 nl,BA,Bosnië-Herzegovina
-nl,BE,BE
-nl,BE,BEL
 nl,BE,Belgenland
 nl,BE,Belgie
 nl,BE,België
 nl,BE,Koninkrijk België
-nl,BE,be
-nl,BE,🇧🇪
-nl,BG,BG
-nl,BG,BGR
 nl,BG,Bulgarije
-nl,BY,BLR
-nl,BY,BY
 nl,BY,Belarus
 nl,BY,Wit-Rusland
-nl,CH,CH
-nl,CH,CHE
 nl,CH,Zwitserland
 nl,CH,Zwitsers Eedgenootschap
 nl,CH,Zwitserse Bondsstaat
 nl,CH,Zwitserse Confederatie
-nl,CY,CY
-nl,CY,CYP
 nl,CY,Cyprus
-nl,CZ,CZ
-nl,CZ,CZE
 nl,CZ,Tsjechie
 nl,CZ,Tsjechische Republiek
 nl,CZ,Tsjechië
 nl,DE,Bondsrepubliek
 nl,DE,Bondsrepubliek Duitsland
-nl,DE,DE
-nl,DE,DEU
 nl,DE,Duitsland
-nl,DK,DK
-nl,DK,DNK
 nl,DK,Denemarken
-nl,DK,FO
-nl,DK,FRO
 nl,DK,Faeroer
 nl,DK,Faeroer Eilanden
 nl,DK,Faeroer-eilanden
@@ -4827,25 +4208,15 @@ nl,DK,Færöer
 nl,DK,Færøer
 nl,DK,Færøerne
 nl,DK,Føroyar
-nl,DK,GL
-nl,DK,GRL
 nl,DK,Groenland
 nl,DK,Koninkrijk Denemarken
-nl,EE,EE
-nl,EE,EST
 nl,EE,Estland
 nl,ES,Catalonie
 nl,ES,Catalonië
-nl,ES,ES
-nl,ES,ESP
 nl,ES,Koninkrijk Spanje
 nl,ES,Spanje
-nl,FI,FI
-nl,FI,FIN
 nl,FI,Finland
 nl,FI,Republiek Finland
-nl,FO,FO
-nl,FO,FRO
 nl,FO,Faeroer
 nl,FO,Faeroer Eilanden
 nl,FO,Faeroer-eilanden
@@ -4874,20 +4245,14 @@ nl,FO,Færöer
 nl,FO,Færøer
 nl,FO,Færøerne
 nl,FO,Føroyar
-nl,FR,FR
-nl,FR,FRA
 nl,FR,Frankrijk
 nl,FR,Franse Republiek
 nl,GB,Engeland
-nl,GB,GB
-nl,GB,GBR
 nl,GB,Noord-Ierland
-nl,GB,UK
 nl,GB,United Kingdom
 nl,GB,United Kingdom of England, Scotland and Wales
 nl,GB,United Kingdom of Great Britain and Northern Ireland
 nl,GB,V.K.
-nl,GB,VK
 nl,GB,Verenigd Koninkrijk
 nl,GB,Verenigd Koninkrijk van Groot-Brittannie en Noord-Ierland
 nl,GB,Verenigd Koninkrijk van Groot-Brittannië en Noord-Ierland
@@ -4895,80 +4260,41 @@ nl,GB,Verenigd Konkrijk
 nl,GB,Verenigde Koningrijk
 nl,GB,Wales
 nl,GB,Y Deyrnas Unedig
-nl,GE,GE
-nl,GE,GEO
 nl,GE,Georgie
 nl,GE,Georgië
-nl,GR,GR
-nl,GR,GRC
 nl,GR,Griekenland
-nl,HR,HR
-nl,HR,HRV
 nl,HR,Kroatie
 nl,HR,Kroatië
 nl,HR,Republiek Kroatië
-nl,HU,HU
-nl,HU,HUN
 nl,HU,Hongarije
-nl,IE,IE
-nl,IE,IRL
 nl,IE,Ierland
 nl,IE,Republic of Ireland
 nl,IE,Republiek Ierland
 nl,IE,Éire
 nl,IS,IJsland
-nl,IS,IS
-nl,IS,ISL
-nl,IT,IT
-nl,IT,ITA
 nl,IT,Italiaanse Republiek
 nl,IT,Italie
 nl,IT,Italië
 nl,IT,Republiek Italië
-nl,KZ,KAZ
-nl,KZ,KZ
 nl,KZ,Kazachstan
 nl,KZ,Qazaqstan
-nl,LI,LI
-nl,LI,LIE
 nl,LI,Liechtenstein
-nl,LT,LT
-nl,LT,LTU
 nl,LT,Litouwen
-nl,LU,LU
-nl,LU,LUX
 nl,LU,Luxembourg
 nl,LU,Luxemburg
 nl,LU,Luxemburg (land)
-nl,LV,LV
-nl,LV,LVA
 nl,LV,Letland
-nl,MC,MC
-nl,MC,MCO
 nl,MC,Monaco
-nl,MD,MD
-nl,MD,MDA
 nl,MD,Moldavie
 nl,MD,Moldavië
-nl,ME,ME
-nl,ME,MNE
 nl,ME,Montenegro
-nl,MK,MK
-nl,MK,MKD
 nl,MK,Macedonië
 nl,MK,Noord-Macedonië
 nl,MK,Republiek Macedonië
 nl,MK,Voormalige Joegoslavische Republiek Macedonië
 nl,MK,macedonie
-nl,MK,mk
-nl,MT,MLT
-nl,MT,MT
 nl,MT,Malta
-nl,NL,ABW
-nl,NL,AW
 nl,NL,Aruba
-nl,NL,CUW
-nl,NL,CW
 nl,NL,Curacao
 nl,NL,Curaçao
 nl,NL,Curaçoa
@@ -4976,69 +4302,33 @@ nl,NL,Eilandgebied sint maarten
 nl,NL,Holland
 nl,NL,Koninkrijk der Nederlanden
 nl,NL,Land Curaçao
-nl,NL,NED
-nl,NL,NL
-nl,NL,NLD
 nl,NL,Nederland
-nl,NL,Q55
-nl,NL,SX
-nl,NL,SXM
 nl,NL,Sint Maarten
 nl,NL,Sint Maarten (land)
 nl,NL,Sint-Maarten
 nl,NL,de Nederlanden
-nl,NL,nl
-nl,NL,z,.
-nl,NL,🇳🇱
-nl,NO,NO
-nl,NO,NOR
 nl,NO,Noorwegen
-nl,PL,PL
-nl,PL,POL
 nl,PL,Polen
 nl,PL,Republiek Polen
-nl,PL,🇵🇱
-nl,PT,PRT
-nl,PT,PT
 nl,PT,Portugal
 nl,PT,Portugese Republiek
-nl,RO,RO
-nl,RO,ROU
 nl,RO,Roemenie
 nl,RO,Roemenië
-nl,RS,RS
-nl,RS,SRB
 nl,RS,Servie
 nl,RS,Servië
-nl,RU,RU
-nl,RU,RUS
 nl,RU,Rusland
 nl,RU,Russische Federatie
-nl,SE,SE
-nl,SE,SWE
 nl,SE,Zweden
 nl,SI,Republiek Slovenië
-nl,SI,SI
-nl,SI,SVN
 nl,SI,Slovenie
 nl,SI,Slovenië
-nl,SK,SK
-nl,SK,SVK
 nl,SK,Slowakije
-nl,SM,SM
-nl,SM,SMR
 nl,SM,San Marino
 nl,TR,Republiek Turkije
-nl,TR,TR
-nl,TR,TUR
 nl,TR,Turkije
 nl,UA,Oekraiene
 nl,UA,Oekraine
 nl,UA,Oekraïne
-nl,UA,UA
-nl,UA,UKR
-nl,VA,VA
-nl,VA,VAT
 nl,VA,Vaticaanstad
 nn,AD,Andorra
 nn,AL,Albania
@@ -5051,7 +4341,6 @@ nn,BA,Bosnia-Hercegovina
 nn,BE,Belgia
 nn,BG,Bulgaria
 nn,BY,Kviterussland
-nn,CH,CH
 nn,CH,Confœderatio Helvetica
 nn,CH,Det sveitsiske eidsforbundet
 nn,CH,Konføderasjonen Sveits
@@ -5107,7 +4396,6 @@ nn,ME,Montenegro
 nn,MK,Makedonia
 nn,MK,Nord-Makedonia
 nn,MK,Republikken Nord-Makedonia
-nn,MK,mk
 nn,MT,Malta
 nn,NL,Aruba
 nn,NL,Curacao
@@ -5119,7 +4407,6 @@ nn,NO,Kongeriket Noreg
 nn,NO,Noreg
 nn,NO,Norge
 nn,PL,Polen
-nn,PL,🇵🇱
 nn,PT,Portugal
 nn,RO,Romania
 nn,RS,Serbia
@@ -5143,7 +4430,6 @@ oc,BE,Belgica
 oc,BG,Bulgaria
 oc,BG,Republica de Bulgaria
 oc,BY,Bielorussia
-oc,CH,CH
 oc,CH,Soïssa
 oc,CY,Chipre
 oc,CZ,Republica Chèca
@@ -5184,7 +4470,6 @@ oc,MD,Moldàvia
 oc,ME,Montenegro
 oc,MK,Macedònia del Nòrd
 oc,MK,Republica de Macedònia del Nòrd
-oc,MK,mk
 oc,MT,Malta
 oc,NL,Aruba
 oc,NL,Curaçao
@@ -5193,7 +4478,6 @@ oc,NL,Reiaume dels Païses Basses
 oc,NL,Sint Maarten
 oc,NO,Norvègia
 oc,PL,Polonha
-oc,PL,🇵🇱
 oc,PT,Portugal
 oc,RO,Romania
 oc,RS,Serbia
@@ -5203,10 +4487,7 @@ oc,SI,Eslovènia
 oc,SK,Eslovaquia
 oc,SM,Sant Marin
 oc,TR,Turquia
-oc,UA,UA
-oc,UA,UKR
 oc,UA,Ucraïna
-oc,UA,🇺🇦
 oc,VA,Vatican
 os,AD,Андоррæ
 os,AL,Албани
@@ -5217,7 +4498,6 @@ os,BA,Босни æмæ Герцеговинæ
 os,BE,Бельги
 os,BG,Болгари
 os,BY,Белорусси
-os,CH,CH
 os,CH,Швейцари
 os,CY,Кипр
 os,CZ,Чехи
@@ -5264,9 +4544,7 @@ os,NL,Кюрасао
 os,NL,Нидерландтæ
 os,NL,Синт-Мартен
 os,NO,Норвеги
-os,PL,POL
 os,PL,Польшæ
-os,PL,🇵🇱
 os,PT,Португали
 os,RO,Румыни
 os,RS,Серби
@@ -5292,7 +4570,6 @@ pl,BG,Republika Bułgarii
 pl,BY,Biała Ruś
 pl,BY,Białoruś
 pl,BY,Republika Białorusi
-pl,CH,CH
 pl,CH,Confederazione Svizzera
 pl,CH,Confederaziun svizra
 pl,CH,Confédération suisse
@@ -5305,11 +4582,9 @@ pl,CY,Cypr
 pl,CZ,Czechia
 pl,CZ,Czechy
 pl,CZ,Republika Czeska
-pl,CZ,ČR
 pl,CZ,Česko
 pl,CZ,Česká republika
 pl,DE,BR Deutschland
-pl,DE,BRD
 pl,DE,Bundesrepublik Deutschland
 pl,DE,Deutschland
 pl,DE,Niemcy
@@ -5321,12 +4596,9 @@ pl,DK,Grønland
 pl,DK,Kalaallit Nunaat
 pl,DK,Królestwo Danii
 pl,DK,Wyspy Owcze
-pl,EE,EST
 pl,EE,Eesti
 pl,EE,Estonia
 pl,EE,Republika Estonii
-pl,EE,ee
-pl,EE,🇪🇪
 pl,ES,Catalunya
 pl,ES,Hiszpania
 pl,ES,Katalonia
@@ -5370,24 +4642,18 @@ pl,MK,Macedonia
 pl,MK,Macedonia Północna
 pl,MK,Republika Macedonii
 pl,MK,Republika Macedonii Północnej
-pl,MK,mk
 pl,MT,Malta
 pl,NL,Aruba
 pl,NL,Curaçao
 pl,NL,Holandia
 pl,NL,Koninkrijk der Nederlanden
 pl,NL,Królestwo Niderlandów
-pl,NL,NL
 pl,NL,Nederland
 pl,NL,Niderlandy
 pl,NL,Sint Maarten
 pl,NO,Norwegia
-pl,PL,PL
-pl,PL,POL
 pl,PL,Polska
-pl,PL,RP
 pl,PL,Rzeczpospolita Polska
-pl,PL,🇵🇱
 pl,PT,Portugalia
 pl,RO,Rumunia
 pl,RS,Serbia
@@ -5399,10 +4665,6 @@ pl,SI,Republika Slovenija
 pl,SI,Republika Słowenii
 pl,SI,Slovenija
 pl,SI,Słowenia
-pl,SI,si
-pl,SI,slo
-pl,SI,svn
-pl,SI,🇸🇮
 pl,SK,Slovensko
 pl,SK,Słowacja
 pl,SM,San Marino
@@ -5426,7 +4688,6 @@ pt,BG,Bulgária
 pt,BG,República da Bulgária
 pt,BY,Bielorrússia
 pt,BY,Republica da Bielorrussia
-pt,CH,CH
 pt,CH,Confederação Suíça
 pt,CH,Suíça
 pt,CY,Chipre
@@ -5493,14 +4754,11 @@ pt,FO,Ilhas Féroe
 pt,FO,Ilhas Féroes
 pt,FR,Franca
 pt,FR,França
-pt,GB,GB
-pt,GB,GBR
 pt,GB,Inglaterra
 pt,GB,Irlanda do Norte
 pt,GB,País de Gales
 pt,GB,Reino Unido
 pt,GB,Reino Unido da Grã-Bretanha e Irlanda do Norte
-pt,GB,🇬🇧
 pt,GE,Geórgia
 pt,GR,Grécia
 pt,HR,Croacia
@@ -5547,7 +4805,6 @@ pt,MK,República da Macedónia
 pt,MK,República da Macedónia do Norte
 pt,MK,República da Macedônia
 pt,MK,República da Macedônia do Norte
-pt,MK,mk
 pt,MT,Malta
 pt,NL,Aruba
 pt,NL,Curaçao
@@ -5563,20 +4820,14 @@ pt,NL,Sint maarten
 pt,NL,St. Maarten
 pt,NL,São Martinho
 pt,NO,Noruega
-pt,PL,PL
 pt,PL,Polska
 pt,PL,Polónia
 pt,PL,República da Polónia
-pt,PL,🇵🇱
-pt,PT,PT
 pt,PT,Portugal
 pt,PT,República Portuguesa
-pt,PT,pt
-pt,PT,🇵🇹
 pt,RO,România
 pt,RO,Roménia
 pt,RO,Romênia
-pt,RO,🇷🇴
 pt,RS,Sérvia
 pt,RU,Federação Russa
 pt,RU,Rússia
@@ -5604,7 +4855,6 @@ rm,BA,Bosnia-Erzegovina
 rm,BE,Belgia
 rm,BG,Bulgaria
 rm,BY,Bielorussia
-rm,CH,CH
 rm,CH,Confederaziun svizra
 rm,CH,Svizra
 rm,CY,Cipra
@@ -5637,13 +4887,10 @@ rm,MC,Monaco
 rm,MD,Moldavia
 rm,ME,Montenegro
 rm,MK,Macedonia dal Nord
-rm,MK,mk
 rm,MT,Malta
 rm,NL,Pajais Bass
 rm,NO,Norvegia
-rm,PL,POL
 rm,PL,Pologna
-rm,PL,🇵🇱
 rm,PT,Portugal
 rm,RO,Rumenia
 rm,RS,Serbia
@@ -5667,13 +4914,11 @@ ro,BG,Bulgaria
 ro,BG,Republica Bulgaria
 ro,BG,Republica Populară Bulgară
 ro,BY,Belarus
-ro,CH,CH
 ro,CH,Confederația Elvețiană
 ro,CH,Elveția
 ro,CY,Cipru
 ro,CZ,Cehia
 ro,DE,Germania
-ro,DE,RFG
 ro,DE,Republica Federală Germania
 ro,DK,Danemarca
 ro,DK,Feroe
@@ -5695,21 +4940,14 @@ ro,FO,Færøerne
 ro,FO,Føroyar
 ro,FO,Insulele Faroe
 ro,FO,Insulele Feroe
-ro,FR,FR
-ro,FR,FRA
 ro,FR,Franța
 ro,FR,Republica Franceză
 ro,FR,Republica Franța
-ro,FR,fr
-ro,FR,🇫🇷
 ro,GB,Anglia
-ro,GB,GBR
 ro,GB,Irlanda de Nord
 ro,GB,Regatul Unit
 ro,GB,Regatul Unit al Marii Britanii și al Irlandei de Nord
-ro,GB,UK
 ro,GB,Țara Galilor
-ro,GB,🇬🇧
 ro,GE,Georgia
 ro,GR,Grecia
 ro,HR,Croația
@@ -5732,7 +4970,6 @@ ro,LV,Letonia
 ro,MC,Monaco
 ro,MD,Moldova
 ro,MD,R. Moldova
-ro,MD,RM
 ro,MD,Rep. Moldova
 ro,MD,Republica Moldova
 ro,ME,Muntenegru
@@ -5740,7 +4977,6 @@ ro,MK,FYROM
 ro,MK,Fosta Republică Iugoslavă Macedonia
 ro,MK,Macedonia de Nord
 ro,MK,Republica Macedonia
-ro,MK,mk
 ro,MT,Malta
 ro,NL,Aruba
 ro,NL,Curacao
@@ -5758,15 +4994,10 @@ ro,NL,Țara morilor de vânt
 ro,NL,Țările de Jos
 ro,NO,Norvegia
 ro,NO,Regatul Norvegiei
-ro,NO,🇳🇴
-ro,PL,PL
 ro,PL,Polonia
-ro,PL,🇵🇱
 ro,PT,Portugalia
 ro,RO,Romania
 ro,RO,România
-ro,RO,ro
-ro,RO,🇷🇴
 ro,RS,Serbia
 ro,RU,Rusia
 ro,SE,Suedia
@@ -5793,7 +5024,6 @@ ru,AT,Республика Австрия
 ru,AZ,Азербайджан
 ru,AZ,Азербайджанская Республика
 ru,BA,Bosna i Hercegovina
-ru,BA,БиГ
 ru,BA,Босния
 ru,BA,Босния и Герцеговина
 ru,BE,Belgique
@@ -5805,7 +5035,6 @@ ru,BG,Республика Болгария
 ru,BY,Беларусь
 ru,BY,Белая Русь
 ru,BY,Белоруссия
-ru,BY,РБ
 ru,BY,Республика Беларусь
 ru,CH,Schweiz
 ru,CH,Suisse
@@ -5820,7 +5049,6 @@ ru,DE,Bundesrepublik Deutschland
 ru,DE,Deutschland
 ru,DE,Германия
 ru,DE,Дойчланд
-ru,DE,ФРГ
 ru,DE,Федеративная Республика Германия
 ru,DK,Гренландия
 ru,DK,Дания
@@ -5849,7 +5077,6 @@ ru,FO,Фарерские острова
 ru,FO,Фареры
 ru,FO,Фарёрские острова
 ru,FO,Фарёры
-ru,FR,ФР
 ru,FR,Франция
 ru,FR,Французская Республика
 ru,GB,Англия
@@ -5877,7 +5104,6 @@ ru,IS,Республика Исландия
 ru,IT,Италия
 ru,IT,Итальянская Республика
 ru,KZ,Казахстан
-ru,KZ,РК
 ru,KZ,Республика Казахстан
 ru,LI,Liechtenstein
 ru,LI,Княжество Лихтенштейн
@@ -5935,7 +5161,6 @@ ru,NO,Норвегия
 ru,NO,Языки Норвегии
 ru,PL,Польша
 ru,PL,Республика Польша
-ru,PL,🇵🇱
 ru,PT,Portugal
 ru,PT,Португалия
 ru,PT,Португальская Республика
@@ -5943,7 +5168,6 @@ ru,RO,România
 ru,RO,Румыния
 ru,RS,Республика Сербия
 ru,RS,Сербия
-ru,RU,РФ
 ru,RU,Российская Федерация
 ru,RU,Россия
 ru,RU,Русь
@@ -5977,7 +5201,6 @@ sk,BE,Belgicko
 sk,BG,Bulharsko
 sk,BG,Bulharská republika
 sk,BY,Bielorusko
-sk,CH,CH
 sk,CH,Švajčiarsko
 sk,CY,Cyprus
 sk,CZ,Česko
@@ -6017,7 +5240,6 @@ sk,MD,Moldavsko
 sk,ME,Čierna Hora
 sk,MK,Macedónsko
 sk,MK,Severné Macedónsko
-sk,MK,mk
 sk,MT,Malta
 sk,NL,Aruba
 sk,NL,Curacao
@@ -6026,9 +5248,7 @@ sk,NL,Holandsko
 sk,NL,Holandské kráľovstvo
 sk,NL,Sint Maarten
 sk,NO,Nórsko
-sk,PL,PL
 sk,PL,Poľsko
-sk,PL,🇵🇱
 sk,PT,Portugalsko
 sk,RO,Rumunsko
 sk,RS,Srbsko
@@ -6046,17 +5266,14 @@ sl,AL,Albanija
 sl,AM,Armenija
 sl,AT,Avstrija
 sl,AZ,Azerbajdžan
-sl,BA,BiH
 sl,BA,Bosna i Hercegovina
 sl,BA,Bosna in Hercegovina
-sl,BA,🇧🇦
 sl,BE,Belgija
 sl,BG,Bolgarija
 sl,BG,Bulgaria
 sl,BG,Bulgarija
 sl,BG,Republika Bolgarija
 sl,BY,Belorusija
-sl,CH,CH
 sl,CH,Švica
 sl,CY,Ciper
 sl,CZ,Češka
@@ -6097,7 +5314,6 @@ sl,MD,Moldavija
 sl,ME,Črna gora
 sl,MK,Makedonija
 sl,MK,Severna Makedonija
-sl,MK,mk
 sl,MT,Malta
 sl,NL,Aruba
 sl,NL,Holandija
@@ -6105,7 +5321,6 @@ sl,NL,Kraljevina Nizozemska
 sl,NL,Nizozemska
 sl,NO,Norveška
 sl,PL,Poljska
-sl,PL,🇵🇱
 sl,PT,Portugalska
 sl,RO,Romunija
 sl,RS,Srbija
@@ -6133,7 +5348,6 @@ sq,BG,Bullgari
 sq,BG,Bullgaria
 sq,BG,Bullgarisë
 sq,BY,Bjellorusia
-sq,CH,CH
 sq,CH,Konfederata Zvicerane
 sq,CH,Zvicra
 sq,CH,Zvicër
@@ -6150,12 +5364,9 @@ sq,ES,Spanja
 sq,FI,Finlanda
 sq,FO,Faroe Islands, Danimarke
 sq,FO,Ishujt Faroe
-sq,FR,FR
-sq,FR,FRA
 sq,FR,Francë
 sq,FR,Republika e Francës
 sq,FR,Republika franceze
-sq,FR,fr
 sq,GB,Anglia
 sq,GB,Britania e Madhe
 sq,GB,Irlanda Veriore
@@ -6191,7 +5402,6 @@ sq,NL,Holanda
 sq,NO,Norvegjia
 sq,PL,Polonia
 sq,PL,Polska
-sq,PL,🇵🇱
 sq,PT,Portugalia
 sq,RO,Rumania
 sq,RS,Republika e Serbisë
@@ -6210,26 +5420,17 @@ sr,AL,Албанија
 sr,AL,Република Албанија
 sr,AM,Јерменија
 sr,AT,Аустрија
-sr,AZ,az
 sr,AZ,Азербајџан
 sr,AZ,Азербејџан
 sr,AZ,Република Азербејџан
-sr,AZ,🇦🇿
-sr,BA,B&H
-sr,BA,ba
-sr,BA,БХ
-sr,BA,БиХ
 sr,BA,Босна
 sr,BA,Босна и Херцеговина
-sr,BA,🇧🇦
 sr,BE,Белгија
 sr,BG,Bulgaria
 sr,BG,Бугарска
 sr,BG,Бугарска држава
 sr,BG,Република Бугарска
 sr,BY,Белорусија
-sr,CH,CH
-sr,CH,SUI
 sr,CH,Schweiz
 sr,CH,Suisse
 sr,CH,Svizzera
@@ -6237,29 +5438,19 @@ sr,CH,Швајцарска
 sr,CH,Швајцарска Конфедерација
 sr,CH,Швица
 sr,CH,Швицарска
-sr,CH,🇨🇭
 sr,CY,Кипар
 sr,CY,Република Кипар
-sr,CZ,CZR
-sr,CZ,cz
-sr,CZ,cze
-sr,CZ,ЧР
 sr,CZ,Чекија
 sr,CZ,Ческо
 sr,CZ,Чехија
 sr,CZ,Чешка
 sr,CZ,Чешка Република
-sr,CZ,🇨🇿
-sr,DE,BRD
 sr,DE,Deutschland
-sr,DE,FRG
-sr,DE,de
 sr,DE,Њемачка
 sr,DE,Германија
 sr,DE,Дојчланд
 sr,DE,Немачка
 sr,DE,Савезна Република Њемачка
-sr,DE,🇩🇪
 sr,DK,Гренланд
 sr,DK,Данска
 sr,DK,Краљевина Данска
@@ -6267,36 +5458,25 @@ sr,DK,Овчија острва
 sr,DK,Фарска Острва
 sr,DK,Ферјарска Острва
 sr,EE,Естонија
-sr,ES,ES
-sr,ES,ESP
 sr,ES,Еспања
 sr,ES,Каталонија
 sr,ES,Краљевина Шпанија
 sr,ES,Шпанија
 sr,ES,Шпанско Краљевство
 sr,ES,Шпањолска
-sr,ES,🇪🇸
 sr,FI,Финска
 sr,FO,Овчија острва
 sr,FO,Фарска Острва
 sr,FO,Ферјарска Острва
-sr,FR,FR
 sr,FR,France
-sr,FR,fr
 sr,FR,Данашња Француска
 sr,FR,Ла Франс
 sr,FR,Република Француска
 sr,FR,Франција
 sr,FR,Француска
 sr,FR,Француска Република
-sr,FR,🇫🇷
 sr,GB,Cymru
-sr,GB,NIR
-sr,GB,UKN
-sr,GB,WAL
-sr,GB,WLS
 sr,GB,Велс
-sr,GB,ЕНГ
 sr,GB,Енглеска
 sr,GB,Северна Ирска
 sr,GB,Сјеверна Ирска
@@ -6306,17 +5486,12 @@ sr,GE,Република Грузија
 sr,GR,Грчка
 sr,HR,Република Хрватска
 sr,HR,Хрватска
-sr,HU,hu
 sr,HU,Мађарска
 sr,HU,Маџарска
 sr,HU,Хунгарија
-sr,HU,🇭🇺
 sr,IE,Eire
-sr,IE,IE
-sr,IE,IRL
 sr,IE,Irska
 sr,IE,Republic of Ireland
-sr,IE,ie
 sr,IE,ireland
 sr,IE,Éire
 sr,IE,Јужна Ирска
@@ -6324,7 +5499,6 @@ sr,IE,Ибернија
 sr,IE,Ирска
 sr,IE,Република Ирска
 sr,IE,Хибернија
-sr,IE,🇮🇪
 sr,IS,Исланд
 sr,IT,Италија
 sr,KZ,Казахстан
@@ -6341,11 +5515,8 @@ sr,LV,Летонија
 sr,MC,Кнежевина Монако
 sr,MC,Монако
 sr,MD,Молдавија
-sr,ME,MNE
-sr,ME,me
 sr,ME,Монтенегро
 sr,ME,Црна Гора
-sr,ME,🇲🇪
 sr,MK,БЈР Македонија
 sr,MK,БЈРМ
 sr,MK,Бивша Југословенска Република Македонија
@@ -6361,32 +5532,23 @@ sr,NL,Краљевина Холандија
 sr,NL,Курасао
 sr,NL,Свети Мартин
 sr,NL,Холандија
-sr,NO,NO
-sr,NO,NOR
 sr,NO,Noreg
-sr,NO,no
 sr,NO,Краљевина Норвешка
 sr,NO,Норвеге
 sr,NO,Норвеген
 sr,NO,Норвешка
 sr,NO,Норвешко Краљевство
 sr,NO,Норге
-sr,NO,🇳🇴
 sr,PL,Пољска
-sr,PL,🇵🇱
 sr,PT,Португал
 sr,PT,Португалија
 sr,RO,Румунија
 sr,RS,Republika Srbija
-sr,RS,rs
 sr,RS,Република Србија
 sr,RS,Србија
-sr,RU,RU
-sr,RU,ru
 sr,RU,Росискаја
 sr,RU,Росија
 sr,RU,Росијскаја Федерација
-sr,RU,Рус
 sr,RU,Русија
 sr,RU,Руска
 sr,RU,Руска Федерација
@@ -6396,12 +5558,9 @@ sr,RU,Руше
 sr,SE,Шведска
 sr,SI,Република Словенија
 sr,SI,Словенија
-sr,SK,SVK
-sr,SK,sk
 sr,SK,Република Словачка
 sr,SK,Словачка
 sr,SK,Словачка Република
-sr,SK,🇸🇰
 sr,SM,Сан Марино
 sr,TR,Турска
 sr,UA,Украјина
@@ -6431,7 +5590,6 @@ sv,CZ,Tjeckien
 sv,CZ,Tjeckiska republiken
 sv,DE,Förbundsrepubliken Tyskland
 sv,DE,Tyskland
-sv,DK,DK
 sv,DK,Danmark
 sv,DK,Danska kungadömet
 sv,DK,Danska kungariket
@@ -6452,7 +5610,6 @@ sv,ES,Spanien
 sv,FI,Finland
 sv,FI,Republiken Finland
 sv,FO,Färöarna
-sv,FR,FR
 sv,FR,France
 sv,FR,Frankrike
 sv,FR,Franska republiken
@@ -6462,8 +5619,6 @@ sv,FR,République française
 sv,GB,England
 sv,GB,Förenade konungariket Storbritannien och Nordirland
 sv,GB,Förenade kungariket
-sv,GB,GB
-sv,GB,GBR
 sv,GB,Nordirland
 sv,GB,Stor-Britannien
 sv,GB,Stor-Britannien och Nord-Irland
@@ -6471,7 +5626,6 @@ sv,GB,Stor-Britannien och Nordirland
 sv,GB,Stora Britannien
 sv,GB,Storbritannien
 sv,GB,Storbritannien och Nordirland
-sv,GB,UK
 sv,GB,Wales
 sv,GE,Georgien
 sv,GR,Grekland
@@ -6481,8 +5635,6 @@ sv,GR,Republiken Grekland
 sv,HR,Kroatien
 sv,HR,Republiken Kroatien
 sv,HU,Ungern
-sv,IE,IE
-sv,IE,IRL
 sv,IE,Irland
 sv,IE,Republic of Ireland
 sv,IE,Republiken Irland
@@ -6517,7 +5669,6 @@ sv,ME,Montenegro
 sv,MK,Makedonien
 sv,MK,Nordmakedonien
 sv,MK,Republiken Makedonien
-sv,MK,mk
 sv,MT,Malta
 sv,MT,Republic of Malta
 sv,MT,Republiken Malta
@@ -6531,7 +5682,6 @@ sv,NL,Nederland
 sv,NL,Nederländerna
 sv,NL,Sint Maarten
 sv,NO,Norge
-sv,PL,POL
 sv,PL,Polen
 sv,PL,Republiken Polen
 sv,PT,Portugal
@@ -6540,17 +5690,13 @@ sv,RS,Republika Srbija
 sv,RS,Republiken Serbien
 sv,RS,Serbien
 sv,RS,Srbija
-sv,RU,RUS
 sv,RU,Rossija
 sv,RU,Rossijskaja Federatsija
 sv,RU,Ryska federationen
 sv,RU,Ryssland
-sv,RU,ru
 sv,SE,Konungariket Sverige
 sv,SE,Kungadömet Sverige
 sv,SE,Kungariket Sverige
-sv,SE,SE
-sv,SE,SWE
 sv,SE,Sverige
 sv,SI,Republika Slovenija
 sv,SI,Republiken Slovenien
@@ -6585,7 +5731,6 @@ tr,BG,Bulgaristan
 tr,BG,Bulgaristan Cumhuriyeti
 tr,BY,Belarus
 tr,BY,Beyaz Rusya
-tr,CH,CH
 tr,CH,İsviçre
 tr,CH,İsviçre Konfederasyonu
 tr,CY,Güney Kıbrıs
@@ -6602,11 +5747,8 @@ tr,DK,Danimarka Krallığı
 tr,DK,Faroe Adaları
 tr,DK,Faroe Islands
 tr,DK,Grönland
-tr,EE,EST
 tr,EE,Estonya
 tr,EE,Estonya Cumhuriyeti
-tr,EE,ee
-tr,EE,🇪🇪
 tr,ES,Katalonya
 tr,ES,İspanya
 tr,ES,İspanya Krallığı
@@ -6648,7 +5790,6 @@ tr,MK,Kuzey Makedonya
 tr,MK,Kuzey Makedonya Cumhuriyeti
 tr,MK,Makedonya
 tr,MK,Makedonya Cumhuriyeti
-tr,MK,mk
 tr,MT,Malta
 tr,NL,Aruba
 tr,NL,Curacao
@@ -6659,10 +5800,8 @@ tr,NL,Kurasao
 tr,NL,Sint Maarten
 tr,NO,Norveç
 tr,NO,Norveç Krallığı
-tr,PL,PL
 tr,PL,Polonya
 tr,PL,Polonya Cumhuriyeti
-tr,PL,🇵🇱
 tr,PT,Portekiz
 tr,PT,Portekiz Cumhuriyeti
 tr,RO,Romanya
@@ -6675,12 +5814,8 @@ tr,SK,Slovakya
 tr,SM,San Marino
 tr,TR,T. C.
 tr,TR,T.C.
-tr,TR,TC
-tr,TR,TUR
 tr,TR,Türkiye
 tr,TR,Türkiye Cumhuriyeti
-tr,TR,tr
-tr,TR,🇹🇷
 tr,UA,Ukrayna
 tr,VA,Vatikan
 tt,AD,Андорра
@@ -6702,7 +5837,6 @@ tt,CH,Эсвичрә
 tt,CY,Кипр
 tt,CY,Кипр Республикасы
 tt,CZ,Чехия
-tt,DE,АФР
 tt,DE,Алман Федератив Республикасы
 tt,DE,Алман иле
 tt,DE,Алмания
@@ -6764,11 +5898,9 @@ tt,NO,Норвегия
 tt,PL,Polska
 tt,PL,Польша
 tt,PL,Польша Җөмһүрияте
-tt,PL,🇵🇱
 tt,PT,Португалия
 tt,RO,Румыния
 tt,RS,Сербия
-tt,RU,РФ
 tt,RU,Россия
 tt,RU,Россия Федерациясе
 tt,RU,Русия Федерациясе
@@ -6796,7 +5928,6 @@ uk,BA,Боснія та Герцоговина
 uk,BA,Боснія і Герцеговина
 uk,BA,Боснія і Герцеґовина
 uk,BA,Боснія і Герцоговина
-uk,BA,БіГ
 uk,BA,Федерація Боснії і Герцеговини
 uk,BE,Бельгія
 uk,BE,Королівство Бельгія
@@ -6804,11 +5935,8 @@ uk,BG,Болгарщина
 uk,BG,Болгарія
 uk,BG,Республіка Болгарія
 uk,BY,Білорусь
-uk,BY,РБ
 uk,BY,Республіка Білорусь
-uk,CH,CH
 uk,CH,Confœderatio Helvetica
-uk,CH,SUI
 uk,CH,Schweiz
 uk,CH,Suisse
 uk,CH,Svizra
@@ -6820,13 +5948,11 @@ uk,CH,Швайцарська Конфедерація
 uk,CH,Швайцарія
 uk,CH,Швейцарська Конфедерація
 uk,CH,Швейцарія
-uk,CH,🇨🇭
 uk,CY,Кіпр
 uk,CZ,Республіка Чехія
 uk,CZ,Чехія
 uk,CZ,Чешська Республіка
 uk,DE,Німеччина
-uk,DE,ФРН
 uk,DE,Федеративна Республіка Німеччина
 uk,DK,Гренландія
 uk,DK,Данське королівство
@@ -6889,14 +6015,11 @@ uk,NL,Нідерланди
 uk,NL,Сінт-Мартен
 uk,NO,Королівство Норвегія
 uk,NO,Норвегія
-uk,PL,POL
 uk,PL,Польща
-uk,PL,🇵🇱
 uk,PT,Португальська Республіка
 uk,PT,Португалія
 uk,RO,Румунія
 uk,RS,Сербія
-uk,RU,РФ
 uk,RU,Російська Федерація
 uk,RU,Росія
 uk,SE,Королівство Швеція
@@ -6909,10 +6032,8 @@ uk,TR,Турецька Республіка
 uk,TR,Туреччина
 uk,TR,Турція
 uk,UA,Ukraina
-uk,UA,ua
 uk,UA,Вкраїна
 uk,UA,Україна
-uk,UA,🇺🇦
 uk,VA,Status Civitatis Vaticanae
 uk,VA,Апо́стольська Столиця
 uk,VA,Ватикан
@@ -6929,7 +6050,6 @@ yi,BE,בעלגיע
 yi,BG,בולגאַריע
 yi,BG,בולגאריע
 yi,BY,בעלארוס
-yi,CH,CH
 yi,CH,שווייץ
 yi,CY,קיפראס
 yi,CZ,טשעכיי
@@ -6971,7 +6091,6 @@ yi,MT,מאלטא
 yi,NL,האלאנד
 yi,NO,נארוועגיע
 yi,PL,פוילן
-yi,PL,🇵🇱
 yi,PT,פארטוגאל
 yi,RO,רומעניע
 yi,RS,סערביע
