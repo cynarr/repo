@@ -10,6 +10,10 @@ Get [Poetry](https://python-poetry.org/):
 
     $ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
 
+Or in Powershell:
+
+    $ (Invoke-WebRequest -Uri https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py -UseBasicParsing).Content | python -
+
 Install:
 
     $ ./install.sh
