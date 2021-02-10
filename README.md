@@ -31,11 +31,11 @@ Registry](https://github.com/orgs/mood-mapping-muppets/packages?ecosystem=contai
 
 Pull with Docker:
 
-    $ docker pull ghcr.io/mood-mapping-muppets/image:latest
+    $ docker pull ghcr.io/mood-mapping-muppets/pipe:latest
 
 Pull with Singularity:
 
-    $ singularity pull docker://ghcr.io/mood-mapping-muppets/image:latest
+    $ singularity pull docker://ghcr.io/mood-mapping-muppets/pipe:latest
 
 ### Running ingress
 
@@ -59,14 +59,25 @@ you should run e.g. `cd $(realpath .)` first.
 
 ## Dashboard
 
-### Manual setup
+### Manual setup and run
 
-TODO
+Get Poetry as above.
+
+Change directory and install.
+
+    $ cd dashboard
+    $ poetry install
+
+Now you can run:
+
+    $ poetry run python app.py
 
 ### Docker
 
-TODO
+You can run the production `Dockerfile` locally.
+
+    $ docker run ghcr.io/mood-mapping-muppets/web:latest
 
 ### Deploying to Rahti
 
-TODO
+The container is automatically deployed through GitHub actions.
