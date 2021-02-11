@@ -27,6 +27,10 @@ def get_antonym(word):
             antonyms = wordnet.synset(f"{word}.{t}.01").lemmas()[0].antonyms() 
             if len(antonyms) > 0:
                 return antonyms[0].name()
+        except LookupError:
+            print("ERROR:")
+            print("Download Wordnet first running: nltk.download('wordnet')")
+            exit()
         except:
             pass
 
