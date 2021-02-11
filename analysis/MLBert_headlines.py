@@ -59,21 +59,24 @@ else:
     print('No GPU available, using the CPU instead.')
     device = torch.device("cpu")
 
-data = []
-with open ("covidmarch.jsonl", 'r') as json_file:
-    lines = json.loads(json_file.read())
-    for l in lines:
-        data.append(l["title"])
+
+for line in sys.stdin:
+    doc = json.loads(line.strip())
+    json_obj = {}
+    json_obj["title"] = doc["title"]
+
+df_data = pd.DataFrame.from_dict(json_obj)
+print(df_data.head())
 
 
-df_data = pd.DataFrame.from_records(data, columns=['headline'])
+df_data = pd.DataFrame.from_dict(json_obj)
 print(df_data.head())
 
 config = BertConfig.from_pretrained('config.json')
 model = BertForSequenceClassification.from_pretrained('pytorch_model.bin', config=config)
 model.cuda()
 
-tokenizer = BertTokenizer.from_pretrained(model, do_lower_case=True)
+tokenizer = BertTokenizer.from_pretrained("bert-base-multilingual-cased", do_lower_case=True)
 
 dataloader = prepare_data(data)
 predictions = predict(model, dataloader)
