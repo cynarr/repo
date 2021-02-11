@@ -17,7 +17,7 @@ EXTRA_PATTERNS = [
     br"corona\pL*",
     br"korona\pL*",
     br"covid\pL*",
-    r"Корона\pL*".encode("utf-8")
+    r"корона\pL*".encode("utf-8")
 ]
 
 
