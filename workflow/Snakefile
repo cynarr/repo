@@ -9,3 +9,4 @@ cnf("WORK", "work")
 
 include: "rules/ingress.smk"
 include: "rules/mmmbgknow.smk"
+include: "rules/analysis.smk"
