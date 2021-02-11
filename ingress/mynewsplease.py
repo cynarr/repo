@@ -136,10 +136,14 @@ class CommonCrawlProcessor:
         counter_article_error, counter_article_total,
     ):
         self.queue.item_done()
-        sys.stderr.write(
-            f"Passed: {counter_article_passed}\t"
-            f"Discarded: {counter_article_discarded}\t"
-            f"Error: {counter_article_error}\tTotal: {counter_article_total}\t"
+        print(
+            (
+                f"Passed: {counter_article_passed}\t"
+                f"Discarded: {counter_article_discarded}\t"
+                f"Error: {counter_article_error}\tTotal: {counter_article_total}\t"
+            ),
+            file=sys.stderr.write,
+            flush=True
         )
 
     def crawl_urls(self, warc_download_urls):
