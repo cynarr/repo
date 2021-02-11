@@ -1,0 +1,12 @@
+from os.path import join as pjoin
+
+
+def cnf(name, val):
+    globals()[name] = config.setdefault(name, val)
+
+
+cnf("WORK", "work")
+
+include: "rules/ingress.smk"
+include: "rules/mmmbgknow.smk"
+include: "rules/analysis.smk"

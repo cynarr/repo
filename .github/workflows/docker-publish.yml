@@ -13,11 +13,6 @@ on:
   # Run tests for any PRs.
   pull_request:
 
-env:
-  # TODO: Change variable to your image's name.
-  PIPE_IMAGE_NAME: pipe
-  WEB_IMAGE_NAME: web
-
 jobs:
   build_publish_containers:
     runs-on: ubuntu-latest
@@ -31,68 +26,28 @@ jobs:
       - uses: actions/checkout@v2
       - uses: textbook/git-checkout-submodule-action@master
 
-      - name: Build pipe image
-        run: docker build . --file Dockerfile.pipe --tag $PIPE_IMAGE_NAME
+      - name: Build/push pipe
+        uses: whoan/docker-build-with-cache-action@v5
+        with:
+          registry: ghcr.io
+          image_name: mood-mapping-muppets/pipe
+          dockerfile: Dockerfile.pipe
+          username: ${{ github.actor }}
+          password: ${{ secrets.CR_PAT }}
 
-      - name: Build web image
-        run: docker build . --file Dockerfile.web --tag $WEB_IMAGE_NAME
+      - name: Build/push web
+        uses: whoan/docker-build-with-cache-action@v5
+        with:
+          registry: ghcr.io
+          image_name: mood-mapping-muppets/web
+          dockerfile: Dockerfile.web
+          username: ${{ github.actor }}
+          password: ${{ secrets.CR_PAT }}
 
-      - name: Log into GitHub Container Registry
-        run: echo "${{ secrets.CR_PAT }}" | docker login https://ghcr.io -u ${{ github.actor }} --password-stdin
-
-      - name: Push pipe image to GitHub Container Registry
-        run: |
-          IMAGE_ID=ghcr.io/${{ github.repository_owner }}/$PIPE_IMAGE_NAME
-
-          # Change all uppercase to lowercase
-          IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
-
-          # Strip git ref prefix from version
-          VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
-
-          # Strip "v" prefix from tag name
-          [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
-
-          # Use Docker `latest` tag convention
-          [ "$VERSION" == "main" ] && VERSION=latest
-
-          echo IMAGE_ID=$IMAGE_ID
-          echo VERSION=$VERSION
-
-          docker tag $PIPE_IMAGE_NAME $IMAGE_ID:$VERSION
-          docker push $IMAGE_ID:$VERSION
-
-      - name: Push web image to GitHub Container Registry
-        run: |
-          IMAGE_ID=ghcr.io/${{ github.repository_owner }}/$WEB_IMAGE_NAME
-
-          # Change all uppercase to lowercase
-          IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
-
-          # Strip git ref prefix from version
-          VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
-
-          # Strip "v" prefix from tag name
-          [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
-
-          # Use Docker `latest` tag convention
-          [ "$VERSION" == "main" ] && VERSION=latest
-
-          echo IMAGE_ID=$IMAGE_ID
-          echo VERSION=$VERSION
-
-          docker tag $WEB_IMAGE_NAME $IMAGE_ID:$VERSION
-          docker push $IMAGE_ID:$VERSION
-
-      - name: Log into Rahti Container Registry
-        run: |
-          oc login https://rahti.csc.fi:8443 --token=${{ secrets.RAHTI_KEY }}
-          docker login -p $(oc whoami -t) -u unused docker-registry.rahti.csc.fi
-
-      - name: Push web to Rahti
-        run: |
-          docker tag $WEB_IMAGE_NAME docker-registry.rahti.csc.fi/mmmweb/web:latest
-          docker push docker-registry.rahti.csc.fi/mmmweb/web:latest
+      - name: Trigger build on Rahti
+        uses: joelwmale/webhook-action@master
+        with:
+          url: ${{ secrets.RAHTI_WEBHOOK_URL }}
 
       - uses: act10ns/slack@v1
         with:

@@ -136,3 +136,7 @@ dmypy.json
 
 # Work directories
 /ingress/work/
+
+
+# SQLite databse files
+*.db

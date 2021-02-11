@@ -7,17 +7,27 @@ from w3lib.url import canonicalize_url
 
 from newsplease.crawler import commoncrawl_crawler
 from newsplease.crawler import commoncrawl_extractor
-from multiprocessing import Queue, Pool, Process
+from multiprocessing import Queue, Pool, Process, active_children
 import queue
 
 
 FINISHED_PRODUCING = object()
 
 
-LINE_CHUNK_SIZE = 256
-MAP_CHUNK_SIZE = 1
+LINE_CHUNK_SIZE = 1
+MAP_CHUNK_SIZE = 256
 QUEUE_SIZE_PER_PROCESS = 16
-GET_TIMEOUT = 5 * 60
+GET_TIMEOUT = 60 * 60 # 1 hour
+
+
+def die_all():
+    import time
+    for child in active_children():
+        child.kill()
+    time.sleep(5)
+    for child in active_children():
+        child.terminate()
+    sys.exit(-1)
 
 
 class ChunkingQueue:
@@ -43,7 +53,7 @@ class ChunkingQueue:
             result = self._global_queue.get(True, GET_TIMEOUT)
         except queue.Empty:
             print("Timeout out waiting for lines", file=sys.stderr)
-            sys.exit(-1)
+            die_all()
         return result
 
     def item_done(self):
@@ -116,19 +126,24 @@ class CommonCrawlProcessor:
         self.extractor_cls = extractor_cls
 
     def on_valid_article_extracted(self, article):
-        article = article.get_dict()
-        article["canon_url"] = canonicalize_url(article["url"])
-        self.queue.put(orjson.dumps(article))
+        article_dict = article.get_dict()
+        article_dict["country"] = article.country
+        article_dict["canon_url"] = canonicalize_url(article_dict["url"])
+        self.queue.put(orjson.dumps(article_dict))
 
     def callback_on_warc_completed(
         self, warc_path, counter_article_passed, counter_article_discarded,
         counter_article_error, counter_article_total,
     ):
         self.queue.item_done()
-        sys.stderr.write(
-            f"Passed: {counter_article_passed}\t"
-            f"Discarded: {counter_article_discarded}\t"
-            f"Error: {counter_article_error}\tTotal: {counter_article_total}\t"
+        print(
+            (
+                f"Passed: {counter_article_passed}\t"
+                f"Discarded: {counter_article_discarded}\t"
+                f"Error: {counter_article_error}\tTotal: {counter_article_total}\t"
+            ),
+            file=sys.stderr.write,
+            flush=True
         )
 
     def crawl_urls(self, warc_download_urls):

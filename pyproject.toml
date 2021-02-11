@@ -7,6 +7,7 @@ authors = ["Frankie Robertson <frankie@robertson.name>"]
 packages = [
     { include = "ingress" },
     { include = "analysis" },
+    { include = "mmmbgknow" },
 ]
 
 [tool.poetry.dependencies]
@@ -27,6 +28,12 @@ rpy2 = { version = "^3.4.2", optional = true }
 awscli = "^1.19.2"
 transformers = "^4.2.2"
 SPARQLWrapper = "^1.8.5"
+pycountry-convert = "^0.7.2"
+pyre2 = "^0.3.3"
+sentencepiece = "^0.1.95"
+ibis-framework = {extras = ["sqlite"], version = "^1.4.0"}
+nltk = "^3.5"
+scipy = "^1.6.0"
 
 [tool.poetry.extras]
 usenews = ["rpy2"]

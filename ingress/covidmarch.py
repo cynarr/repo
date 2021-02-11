@@ -1,29 +1,22 @@
 import os
-from urllib.parse import urlsplit
-from typing import List
 from datetime import datetime
 from ingress.mynewsplease import mynewsplease
 
 from newsplease import NewsPlease
 from newsplease.crawler.commoncrawl_extractor import CommonCrawlExtractor
+from mmmbgknow.country_detect import detect_country
+from mmmbgknow.european import is_european_cc, is_european_langcode
+from mmmbgknow.pickled_searchers import get_covid
 
 
-class BertPreproc:
-    def __init__(self):
-        from tokenizers import Tokenizer
-        from tokenizers.pre_tokenizers import BertPreTokenizer
-        from tokenizers.normalizers import BertNormalizer
-        from tokenizers.models import WordLevel
-
-        self.tokenizer = Tokenizer(WordLevel({"UNK": 0}, unk_token="UNK"))
-        self.tokenizer.pre_tokenizer = BertPreTokenizer()
-        self.tokenizer.normalizer = BertNormalizer()
-
-    def __call__(self, inp: str) -> List[str]:
-        return self.tokenizer.encode(inp).tokens
+_covid_searchers = None
 
 
-preproc = BertPreproc()
+def get_covid_searchers():
+    global _covid_searchers
+    if _covid_searchers is None:
+        _covid_searchers = get_covid()
+    return _covid_searchers
 
 
 class KeywordFilterCommonCrawl(CommonCrawlExtractor):
@@ -32,23 +25,33 @@ class KeywordFilterCommonCrawl(CommonCrawlExtractor):
         if not passed_filters:
             return False, article
         url = warc_record.rec_headers.get_header('WARC-Target-URI')
-        netloc = urlsplit(url).netloc
-        # TLD filtering XXX: stub
-        if netloc.strip(".").rsplit(".", 1)[-1] not in ("fi", "ee", "uk", "ie", "es", "fr", "de", "se"):
+
+        def get_lang():
+            nonlocal article
+            if article is None:
+                article = NewsPlease.from_warc(warc_record)
+            return article.language
+        country = detect_country(url, get_lang)
+        if not country or not is_european_cc(country):
             return False, article
-        # We definitely need the full article object now
+        article.country = country
         if article is None:
             article = NewsPlease.from_warc(warc_record)
-        # Filter by language XXX: stub
-        if article.language not in ("fi", "et", "en", "es", "fr", "de", "sv"):
+        lang = article.language
+        if not lang or not is_european_langcode(lang):
             return False, article
-        # Keywords XXX: stub
-        text = article.maintext
-        if text is None:
+        # TODO: Find COVID-19 mention
+        searcher = get_covid_searchers().get(lang)
+        if searcher is None:
             return False, article
-        bits = preproc(text)
-        if "korona" not in bits and "covid" not in bits and not "coronavirus" not in bits:
-            # XXX: Just returning anyway for now
+
+        def match(key):
+            return searcher.match(
+                (getattr(article, key) or "").lower().encode("utf-8")
+            )
+        if match("title"):
+            return True, article
+        if match("maintext"):
             return True, article
         return True, article
 

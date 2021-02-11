@@ -1,15 +1,8 @@
-from os.path import join as pjoin
-
-
-def cnf(name, val):
-    globals()[name] = config.setdefault(name, val)
-
-cnf("WORK", "work")
 cnf("COVIDMARCH", pjoin(WORK, "covidmarch.jsonl.zstd"))
 cnf("USENEWS_FULLTEXT", pjoin(WORK, "usenews.fulltext.jsonl.zstd"))
 
 
-rule all:
+rule ingress_all:
     input:
         COVIDMARCH,
         USENEWS_FULLTEXT
@@ -30,7 +23,7 @@ rule extract_rdata:
     input:
         pjoin(WORK, "{base}.RData.xz")
     output:
-        pjoin(WORK, "{base}.RData")
+        temp(pjoin(WORK, "{base}.RData"))
     shell:
         "xz -dk -T0 {input}"
 
@@ -46,7 +39,7 @@ rule save_usenews_urls:
     input:
         pjoin(WORK, "usenews.{year}.pickles/crowdtangle{year}.pkl")
     output:
-        pjoin(WORK, "usenews.{year}.urls.txt")
+        temp(pjoin(WORK, "usenews.{year}.urls.txt"))
     shell:
         "python -m ingress.save_usenews_urls {input} > {output}"
 
@@ -57,7 +50,7 @@ rule cat_usenews_urls:
     output:
         pjoin(WORK, "usenews.urls.txt")
     shell:
-        "cat {input.urls19} {input.urls20} > {output}"
+        "sort -u {input.urls19} {input.urls20} > {output}"
 
 rule get_covid_march:
     output:
