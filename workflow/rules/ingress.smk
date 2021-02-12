@@ -37,11 +37,12 @@ rule convert_rdata:
 
 rule agg_usenews:
     input:
-        pjoin(WORK, "{base}.pickles")
+        usenews19 = pjoin(WORK, "usenews.2019.pickles"),
+        usenews20 = pjoin(WORK, "usenews.2020.pickles")
     output:
         pjoin(WORK, "usenews_joined.arrow")
     shell:
-        "python -m ingress.agg_usenews {input} {output}"
+        "python -m ingress.agg_usenews {input.usenews19} {input.usenews20} {output}"
 
 rule save_usenews_urls:
     input:
