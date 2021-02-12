@@ -7,19 +7,10 @@ from newsplease.crawler.commoncrawl_extractor import CommonCrawlExtractor
 from mmmbgknow.country_detect import detect_country
 from mmmbgknow.european import is_european_cc, is_european_langcode
 from mmmbgknow.pickled_searchers import get_covid
+from ingress.search_utils import get_covid_searchers
 
 
-_covid_searchers = None
-
-
-def get_covid_searchers():
-    global _covid_searchers
-    if _covid_searchers is None:
-        _covid_searchers = get_covid()
-    return _covid_searchers
-
-
-class KeywordFilterCommonCrawl(CommonCrawlExtractor):
+class March2020KeywordFilterCommonCrawl(CommonCrawlExtractor):
     def filter_record(self, warc_record, article=None):
         passed_filters, article = super().filter_record(warc_record, article)
         if not passed_filters:
@@ -65,7 +56,7 @@ def main():
         local_download_dir_warc=warc_dir,
         start_date=datetime(2020, 3, 1),
         end_date=datetime(2020, 3, 31, 23, 59, 59),
-        extractor_cls=KeywordFilterCommonCrawl,
+        extractor_cls=March2020KeywordFilterCommonCrawl,
     )
 
 
