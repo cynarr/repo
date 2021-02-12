@@ -5,6 +5,7 @@ rule mmmbgknow_all:
         "mmmbgknow/data/tld_country.csv",
         "mmmbgknow/data/euro_language.csv",
         "mmmbgknow/data/euro_country.csv",
+        "mmmbgknow/data/langdetect_euro_language.csv",
         "mmmbgknow/data/country_labels.csv",
         "mmmbgknow/data/covid_labels.csv",
         "mmmbgknow/data/country_search.pkl",
@@ -43,9 +44,9 @@ rule get_euro_country:
 rule get_langdetect_euro_country:
     input:
         "mmmbgknow/data/langdetect_languages.csv",
-        "mmmbgknow/data/euro_country.csv"
+        "mmmbgknow/data/euro_language.csv"
     output:
-        "mmmbgknow/data/langdetect_euro_country.csv"
+        "mmmbgknow/data/langdetect_euro_language.csv"
     shell:
         "python -m mmmbgknow.langdetect_euro > {output}"
 
