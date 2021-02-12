@@ -1,11 +1,11 @@
 cnf("COVIDMARCH", pjoin(WORK, "covidmarch.jsonl.zstd"))
+cnf("COVIDSTATEBROADCASTER", pjoin(WORK, "covidstatebroadcaster.jsonl.zstd"))
 cnf("USENEWS_FULLTEXT", pjoin(WORK, "usenews.fulltext.jsonl.zstd"))
 
 
 rule ingress_all:
     input:
-        COVIDMARCH,
-        USENEWS_FULLTEXT
+        COVIDSTATEBROADCASTER
 
 rule get_usenews_2019:
     output:
@@ -57,6 +57,12 @@ rule get_covid_march:
         COVIDMARCH
     shell:
         "python -m ingress.covidmarch | zstd -T0 -14 -f - -o {output}"
+
+rule get_covid_statebroadcaster:
+    output:
+        COVIDSTATEBROADCASTER
+    shell:
+        "python -m ingress.covidstatebroadcaster | zstd -T0 -14 -f - -o {output}"
 
 rule get_usenews_fulltext:
     input:
