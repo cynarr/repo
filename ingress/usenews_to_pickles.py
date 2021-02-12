@@ -1,10 +1,8 @@
 import sys
-import pickle
 from os import makedirs
 from os.path import join as pjoin
 from rpy2 import robjects as ro
 from rpy2.robjects import pandas2ri
-from pandas import DataFrame
 import pyarrow
 
 
@@ -34,12 +32,15 @@ MEDIACLOUD_KEEP = [
     "guid"
 ]
 
+CROWDTANGLE_NAMES = ["crowdtangle2019", "crowdtangle2020"]
+MEDIACLOUD_NAMES = ["mediacloud2019", "mediacloud2020"]
+
 for name in names:
     obj = ro.r[name]
-    if name.startswith("mediacloud."):
-        keep_cols = MEDIACLOUD_KEEP
-    elif name.startswith("crowdtangle"):
+    if name in CROWDTANGLE_NAMES:
         keep_cols = CROWDTANGLE_KEEP
+    elif name in MEDIACLOUD_NAMES:
+        keep_cols = MEDIACLOUD_KEEP
     else:
         continue
     obj.drop(obj.columns.difference(keep_cols), 1, inplace=True)
