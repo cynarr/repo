@@ -142,7 +142,7 @@ class CommonCrawlProcessor:
                 f"Discarded: {counter_article_discarded}\t"
                 f"Error: {counter_article_error}\tTotal: {counter_article_total}\t"
             ),
-            file=sys.stderr.write,
+            file=sys.stderr,
             flush=True
         )
 

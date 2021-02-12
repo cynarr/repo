@@ -1,3 +1,6 @@
+from mmmbgknow.pickled_searchers import get_covid
+
+
 _covid_searchers = None
 
 

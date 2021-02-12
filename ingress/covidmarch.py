@@ -6,7 +6,6 @@ from newsplease import NewsPlease
 from newsplease.crawler.commoncrawl_extractor import CommonCrawlExtractor
 from mmmbgknow.country_detect import detect_country
 from mmmbgknow.european import is_european_cc, is_european_langcode
-from mmmbgknow.pickled_searchers import get_covid
 from ingress.search_utils import get_covid_searchers
 
 
