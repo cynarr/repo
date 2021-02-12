@@ -1,6 +1,7 @@
 rule mmmbgknow_all:
     input:
         "mmmbgknow/data/fqdn_country.csv",
+        "mmmbgknow/data/state_broadcasters.csv",
         "mmmbgknow/data/lang_country.csv",
         "mmmbgknow/data/tld_country.csv",
         "mmmbgknow/data/euro_language.csv",
@@ -16,6 +17,12 @@ rule get_fqdn_country:
         "mmmbgknow/data/fqdn_country.csv"
     shell:
         "python -m mmmbgknow.queries.get_fqdn_country > {output}"
+
+rule get_state_broadcasters:
+    output:
+        "mmmbgknow/data/state_broadcasters.csv"
+    shell:
+        "python -m mmmbgknow.queries.get_state_broadcasters > {output}"
 
 rule get_lang_country:
     output:
