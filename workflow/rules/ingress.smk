@@ -35,6 +35,14 @@ rule convert_rdata:
     shell:
         "python -m ingress.usenews_to_pickles {input} {output}"
 
+rule agg_usenews:
+    input:
+        pjoin(WORK, "{base}.pickles")
+    output:
+        pjoin(WORK, "usenews_joined.arrow")
+    shell:
+        "python -m ingress.agg_usenews {input} {output}"
+
 rule save_usenews_urls:
     input:
         pjoin(WORK, "usenews.{year}.pickles/crowdtangle{year}.pkl")
