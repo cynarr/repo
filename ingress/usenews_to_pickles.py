@@ -45,6 +45,7 @@ for name in names:
         continue
     obj.drop(obj.columns.difference(keep_cols), 1, inplace=True)
     obj.fillna(0, inplace=True)
+    table = pyarrow.Table.from_pandas(obj)
     with pyarrow.OSFile(pjoin(outdir, name + ".arrow"), 'wb') as sink:
-        with pyarrow.RecordBatchFileWriter(sink, obj.schema) as writer:
-            writer.write_table(obj)
+        with pyarrow.RecordBatchFileWriter(sink, table.schema) as writer:
+            writer.write_table(table)
