@@ -28,8 +28,8 @@ CROWDTANGLE_KEEP = [
 ]
 
 MEDIACLOUD_KEEP = [
-    "title"
-    "guid"
+    "title",
+    "url"
 ]
 
 CROWDTANGLE_NAMES = ["crowdtangle2019", "crowdtangle2020"]
@@ -44,6 +44,14 @@ for name in names:
     else:
         continue
     obj.drop(obj.columns.difference(keep_cols), 1, inplace=True)
+    obj.astype(
+        {
+            col: str if col in ["title", "url", "link"] else int
+            for col
+            in keep_cols
+        },
+        copy=False
+    )
     obj.fillna(0, inplace=True)
     table = pyarrow.Table.from_pandas(obj)
     with pyarrow.OSFile(pjoin(outdir, name + ".arrow"), 'wb') as sink:
