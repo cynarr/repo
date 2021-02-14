@@ -11,7 +11,7 @@ from multiprocessing import Queue, Pool, Process, active_children
 import queue
 
 
-FINISHED_PRODUCING = object()
+FINISHED_PRODUCING = None
 
 
 LINE_CHUNK_SIZE = 1
