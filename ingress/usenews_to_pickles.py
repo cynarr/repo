@@ -39,19 +39,19 @@ for name in names:
     obj = ro.r[name]
     if name in CROWDTANGLE_NAMES:
         keep_cols = CROWDTANGLE_KEEP
+        if name == "crowdtangle2019":
+            del keep_cols["statistics.actual.careCount"]
     elif name in MEDIACLOUD_NAMES:
         keep_cols = MEDIACLOUD_KEEP
     else:
         continue
     obj.drop(obj.columns.difference(keep_cols), 1, inplace=True)
-    obj.astype(
-        {
-            col: str if col in ["title", "url", "link"] else int
-            for col
-            in keep_cols
-        },
-        copy=False
-    )
+    type_map = {
+        col: str if col in ["title", "url", "link"] else int
+        for col
+        in keep_cols
+    }
+    obj = obj.astype(type_map, copy=False)
     obj.fillna(0, inplace=True)
     table = pyarrow.Table.from_pandas(obj)
     with pyarrow.OSFile(pjoin(outdir, name + ".arrow"), 'wb') as sink:
