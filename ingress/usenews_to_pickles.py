@@ -27,6 +27,8 @@ CROWDTANGLE_KEEP = [
     "statistics.actual.careCount",
 ]
 
+REMOVE_PREFIX = "statistics.actual."
+
 MEDIACLOUD_KEEP = [
     "title",
     "url"
@@ -52,7 +54,13 @@ for name in names:
         in keep_cols
     }
     obj = obj.astype(type_map, copy=False)
-    obj.fillna(0, inplace=True)
+    obj.rename(
+        lambda col_name:
+            col_name[len(REMOVE_PREFIX):]
+            if col_name.startswith(REMOVE_PREFIX)
+            else col_name
+    )
+    # obj.fillna(0, inplace=True)
     table = pyarrow.Table.from_pandas(obj)
     with pyarrow.OSFile(pjoin(outdir, name + ".arrow"), 'wb') as sink:
         with pyarrow.RecordBatchFileWriter(sink, table.schema) as writer:
