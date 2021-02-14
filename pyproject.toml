@@ -35,6 +35,8 @@ ibis-framework = {extras = ["sqlite"], version = "^1.4.0"}
 nltk = "^3.5"
 scipy = "^1.6.0"
 pyarrow = "^3.0.0"
+vaex-core = "^2.0.3"
+vaex-arrow = "^0.5.1"
 
 [tool.poetry.extras]
 usenews = ["rpy2"]
