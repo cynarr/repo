@@ -63,13 +63,13 @@ rule cat_usenews_urls:
 
 rule get_covid_march:
     output:
-        COVIDMARCH
+        protected(COVIDMARCH)
     shell:
         "python -m ingress.covidmarch | zstd -T0 -14 -f - -o {output}"
 
 rule get_covid_statebroadcaster:
     output:
-        COVIDSTATEBROADCASTER
+        protected(COVIDSTATEBROADCASTER)
     shell:
         "python -m ingress.covidstatebroadcaster | zstd -T0 -14 -f - -o {output}"
 
@@ -77,6 +77,6 @@ rule get_usenews_fulltext:
     input:
         pjoin(WORK, "usenews.urls.txt")
     output:
-        USENEWS_FULLTEXT
+        protected(USENEWS_FULLTEXT)
     shell:
         "python -m ingress.usenews_fulltext {input} | zstd -T0 -14 -f - -o {output}"
