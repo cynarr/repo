@@ -3,7 +3,7 @@ from ..utils.wikidata import Wikidata
 wikidata = Wikidata()
 
 QUERY = """
-SELECT ?cc2
+SELECT (SAMPLE(?cc2) AS ?cc2s)
 WHERE
 {
   # is a country
@@ -15,9 +15,10 @@ WHERE
   # has 2-letter country code
   ?country wdt:P297 ?cc2 .
 }
+GROUP BY ?cc2
 """
 
 
 print("cc2")
-for cc2, in sorted(wikidata.query_tpl(QUERY, "cc2")):
+for cc2, in sorted(wikidata.query_tpl(QUERY, "cc2s")):
     print(cc2)
