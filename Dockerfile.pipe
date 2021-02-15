@@ -1,4 +1,4 @@
-FROM quay.io/jitesoft/debian:10-slim
+FROM pytorch/pytorch:1.7.1-cuda11.0-cudnn8-runtime
 
 LABEL org.opencontainers.image.source https://github.com/mood-mapping-muppets/repo
 
@@ -21,6 +21,7 @@ COPY pyproject.toml poetry.lock install_rest.sh ./
 
 RUN poetry export -E usenews \
       --without-hashes > requirements.txt && \
+    sed -i '/pytorch/d' requirements.txt && \
     python3 -m pip install -r requirements.txt && \
     rm requirements.txt && \
     ./install_rest.sh && \
