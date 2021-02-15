@@ -116,8 +116,18 @@ if __name__ == '__main__':
     vocab_count = 100000
     language_code = sys.argv[1]
 
+    if not path.exists(f"data/wiki.multi.en.vec"):
+        print(f"WARNING: Embedding file not found for 'en'. Downloading.", file=sys.stderr)
+        emb_url = f"https://dl.fbaipublicfiles.com/arrival/vectors/wiki.multi.en.vec"
+        r = requests.get(emb_url, stream = True)
+        with open(f"data/wiki.multi.en.vec", "wb") as emb_file:
+            for chunk in r.iter_content(chunk_size = 64 * 1024 * 1024):
+                if chunk:
+                    emb_file.write(chunk)
+        print("Done.", file=sys.stderr)
+
     if not path.exists(f"data/wiki.multi.{language_code}.vec"):
-        print("WARNING: Embedding file not found. Downloading.", file=sys.stderr)
+        print(f"WARNING: Embedding file not found for '{language_code}'. Downloading.", file=sys.stderr)
         emb_url = f"https://dl.fbaipublicfiles.com/arrival/vectors/wiki.multi.{language_code}.vec"
         r = requests.get(emb_url, stream = True)
         with open(f"data/wiki.multi.{language_code}.vec", "wb") as emb_file:
@@ -130,7 +140,7 @@ if __name__ == '__main__':
     src_embeddings, src_id2word, src_word2id = load_vec("data/wiki.multi.en.vec", vocab_count)
     tgt_embeddings, tgt_id2word, tgt_word2id = load_vec(f"data/wiki.multi.{language_code}.vec", vocab_count)
 
-    # Compute moral dimensions
+    # Compute moral dimensions, compute the .pkl file with with analysis/sentiment_antonym_pair_util.py
     with open("data/mft_sentiment_word_pairs.pkl", "rb") as fp:
         moral_word_pairs = pickle.load(fp)
         moral_dims = compute_moral_dimensions(moral_word_pairs, src_embeddings, src_word2id, tgt_embeddings, tgt_word2id)
@@ -139,15 +149,15 @@ if __name__ == '__main__':
     mft_dict, mft_cat = load_mft_dictionary("data/mfd2.0.dic")
     moral_docs = {}
 
-    if path.exists(".tmp/moral_doc_cache.pkl"):
-        with open(".tmp/moral_doc_cache.pkl", "rb") as fp:
+    if path.exists(f".tmp/moral_doc_cache_{language_code}.pkl"):
+        with open(f".tmp/moral_doc_cache_{language_code}.pkl", "rb") as fp:
             moral_docs = pickle.load(fp)
     else:
         for moral_id in mft_dict:
             moral_docs[moral_id] = multilingual_encode(mft_dict[moral_id], src_embeddings, src_word2id, tgt_embeddings, tgt_word2id)
         if not path.exists(".tmp/"):
             os.mkdir(".tmp")
-        with open(".tmp/moral_doc_cache.pkl", "wb") as fp:
+        with open(f".tmp/moral_doc_cache_{language_code}.pkl", "wb") as fp:
             pickle.dump(moral_docs, fp)   
 
     for line in sys.stdin:
