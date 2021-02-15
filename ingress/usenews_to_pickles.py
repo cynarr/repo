@@ -58,7 +58,8 @@ for name in names:
         lambda col_name:
             col_name[len(REMOVE_PREFIX):]
             if col_name.startswith(REMOVE_PREFIX)
-            else col_name
+            else col_name,
+        inplace=True
     )
     # obj.fillna(0, inplace=True)
     table = pyarrow.Table.from_pandas(obj)
