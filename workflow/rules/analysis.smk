@@ -13,3 +13,7 @@ rule get_country_mention:
 rule get_mft_dictionary:
     shell:
         "curl -J -L https://osf.io/whjt2/download > data/mfd2.0.dic"
+
+rule generate_moral_sentiment_pairs:
+    shell:
+        "python -m analysis.sentiment_antonym_pair_util"
