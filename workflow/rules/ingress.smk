@@ -1,4 +1,3 @@
-cnf("COVIDMARCH", pjoin(WORK, "covidmarch.jsonl.zstd"))
 cnf("COVIDSTATEBROADCASTER", pjoin(WORK, "covidstatebroadcaster.jsonl.zstd"))
 cnf("USENEWS_FULLTEXT", pjoin(WORK, "usenews.fulltext.jsonl.zstd"))
 
@@ -60,12 +59,6 @@ rule cat_usenews_urls:
         pjoin(WORK, "usenews.urls.txt")
     shell:
         "sort -u {input.urls19} {input.urls20} > {output}"
-
-rule get_covid_march:
-    output:
-        protected(COVIDMARCH)
-    shell:
-        "python -m ingress.covidmarch | zstd -T0 -14 -f - -o {output}"
 
 rule get_covid_statebroadcaster:
     output:

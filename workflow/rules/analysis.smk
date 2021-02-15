@@ -4,7 +4,7 @@ cnf("COUNTRY_MENTION", pjoin(ANALYSES, "country_mention.jsonl.zstd"))
 
 rule get_country_mention:
     input:
-        COVIDMARCH
+        COVIDSTATEBROADCASTER
     output:
         COUNTRY_MENTION
     shell:
