@@ -8,6 +8,7 @@ from os import path
 import pickle
 import scipy.linalg
 import pickle
+import requests
 
 
 def load_vec(emb_path, nmax=50000):
@@ -108,8 +109,22 @@ def bures_distance(A, B):
     return np.real(distance)
 
 if __name__ == '__main__':
-    vocab_count = 50000
-    language_code = "de"
+    if len(sys.argv) < 2:
+        print("Error: Input language code to use e.g. 'de'", file=sys.stderr)
+        exit()
+
+    vocab_count = 100000
+    language_code = sys.argv[1]
+
+    if not path.exists(f"data/wiki.multi.{language_code}.vec"):
+        print("WARNING: Embedding file not found. Downloading.", file=sys.stderr)
+        emb_url = f"https://dl.fbaipublicfiles.com/arrival/vectors/wiki.multi.{language_code}.vec"
+        r = requests.get(emb_url, stream = True)
+        with open(f"data/wiki.multi.{language_code}.vec", "wb") as emb_file:
+            for chunk in r.iter_content(chunk_size = 64 * 1024 * 1024):
+                if chunk:
+                    emb_file.write(chunk)
+        print("Done.", file=sys.stderr)
 
     # Get multilingual embeddings from https://github.com/facebookresearch/MUSE
     src_embeddings, src_id2word, src_word2id = load_vec("data/wiki.multi.en.vec", vocab_count)
@@ -119,8 +134,6 @@ if __name__ == '__main__':
     with open("data/mft_sentiment_word_pairs.pkl", "rb") as fp:
         moral_word_pairs = pickle.load(fp)
         moral_dims = compute_moral_dimensions(moral_word_pairs, src_embeddings, src_word2id, tgt_embeddings, tgt_word2id)
-
-    #project_document_to_moral_dim(np.random.randn(123,300), moral_dims['care'])
 
     # Get MFT dictionary from https://osf.io/whjt2/
     mft_dict, mft_cat = load_mft_dictionary("data/mfd2.0.dic")
@@ -137,27 +150,29 @@ if __name__ == '__main__':
         with open(".tmp/moral_doc_cache.pkl", "wb") as fp:
             pickle.dump(moral_docs, fp)   
 
-
     for line in sys.stdin:
-        doc = json.loads(line.strip())
-        json_obj = {}        
-        if doc["language"] == language_code:
-            json_obj["canon_url"] = doc["canon_url"]
-            json_obj["bures_sentiment"] = {}
-            json_obj["frob_sentiment"] = {}
-            json_obj["proj_sentiment"] = {}
-            
-            doc_matrix = create_doc_matrix(tokenize(doc["maintext"]), src_embeddings, src_word2id)
-            enc_doc = encode(doc_matrix, src_embeddings, src_word2id)
-            
-            for moral_id in moral_docs:
-                sentiment_score = frobenius_cosine(moral_docs[moral_id][None], enc_doc[None])[0]
-                bures_sentiment_score = bures_distance(moral_docs[moral_id], enc_doc)
-                json_obj["frob_sentiment"][mft_cat[moral_id]] = sentiment_score
-                json_obj["bures_sentiment"][mft_cat[moral_id]] = bures_sentiment_score
-            
-            for moral_dim in moral_dims:
-                json_obj["proj_sentiment"][moral_dim] = project_document_to_moral_dim(doc_matrix, moral_dims[moral_dim])
-            
-            print(json.dumps(json_obj))
+        try:
+            doc = json.loads(line.strip())
+            json_obj = {}        
+            if doc["language"] == language_code:
+                json_obj["canon_url"] = doc["canon_url"]
+                json_obj["bures_sentiment"] = {}
+                json_obj["frob_sentiment"] = {}
+                json_obj["proj_sentiment"] = {}
+                
+                doc_matrix = create_doc_matrix(tokenize(doc["maintext"]), src_embeddings, src_word2id)
+                enc_doc = encode(doc_matrix, src_embeddings, src_word2id)
+                
+                for moral_id in moral_docs:
+                    sentiment_score = frobenius_cosine(moral_docs[moral_id][None], enc_doc[None])[0]
+                    bures_sentiment_score = bures_distance(moral_docs[moral_id], enc_doc)
+                    json_obj["frob_sentiment"][mft_cat[moral_id]] = sentiment_score
+                    json_obj["bures_sentiment"][mft_cat[moral_id]] = bures_sentiment_score
+                
+                for moral_dim in moral_dims:
+                    json_obj["proj_sentiment"][moral_dim] = project_document_to_moral_dim(doc_matrix, moral_dims[moral_dim])
+                
+                print(json.dumps(json_obj))
+        except:
+            pass
 
