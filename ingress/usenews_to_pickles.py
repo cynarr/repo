@@ -42,7 +42,7 @@ for name in names:
     if name in CROWDTANGLE_NAMES:
         keep_cols = CROWDTANGLE_KEEP
         if name == "crowdtangle2019":
-            del keep_cols["statistics.actual.careCount"]
+            keep_cols.remove("statistics.actual.careCount")
     elif name in MEDIACLOUD_NAMES:
         keep_cols = MEDIACLOUD_KEEP
     else:
