@@ -22,6 +22,7 @@ COPY pyproject.toml poetry.lock install_rest.sh ./
 RUN poetry export -E usenews \
       --without-hashes > requirements.txt && \
     sed -i '/pytorch/d' requirements.txt && \
+    sed -i '/PyYAML/d' requirements.txt && \
     python3 -m pip install -r requirements.txt && \
     rm requirements.txt && \
     ./install_rest.sh && \
