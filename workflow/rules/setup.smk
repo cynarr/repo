@@ -1,4 +1,4 @@
-DATA_DIR = pjoin(snakemake.workflow.current_basedir, "..", "data")
+DATA_DIR = pjoin(workflow.current_basedir, "..", "data")
 cnf("MFD20", pjoin(DATA_DIR, "mfd2.0.dic"))
 cnf("MFT_SENTIMENT_WORD_PAIRS", pjoin(DATA_DIR, "mft_sentiment_word_pairs.pkl"))
 cnf("NEWS_SENTIMENT_MODEL", pjoin(DATA_DIR, "news_sentiment_model.bin"))
