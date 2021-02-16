@@ -3,6 +3,7 @@ cnf("MFD20", pjoin(WORK, "mfd2.0.dic"))
 cnf("MFT_SENTIMENT_WORD_PAIRS", pjoin(WORK, "mft_sentiment_word_pairs.pkl"))
 cnf("NEWS_SENTIMENT_MODEL", pjoin(WORK, "news_sentiment_model.bin"))
 cnf("MUSE", pjoin(WORK, "muse"))
+cnf("BERT_MULTILINGUAL_CASED", pjoin(WORK, "bert_multilingual_cased"))
 
 
 rule mk_data_dir:
@@ -37,6 +38,16 @@ rule generate_moral_sentiment_pairs:
         MFT_SENTIMENT_WORD_PAIRS
     shell:
         "python -m analysis.sentiment_antonym_pair_util {input.mdf} {output}"
+
+
+rule download_mbert_tokenizer:
+    output:
+        BERT_MULTILINGUAL_CASED
+    run:
+        from transformers import BertTokenizerFast
+        tokenizer = BertTokenizerFast.from_pretrained(
+            "bert-base-multilingual-cased"
+        ).save_pretrained(output[0])
 
 
 rule download_news_sentiment_model:

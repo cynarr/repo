@@ -34,9 +34,10 @@ rule get_moral_sentiment_all:
 
 rule get_mbert_sentiment:
     input:
-        COVIDSTATEBROADCASTER,
-        news_sentiment_model = NEWS_SENTIMENT_MODEL
+        corpus = COVIDSTATEBROADCASTER,
+        news_sentiment_model = NEWS_SENTIMENT_MODEL,
+        bert_multilingual_cased = BERT_MULTILINGUAL_CASED
     output:
         MBERT_SENTIMENT
     shell:
-        "zstdcat -T0 {input} | NEWS_SENTIMENT_MODEL={input.news_sentiment_model} python -m analysis.mbert_headlines --batch-size 512 | zstd -T0 -14 -f - -o {output}"
+        "zstdcat -T0 {input.corpus} | BERT_MULTILINGUAL_CASED_PATH={input.bert_multilingual_cased} NEWS_SENTIMENT_MODEL={input.news_sentiment_model} python -m analysis.mbert_headlines --batch-size 512 | zstd -T0 -14 -f - -o {output}"

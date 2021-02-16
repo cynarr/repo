@@ -52,8 +52,8 @@ def main(batch_size):
         device = torch.device("cpu")
 
     tokenizer = BertTokenizerFast.from_pretrained(
-        "bert-base-multilingual-cased",
-        do_lower_case=True
+        os.environ.get("BERT_MULTILINGUAL_CASED_PATH", "bert-base-multilingual-cased"),
+        do_lower_case=False,
     )
     config = BertConfig.from_pretrained(CONFIG_PATH)
     model = BertForSequenceClassification.from_pretrained(
