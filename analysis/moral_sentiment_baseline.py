@@ -116,29 +116,9 @@ if __name__ == '__main__':
     vocab_count = 100000
     language_code = sys.argv[1]
 
-    if not path.exists(f"data/wiki.multi.en.vec"):
-        print(f"WARNING: Embedding file not found for 'en'. Downloading.", file=sys.stderr)
-        emb_url = f"https://dl.fbaipublicfiles.com/arrival/vectors/wiki.multi.en.vec"
-        r = requests.get(emb_url, stream = True)
-        with open(f"data/wiki.multi.en.vec", "wb") as emb_file:
-            for chunk in r.iter_content(chunk_size = 64 * 1024 * 1024):
-                if chunk:
-                    emb_file.write(chunk)
-        print("Done.", file=sys.stderr)
-
-    if not path.exists(f"data/wiki.multi.{language_code}.vec"):
-        print(f"WARNING: Embedding file not found for '{language_code}'. Downloading.", file=sys.stderr)
-        emb_url = f"https://dl.fbaipublicfiles.com/arrival/vectors/wiki.multi.{language_code}.vec"
-        r = requests.get(emb_url, stream = True)
-        with open(f"data/wiki.multi.{language_code}.vec", "wb") as emb_file:
-            for chunk in r.iter_content(chunk_size = 64 * 1024 * 1024):
-                if chunk:
-                    emb_file.write(chunk)
-        print("Done.", file=sys.stderr)
-
     # Get multilingual embeddings from https://github.com/facebookresearch/MUSE
-    src_embeddings, src_id2word, src_word2id = load_vec("data/wiki.multi.en.vec", vocab_count)
-    tgt_embeddings, tgt_id2word, tgt_word2id = load_vec(f"data/wiki.multi.{language_code}.vec", vocab_count)
+    src_embeddings, src_id2word, src_word2id = load_vec("data/muse/wiki.multi.en.vec", vocab_count)
+    tgt_embeddings, tgt_id2word, tgt_word2id = load_vec(f"data/muse/wiki.multi.{language_code}.vec", vocab_count)
 
     # Compute moral dimensions, compute the .pkl file with with analysis/sentiment_antonym_pair_util.py
     with open("data/mft_sentiment_word_pairs.pkl", "rb") as fp:

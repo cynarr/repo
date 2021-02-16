@@ -1,6 +1,8 @@
 cnf("ANALYSES", pjoin(WORK, "analyses"))
 cnf("COUNTRY_MENTION", pjoin(ANALYSES, "country_mention.jsonl.zstd"))
 cnf("MBERT_SENTIMENT", pjoin(ANALYSES, "mbert_sentiment.jsonl.zstd"))
+MUSE_LANGS, = glob_wildcards(MUSE + "/wiki.multi.{lang}.vec")
+MORAL_SENTIMENT_ALL = [pjoin(ANALYSES, f"moral_sentiment.{lang}.jsonl.zstd") for lang in MUSE_LANGS]
 
 
 rule get_country_mention:
@@ -10,6 +12,22 @@ rule get_country_mention:
         COUNTRY_MENTION
     shell:
         "zstdcat -T0 {input} | python -m analysis.country_mention | zstd -T0 -14 -f - -o {output}"
+
+
+rule get_moral_sentiment_one:
+    input:
+        COVIDSTATEBROADCASTER
+    output:
+        pjoin(ANALYSES, "moral_sentiment.{lang}.jsonl.zstd")
+    shell:
+        "zstdcat -T0 {input} | python -m analysis.moral_sentiment_baseline {lang} | zstd -T0 -14 -f - -o {output}"
+
+
+rule get_moral_sentiment_all:
+    input:
+        MORAL_SENTIMENT_ALL
+    output:
+        touch(pjoin(ANALYSES, ".moral_sentiment_all"))
 
 
 rule get_mbert_sentiment:

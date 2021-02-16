@@ -1,4 +1,4 @@
-from os.path import join as pjoin
+from os.path import join as pjoin, normpath
 
 
 def cnf(name, val):
@@ -11,3 +11,4 @@ include: "rules/setup.smk"
 include: "rules/ingress.smk"
 include: "rules/mmmbgknow.smk"
 include: "rules/analysis.smk"
+include: "rules/database.smk"
