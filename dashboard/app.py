@@ -7,6 +7,8 @@ import dash_html_components as html
 import pandas as pd
 import dash_bootstrap_components as dbc
 import plotly.express as px
+import plotly.graph_objects as go
+
 import database_conn as db_conn
 
 
@@ -28,7 +30,7 @@ server = app.server
 df = db_conn.get_sentiment_hist_df({'start_date': '2020-01-01', 'end_date': '2020-05-01'})
 
 fig_timeline = px.histogram(df, x="date", y="Number of articles", color="Sentiment", barmode="stack",
-                            title="News sentiment on the COVID-19 pandemic in March 2020")
+                            title="News sentiment on the COVID-19 pandemic in March 2020", nbins=31)
 
 
 fig_timeline.update_layout(
@@ -39,6 +41,11 @@ fig_timeline.update_layout(
         title="Number of news articles",
     )
 )
+
+
+df = db_conn.get_moral_sentiment_hist_df()
+fig_moral_timeline = px.bar(df, x="date", y="sum", color="sentiment_type", barmode="group")
+
 
 fig_map = px.choropleth(locations=["UK", "Finland", "Sweden"], locationmode="ISO-3", scope="europe",
                         width=1000, height=1000, color_continuous_scale="Blues")
@@ -57,6 +64,10 @@ app.layout = html.Div(children=[
     dcc.Graph(
         id='timeline-graph',
         figure=fig_timeline
+    ),
+    dcc.Graph(
+        id='moral-graph',
+        figure=fig_moral_timeline
     ),
     dcc.Graph(
         id='map-graph',

@@ -11,7 +11,7 @@ def generate_where_conditions(conditions):
         start = int(time.mktime(datetime.datetime.strptime(conditions['start_date'], "%Y-%m-%d").timetuple()))
         end = int(time.mktime(datetime.datetime.strptime(conditions['end_date'], "%Y-%m-%d").timetuple()))
 
-        where_parts.append(f"date_publish > {start} AND date_publish < {end}")
+        where_parts.append(f"d.date_publish > {start} AND d.date_publish < {end}")
 
     if len(where_parts) > 0:
         return "WHERE " + " AND ".join(where_parts)
@@ -21,8 +21,8 @@ def generate_where_conditions(conditions):
 def get_sentiment_hist_df(conditions = {}):
     where_clause = generate_where_conditions(conditions)
 
-    with sqlite3.connect("data/database.db", check_same_thread=False) as conn:
-        query = f'SELECT date_publish FROM documents {where_clause} ORDER BY date_publish'
+    with sqlite3.connect("database/database.db", check_same_thread=False) as conn:
+        query = f'SELECT date_publish FROM documents AS d {where_clause} ORDER BY d.date_publish'
         df = pd.read_sql_query(query, conn)
         df = (pd.to_datetime(df['date_publish'], unit='s')
             .dt.floor('d')
@@ -33,5 +33,18 @@ def get_sentiment_hist_df(conditions = {}):
         df["Sentiment"] = "Positive" 
     return df
 
+def get_moral_sentiment_hist_df():
+    with sqlite3.connect("database/database.db", check_same_thread=False) as conn:
+        query = " ".join([
+            f"SELECT date_publish, sentiment_type, score FROM documents AS d JOIN moral_sentiment_scores AS m ON d.canon_url = m.canon_url",
+            "ORDER BY d.date_publish"
+        ])
+        df = pd.read_sql_query(query, conn)
+        df['date'] = pd.to_datetime(df['date_publish'], unit='s').dt.floor('d')
+
+    return (df.groupby(['date', 'sentiment_type'])['score']
+        .agg(['sum','count'])
+        .reset_index())
+
 if __name__ == "__main__":
-    print(get_sentiment_hist_df({'start_date': '2020-01-01', 'end_date': '2020-05-01'}))
+    print(get_moral_sentiment_hist_df())
