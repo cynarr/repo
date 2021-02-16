@@ -39,6 +39,7 @@ RUN snakemake --cores 1 setup_image
 COPY ingress ./ingress/
 COPY analysis/ ./analysis/
 COPY mmmbgknow/ ./mmmbgknow/
+COPY database/ ./database/
 
 RUN echo "/opt/coviddash" > \
     /opt/conda/lib/python3.8/site-packages/coviddash.pth
