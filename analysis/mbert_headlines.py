@@ -21,6 +21,8 @@ CONFIG_PATH = os.path.join(
 )
 MODEL_PATH = os.path.join(
     DIR_PATH,
+    "..",
+    "data",
     "news_sentiment_model.bin"
 )
 LABELS = ["negative", "neutral", "positive"]
