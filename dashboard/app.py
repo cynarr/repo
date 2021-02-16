@@ -8,10 +8,15 @@ import pandas as pd
 import dash_bootstrap_components as dbc
 import plotly.express as px
 import plotly.graph_objects as go
+import datetime
 from datetime import date
 
 import database_conn as db_conn
 
+# Load configs for filters
+config_available_languages = [{'label': 'All', 'value': ''}] 
+config_available_languages += [{'label': pl, 'value': l} for pl, l in db_conn.get_available_languages()]
+config_min_date, config_max_date = [date.fromtimestamp(ts) for ts in db_conn.get_min_and_max_dates()]
 
 __all__ = ["server"]
 
@@ -31,8 +36,9 @@ server = app.server
 @app.callback(
     dash.dependencies.Output('timeline-graph', 'figure'),
     [dash.dependencies.Input('my-date-picker-range', 'start_date'),
-     dash.dependencies.Input('my-date-picker-range', 'end_date')])
-def update_sentiment_timeline(start_date, end_date):
+     dash.dependencies.Input('my-date-picker-range', 'end_date'),
+     dash.dependencies.Input('language-dropdown', 'value')])
+def update_sentiment_timeline(start_date, end_date, value):
     start_date_object = "1970-01-01"
     end_date_object = "2100-01-01"
 
@@ -41,7 +47,11 @@ def update_sentiment_timeline(start_date, end_date):
     if end_date is not None:
         end_date_object = date.fromisoformat(end_date)
             
-    df = db_conn.get_sentiment_hist_df({'start_date': str(start_date_object), 'end_date': str(end_date_object)})
+    df = db_conn.get_sentiment_hist_df({
+        'start_date': str(start_date_object), 
+        'end_date': str(end_date_object),
+        'language': value
+    })
 
     fig_timeline = px.histogram(df, x="date", y="Number of articles", color="Sentiment", barmode="stack",
                                 title="News sentiment on the COVID-19 pandemic in March 2020", nbins=31)
@@ -99,19 +109,15 @@ app.layout = html.Div(children=[
         dcc.DatePickerRange(
             id='my-date-picker-range',
             display_format='YYYY-MM-DD',
-            min_date_allowed=date(2020, 1, 1),
-            max_date_allowed=date(2021, 1, 1),
-            initial_visible_month=date(2020, 3, 1),
-            start_date=date(2020, 3, 1),
-            end_date=date(2020, 3, 31)
+            min_date_allowed=config_min_date,
+            max_date_allowed=config_max_date,
+            initial_visible_month=config_min_date,
+            start_date=config_min_date,
+            end_date=config_max_date
         ), 
         dcc.Dropdown(
             id='language-dropdown',
-            options=[
-                {'label': 'All', 'value': ''},
-                {'label': 'German', 'value': 'de'},
-                {'label': 'English', 'value': 'en'}
-            ],
+            options=config_available_languages,
             value=''
         )
     ]),

@@ -4,6 +4,24 @@ import datetime
 import time
 
 
+def get_min_and_max_dates():
+    with sqlite3.connect("database/database.db", check_same_thread=False) as conn:
+        query = "SELECT MIN(date_publish) - 86400, MAX(date_publish) + 86400 FROM documents"
+        cursor = conn.execute(query)
+        min_date, max_date = next(cursor)
+    return min_date, max_date
+
+def get_available_languages():
+    languages = []
+    with sqlite3.connect("database/database.db", check_same_thread=False) as conn:
+        query = "SELECT DISTINCT language FROM documents"
+        cursor = conn.execute(query)
+        for language in cursor:
+            language = language[0]
+            proper_language_name = language # TODO: map to proper language name
+            languages.append((proper_language_name, language))
+    return languages
+
 def generate_where_conditions(conditions): # TODO: switch conditions dict to kwargs
     where_parts = []
 
@@ -33,7 +51,7 @@ def get_sentiment_hist_df(conditions = {}):
             .rename_axis('date')
             .reset_index(name='Number of articles'))
 
-        df["Sentiment"] = "Positive" 
+        df["Sentiment"] = "Positive" # TODO: Get actual sentiments
     return df
 
 def get_moral_sentiment_hist_df(conditions = {}):
@@ -52,5 +70,7 @@ def get_moral_sentiment_hist_df(conditions = {}):
         .agg(['sum','count'])
         .reset_index())
 
+
 if __name__ == "__main__":
-    print(get_moral_sentiment_hist_df({'start_date': "2020-03-01", 'end_date': "2020-03-02"}))
+    print(get_available_languages())
+    #print(get_moral_sentiment_hist_df({'start_date': "2020-03-01", 'end_date': "2020-03-02"}))
