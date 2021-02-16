@@ -7,7 +7,7 @@ import time
 # First run "cat database/database_schema.sql | sqlite3 database/database.db" to create the scehma on command line
 
 if __name__ == '__main__':
-    conn = sqlite3.connect("database/database.db")
+    conn = sqlite3.connect(sys.argv[1])
     c = conn.cursor()
     counter = 0
 

@@ -1,3 +1,4 @@
+import sys
 import nltk 
 from nltk.corpus import wordnet 
 from collections import defaultdict
@@ -45,7 +46,7 @@ def generate_list(virtues, vices):
     return word_pairs        
 
 if __name__ == "__main__":
-    mft_dict, mft_cat = load_mft_dictionary("data/mfd2.0.dic")
+    mft_dict, mft_cat = load_mft_dictionary(sys.argv[1])
 
     word_pairs_dict = defaultdict(list)
 
@@ -57,5 +58,5 @@ if __name__ == "__main__":
     for key in word_pairs_dict:
         word_pairs_dict[key] = sorted(set(word_pairs_dict[key]), key=lambda x: x[0])
 
-    with open("data/mft_sentiment_word_pairs.pkl", "wb") as fp:
+    with open(sys.argv[2], "wb") as fp:
         pickle.dump(word_pairs_dict, fp)
