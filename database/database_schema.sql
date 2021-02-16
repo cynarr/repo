@@ -13,3 +13,14 @@ CREATE TABLE moral_sentiment_scores (
 	score REAL NOT NULL,
 	PRIMARY KEY (canon_url, sentiment_type)
 );
+
+CREATE TABLE mbert_sentiment (
+    document_id INTEGER PRIMARY KEY,
+    sentiment TEXT NOT NULL
+);
+
+CREATE TABLE country_mentions (
+    pk INTEGER PRIMARY KEY,
+    document_id INTEGER,
+    mention_country TEXT
+);
