@@ -3,11 +3,21 @@ cnf("COUNTRY_MENTION", pjoin(ANALYSES, "country_mention.jsonl.zstd"))
 cnf("MBERT_SENTIMENT", pjoin(ANALYSES, "mbert_sentiment.jsonl.zstd"))
 MUSE_LANGS, = glob_wildcards(MUSE + "/wiki.multi.{lang}.vec")
 MORAL_SENTIMENT_ALL = [pjoin(ANALYSES, f"moral_sentiment.{lang}.jsonl.zstd") for lang in MUSE_LANGS]
+cnf("COVIDSTATEBROADCASTERFILTERED", pjoin(WORK, "covidstatebroadcaster.filtered.jsonl.zstd"))
+
+
+rule get_covid_statebroadcaster:
+    input:
+        COVIDSTATEBROADCASTER
+    output:
+        COVIDSTATEBROADCASTERFILTERED
+    shell:
+        "zstdcat -T0 {input} | python -m analysis.filters.no_title | python -m analysis.filters.impossible 2021-02 | zstd -T0 -14 -f - -o {output}"
 
 
 rule get_country_mention:
     input:
-        COVIDSTATEBROADCASTER
+        COVIDSTATEBROADCASTERFILTERED
     output:
         COUNTRY_MENTION
     shell:
@@ -16,7 +26,7 @@ rule get_country_mention:
 
 rule get_moral_sentiment_one:
     input:
-        corpus = COVIDSTATEBROADCASTER,
+        corpus = COVIDSTATEBROADCASTERFILTERED,
         muse = pjoin(MUSE, "wiki.multi.{langcode}.vec"),
         mft_sentiment_word_pairs = MFT_SENTIMENT_WORD_PAIRS
     output:
@@ -46,7 +56,7 @@ rule get_moral_sentiment_all:
 
 rule get_mbert_sentiment:
     input:
-        corpus = COVIDSTATEBROADCASTER,
+        corpus = COVIDSTATEBROADCASTERFILTERED,
         news_sentiment_model = NEWS_SENTIMENT_MODEL,
         bert_multilingual_cased = BERT_MULTILINGUAL_CASED
     output:
