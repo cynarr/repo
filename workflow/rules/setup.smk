@@ -42,7 +42,7 @@ rule generate_moral_sentiment_pairs:
 
 rule download_mbert_tokenizer:
     output:
-        BERT_MULTILINGUAL_CASED
+        directory(BERT_MULTILINGUAL_CASED)
     run:
         from transformers import BertTokenizerFast
         tokenizer = BertTokenizerFast.from_pretrained(
