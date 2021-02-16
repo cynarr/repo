@@ -19,7 +19,7 @@ rule load_mbert_sentiment:
     output:
         touch(pjoin(DATABASE_DIR, ".mbert_sentiment_imported"))
     shell:
-        "zstdcat -T0 {input.jsonl} | poetry run python -m database.digest_mbert_sentiment_jsonl {input.database}"
+        "zstdcat -T0 {input.jsonl} | python -m database.digest_mbert_sentiment_jsonl {input.database}"
 
 
 rule load_moral_sentiment:
@@ -29,7 +29,7 @@ rule load_moral_sentiment:
     output:
         touch(pjoin(DATABASE_DIR, ".moral_sentiment_imported"))
     shell:
-        "zstdcat -T0 {input.jsonls} | poetry run python -m database.digest_mbert_sentiment_jsonl {input.database}"
+        "zstdcat -T0 {input.jsonls} | python -m database.digest_mbert_sentiment_jsonl {input.database}"
 
 
 rule load_country_mentions:
@@ -39,7 +39,7 @@ rule load_country_mentions:
     output:
         touch(pjoin(DATABASE_DIR, ".country_mentions_imported"))
     shell:
-        "zstdcat -T0 {input.jsonl} | poetry run python -m database.digest_country_mentions_jsonl {input.database}"
+        "zstdcat -T0 {input.jsonl} | python -m database.digest_country_mentions_jsonl {input.database}"
 
 
 rule database_all:
