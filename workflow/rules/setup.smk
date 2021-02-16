@@ -3,7 +3,6 @@ cnf("MFD20", pjoin(DATA_DIR, "mfd2.0.dic"))
 cnf("MFT_SENTIMENT_WORD_PAIRS", pjoin(DATA_DIR, "mft_sentiment_word_pairs.pkl"))
 cnf("NEWS_SENTIMENT_MODEL", pjoin(DATA_DIR, "news_sentiment_model.bin"))
 cnf("MUSE", pjoin(WORK, "muse"))
-MUSE_FETCHED = pjoin(MUSE, ".vectors_fetched")
 
 
 rule mk_data_dir:
@@ -49,7 +48,7 @@ rule download_news_sentiment_model:
 
 rule download_muse:
     output:
-        touch(MUSE_FETCHED)
+        dynamic(pjoin(MUSE, "wiki.multi.{langcode}.vec"))
     run:
         from mmmbgknow.european import LANGDETECT_EURO_LANGAUGES
         shell(f"mkdir -p {MUSE}")

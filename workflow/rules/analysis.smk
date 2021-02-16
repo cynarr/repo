@@ -17,7 +17,7 @@ rule get_country_mention:
 rule get_moral_sentiment_one:
     input:
         corpus = COVIDSTATEBROADCASTER,
-        muse = MUSE_FETCHED
+        muse = dynamic(pjoin(MUSE, "wiki.multi.{langcode}.vec"))
     output:
         pjoin(ANALYSES, "moral_sentiment.{lang}.jsonl.zstd")
     shell:
@@ -26,7 +26,7 @@ rule get_moral_sentiment_one:
 
 rule get_moral_sentiment_all:
     input:
-        MORAL_SENTIMENT_ALL
+        dynamic(pjoin(ANALYSES, "moral_sentiment.{lang}.jsonl.zstd"))
     output:
         touch(pjoin(ANALYSES, ".moral_sentiment_all"))
 
