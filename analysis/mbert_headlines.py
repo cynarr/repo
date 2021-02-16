@@ -19,11 +19,14 @@ CONFIG_PATH = os.path.join(
     DIR_PATH,
     "news_sentiment_config.json"
 )
-MODEL_PATH = os.path.join(
-    DIR_PATH,
-    "..",
-    "data",
-    "news_sentiment_model.bin"
+MODEL_PATH = os.environ.get(
+    "NEWS_SENTIMENT_MODEL",
+    os.path.join(
+        DIR_PATH,
+        "..",
+        "data",
+        "news_sentiment_model.bin"
+    )
 )
 LABELS = ["negative", "neutral", "positive"]
 
@@ -49,8 +52,8 @@ def main(batch_size):
         device = torch.device("cpu")
 
     tokenizer = BertTokenizerFast.from_pretrained(
-        "bert-base-multilingual-cased",
-        do_lower_case=True
+        os.environ.get("BERT_MULTILINGUAL_CASED_PATH", "bert-base-multilingual-cased"),
+        do_lower_case=False,
     )
     config = BertConfig.from_pretrained(CONFIG_PATH)
     model = BertForSequenceClassification.from_pretrained(

@@ -34,7 +34,7 @@ RUN mkdir -p analysis && \
     touch analysis/__init__.py
 COPY analysis/sentiment_antonym_pair_util.py ./analysis/sentiment_antonym_pair_util.py
 
-RUN snakemake --cores 1 setup_image
+RUN snakemake --cores 1 fetch_wordnet
 
 COPY ingress ./ingress/
 COPY analysis/ ./analysis/
