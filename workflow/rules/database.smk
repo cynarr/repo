@@ -1,5 +1,5 @@
 cnf("DATABASE_DIR", pjoin(WORK, "database"))
-DATABASE_SCHEMA = normpath(pjoin(workflow.current_basedir, "..", "database", "database_schema.sql"))
+DATABASE_SCHEMA = normpath(pjoin(workflow.current_basedir, "..", "..", "database", "database_schema.sql"))
 DATABASE = pjoin(DATABASE_DIR, "database.db")
 
 
