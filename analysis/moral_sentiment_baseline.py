@@ -121,7 +121,7 @@ if __name__ == '__main__':
     tgt_embeddings, tgt_id2word, tgt_word2id = load_vec(f"data/muse/wiki.multi.{language_code}.vec", vocab_count)
 
     # Compute moral dimensions, compute the .pkl file with with analysis/sentiment_antonym_pair_util.py
-    with open("data/mft_sentiment_word_pairs.pkl", "rb") as fp:
+    with open(os.envion.get("MFT_SENTIMENT_WORD_PAIRS", "data/mft_sentiment_word_pairs.pkl"), "rb") as fp:
         moral_word_pairs = pickle.load(fp)
         moral_dims = compute_moral_dimensions(moral_word_pairs, src_embeddings, src_word2id, tgt_embeddings, tgt_word2id)
 

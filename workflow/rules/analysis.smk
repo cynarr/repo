@@ -17,11 +17,12 @@ rule get_country_mention:
 rule get_moral_sentiment_one:
     input:
         corpus = COVIDSTATEBROADCASTER,
-        muse = dynamic(pjoin(MUSE, "wiki.multi.{langcode}.vec"))
+        muse = dynamic(pjoin(MUSE, "wiki.multi.{langcode}.vec")),
+        mft_sentiment_word_pairs = MFT_SENTIMENT_WORD_PAIRS
     output:
         pjoin(ANALYSES, "moral_sentiment.{lang}.jsonl.zstd")
     shell:
-        "zstdcat -T0 {input.corpus} | python -m analysis.moral_sentiment_baseline {lang} | zstd -T0 -14 -f - -o {output}"
+        "zstdcat -T0 {input.corpus} | MFT_SENTIMENT_WORD_PAIRS={input.mft_sentiment_word_pairs} python -m analysis.moral_sentiment_baseline {lang} | zstd -T0 -14 -f - -o {output}"
 
 
 rule get_moral_sentiment_all:
@@ -33,8 +34,9 @@ rule get_moral_sentiment_all:
 
 rule get_mbert_sentiment:
     input:
-        COVIDSTATEBROADCASTER
+        COVIDSTATEBROADCASTER,
+        news_sentiment_model = NEWS_SENTIMENT_MODEL
     output:
         MBERT_SENTIMENT
     shell:
-        "zstdcat -T0 {input} | python -m analysis.mbert_headlines --batch-size 512 | zstd -T0 -14 -f - -o {output}"
+        "zstdcat -T0 {input} | NEWS_SENTIMENT_MODEL={input.news_sentiment_model} python -m analysis.mbert_headlines --batch-size 512 | zstd -T0 -14 -f - -o {output}"

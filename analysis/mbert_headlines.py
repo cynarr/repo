@@ -19,11 +19,14 @@ CONFIG_PATH = os.path.join(
     DIR_PATH,
     "news_sentiment_config.json"
 )
-MODEL_PATH = os.path.join(
-    DIR_PATH,
-    "..",
-    "data",
-    "news_sentiment_model.bin"
+MODEL_PATH = os.environ.get(
+    "NEWS_SENTIMENT_MODEL",
+    os.path.join(
+        DIR_PATH,
+        "..",
+        "data",
+        "news_sentiment_model.bin"
+    )
 )
 LABELS = ["negative", "neutral", "positive"]
 
