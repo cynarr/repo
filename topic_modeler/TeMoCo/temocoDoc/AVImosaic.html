@@ -1,0 +1,629 @@
+
+{% block head %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <style>
+
+  body {
+    font: 10px sans-serif;
+  }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+
+   /*HTML Horizonal Legend*/
+.country-name {
+    margin: 0 !important;
+}
+.key-dot {
+    display: inline-block;
+    height: 16px;
+    margin-right: 1em;
+    width: 16px;
+}
+
+/*.L1 { background: red;
+          opacity:0.3  }
+.L21 { background: orange;
+         opacity:0.3}*/
+
+
+#legend2{
+    overflow:hidden;
+}
+.legend2 {
+    float:left;
+    margin-right: 1em;
+}
+#legend{
+    margin-left: 320px;
+    font-size:16px;
+</style>
+
+{% endblock %}
+
+{% block content %}
+
+
+<body>
+  
+  <div id="chart" style="float:left;">
+    <div id="legend" align="centre">
+    <h3 >Speakers</h3>
+     <div class="legend2"> <p class="country-name"><span class="key-dot" id="LP1"></span>P1</p> </div>
+     <div class="legend2"> <p class="country-name"><span class="key-dot"id="LN1"></span>N1</p> </div>
+     <div class="legend2"> <p class="country-name"><span class="key-dot" id="LD1"></span>D1</p> </div>
+     <div class="legend2"> <p class="country-name"><span class="key-dot"id="LD2"></span>D2</p> </div>
+     <div class="legend2"> <p class="country-name"><span class="key-dot" id="LMedReg"></span>MedReg</p> </div>
+  </div>
+  </div>
+  <div id="transcript" style="width:600px;height:880px;line-height:3em;overflow:scroll;padding:5px;float:left;margin-top: 130px;font-size:12px;">
+
+<div id="s0">
+ <div class="P1">P1   00:00:05.460   I'm good 
+ </div>
+ <div class="N1">N1   00:00:04.960   How are you?
+ </div>
+ <div class="N1">N1   00:00:06.570   yeah and what's your name?
+ </div>
+ <div class="P1">P1   00:00:07.310   PATIENT_NAME 
+ </div>
+ <div class="N1">N1   00:00:09.965   my name is NURSE_NAME I'm the student nurse with you today
+ </div>
+ <div class="N1">N1   00:00:12.150   I'll just do your blood pressure if that's OK with you 
+ </div>
+ <div class="P1">P1   00:00:12.820   of course you can
+ </div>
+ <div class="N1">N1   00:00:15.640   (inaudible) just wash my hands 
+ </div>
+ <div class="N1">N1   00:00:37.990   are you OK and well?
+ </div>
+ <div class="P1">P1   00:00:38.725   I'm good *laughing  
+ </div>
+ <div class="N1">N1   00:00:40.600   'm just going to roll up your sleeve
+ </div>
+ <div class="P1">P1   00:00:41.595   no problem 
+ </div>
+ <div class="N1">N1   00:00:45.455   just not restricted or anything
+ </div>
+ <div class="N1">N1   00:00:49.045   and have you had break your (inaudible) or surgery?
+ </div>
+ <div class="P6">P6   00:00:49.740   "NoI haven't"
+ </div>
+ <div class="N1">N1   00:00:53.175   "and you have no intravenoushmm infusion at the moment?"
+ </div>
+ <div class="P1">P1   00:00:53.560   No 
+ </div>
+ <div class="N1">N1   00:00:55.132   I don't see any lymphodema! 
+ </div>
+ <div class="P1">P1   00:00:55.620   No 
+ </div>
+ <div class="N1">N1   00:00:57.960   So I think you're OK ...
+ </div>
+ <div class="N1">N1   00:00:59.770   and have you had trauma to the arm?
+ </div>
+
+  </div>
+<div id="s1">
+
+ <div class="P1">P1   00:01:00.075   No!
+ </div>
+ <div class="N1">N1   00:01:02.305   Excuse me! no - it's fine 
+ </div>
+ <div class="N1">N1   00:01:05.220   and hu do you have hmm an arter
+ </div>
+ <div class="N1">N1   00:01:06.430   artery veinous 
+ </div>
+ <div class="N1">N1   00:01:09.215   arterial veinous (inaudible) *laughing 
+ </div>
+ <div class="P1">P1   00:01:09.655   "I don'tI don't ok"
+ </div>
+ <div class="N1">N1   00:01:10.500   no problem 
+ </div>
+ <div class="P1">P1   00:01:17.415   no problem 
+ </div>
+ <div class="N1">N1   00:01:18.085   now I'm just going to do an estimation alright ... and then 
+ </div>
+ <div class="N1">N1   00:01:18.945   (inaudible)
+ </div>
+ <div class="N1">N1   00:01:21.330   slow
+ </div>
+ <div class="N1">N1   00:01:24.550   First I just need to check if your cuff is big enough 
+ </div>
+ <div class="N1">N1   00:01:28.780   so 80% now I'm just going to put some (inaudible)
+ </div>
+ <div class="N1">N1   00:01:31.670   and it's about 40% upper here 
+ </div>
+ <div class="P1">P1   00:01:32.220   alright 
+ </div>
+ <div class="N1">N1   00:01:34.645   I'm just going to put the tube 2-3 cms
+ </div>
+ <div class="N1">N1   00:01:35.615   above
+ </div>
+ <div class="N1">N1   00:01:39.140   inaudible 
+ </div>
+ <div class="P1">P1   00:01:41.735   (inaudible)
+ </div>
+ <div class="N1">N1   00:01:44.410   inaudible
+ </div>
+ <div class="N1">N1   00:01:49.520   inaudible 
+ </div>
+ <div class="N1">N1   00:01:52.750   inaudible  
+ </div>
+ <div class="P1">P1   00:01:54.725   yeah
+ </div>
+
+  </div>
+<div id="s2">
+
+ <div class="P1">P1   00:02:01.102   no problem 
+ </div>
+ <div class="N1">N1   00:02:01.485   now I think I might just might take a pillow just to elevate your (inaudible) in there 
+ </div>
+ <div class="N1">N1   00:02:03.535   and have you done any strain or exercise?
+ </div>
+ <div class="P1">P1   00:02:04.095   No I haven't 
+ </div>
+ <div class="N1">N1   00:02:05.345   in the last 20 minutes 
+ </div>
+ <div class="P1">P1   00:02:05.685   No 
+ </div>
+ <div class="N1">N1   00:02:06.310   Okay 
+ </div>
+ <div class="N1">N1   00:02:16.340   I'm going to sanitise my hands (inaudible)  
+ </div>
+ <div class="N1">N1   00:02:21.040   hum
+ </div>
+ <div class="N1">N1   00:02:26.185   inaudible 
+ </div>
+ <div class="N1">N1   00:02:29.195   Inaudible is that alright?
+ </div>
+ <div class="P1">P1   00:02:30.380   Yeah it's OK yeah 
+ </div>
+ <div class="N1">N1   00:02:36.920   inaudible 
+ </div>
+ <div class="P1">P1   00:02:37.675   yeah OK 
+ </div>
+ <div class="N1">N1   00:02:37.845   hm hm
+ </div>
+ <div class="N1">N1   00:02:45.705   relaxed?
+ </div>
+ <div class="P1">P1   00:02:46.535   yeah yeah 
+ </div>
+ <div class="N1">N1   00:02:55.900   oh
+ </div>
+ <div class="N1">N1   00:02:56.675   hmm
+ </div>
+
+ </div>
+<div id="s3">
+
+ <div class="N1">N1   00:03:00.950   seems to have a little problem hmmm...
+ </div>
+ <div class="P1">P1   00:03:04.070   hu hm
+ </div>
+ <div class="N1">N1   00:03:06.915   (inaudible) it must have come off yeah 
+ </div>
+ <div class="N1">N1   00:03:09.190   yeah no that's fine 
+ </div>
+ <div class="N1">N1   00:03:16.545   (inaudible) while we wait *giggling 
+ </div>
+ <div class="N1">N1   00:03:20.520   inaudible 
+ </div>
+ <div class="N1">N1   00:03:25.840   Thank you!
+ </div>
+ <div class="N1">N1   00:03:30.155   Thanks 
+ </div>
+ <div class="N1">N1   00:03:33.760   inaudible
+ </div>
+ <div class="N1">N1   00:03:49.170   don't worry I'll write this down so ...
+ </div>
+ <div class="P1">P1   00:03:50.500   Ok
+ </div>
+ <div class="N1">N1   00:03:54.510   I'm just going to fold it up (inaudible) and check
+ </div>
+ <div class="N1">N1   00:03:56.790   is this OK for you?
+ </div>
+
+ </div>
+<div id="s4">
+
+ <div class="N1">N1   00:04:01.305   inaudible
+ </div>
+ <div class="P1">P1   00:04:05.270   (inaudible) would be fine - Yeah!
+ </div>
+ <div class="N1">N1   00:04:06.045   yeah
+ </div>
+ <div class="N1">N1   00:04:09.930   inaudible
+ </div>
+ <div class="N1">N1   00:04:12.195   Sorry!
+ </div>
+ <div class="P1">P1   00:04:12.980   you OK
+ </div>
+ <div class="P1">P1   00:04:18.280   you OK!
+ </div>
+ <div class="N1">N1   00:04:18.280   inaudible 
+ </div>
+ <div class="N1">N1   00:04:20.495   yeah that's it
+ </div>
+ <div class="N1">N1   00:04:32.910   it's not tight?
+ </div>
+ <div class="P1">P1   00:04:33.685   too loose 
+ </div>
+ <div class="N1">N1   00:04:34.875   it's a bit loose?
+ </div>
+ <div class="P1">P1   00:04:35.785   It's a bit big 
+ </div>
+ <div class="P1">P1   00:04:36.345   *giggling 
+ </div>
+ <div class="N1">N1   00:04:36.345   yeah 
+ </div>
+ <div class="N1">N1   00:04:37.735   It's a bit bit unfortunately  
+ </div>
+ <div class="N1">N1   00:04:55.575   (inaudible) sorry my hands are a bit cold - just trying to find your pulse 
+ </div>
+
+  </div>
+<div id="s5">
+
+ <div class="N1">N1   00:05:11.952   and if you feel uncomfortable at anytime just tell me OK 
+ </div>
+ <div class="N1">N1   00:05:14.742   I just need some silence when I'm doing this 
+ </div>
+ <div class="N1">N1   00:05:34.782   Sorry I'm having some difficulties finding your (inaudible) pulse 
+ </div>
+ <div class="N1">N1   00:05:38.042   there it is 
+ </div>
+ <div class="N1">N1   00:05:42.497   now I'm just going to pump it up until I feel your pulse is that alright 
+ </div>
+
+  </div>
+<div id="s6">
+
+ <div class="N1">N1   00:06:06.862   Inaudible 
+ </div>
+ <div class="N1">N1   00:06:26.592   there PATIENT_NAME 
+ </div>
+ <div class="N1">N1   00:06:33.072   I'm actually going to do your pulse that was just my estimation  I'm just going to wipe my stethoscope
+ </div>
+ <div class="P1">P1   00:06:34.347   yes
+ </div>
+ <div class="P1">P1   00:06:35.212   fine
+ </div>
+ <div class="N1">N1   00:06:45.642   inaudible 
+ </div>
+
+  </div>
+<div id="s7">
+
+ <div class="N1">N1   00:07:28.002   inaudible 
+ </div>
+ <div class="N1">N1   00:07:44.017   Now ... as I said before
+ </div>
+ <div class="N1">N1   00:07:48.702   hmmm .... I just some silence cause I just need to hear your pulse 
+ </div>
+ <div class="P1">P1   00:07:49.687   Alright 
+ </div>
+ <div class="P1">P1   00:07:55.528   
+ </div>
+ <div class="N1">N1   00:07:57.063   Sorry alright
+ </div>
+
+ </div>
+<div id="s8">
+
+ <div class="N1">N1   00:08:02.392   yeah - that's working!
+ </div>
+ <div class="N1">N1   00:08:09.792   Sorry again form my cold hands 
+ </div>
+ <div class="P1">P1   00:08:10.307   it's OK
+ </div>
+ <div class="N1">N1   00:08:15.802   I'm just going to pump it 
+ </div>
+ <div class="N1">N1   00:08:18.867   again alright if you feel uncomfortable just let me know
+ </div>
+
+ </div>
+<div id="s9">
+
+ <div class="N1">N1   00:09:29.010   now
+ </div>
+ <div class="P1">P1   00:09:46.082   Thank you!
+ </div>
+ <div class="N1">N1   00:09:46.082   PATIENT_NAME all done now 
+ </div>
+ <div class="N1">N1   00:09:56.597   just release you there -  your blood pressure was 122/98 so your diastolic is a bit high so I'll them know who is  in charge now 
+ </div>
+ <div class="P1">P1   00:09:57.647   Alright 
+ </div>
+
+ </div>
+<div id="s10">
+
+ <div class="N1">N1   00:10:02.412   Thank you -  I'm just going to record that in your chart 
+ </div>
+ <div class="N1">N1   00:10:21.292   Inaudible 
+ </div>
+ <div class="N1">N1   00:10:42.422   so the date is ....
+ </div>
+ <div class="P1">P1   00:10:44.151   
+ </div>
+ <div class="N1">N1   00:10:50.212   the date is the 31st of the 3rd 16 
+ </div>
+ <div class="N1">N1   00:10:55.102   and time is 9h15
+ </div>
+
+</div>
+<div id="s11">
+
+ <div class="N1">N1   00:11:03.672   and your blood pressure was 122 
+ </div>
+ <div class="N1">N1   00:11:07.352   over 98 
+ </div>
+ <div class="P1">P1   00:11:10.307   okay
+ </div>
+ <div class="N1">N1   00:11:14.092   so you're scoring ...
+ </div>
+ <div class="N1">N1   00:11:26.352   sorry now 
+ </div>
+ <div class="N1">N1   00:11:37.132   ah - just recorded that so (inaudible)
+ </div>
+ <div class="P1">P1   00:11:42.712   OK 
+ </div>
+ <div class="N1">N1   00:11:42.722   "So blood pressure of 0 so nothing to worry aboutjust your diastolic is a bit high "
+ </div>
+ <div class="N1">N1   00:11:43.355   and
+ </div>
+ <div class="N1">N1   00:11:47.427   I just wrote in the heart rate by mistake but ....
+ </div>
+ <div class="N1">N1   00:11:49.837   it's all good! right so ...
+ </div>
+ <div class="P1">P1   00:11:52.742   Yeah - I'm fine 
+ </div>
+ <div class="N1">N1   00:11:52.742   are you OK? yeah I'm going to put your pillow back 
+ </div>
+
+</div>
+<div id="s12">
+
+ <div class="P1">P1   00:12:01.917   no problem 
+ </div>
+ <div class="N1">N1   00:12:01.917   thank you PATIENT_NAME and you need anything just give me a shout 
+ </div>
+ <div class="P1">P1   00:12:03.547   no problem 
+ </div>
+
+</div>
+
+</div>
+
+</body>
+
+
+
+</html>
+{% endblock %}
+
+{% block js %}
+
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <!-- .attrs() -->
+    <script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
+    <script>
+        const bc = new BroadcastChannel('test_channel');
+
+        var margin = {top: 50, right: 45, bottom: 80, left: 45},
+         width = 1300 - margin.left - margin.right,
+         height = 1000 - margin.top - margin.bottom;
+
+
+        svg = d3.select("#chart").append("svg")
+          .attr("width", width + margin.left + margin.right)
+          .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        //Count number of items per time slot
+        var countObj = {};
+
+        d3.csv("/js/avi.csv",  function(error, data) {
+          data.forEach(function(d) {
+              
+              
+              d.slot = +d.time;
+              d.name = d.name
+              var val = d.time;
+              if(countObj[val] === undefined) {
+                  countObj[val] = 1;
+              } else {
+                  countObj[val] = countObj[val] + 1;
+              }
+            });
+
+            // now store the count in each data member
+            data.forEach(function(d) {
+                var val = d.value;
+                d.count = countObj[val];
+            });
+         
+     
+        //AXIS CODE
+
+        var max = d3.max( data, function(d) { return d.slot; }) + 1;
+        var xRange = d3.scale.linear().domain([0,max]).range([0, width]);
+        var xAxis = d3.svg.axis().scale(xRange).orient("bottom").ticks(max);
+        var color = d3.scale.category10();
+
+
+        var dict = {};
+        dict["P1"] = 1;
+        //dict["D1"] = 2;
+        dict["N1"] = 3;
+        //dict["D2"] = 4;
+        //dict["MedReg"] = 5;
+
+        svg.append("g")
+          .attr("class", "axis")
+          .attr("transform", "translate(0," + height + ")")
+          .style("stroke-width", 1)
+          .call(xAxis);
+
+        //Add border
+        var borderPath = svg.append("rect")
+        .attr("x", 0)
+        .attr("y", 0)
+        .attr("height", height)
+        .attr("width", width)
+        //.style("stroke", 'black')
+        .style("fill", "none")
+        .style("stroke-width", 1);
+
+        //Draw rectangles
+        var position = 0;
+        var heigthUsed = 0;
+
+        var timeslot;
+        var userSpeach;
+        var firstClick = 0;
+        var selected;
+
+        data.forEach(function(d) {
+            var boxH = height*d.spk_contribution;
+
+
+            if(d.slot > position){
+              position = d.slot;
+              heigthUsed = 0;
+            }
+            var identifier = dict[d.name]
+            var fcol = color(identifier);
+            var words = d.words;
+            var lsWords = words.split(" ");
+            var i;
+            //legend
+           
+            document.getElementById("L"+d.name).style.backgroundColor = fcol;
+
+            //tiles
+            var rect = svg.append('rect')
+               .attrs({ x: xRange(d.slot), y: heigthUsed, width: xRange(d.slot + 1) - xRange(d.slot) + 1, height: boxH  })
+               .attr("id","s"+d.slot.toString()+"p"+identifier.toString())
+               .attr("fcol",fcol)
+               //.style("stroke", 'black')
+               .style("fill",  fcol)
+               .style("stroke-width", 1)
+               .on('click', function(data,i) {
+                    if (firstClick === 1) {
+                        timeslot.style.backgroundColor = 'white';
+                        for(var i = 0; i < userSpeach.length; i++)
+                        {
+                            userSpeach.item(i).style.backgroundColor = "transparent";
+                        }
+                        selected.style("fill",  selected.attr("fcol"));
+                        selected.style("fill-opacity", 1);
+                    }
+                    selected=rect;
+                    rect.style("fill-opacity", 0.75);
+                    //rect.style("stroke",black");
+                    timeslot = document.getElementById("s"+d.slot);
+                    timeslot.scrollIntoView();
+                    timeslot.style.backgroundColor = '#CFCFC4';
+                    
+
+                    userSpeach = timeslot.getElementsByClassName(d.name);
+                    for(var i = 0; i < userSpeach.length; i++)
+                    {
+                        userSpeach.item(i).style.backgroundColor = fcol;
+                        // for (i = 0; i < Math.floor(12/countObj[d.slot]); i++) { 
+                        //   userSpeach.item(i).textContent  = userSpeach.item(i).textContent.replace(lsWords[i],"<font color=\"white\">"+lsWords[i]+"</font>");
+                        // }
+                    }
+
+                    firstClick = 1;
+                  });
+
+            for (i = 0; i < lsWords.length; i++) { 
+                var text = lsWords[i];
+                svg.append("text")
+                  .attr("class", "label")
+                  .attr("x", xRange(d.slot) + ((xRange(d.slot+1) - xRange(d.slot) +1)/2) )
+                  .attr("y", heigthUsed + i*( (d.spk_contribution*height) / lsWords.length )+ ( (d.spk_contribution*height) / lsWords.length )/2  )
+                  //.attr("y", (height/12)/2 + (heigthUsed) + (height/12)*i  )
+                  .style("text-anchor", "middle")
+                  .style("font-size", "14px")
+                  .style("fill", "white") 
+                  .text(text)
+                  ;
+            }
+            heigthUsed = heigthUsed + boxH;
+      });
+
+
+    //   var box2N = document.getElementById("whN").onclick = function(){
+    //   timeslot = document.getElementById("s"+2);
+    //   if (typeof clnkTranscript !== 'undefined'){
+    //     console.log("here")
+    //       for(var i = 0; i < clnkTranscript.length; i++)
+    //       {
+    //           clnkTranscript .item(i).style.backgroundColor = "white";
+    //       }
+    //   }
+    //   clnkTranscript = timeslot.getElementsByClassName("N1");
+    //   for(var i = 0; i < clnkTranscript.length; i++)
+    //   {
+    //       clnkTranscript .item(i).style.backgroundColor = color(dict["N1"]);
+    //   }
+    // }
+
+bc.onmessage = function (ev) { 
+          console.log(ev);
+          console.log(ev["data"]);
+          var data = ev.data
+
+
+          var slots = data[0];
+          var usr = data[1];
+          var clicked = data[2];
+          if (!clicked){
+            timeslot = document.getElementById("s"+slots[0]);
+            timeslot.scrollIntoView();
+            for (var i = 0; i < slots.length; i++) {
+              var mosaicrect = svg.select("rect[id='"+"s"+slots[i]+"p"+dict[usr]+"']");
+              mosaicrect.style("fill-opacity", 0.75);
+              
+              timeslot = document.getElementById("s"+slots[i]);
+              clnkTranscript = timeslot.getElementsByClassName(usr);
+              for(var x = 0; x < clnkTranscript.length; x++)
+              {
+                  clnkTranscript .item(x).style.backgroundColor = color(dict[usr]);
+              }
+            }
+          }else{
+            for (var y = 0; y < slots.length; y++) {
+              var mosaicrect = svg.select("rect[id='"+"s"+slots[y]+"p"+dict[usr]+"']");
+              mosaicrect.style("fill-opacity", 1);
+
+              timeslot = document.getElementById("s"+slots[y]);
+              clnkTranscript = timeslot.getElementsByClassName(usr);
+              for(var z = 0; z < clnkTranscript.length; z++)
+              {
+                  clnkTranscript .item(z).style.backgroundColor = "white";
+              }
+            }
+          }
+
+
+        }
+
+
+});
+
+   
+
+
+    </script>
+
+{% endblock %}

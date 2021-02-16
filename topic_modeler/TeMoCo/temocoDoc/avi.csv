@@ -1,0 +1,24 @@
+name,time,words,spk_time,spk_contribution
+P1,0,good patient_name course *laughing problem,0.0608,0.1357
+N1,0,name nurse_name nurse student today,0.3875,0.8643
+P1,1,problem alright,0.0167,0.0350
+N1,1,going now veinous put fine,0.4600,0.9650
+P1,2,problem,0.0138,0.0631
+N1,2,elevate exercise done strain minutes,0.2055,0.9369
+P1,3,hu,0.0088,0.0314
+N1,3,little problem must come fine,0.2723,0.9686
+P1,4,fine loose bit big *giggling,0.0757,0.3180
+N1,4,bit sorry tight loose unfortunately,0.1622,0.6820
+N1,5,feel pulse tell uncomfortable anytime,0.2067,1.0000
+P1,6,yes fine,0.0205,0.1463
+N1,6,patient_name wipe estimation stethoscope actually,0.1197,0.8537
+P1,7,alright,0.0165,0.1143
+N1,7,now said need silence pulse,0.1278,0.8857
+N1,8,working sorry hands form cold,0.1245,1.0000
+P1,9,thank alright,0.0470,0.1904
+N1,9,now patient_name done diastolic pressure,0.1998,0.8096
+N1,10,date record chart going 3rd,0.2219,1.0000
+P1,11,fine,0.0442,0.0958
+N1,11,blood pressure 122 98 scoring,0.4170,0.9042
+P1,12,problem,0.0426,0.5715
+N1,12,anything need shout give,0.0319,0.4285

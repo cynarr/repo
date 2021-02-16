@@ -1,0 +1,758 @@
+
+
+{% block head %}
+  <style>
+
+  body {
+    font: 10px sans-serif;
+  }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+
+   /*HTML Horizonal Legend*/
+.country-name {
+    margin: 0 !important;
+}
+.key-dot {
+    display: inline-block;
+    height: 16px;
+    margin-right: 1em;
+    width: 16px;
+}
+
+/*.L1 { background: red;
+          opacity:0.3  }
+.L21 { background: orange;
+         opacity:0.3}*/
+
+
+#legend2{
+    overflow:hidden;
+}
+.legend2 {
+    float:left;
+    margin-right: 1em;
+}
+#legend{
+    margin-left: 320px;
+    font-size:16px;
+</style>
+
+{% endblock %}
+
+{% block content %}
+
+
+<body>
+  
+  <div id="chart" style="float:left;">
+    <div id="legend" align="centre">
+    <h3 >Speakers</h3>
+     <div class="legend2"> <p class="country-name"><span class="key-dot" id="LP1"></span>P1</p> </div>
+     <div class="legend2"> <p class="country-name"><span class="key-dot"id="LN1"></span>N1</p> </div>
+     <div class="legend2"> <p class="country-name"><span class="key-dot" id="LD1"></span>D1</p> </div>
+     <div class="legend2"> <p class="country-name"><span class="key-dot"id="LD2"></span>D2</p> </div>
+     <div class="legend2"> <p class="country-name"><span class="key-dot" id="LMedReg"></span>MedReg</p> </div>
+  </div>
+  </div>
+  <div id="transcript" style="width:600px;height:540px;line-height:3em;overflow:scroll;padding:5px;float:left;margin-top: 130px;font-size:12px;"> 
+<div id="s0">
+<div class="P1"> P1   00:00:00.070  Nurse?  </div>
+<div class="N1"> N1   00:00:01.184  You alright, &lt;P1_name&gt;?  </div>
+<div class="P1"> P1   00:00:01.944  Oh, I have an awful pain!  </div>
+<div class="N1"> N1   00:00:04.058  inauidble   </div>
+<div class="N1"> N1   00:00:04.545  Where's the pain?  </div>
+<div class="P1"> P1   00:00:05.433  It's on my chest!  </div>
+<div class="N1"> N1   00:00:06.760  Ah, OK and is it longer?  </div>
+<div class="P1"> P1   00:00:08.875  Every since Supermac's!  </div>
+<div class="N1"> N1   00:00:10.493  Yeah!  </div>
+<div class="N1"> N1   00:00:11.135  Okay  </div>
+<div class="N1"> N1   00:00:13.082  Yeah!  </div>
+<div class="P1"> P1   00:00:13.439  Ah, it's pretty bad!  </div>
+<div class="N1"> N1   00:00:13.439  OK  </div>
+<div class="N1"> N1   00:00:14.830  What do you nornally  take after getting pains like that?  </div>
+<div class="P1"> P1   00:00:17.164  Uhhh gavisgon!  </div>
+<div class="N1"> N1   00:00:18.797  Perfect, Alright! I tell you what I will do I''l get a dctor to chart it up   </div>
+<div class="N1"> N1   00:00:21.829  and we'll get you some gaviscon. Is that OK?  </div>
+<div class="P1"> P1   00:00:24.128  Yeah!  </div>
+<div class="N1"> N1   00:00:24.764  Thanks &lt;P1_name&gt;!  </div>
+<div class="N1"> N1   00:00:29.252  Hi, is there any ED interns?  </div>
+<div class="N1"> N1   00:00:31.515  Hi &lt;D1_name&gt;, is it?  </div>
+<div class="D1"> D1   00:00:32.571  Yes!  </div>
+<div class="D1"> D1   00:00:33.067  How are you?  </div>
+<div class="N1"> N1   00:00:33.557  Hi &lt;D1_name&gt;, my name is &lt;N1_name&gt;, I'm one of the nurses here   </div>
+<div class="D1"> D1   00:00:33.557  inaudible   </div>
+<div class="N1"> N1   00:00:35.937  &lt;D1_name&gt;, I'm just here from triage(?) - this is &lt;P1_name&gt;   </div>
+<div class="N1"> N1   00:00:38.627  She's coming across the road ...  </div>
+<div class="X1"> X1   00:00:38.627  inaudible   </div>
+<div class="N1"> N1   00:00:40.123  hmmm, so basically just wonder if you could charge her some gaviscon - &lt;P1_name&gt; is just after eating Supermacs (inaudible)   </div>
+<div class="P1"> P1   00:00:44.265  inaudible   </div>
+<div class="N1"> N1   00:00:44.265  She's getting a little bit of indegestion - just wonder ...  </div>
+<div class="N1"> N1   00:00:46.579  (inaudible) some gaviscon - I'll draw up as soon as you chart it, is that OK - Thank you!  </div>
+<div class="D1"> D1   00:00:46.579  Ok - Ok no problem!  </div>
+<div class="P1"> P1   00:00:51.036  Oh, not great now!  </div>
+<div class="D1"> D1   00:00:51.036  How are you &lt;P1_name&gt;?  </div>
+<div class="D1"> D1   00:00:53.964  My name is &lt;D1_name&gt;, I'm one of the doctors here  </div>
+<div class="P1"> P1   00:00:55.720  Hello!  </div>
+<div class="D1"> D1   00:00:56.676  What the ... What, what, what .. how are you feeling?  </div>
+<div class="P1"> P1   00:00:58.862  Oh not good - I have an awful pain in my chest!  </div>
+<div class="P1"> P1   00:01:01.276  It's probably the heartburn though!  </div>
+<div class="D1"> D1   00:01:03.757  Yeah, do you think? How long is the, how long the chest pain is going on?  </div>
+<div class="P1"> P1   00:01:07.393  Just.. since after I had my curry chips in Supermacs.  </div>
+<div class="P1"> P1   00:01:10.746  20 minutes ago   </div>
+<div class="D1"> D1   00:01:10.746  OK  </div>
+<div class="D1"> D1   00:01:12.618  How...hmmm....  </div>
+<div class="D1"> D1   00:01:14.639  Have... have you had heartburn before?  </div>
+<div class="P1"> P1   00:01:16.212  Yeah, if you just give me some gaviscon It usually goes away!  </div>
+<div class="D1"> D1   00:01:18.853  Does the chest pain feels any different than when ...  </div>
+<div class="P1"> P1   00:01:21.125  It's just a lot worse - the worst indigestion I ever had  </div>
+<div class="P1"> P1   00:01:25.537  Just right in the middle!  </div>
+<div class="D1"> D1   00:01:25.537  Yeah ... Coul... Uh, Where about is, is the pain?  </div>
+
+</div>
+<div id="s1">
+<div class="D1"> D1   00:01:30.142  Okay   </div>
+<div class="D1"> D1   00:01:31.141  And they come all of the sudden?  </div>
+<div class="P1"> P1   00:01:33.131  Yeah, just after the food!  </div>
+<div class="D1"> D1   00:01:35.032  Ok and what... how do you describe the pain?  </div>
+<div class="P1"> P1   00:01:37.468  Really, really painful!  </div>
+<div class="D1"> D1   00:01:39.430  Is it kind of like ...crushing pain or...?  </div>
+<div class="P1"> P1   00:01:41.959  Feels like someone is sitting on me!  </div>
+<div class="D1"> D1   00:01:44.268  Ok, alright!  </div>
+<div class="D1"> D1   00:01:45.930  Does it go anywhere?  </div>
+<div class="P1"> P1   00:01:47.570  Yeah, down in my harm.  </div>
+<div class="D1"> D1   00:01:49.713  OK  </div>
+<div class="P1"> P1   00:01:50.321  Maybe up to my neck a bit as well!  </div>
+<div class="D1"> D1   00:01:50.321  and ...  </div>
+<div class="P1"> P1   00:01:52.231  I feel a little bit sick, yeah!  </div>
+<div class="D1"> D1   00:01:52.231  Is there any sweating or anything or nausea?  </div>
+<div class="D1"> D1   00:01:55.948  Ok, alright!  </div>
+<div class="P1"> P1   00:01:57.460  You can just give some gaviscon and it'll go away   </div>
+<div class="N1"> N1   00:01:57.460  inaudible   </div>
+<div class="D1"> D1   00:01:57.460  and ...  </div>
+<div class="P1"> P1   00:02:00.424  inaudible  </div>
+<div class="N1"> N1   00:02:00.424  Will I give her teh gaviscon?  </div>
+<div class="D1"> D1   00:02:00.424  No, I think, uh....  </div>
+<div class="N1"> N1   00:02:02.552  No?  </div>
+<div class="D1"> D1   00:02:03.187  Uh, I don't think the chest pain is, is to do with ...  </div>
+<div class="D1"> D1   00:02:05.918  Is to do with the reflux - We woudl like, I would like to do some fews test on you first if that's OK  </div>
+<div class="P1"> P1   00:02:10.647  Oh, I suppose so - yeah!  </div>
+<div class="D1"> D1   00:02:12.253  Is that OK?  </div>
+<div class="D1"> D1   00:02:13.477  I would like to do a bit of examination as well!  </div>
+<div class="P1"> P1   00:02:15.860  Oh yeah - whatever you think - Can you give something for the pain, it's pretty bad?  </div>
+<div class="N1"> N1   00:02:15.860  you want an ECG? Yeah sure I'll do that now   </div>
+<div class="D1"> D1   00:02:15.860  (inaudible) - Oh we can't give you something for the pain!  </div>
+<div class="N1"> N1   00:02:22.251  GTN spray, sure   </div>
+<div class="D1"> D1   00:02:22.251   And can we get, hhm, some GTN spray to start with? - so I'll give you a little spray to help with the pain   </div>
+<div class="P1"> P1   00:02:27.324  Sounds good!  </div>
+<div class="D1"> D1   00:02:28.502  And, and if you need anything more, we'll give you more then.  </div>
+<div class="P1"> P1   00:02:31.389  Just a cup of gaviscon will be nice!  </div>
+<div class="D1"> D1   00:02:33.403  Wonder, could we have ...  </div>
+<div class="D1"> D1   00:02:34.443  300mgs of aspirin as well please?  </div>
+<div class="N1"> N1   00:02:36.099  Have what?  </div>
+<div class="D1"> D1   00:02:36.610  300mgs of aspirin  </div>
+<div class="N1"> N1   00:02:37.786  Aspirin?  </div>
+<div class="N1"> N1   00:02:38.230  Ok, which I do first - the ECG or the aspirin?  </div>
+<div class="D1"> D1   00:02:38.230  Do the ECG first!  </div>
+<div class="P1"> P1   00:02:40.550  I don't like the aspirin!  </div>
+<div class="N1"> N1   00:02:40.550  Do the ECG first then the aspirin.  </div>
+<div class="P1"> P1   00:02:42.157  Aspi...Aspirin makes me feel sick I don't like it   </div>
+<div class="N1"> N1   00:02:42.157  he..he...  </div>
+<div class="D1"> D1   00:02:42.157  Do you have any allergies?  </div>
+<div class="D1"> D1   00:02:45.726  What happen when you take the aspirin?  </div>
+<div class="P1"> P1   00:02:46.814  Just makes me feel sick!  </div>
+<div class="P1"> P1   00:02:48.542  No, no, I just don't like it!  </div>
+<div class="D1"> D1   00:02:48.542  Do you get any swealing or rash or anything?  </div>
+<div class="P1"> P1   00:02:51.500  (inaudible) in my tummy!  </div>
+<div class="D1"> D1   00:02:51.500  Oh OK!  </div>
+<div class="N1"> N1   00:02:53.103  &lt;P1_name&gt;, lift up your tongue for me there?  </div>
+<div class="D1"> D1   00:02:53.103  inaudible  </div>
+<div class="N1"> N1   00:02:55.200  I want to give you a wee bit of the spray before! (not sure of the question)  </div>
+<div class="P1"> P1   00:02:57.631  No  </div>
+<div class="N1"> N1   00:02:58.089  No, Okay!  </div>
+</div>
+<div id="s2">
+<div class="D1"> D1   00:03:00.272  inaudible   </div>
+<div class="N1"> N1   00:03:01.293  Okay   </div>
+<div class="D1"> D1   00:03:01.293  We take bloods of her...  </div>
+<div class="N1"> N1   00:03:02.247  2 sprays under the tongue - that's the GTN given!  </div>
+<div class="D1"> D1   00:03:02.247  inaudible   </div>
+<div class="N1"> N1   00:03:04.324  I'll do the ECG, is it?  </div>
+<div class="D1"> D1   00:03:04.324  GTN given! Wonder if I'll go and get help...ask for help from a colleague.  </div>
+<div class="N1"> N1   00:03:08.683  You want to get help from colleague, OK? I'll do the ECG, yeah!  </div>
+<div class="D1"> D1   00:03:08.683  Be back in few minutes &lt;P1_name&gt;!  </div>
+<div class="X2"> X2  00:03:12.038    </div>
+<div class="N1"> N1   00:03:13.234  Okay!  </div>
+<div class="N1"> N1   00:03:13.920  &lt;P1_name&gt;, I just need to put some leads on your chest, is that alright?  </div>
+<div class="P1"> P1   00:03:18.241  Yeah!  </div>
+<div class="X2"> X2  00:03:18.744  *door   </div>
+<div class="D1"> D1   00:03:20.389  Alright &lt;N1_name&gt;, how are you?  </div>
+<div class="P1"> P1   00:03:21.391  inaudible   </div>
+<div class="N1"> N1   00:03:21.391  Cause of the ECG...  </div>
+<div class="D1"> D1   00:03:21.391  Not too bad - inaudible  </div>
+<div class="D2"> D2  00:03:21.391  Hi How are you?  </div>
+<div class="D1"> D1   00:03:24.856  been admitted recently with 20 minutes history of, uh, chest pain   </div>
+<div class="D2"> D2  00:03:29.208  Okay   </div>
+<div class="D1"> D1   00:03:29.460  with a crushing chest pain ...  </div>
+<div class="D2"> D2  00:03:30.677  Okay   </div>
+<div class="D1"> D1   00:03:31.130  again after eating a chicken curry she's (inaudible)  </div>
+<div class="D1"> D1   00:03:33.895  Uhhh  </div>
+<div class="D1"> D1   00:03:34.694  reflux so, uh, ...  </div>
+<div class="D1"> D1   00:03:36.146  It sounds more ...  </div>
+<div class="D1"> D1   00:03:37.016  cardiac to me so I'm going to ...  </div>
+<div class="D2"> D2  00:03:38.384  Yeah!  </div>
+<div class="D1"> D1   00:03:38.793  yeah so start on GTN spray   </div>
+<div class="N1"> N1   00:03:40.465  She had 2 of thoses, yeah - Will you check that for me, Doctor?  </div>
+<div class="D1"> D1   00:03:40.465  (inaudible) 2 of those  </div>
+<div class="N1"> N1   00:03:43.905   Yeah OK - Sorry now &lt;P1_name&gt; - You remember the leads I was going to do on your chest   </div>
+<div class="D1"> D1   00:03:43.905  inaudible   </div>
+<div class="N1"> N1   00:03:51.711  just going to stick on those little stckers and buttons... and I just need to see what your chest is like...  </div>
+<div class="D1"> D1   00:03:51.711   inaudible   </div>
+<div class="D2"> D2  00:03:51.711  Ok perfect!  </div>
+<div class="D1"> D1   00:03:56.371   inaudible    </div>
+<div class="D2"> D2  00:03:56.375   inaudible    </div>
+<div class="N1"> N1   00:03:56.384  Ok   </div>
+<div class="P1"> P1   00:03:57.191  inaudible   </div>
+<div class="P1"> P1   00:03:59.002  Is there something wrong with my heart?  </div>
+<div class="N1"> N1   00:03:59.002  Just in case it's not heartburn, the doctor asked me to do it so I'm just doing what he asked - You alright? It's all done now (inaudible) .... Your heart?  </div>
+<div class="N1"> N1   00:04:07.689  Do you know...  </div>
+<div class="N1"> N1   00:04:08.598  Doctor?  </div>
+<div class="P1"> P1   00:04:09.106  Is this what my brother had>?  </div>
+<div class="D1"> D1   00:04:09.106  How are you?  </div>
+<div class="D1"> D1   00:04:10.999  What did your brother have?  </div>
+<div class="P1"> P1   00:04:12.270  He died of an heart attack in his fifties!  </div>
+<div class="D1"> D1   00:04:14.323  Okay   </div>
+<div class="P1"> P1   00:04:15.066  (inaudible) Am I having an heart attack?  </div>
+<div class="D1"> D1   00:04:15.066  Inaudible  </div>
+<div class="D1"> D1   00:04:17.259  We are just running a few tests now ...  </div>
+<div class="N1"> N1   00:04:19.515  inaudible   </div>
+<div class="D1"> D1   00:04:19.515  It's perfectly normal to be a bit anxious - the, the - the chest pain...  </div>
+<div class="P1"> P1   00:04:24.660  Am I going to die?  </div>
+<div class="N1"> N1   00:04:24.660  inaudible   </div>
+<div class="D1"> D1   00:04:24.660  No, we are going to take care of you now   </div>
+<div class="D2"> D2  00:04:24.660  Inaudible (not sure!)  </div>
+<div class="P1"> P1   00:04:28.658  Is this because I didn't take my blood pressure meds?  </div>
+<div class="D1"> D1   00:04:28.658  inaudible   </div>
+</div>
+<div id="s3">
+<div class="D1"> D1   00:04:31.608  Oh!  </div>
+<div class="D1"> D1   00:04:32.266  Maybe - do you have, do you have high blood pressure?  </div>
+<div class="N1"> N1   00:04:34.209  Sorry &lt;P1_name&gt;!  </div>
+<div class="P1"> P1   00:04:35.402  It's something ... yeah, sugar, blood sugar ... high blood pressure. (inaudible)   </div>
+<div class="N1"> N1   00:04:35.402  inaudible    </div>
+<div class="D1"> D1   00:04:35.402  Diabetes as well? Ok - Do have anything else? uh are you on any other medications?  </div>
+<div class="D2"> D2  00:04:35.402  inaudible    </div>
+<div class="P1"> P1   00:04:46.201  No, just gaviscon!  </div>
+<div class="D1"> D1   00:04:47.849  Okay!  </div>
+<div class="P1"> P1   00:04:48.280  I don't think Ike any of them thoug but I think I'm supoose to ...  </div>
+<div class="D1"> D1   00:04:50.992  Ok so you can.. have high blood pressure - How's the cholesterol?  </div>
+<div class="P1"> P1   00:04:54.079  Not great!  </div>
+<div class="D1"> D1   00:04:54.952  Not great as well!  </div>
+<div class="D1"> D1   00:04:56.208  Ok, that's, that's alright! Uh, Do you have any allergies to medications?  </div>
+<div class="P1"> P1   00:05:00.066  What?  </div>
+<div class="D1"> D1   00:05:00.651  Do you have any allergies to medications?  </div>
+<div class="P1"> P1   00:05:02.533  No, no I just don;t like the aspirin!  </div>
+<div class="D1"> D1   00:05:02.533  Apart from the aspirin?  </div>
+<div class="P1"> P1   00:05:04.533  Inaudible   </div>
+<div class="N1"> N1   00:05:04.533  inaudible   </div>
+<div class="D1"> D1   00:05:04.533  Okay, alright!  </div>
+<div class="D1"> D1   00:05:07.653  No, don't go for a smoke!  </div>
+<div class="D1"> D1   00:05:09.321  Uh, how long have you been smoking?  </div>
+<div class="P1"> P1   00:05:11.375  All my life!  </div>
+<div class="D1"> D1   00:05:12.484  All your life, Okay!  </div>
+<div class="D1"> D1   00:05:13.817  Hmmm...  </div>
+<div class="D1"> D1   00:05:14.682  (inaudible)  </div>
+<div class="P1"> P1   00:05:16.465  Just the husband?!  </div>
+<div class="P1"> P1   00:05:18.273  Unfortunately!  </div>
+<div class="D1"> D1   00:05:18.273  Ok that's alright!  </div>
+<div class="D1"> D1   00:05:20.047  Haha (*laughs)  </div>
+<div class="D1"> D1   00:05:21.286  So how are you feeling now?  </div>
+<div class="P1"> P1   00:05:22.884  Oh, it's so painful!  </div>
+<div class="D1"> D1   00:05:24.448  Ok, still painful?  </div>
+<div class="P1"> P1   00:05:25.508  I need something!  </div>
+<div class="D1"> D1   00:05:26.629  (inaudible) - can we start her on a bit of morphine please?  </div>
+<div class="N1"> N1   00:05:28.780  Sure, yeah - how much morphine do you want?  </div>
+<div class="D1"> D1   00:05:28.780  inaudible   </div>
+<div class="D1"> D1   00:05:30.404  Hmm, do you know the dose?  </div>
+<div class="D2"> D2  00:05:31.838  Hmm I think it's 5mgs but I'll double check!  </div>
+<div class="D1"> D1   00:05:34.124  Ok - thank you!  </div>
+<div class="D1"> D1   00:05:35.050  Did you know the dose of (inaudible), morphine for ...  </div>
+<div class="N1"> N1   00:05:37.753  inaudible   </div>
+<div class="P1"> P1   00:05:38.505  inaudible   </div>
+<div class="D1"> D1   00:05:38.505  Do, do you know the dose?  </div>
+<div class="N1"> N1   00:05:40.110  Do I know the dose, yeah! I'll get you the BNF!  </div>
+<div class="N1"> N1   00:05:41.939  inaudible   </div>
+<div class="X2"> X2  00:05:41.939  multiple speakers - inaudible  </div>
+<div class="N1"> N1   00:05:44.626  What is she like - her blood pressure is ... (not sure)   </div>
+<div class="N1"> N1   00:05:46.346  I'm just clarifying ...  </div>
+<div class="D1"> D1   00:05:46.346  inaudible   </div>
+<div class="N1"> N1   00:05:47.475  What do we do about the asthma..the aspirin?  </div>
+<div class="D2"> D2  00:05:47.475  Yeah!  </div>
+<div class="D1"> D1   00:05:49.540  Oh, we get the aspirin....  </div>
+<div class="X1"> X1   00:05:50.826  multiple speakers  </div>
+<div class="D2"> D2  00:05:52.759  like it ...  </div>
+<div class="N1"> N1   00:05:53.584  inaudible   </div>
+<div class="D2"> D2  00:05:53.584  What, what ... we, we should clarify exactly (inaudible)   </div>
+<div class="D1"> D1   00:05:56.922  Yeah we (inaudible) to know ...  </div>
+<div class="D1"> D1   00:05:57.988  So just to clarify you didn't have any swelling or any rash when you take the aspirin, did you?  </div>
+<div class="X1"> X1   00:05:57.988  inaudible - multiple speakers   </div>
+</div>
+<div id ="s4">
+<div class="P1"> P1   00:06:01.551  No, no ...  </div>
+<div class="D1"> D1   00:06:01.553  Do you have any trouble breathing?  </div>
+<div class="P1"> P1   00:06:03.857  It' just gives me heartburn, that's all!  </div>
+<div class="D1"> D1   00:06:05.479  Okay   </div>
+<div class="P1"> P1   00:06:06.545  inaudible  </div>
+<div class="D1"> D1   00:06:06.545  inaudible  </div>
+<div class="D1"> D1   00:06:10.384  Will ....   </div>
+<div class="D2"> D2  00:06:10.384  Yeah, it's OK!  </div>
+<div class="D1"> D1   00:06:11.289  I think the aspirin will be more important - we'll get the gaviscon then later o if that's ok?  </div>
+<div class="P1"> P1   00:06:14.468  Oh, I suppose!  </div>
+<div class="P1"> P1   00:06:15.137  What's on that picture in your hand??  </div>
+<div class="N1"> N1   00:06:15.137  inaudible   </div>
+<div class="D1"> D1   00:06:15.137  Just going to talk to my colleague here - be right back to you!  </div>
+<div class="D2"> D2  00:06:15.137  inaudible   </div>
+<div class="D1"> D1   00:06:19.850  This is just a scan here of the ... scan of your heart.  </div>
+<div class="X1"> X1   00:06:19.850  inaudible - (not sure who's talking)  </div>
+<div class="P1"> P1   00:06:22.643  Am I having an heart attack? Was wrong with my heart? - I don't want to die like my brother!  </div>
+<div class="D1"> D1   00:06:22.643  This is all, this is what it is - Ha....  </div>
+<div class="D1"> D1   00:06:27.416  No you are not going to die - we think you are having a bit, uh, I'd say you have an heart attack now.  </div>
+<div class="P1"> P1   00:06:31.493  WHAT?  </div>
+<div class="D1"> D1   00:06:31.493  You see here its going a bit high whch means you're having ....  </div>
+<div class="D1"> D1   00:06:33.900  Oh, sooorr....  </div>
+<div class="P1"> P1   00:06:34.883  What? - Inaudible  Am I going to die?  </div>
+<div class="N1"> N1   00:06:34.883  It's OK &lt;P1_name&gt;, It's alright! we will be with you ...   </div>
+<div class="D1"> D1   00:06:34.883  It's OK, no we 're going...I'm going to call the people  the cardiology now ....  </div>
+<div class="N1"> N1   00:06:41.304  It's OK - inaudible   </div>
+<div class="D1"> D1   00:06:41.304  No, you are not going to die! we, we're giving you the aspirin and we've giving you something for the pain.  </div>
+<div class="D1"> D1   00:06:45.233  Yeah!  </div>
+<div class="D1"> D1   00:06:45.991  and you are going to be perfectly.... you you are going to be alright now - we are going to call the cardiology people and get them to see you   </div>
+<div class="P1"> P1   00:06:51.383  Oh my god!  </div>
+<div class="P1"> P1   00:06:52.608  The pain is really bad!  </div>
+<div class="N1"> N1   00:06:52.608  Hi &lt;P1_name&gt;...just swollow these...  </div>
+<div class="D1"> D1   00:06:52.608  inaudible  </div>
+<div class="N1"> N1   00:06:54.867  Just swollow those 2 tablets for me - this is aspirin 300, OK?  </div>
+<div class="D1"> D1   00:06:54.867  OK  </div>
+<div class="D1"> D1   00:06:57.636  Okay!  </div>
+<div class="N1"> N1   00:06:58.328  One...  </div>
+<div class="N1"> N1   00:06:59.054  Two...  </div>
+<div class="N1"> N1   00:06:59.898  Ok, perfect!  </div>
+<div class="D1"> D1   00:06:59.898  Cam we get some, uh, Clopidogrel, as well?  </div>
+<div class="N1"> N1   00:07:02.240  Clopidogrel, how much would you like?  </div>
+<div class="D1"> D1   00:07:02.240  Please!  </div>
+<div class="D1"> D1   00:07:03.928  Just the dose ...  </div>
+<div class="P1"> P1   00:07:04.993  Oohh... (inaudible) this is terrible!  </div>
+<div class="D1"> D1   00:07:04.993  inaudible   </div>
+<div class="P1"> P1   00:07:07.273  inaudible   </div>
+<div class="D1"> D1   00:07:07.273  We're going to get you some morphine as well for the pain now ...  </div>
+<div class="N1"> N1   00:07:11.024  And ...  </div>
+<div class="N1"> N1   00:07:11.368  we shoudl do any blood tests or anything ....hmm, hhm I have no access, she's just coming over from ED  </div>
+<div class="D1"> D1   00:07:11.368  Oh yes please!  </div>
+<div class="D1"> D1   00:07:15.605  Okay, we'll have to put a line there or we have to pu, take bloods specially, uh,  troponines    </div>
+<div class="N1"> N1   00:07:20.687  (inaudible) - sure yeah!  </div>
+<div class="D1"> D1   00:07:20.687  (inaudible) as well   </div>
+<div class="N1"> N1   00:07:22.979  Yeah .... OK!  </div>
+<div class="D1"> D1   00:07:22.979  Full blood count, uhhh...  </div>
+<div class="D1"> D1   00:07:24.884  U/Es, LFTs...  </div>
+<div class="N1"> N1   00:07:26.538  OK  </div>
+<div class="D1"> D1   00:07:26.538  Hmmm...  </div>
+<div class="D1"> D1   00:07:27.971  Bloo....blood glucose....  </div>
+<div class="D1"> D1   00:07:29.384  Hmm  </div>
+</div>
+<div id="s5">
+<div class="D1"> D1   00:07:30.077  HbA1c   </div>
+<div class="D1"> D1   00:07:31.307  Hmmm  </div>
+<div class="D1"> D1   00:07:31.795  fasting lipids and ....  </div>
+<div class="D1"> D1   00:07:34.129  Start with that (inaudible) - VBG as well if that's OK!  </div>
+<div class="N1"> N1   00:07:35.056  Okay   </div>
+<div class="N1"> N1   00:07:37.124   OK, I forget to write all those down but I'll give you a buzz OK? - (inauidble), I've,  I've done my cannula course so I dont mind to try  -  I'll try her once, OK?  </div>
+<div class="D1"> D1   00:07:37.124  OK, thanks - OK!  </div>
+<div class="D1"> D1   00:07:43.160  That's grand, thank you very much!  </div>
+<div class="P1"> P1   00:07:44.719  Not great!  </div>
+<div class="N1"> N1   00:07:44.719  No I don't have ....  </div>
+<div class="D1"> D1   00:07:44.719  How's the breathing there &lt;P1_name&gt;?  - Not great....  </div>
+<div class="P1"> P1   00:07:47.945  Inaudible   </div>
+<div class="N1"> N1   00:07:47.945  No, I don't have the dose yet ...  </div>
+<div class="P1"> P1   00:07:49.835  Oh the pain is so bad!  </div>
+<div class="P1"> P1   00:07:51.320  I thought you are going to get me some morphine!  </div>
+<div class="D1"> D1   00:07:51.320  Ok, we're going to ...  </div>
+<div class="D1"> D1   00:07:53.487  The morphine is coming now, soon now ...  </div>
+<div class="P1"> P1   00:07:55.274   Oh right _inaudible   </div>
+<div class="N1"> N1   00:07:55.274  I just need the dose Doctor - (inaudible)  </div>
+<div class="D1"> D1   00:07:55.274  Oh sorry Yes ...  </div>
+<div class="D1"> D1   00:07:57.744  Sorry!  </div>
+<div class="D2"> D2  00:07:58.139  inaudible   </div>
+<div class="D1"> D1   00:07:59.549  5 mgs ...  </div>
+<div class="D2"> D2  00:07:59.549  5 mgs, yeah?  </div>
+<div class="D1"> D1   00:08:01.265  Ok, we may give 5mgs of, of morphine   </div>
+<div class="P1"> P1   00:08:03.326  So give it all to me !  </div>
+<div class="X1"> X1   00:08:03.326  inaudible   </div>
+<div class="D1"> D1   00:08:04.701  *laughing ...  </div>
+<div class="N1"> N1   00:08:05.350  inaudible  </div>
+<div class="N1"> N1   00:08:05.927  inaudible   </div>
+<div class="D1"> D1   00:08:05.927  We'll get that done now   </div>
+<div class="D2"> D2  00:08:07.728  And, if we give her some...hmmm...  </div>
+<div class="D2"> D2  00:08:10.724  inaudible    </div>
+<div class="D1"> D1   00:08:11.819  OK  </div>
+<div class="D2"> D2  00:08:11.819  hmm, antiemetic with.... hmmm...  </div>
+<div class="D1"> D1   00:08:14.357  That's good idea!  </div>
+<div class="N1"> N1   00:08:14.603  It's going to be a sharp scratch &lt;P1_name&gt; -I'm just going to try to put a line OK?  </div>
+<div class="P1"> P1   00:08:18.613  Alright!  </div>
+<div class="P1"> P1   00:08:20.320  I don't like needles!  </div>
+<div class="N1"> N1   00:08:21.399  I know - look away to the doctor there, you won't notice me   </div>
+<div class="N1"> N1   00:08:24.108  *Sniffs  </div>
+<div class="X1"> X1   00:08:24.869  inaudible - multiple speakers   </div>
+<div class="N1"> N1   00:08:26.903  Yeah... I've, I have no blood pressure at all.  </div>
+<div class="X1"> X1   00:08:26.903  multiple speakers - inaudible   </div>
+<div class="D2"> D2  00:08:29.875  inaudible  </div>
+<div class="N1"> N1   00:08:30.874  inaudible   </div>
+<div class="N1"> N1   00:08:32.086  Oh  </div>
+<div class="P1"> P1   00:08:32.662  Inaudible   </div>
+<div class="N1"> N1   00:08:32.662  OK - will I still give her the morphine?  </div>
+<div class="D1"> D1   00:08:32.662  Ok  </div>
+<div class="D2"> D2  00:08:32.662  OK  </div>
+<div class="P1"> P1   00:08:36.195  Oh, give me the morphine!  </div>
+<div class="D1"> D1   00:08:37.931  We are going to (inaudible) some fluids as well.  </div>
+<div class="P1"> P1   00:08:39.849  I'm in a lot of pain ...  </div>
+<div class="D1"> D1   00:08:39.849  Once the line is in   </div>
+<div class="N1"> N1   00:08:41.675  You Ok with the morphine?  </div>
+<div class="D1"> D1   00:08:42.570  Hmmm  </div>
+<div class="D1"> D1   00:08:43.639  Uh, is there a contra-indictation there with morphine with   </div>
+<div class="P1"> P1   00:08:45.970  Oh, no just give it to me!  </div>
+<div class="D1"> D1   00:08:45.970  the.....  </div>
+<div class="N1"> N1   00:08:47.411  I'll check ...  </div>
+<div class="N1"> N1   00:08:48.087  2 seconds now &lt;P1_name&gt; and he'll decied but I'll take the blood in the meantime    </div>
+<div class="X1"> X1   00:08:48.087  inaudible   </div>
+<div class="X1"> X1   00:08:52.577  inaudible   </div>
+<div class="P1"> P1   00:08:53.735  I feel a little bit sweaty - a bit sweaty!  </div>
+<div class="N1"> N1   00:08:53.735   I don't think I'll be confident to give morphine when the patient has such a low pressure   </div>
+<div class="D1"> D1   00:08:53.735   Ok - That's alright!  </div>
+</div>
+<div id ="s6">
+<div class="N1"> N1   00:09:01.046  Ok, sharp scratch!  </div>
+<div class="D1"> D1   00:09:01.046  Ok, we are going to get a line   </div>
+<div class="P1"> P1   00:09:02.583  inaudible  </div>
+<div class="N1"> N1   00:09:02.583  Sharp scratch - well done!  </div>
+<div class="D1"> D1   00:09:04.117  We are going to get a line into you and get some fluids up   </div>
+<div class="P1"> P1   00:09:06.412  I feel a bit sick!  </div>
+<div class="N1"> N1   00:09:06.412  Perfect!  </div>
+<div class="D1"> D1   00:09:06.412  and we are gong to start some oxygen as well (inaudible)  </div>
+<div class="P1"> P1   00:09:10.105  inaudible   </div>
+<div class="N1"> N1   00:09:10.105  OK - Did you, did you call .... who are you going to call  </div>
+<div class="D1"> D1   00:09:10.105  I'm going to call ..... I'm going to call cardiology.  </div>
+<div class="N1"> N1   00:09:14.315  you gonna...wil you... OK!  </div>
+<div class="D1"> D1   00:09:14.315  The medical reg on call first and see what he ....  </div>
+<div class="N1"> N1   00:09:16.717  OK, yeah - the medical reg on call!  </div>
+<div class="N1"> N1   00:09:18.224  OK!  </div>
+<div class="N1"> N1   00:09:19.987  The phone is just over there!  </div>
+<div class="P1"> P1   00:09:21.145  Doctor, I can't catch my breath!  </div>
+<div class="N1"> N1   00:09:21.145  Hmmmm  </div>
+<div class="N1"> N1   00:09:22.769  Okay!  </div>
+<div class="N1"> N1   00:09:23.596  I'm going to get the other Doctor with you &lt;P1_name&gt; - I'm just  doing the bloods!  </div>
+<div class="D2"> D2  00:09:23.596  &lt;P1_name&gt; you can't catch your breath, is it?  </div>
+<div class="P1"> P1   00:09:27.495  No!  </div>
+<div class="P1"> P1   00:09:28.535  Yeah - I can't catch my breath  </div>
+<div class="D1"> D1   00:09:28.535  Hi, could you put me through the medical reg on call please?  </div>
+<div class="D2"> D2  00:09:28.535  you're feeling...(inaudible) ...do you have thightness on your chest?  </div>
+<div class="D1"> D1   00:09:33.926  inaudible   </div>
+<div class="D2"> D2  00:09:34.308  Okay   </div>
+<div class="D2"> D2  00:09:34.866  Hmmm, we may put you up on some oxygen OK?  </div>
+<div class="P1"> P1   00:09:37.554  Sounds good.  </div>
+<div class="D2"> D2  00:09:38.240  Hmmm.... so we may put her up on, hmm, 4 liters of oxygen   </div>
+<div class="N1"> N1   00:09:42.478  Okay!  </div>
+<div class="N1"> N1   00:09:42.893  Hmm, nasal prongs or...? Face-mask.  </div>
+<div class="X1"> X1   00:09:42.893  inaudible - multiple speakers - phone ringing inaudible  </div>
+<div class="D2"> D2  00:09:42.893  Hmmm face masks if you have. or (inaudible) yes it's ...  </div>
+<div class="D1"> D1   00:09:48.789  ED  </div>
+<div class="D1"> D1   00:09:49.401  How are you?  </div>
+<div class="MedReg"> MedReg  00:09:49.756  I'm OK!  </div>
+<div class="D1"> D1   00:09:50.102  I'm worried here about a lady, uh, who has been admitted to, on urgent department for central chest pain   </div>
+<div class="X1"> X1   00:09:50.102  inaudible   </div>
+<div class="D1"> D1   00:09:56.210  She...uh, a 46 years old lady....  </div>
+<div class="X1"> X1   00:09:56.210  inaudible   </div>
+<div class="N1"> N1   00:09:59.118  yeah OK - how many liters? (inaudible) will you check that for when you have a second - &lt;P1_name&gt;, I'm going to put that  under the nose, alright?  </div>
+<div class="D1"> D1   00:09:59.118  with (inaudible) central crushing chest pain for 20 minutes history - we've done an ECG  there's ST elevation on lead AVR and ST depression on arterial lead   </div>
+<div class="D2"> D2  00:09:59.118  inaudible   </div>
+<div class="N1"> N1   00:10:10.119  A little bit of oxygen to help you breath - (inaudible)   </div>
+<div class="D1"> D1   00:10:10.119  Hmm we set it her on oxygen  - we've given morph, we've given, uh,   </div>
+<div class="D1"> D1   00:10:15.839  GTN spray   </div>
+<div class="D1"> D1   00:10:16.892  we've given aspirin and clopidogrel   </div>
+<div class="P1"> P1   00:10:18.620  Can you give me that morphine?  </div>
+<div class="N1"> N1   00:10:18.620  I'll ask the doctor now and see if we can get another pain relief  </div>
+<div class="D1"> D1   00:10:18.620   and wondering if you can come down and have, have a look at her please.  </div>
+<div class="MedReg"> MedReg  00:10:22.944  Yeah that's fine!  </div>
+<div class="N1"> N1   00:10:23.799  You can't get morphine with low blood pressure   </div>
+<div class="D1"> D1   00:10:23.799  Down in ED!  </div>
+<div class="MedReg"> MedReg  00:10:23.799  Where's the patient?  </div>
+<div class="D1"> D1   00:10:26.173  Thank you!  </div>
+<div class="N1"> N1   00:10:26.975  Alright!  </div>
+<div class="X2"> X2  00:10:27.389    </div>
+<div class="N1"> N1   00:10:29.235  Now, that's up 4 liters Doctor, OK?  </div>
+</div>
+<div id="s7">
+<div class="N1"> N1   00:10:31.596  Thanks!  </div>
+<div class="D2"> D2  00:10:31.596  Ok, thanks.  </div>
+<div class="N1"> N1   00:10:32.604  inaudible   </div>
+<div class="D1"> D1   00:10:32.604  Medical reg is his way now!  </div>
+<div class="N1"> N1   00:10:33.868   medical reg, OK!... I've sent the bloods   </div>
+<div class="N1"> N1   00:10:35.994  And.... so I sent them off!  </div>
+<div class="D1"> D1   00:10:35.996  Perfect  </div>
+<div class="N1"> N1   00:10:37.912  Is there anything else I can do?  </div>
+<div class="X1"> X1   00:10:39.056  multiple speakers - inaudible   </div>
+<div class="D2"> D2  00:10:40.235  If we need to look at some other pain relief if she can't get the morphineso....  </div>
+<div class="N1"> N1   00:10:43.118  OK - yeah!  </div>
+<div class="P1"> P1   00:10:43.841  Oh, the pain is so bad!  </div>
+<div class="N1"> N1   00:10:43.841  Just give me a shout - I'm just going to help with the beds next door ok?  </div>
+<div class="X1"> X1   00:10:43.841  multiple speakers   </div>
+<div class="D1"> D1   00:10:47.449  Okay!  </div>
+<div class="X2"> X2  00:10:48.012  foot steps   </div>
+<div class="D1"> D1   00:10:49.590  Is there anything else I wonder - could we give ...  </div>
+<div class="D1"> D1   00:10:50.903  her?  </div>
+<div class="D2"> D2  00:10:50.903  Yeah - (inaudible)  </div>
+<div class="D2"> D2  00:10:52.489  Inaudible   </div>
+<div class="P1"> P1   00:10:56.027  Oh, give me something for the pain(?)  </div>
+<div class="N1"> N1   00:10:56.027  She got two sprays of GTN!  </div>
+<div class="D1"> D1   00:10:56.027  How many sprays of GNT did she had?  </div>
+<div class="D1"> D1   00:10:58.926  OK!  </div>
+<div class="D1"> D1   00:10:59.520  Did the spray help at all Nacy?  </div>
+<div class="P1"> P1   00:11:01.044  Oh, I'm having a headache(?)  </div>
+<div class="X1"> X1   00:11:01.044  inaudible   </div>
+<div class="D2"> D2  00:11:01.044  Well, we can't give her more because she's less, her systolic is going down so  </div>
+<div class="N1"> N1   00:11:04.491  Could she do with any fluids or anything?  </div>
+<div class="D1"> D1   00:11:05.903  Yes.  </div>
+<div class="D2"> D2  00:11:05.903  Yeah!  </div>
+<div class="D1"> D1   00:11:06.535  Can we get a line in?  </div>
+<div class="N1"> N1   00:11:07.489  I have a line in there, yeah !  </div>
+<div class="D1"> D1   00:11:07.489  A ine in - Can we start   </div>
+<div class="P1"> P1   00:11:09.074  inaudible   </div>
+<div class="D1"> D1   00:11:09.074  fluids please - uh, 250...250mls over 15 minutes please?  </div>
+<div class="N1"> N1   00:11:13.724  250 mls of ...  </div>
+<div class="D1"> D1   00:11:15.294  over 15 minutes   </div>
+<div class="N1"> N1   00:11:16.194  OK!  </div>
+<div class="N1"> N1   00:11:16.511  I'll do that now - I just need a pump ...  </div>
+<div class="X1"> X1   00:11:16.511  inaudible   </div>
+<div class="D1"> D1   00:11:18.216  250mls over ...  </div>
+<div class="D2"> D2  00:11:18.216  Yeah - Yeah   </div>
+<div class="D2"> D2  00:11:19.894  OK so   </div>
+<div class="D2"> D2  00:11:20.600  Have we - we need to give her (inaudible) as well   </div>
+<div class="D1"> D1   00:11:22.623  That's OK.  </div>
+<div class="D2"> D2  00:11:22.623  inaudible   </div>
+<div class="D2"> D2  00:11:23.935  ... and .... (inaudible)  </div>
+<div class="D1"> D1   00:11:27.282  hmm-hmm  </div>
+<div class="D2"> D2  00:11:28.142  and we could (inaudible)  </div>
+<div class="D1"> D1   00:11:31.720  inaudible   </div>
+<div class="D2"> D2  00:11:33.757  Yeah, she's ... her blood pressure is low-low so ...  </div>
+<div class="N1"> N1   00:11:36.734  yeah, let's put my EWS there Doctor.  </div>
+<div class="X1"> X1   00:11:36.734  inaudible - multiple speakers   </div>
+<div class="D1"> D1   00:11:39.937  Okay  </div>
+<div class="D1"> D1   00:11:40.507  I'm going to do a bit of examination on you now, is that OK?  </div>
+<div class="P1"> P1   00:11:43.458  Yeah!  </div>
+<div class="D1"> D1   00:11:44.408  I'm just going to feel the pulse!  </div>
+<div class="P1"> P1   00:11:46.578  Oh, can you give me that morphine please?  </div>
+<div class="D1"> D1   00:11:49.720  See now, your blood pressure is a little bit low so we, we won't give you the morphine just yet until the reg gets down OK and we'll see what he says!  </div>
+<div class="D2"> D2  00:11:56.315  Do you know what we should give instead of morphine?  </div>
+<div class="D1"> D1   00:11:58.607  inaudible   </div>
+<div class="D2"> D2  00:11:59.256  Do you know what drugs we can give her instead of morphine?  </div>
+</div>
+<div id="s8">
+<div class="MedReg"> MedReg  00:12:00.700  Hi, this the medical Reg  </div>
+<div class="D1"> D1   00:12:01.598  Hi, how are you? - (inaudible) one of the interns and this is Ashley!  </div>
+<div class="N1"> N1   00:12:04.887  Now ... just (inaudible)  </div>
+<div class="D1"> D1   00:12:04.887  So this is a 46 years old lady, she's just coming with a 20 minutes history of   </div>
+<div class="D1"> D1   00:12:09.397  uh, crushing central chest pain spreading down to, to  the left arm up to the jaw   </div>
+<div class="D1"> D1   00:12:13.377  we did an ECG - it's over there - (inaudible)  </div>
+<div class="D1"> D1   00:12:18.276  and then we've given s... two spray of GTN  </div>
+<div class="D1"> D1   00:12:21.068  we've given... we've taken, uh,  bloods, sent for troponines   </div>
+<div class="D1"> D1   00:12:24.805  Hmmm, fift....  </div>
+<div class="P1"> P1   00:12:25.637  patient moaning   </div>
+<div class="D1"> D1   00:12:25.637  hmm, given ... (inaudible)  </div>
+<div class="MedReg"> MedReg  00:12:25.637  (inaudible)   </div>
+<div class="D1"> D1   00:12:29.213  past history of hypertension, hmm   </div>
+<div class="D1"> D1   00:12:30.870  hypercholesteroleamia and diabetes   </div>
+<div class="MedReg"> MedReg  00:12:33.226  And what did you find on exam?  </div>
+<div class="D1"> D1   00:12:34.706  (inaudible) the exam.  </div>
+<div class="MedReg"> MedReg  00:12:36.855  That's the ECG, is it?  </div>
+<div class="N1"> N1   00:12:38.441  I'll give you the ECG (inaudible)   </div>
+<div class="D1"> D1   00:12:38.441  The ECG is, sorry, over there!  </div>
+<div class="D2"> D2  00:12:38.441  she was given 300mgs of aspirin as well   </div>
+<div class="MedReg"> MedReg  00:12:38.441  Have you sent any bloods?  </div>
+<div class="D1"> D1   00:12:44.251  Yeah, I've sent off FBC, and, uh, troponines and (inaudible)   </div>
+<div class="MedReg"> MedReg  00:12:48.891  and you said you give her something.  </div>
+<div class="D1"> D1   00:12:50.361  Given ...  </div>
+<div class="X2"> X2  00:12:50.387  and she had two puffs of GNT spray and she had 300mgs of aspirin and her blood pressure is low there   </div>
+<div class="X2"> X2  00:12:56.438  inaudible  </div>
+<div class="D1"> D1   00:12:56.441  Just going to your chest there.  </div>
+<div class="X3"> X3  00:12:57.810  well done it's finished    </div>
+<div class="P1"> P1   00:13:02.194  Can I get that gaviscon?  </div>
+<div class="D1"> D1   00:13:04.134  *laughing   </div>
+<div class="X3"> X3  00:13:05.325  Ok enough   </div>
+</div>
+ </div>
+
+</body>
+</html>
+{% endblock %}
+
+{% block js %}
+
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <!-- .attrs() -->
+    <script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
+    <script>
+
+        var margin = {top: 50, right: 45, bottom: 80, left: 45},
+         width = 1000 - margin.left - margin.right,
+         height = 700 - margin.top - margin.bottom;
+
+
+        svg = d3.select("#chart").append("svg")
+          .attr("width", width + margin.left + margin.right)
+          .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        //Count number of items per time slot
+        var countObj = {};
+
+        d3.csv("/js/data2.csv",  function(error, data) {
+          data.forEach(function(d) {
+              
+              
+              d.slot = +d.time;
+              d.name = d.name
+              var val = d.time;
+              if(countObj[val] === undefined) {
+                  countObj[val] = 1;
+              } else {
+                  countObj[val] = countObj[val] + 1;
+              }
+            });
+
+            // now store the count in each data member
+            data.forEach(function(d) {
+                var val = d.value;
+                d.count = countObj[val];
+            });
+         
+     
+        //AXIS CODE
+
+        var max = d3.max( data, function(d) { return d.slot; }) + 1;
+        var xRange = d3.scale.linear().domain([0,max]).range([0, width]);
+        var xAxis = d3.svg.axis().scale(xRange).orient("bottom").tickFormat(function(d, i) {
+          var seconds =( Math.floor(d*1.5) ===0) ?  0 :  60*( (d*1.5) % Math.floor(d*1.5));
+          return Math.floor(d*1.5)+":"+ seconds ; 
+        });;
+        var color = d3.scale.category10()
+
+
+        var dict = {};
+        dict["P1"] = 1;
+        dict["D1"] = 2;
+        dict["N1"] = 3;
+        dict["D2"] = 4;
+        dict["MedReg"] = 5;
+
+        svg.append("g")
+          .attr("class", "axis")
+          .attr("transform", "translate(0," + height + ")")
+          .style("stroke-width", 1)
+          .call(xAxis);
+
+        //Add border
+        var borderPath = svg.append("rect")
+        .attr("x", 0)
+        .attr("y", 0)
+        .attr("height", height)
+        .attr("width", width)
+        //.style("stroke", 'black')
+        .style("fill", "none")
+        .style("stroke-width", 1);
+
+        //Draw rectangles
+        var position = 0;
+        var heigthUsed = 0;
+
+        var timeslot;
+        var userSpeach;
+        var firstClick = 0;
+        var selected;
+
+        data.forEach(function(d) {
+            var boxH = height / countObj[d.slot];
+
+
+            if(d.slot > position){
+              position = d.slot;
+              heigthUsed = 0;
+            }
+
+            var fcol = color(dict[d.name]);
+            var words = d.words;
+            var lsWords = words.split(" ");
+            var i;
+            //legend
+           
+            document.getElementById("L"+d.name).style .backgroundColor = fcol;
+
+            //tiles
+            var rect = svg.append('rect')
+               .attrs({ x: xRange(d.slot), y: boxH*heigthUsed, width: xRange(d.slot + 1) - xRange(d.slot) + 1, height: boxH + 1 })
+               .attr("fcol",fcol)
+               //.style("stroke", 'black')
+               .style("fill",  fcol)
+               .style("stroke-width", 1)
+               .on('click', function(data,i) {
+                    if (firstClick === 1) {
+                        timeslot.style.backgroundColor = 'white';
+                        for(var i = 0; i < userSpeach.length; i++)
+                        {
+                            userSpeach.item(i).style.backgroundColor = "transparent";
+                        }
+                        selected.style("fill",  selected.attr("fcol"));
+                    }
+                    selected=rect;
+                    rect.style("fill",  '#CFCFC4');
+                    //rect.style("stroke",black");
+                    timeslot = document.getElementById("s"+d.slot);
+                    timeslot.scrollIntoView();
+                    timeslot.style.backgroundColor = '#CFCFC4';
+                 
+                    userSpeach = timeslot.getElementsByClassName(d.name);
+                    for(var i = 0; i < userSpeach.length; i++)
+                    {
+                        userSpeach.item(i).style.backgroundColor = fcol;
+                        // for (i = 0; i < Math.floor(12/countObj[d.slot]); i++) { 
+                        //   userSpeach.item(i).textContent  = userSpeach.item(i).textContent.replace(lsWords[i],"<font color=\"white\">"+lsWords[i]+"</font>");
+                        // }
+                    }
+
+                    firstClick = 1;
+                  });
+
+
+            for (i = 0; i < Math.floor(12/countObj[d.slot]); i++) { 
+                var text = lsWords[i];
+                svg.append("text")
+                  .attr("class", "label")
+                  .attr("x", xRange(d.slot) + ((xRange(d.slot+1) - xRange(d.slot) +1)/2) )
+                  .attr("y", (height/12)/2 + (boxH*heigthUsed) + (height/12)*i  )
+                  .style("text-anchor", "middle")
+                  .style("font-size", "14px")
+                  .style("fill", "white") 
+                  .text(text)
+                  ;
+            }
+            heigthUsed = heigthUsed + 1;
+        });
+
+
+      });
+    </script>
+
+{% endblock %}

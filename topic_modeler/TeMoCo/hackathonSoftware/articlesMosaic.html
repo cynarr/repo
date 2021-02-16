@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>TeMoCo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TeMoCo">
+    <meta name="author" content="Shane Sheehan">  <style>
+
+  body {
+    font: 10px sans-serif;
+  }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+
+   /*HTML Horizonal Legend*/
+    .country-name {
+        margin: 0 !important;
+    }
+    .key-dot {
+        display: inline-block;
+        height: 16px;
+        margin-right: 1em;
+        width: 16px;
+    }
+
+    /*.L1 { background: red;
+              opacity:0.3  }
+    .L21 { background: orange;
+             opacity:0.3}*/
+
+
+    #legend2{
+        overflow:hidden;
+    }
+    .legend2 {
+        float:left;
+        margin-right: 1em;
+    }
+    #legend{
+        margin-left: 320px;
+        font-size:16px;
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+
+<body>
+  
+  <div id="chart" style="float:left;">
+    <div id="legend" align="centre">
+    <h3>Topics</h3>
+  </div>
+  </div>
+  <div id="transcript" style="width:600px;height:800px;line-height:3em;overflow:scroll;padding:5px;float:left;margin-top: 130px;font-size:12px;"> 
+
+  </div>
+
+</body>
+</html>
+
+
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <!-- .attrs() -->
+    <script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
+    <script>
+
+        //Count number of items per time slot
+        var countObj = {};
+        var topicStr = [];
+        var articleJSON ;
+        d3.json("articles.json", function(data) {
+            articleJSON = data
+        });
+
+        d3.csv("articles1.csv",  function(error, data) {
+          data.forEach(function(d) {
+              
+              // console.log(d)
+              d.slot = +d.time;
+              d.name = d.topic
+              if(topicStr.indexOf(d.name) === -1) {
+                  topicStr.push(d.name);
+              }
+
+              var val = d.time;
+              if(countObj[val] === undefined) {
+                  countObj[val] = 1;
+              } else {
+                  countObj[val] = countObj[val] + 1;
+              }
+            });
+
+            // now store the count in each data member
+            data.forEach(function(d) {
+                var val = d.value;
+                d.count = countObj[val];
+            });
+  
+      // Calculate width and heigth based on num topics and timeslots
+        var max = d3.max( data, function(d) { return d.slot; }) + 1;    
+        var year =0;
+        var margin = {top: 50, right: 45, bottom: 80, left: 45},
+         width = (130 *max) - margin.left - margin.right,
+         height = (200 * topicStr.length ) - margin.top - margin.bottom;
+
+
+        svg = d3.select("#chart").append("svg")
+          .attr("width", width + margin.left + margin.right)
+          .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+          .attr("transform", "translate(" + margin.left + "," + margin.top + ")"); 
+     
+        //AXIS CODE
+        var xRange = d3.scale.linear().domain([0,max]).range([0, width]);
+
+        var xAxis = d3.svg.axis().scale(xRange).orient("bottom").tickFormat(function(d, i) {
+          var seconds =( Math.floor( d * 1.5) === 0) ?  0 :  60 * ( (d * 1.5) % Math.floor(d * 1.5) );
+          return "Slot " + (year+d); 
+        });;
+
+        var color = d3.scale.category10();
+
+        var dict = {};
+        topicStr.forEach(function (item, index) {
+               dict[item] = index;
+          });
+
+        svg.append("g")
+          .attr("class", "axis")
+          .attr("transform", "translate(0," + height + ")")
+          .style("stroke-width", 1)
+          .call(xAxis);
+
+        //Add border
+        var borderPath = svg.append("rect")
+        .attr("x", 0)
+        .attr("y", 0)
+        .attr("height", height)
+        .attr("width", width)
+        .style("fill", "none")
+        .style("stroke-width", 1);
+
+        //Draw rectangles
+        var position = 0;
+        var heigthUsed = 0;
+
+        var timeslot;
+        var userSpeach;
+        var firstClick = 0;
+        var selected;
+
+        // Legend
+        topicStr.forEach(function (item, index) {
+               var div = document.createElement('div');
+               div.className = 'legend2';
+
+               var p = document.createElement('p');
+               p.className = 'country-name';
+               p.textContent = item;
+               div.appendChild(p);
+
+               var span = document.createElement('span');
+               span.className = 'key-dot';
+               span.style.backgroundColor = color(index)
+               
+               p.appendChild(span);
+               document.getElementById("legend").appendChild(div);
+          });
+
+        // Build the Mosaic
+        data.forEach(function(d) {
+            var boxH = height * d.topic_size;
+
+            if(d.slot > position){
+              position = d.slot;
+              heigthUsed = 0;
+            }
+
+            var identifier = dict[d.name]
+            var fcol = color(identifier);
+            var words = d.words;
+            var lsWords = words.split(" ");
+            var i;
+
+            //tiles
+            var rect = svg.append('rect')
+               .attrs({ x: xRange(d.slot), y: heigthUsed, width: xRange(d.slot + 1) - xRange(d.slot) + 1, height: boxH  })
+               .attr("id","s"+d.slot.toString()+"p"+identifier.toString())
+               .attr("fcol",fcol)
+               .style("fill",  fcol)
+               .style("stroke-width", 1)
+               // Click Interaction
+               .on('click', function(data,i) {
+                    if (firstClick === 1) {
+                        selected.style("fill",  selected.attr("fcol"));
+                        selected.style("fill-opacity", 1);
+                    }
+                    $('#transcript div').empty();
+                    // On click get articles and highlight
+                    fileList = d.filenames.split(" ");
+                    var htmlString ="";
+                    for (var i = 0; i < fileList.length; i++) {
+                       htmlString += articleJSON[fileList[i]].toLowerCase();;
+                    }
+                    for (var i = 0; i < lsWords.length; i++) {
+                       htmlString = htmlString.replaceAll($.trim(lsWords[i]), "<b class=\"contextText\" style=\" color:"+fcol+"; font-size:24px;\">"+lsWords[i]+"</b>")
+                    }
+
+                    var div = document.createElement('div');
+                    div.innerHTML = htmlString;
+                    document.getElementById("transcript").appendChild(div);
+
+                    selected=rect;
+                    rect.style("fill-opacity", 0.60);
+
+                    firstClick = 1;
+                  });
+
+            for (i = 0; i < lsWords.length; i++) { 
+                var text = lsWords[i];
+                svg.append("text")
+                  .attr("class", "label")
+                  .attr("x", xRange(d.slot) + ((xRange(d.slot+1) - xRange(d.slot) +1)/2) )
+                  .attr("y", heigthUsed + i*( (d.topic_size * height) / lsWords.length )+ ( (d.topic_size * height) / lsWords.length )/2  )
+                  //.attr("y", (height/12)/2 + (heigthUsed) + (height/12)*i  )
+                  .style("text-anchor", "middle")
+                  .style("font-size", "14px")
+                  .style("fill", "white") 
+                  .text(text)
+                  ;
+            }
+            heigthUsed = heigthUsed + boxH;
+      });
+
+
+      });
+    </script>
+
+ </body>
+</html>
+

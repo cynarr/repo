@@ -1,0 +1,37 @@
+name,time,words,time1,time2
+P1,0,chest gavisgon! pain awful supermacs,0.3167,0.3348
+D1,0,pain heartburn chest feeling feels,0.2817,0.2978
+N1,0,ed pains gaviscon indegestion hi,0.3476,0.3674
+P1,1,tummy! gaviscon pain aspirin! dont,0.4088,0.2932
+D1,1,crushing reflux pain sweating anything ,0.6690,0.4798
+N1,1,aspirin ecg spray tongue sure,0.3166,0.2270
+P1,2,heart attack blood brother something,-0.7341,5.2952
+D1,2,cardiac chest pain gtn take,-0.2201,1.5876
+N1,2,ecg doctor gnt ok ecg,0.5527,-3.9869
+D2,2,okay perfect yeah perfect ok,0.2628,-1.8959
+P1,3,blood sugar pressure inaudible,1.2697,0.6332
+D1,3,medications? Diabetes cholesterol? medications inaudible,0.2280,0.1137
+N1,3,morphine asthma dose much dose,0.3043,0.1518
+D2,3,double 5mgs think ill hmm,0.2032,0.1014
+P1,4,heartburne die heart picture like,0.3785,0.1264
+D1,4,breathing? scan get ok uh,2.1939,0.7330
+N1,4,Clopidogrel tablets aaspirin will be m ,0.3588,0.1199
+D2,4,yeah ok inaudible,0.0619,0.0207
+P1,5,morphine! needles! sweaty morphine pain,-1.7052,0.3662
+D1,5,breathing hba1c lipids morphine hmm,-1.4874,0.3194
+N1,5,ok dont ill inaudible try,-1.5750,0.3382
+D2,5,inaudible give somehmm antiemetic hmm,0.1107,-0.0238
+P1,6,sick morphine breath feel catch,2.2419,0.4097
+MedReg,6,patient fine ok wheres patient,0.0358,0.0065
+D1,6,oxygen cardiology call reg ed,2.6038,0.4759
+N1,6,bloods! nasal morphine pressure get,0.2396,0.0438
+D2,6,thightness oxygen put may masks,0.3504,0.0640
+P1,7,headache morphine pain please something,0.1989,0.2409
+D1,7,250mls pulse pressure reg minutes,0.3744,0.4536
+N1,7,dose morphine doctor blood sent anything,2.6072,3.1589
+D2,7,antiemetic systolic morphine? shes inaudible,-2.3551,-2.8534
+P1,8,moaning patient gaviscon get,0.0587,0.0168
+MedReg,8,ecg bloods something find bloods,0.1213,0.0346
+D1,8,troponines diabetes uh sent history,0.4700,0.1341
+N1,8,give ecg ill,0.1104,0.0315
+D2,8,300mgs aspirin well drugs aspirin,2.7435,0.7830
