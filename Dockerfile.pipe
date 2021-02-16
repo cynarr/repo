@@ -28,16 +28,13 @@ RUN poetry export -E usenews \
     ./install_rest.sh && \
     rm -rf /root/.cache
 
-# First copy only bare minimum to run setup_all
+# First copy only bare minimum to run setup_image
 COPY workflow/ ./workflow/
-RUN mkdir -p analysis mmmbgknow/utils/ && \
-    touch analysis/__init__.py mmmbgknow/__init__.py mmmbgknow/utils/__init__.py
+RUN mkdir -p analysis && \
+    touch analysis/__init__.py
 COPY analysis/sentiment_antonym_pair_util.py ./analysis/sentiment_antonym_pair_util.py
-COPY mmmbgknow/european.py ./mmmbgknow/european.py
-COPY mmmbgknow/utils/csv.py ./mmmbgknow/utils/csv.py
-COPY mmmbgknow/data ./mmmbgknow/data/
 
-RUN snakemake --cores 1 setup_all
+RUN snakemake --cores 1 setup_image
 
 COPY ingress ./ingress/
 COPY analysis/ ./analysis/

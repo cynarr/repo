@@ -16,11 +16,12 @@ rule get_country_mention:
 
 rule get_moral_sentiment_one:
     input:
-        COVIDSTATEBROADCASTER
+        corpus = COVIDSTATEBROADCASTER,
+        muse = MUSE_FETCHED
     output:
         pjoin(ANALYSES, "moral_sentiment.{lang}.jsonl.zstd")
     shell:
-        "zstdcat -T0 {input} | python -m analysis.moral_sentiment_baseline {lang} | zstd -T0 -14 -f - -o {output}"
+        "zstdcat -T0 {input.corpus} | python -m analysis.moral_sentiment_baseline {lang} | zstd -T0 -14 -f - -o {output}"
 
 
 rule get_moral_sentiment_all:
