@@ -46,7 +46,8 @@ rule download_mbert_tokenizer:
     run:
         from transformers import BertTokenizerFast
         tokenizer = BertTokenizerFast.from_pretrained(
-            "bert-base-multilingual-cased"
+            "bert-base-multilingual-cased",
+            cache_dir=pjoin(os.environ.get("TMPDIR", "/tmp/"), "transformerscache")
         ).save_pretrained(output[0])
 
 
