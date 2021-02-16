@@ -46,5 +46,5 @@ rule download_news_sentiment_model:
 
 rule setup_all:
     input:
-        generate_moral_sentiment_pairs.output,
-        download_news_sentiment_model.output
+        rules.generate_moral_sentiment_pairs.output,
+        rules.download_news_sentiment_model.output
