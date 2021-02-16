@@ -28,10 +28,13 @@ RUN poetry export -E usenews \
     ./install_rest.sh && \
     rm -rf /root/.cache
 
+COPY workflow/ ./workflow/
+
+RUN snakemake --cores 1 setup_all
+
 COPY ingress ./ingress/
 COPY analysis/ ./analysis/
 COPY mmmbgknow/ ./mmmbgknow/
-COPY workflow/ ./workflow/
 
 RUN echo "/opt/coviddash" > \
     /usr/local/lib/python3.7/dist-packages/coviddash.pth

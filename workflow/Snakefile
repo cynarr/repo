@@ -7,6 +7,7 @@ def cnf(name, val):
 
 cnf("WORK", "work")
 
+include: "rules/setup.smk"
 include: "rules/ingress.smk"
 include: "rules/mmmbgknow.smk"
 include: "rules/analysis.smk"
