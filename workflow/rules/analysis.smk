@@ -38,7 +38,7 @@ rule get_moral_sentiment_one:
 def all_moral_sentiments(wildcards):
     checkpoint_output = checkpoints.download_muse.get(**wildcards).output[0]
     langcode = glob_wildcards(pjoin(
-        checkpoint_output.output[0],
+        checkpoint_output,
         "wiki.multi.{langcode}.vec"
     )).langcode
     return expand(
