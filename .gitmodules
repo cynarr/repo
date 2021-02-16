@@ -1,3 +1,0 @@
-[submodule "submodules/embeddia_news_mbert"]
-	path = submodules/embeddia_news_mbert
-	url = https://github.com/PeliconA/news_sentiment_tool_embeddia.git
