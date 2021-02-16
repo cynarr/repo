@@ -34,6 +34,9 @@ RUN mkdir -p analysis && \
     touch analysis/__init__.py
 COPY analysis/sentiment_antonym_pair_util.py ./analysis/sentiment_antonym_pair_util.py
 
+RUN mkdir -p /opt/nltk_data
+ENV NLTK_DATA=/opt/nltk_data
+
 RUN snakemake --cores 1 fetch_wordnet
 
 COPY ingress ./ingress/
