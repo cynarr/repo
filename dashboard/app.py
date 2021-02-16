@@ -7,6 +7,8 @@ import dash_html_components as html
 import pandas as pd
 import dash_bootstrap_components as dbc
 import plotly.express as px
+import database_conn as db_conn
+
 
 __all__ = ["server"]
 
@@ -23,21 +25,11 @@ app = dash.Dash(
 
 server = app.server
 
-df = pd.DataFrame({
-    "Number of articles": [602, 100, 55, 3444, 500, 1000, 600, 100, 55, 3000, 500, 2654, 600, 100, 89, 2987, 500, 1345,
-                           600, 100, 55, 3212, 500, 1000, 55, 100, 55, 3222, 500, 899, 600],
-    "Sentiment": ["Positive", "Negative", "Positive", "Negative", "Positive", "Negative", "Positive", "Negative",
-    "Positive", "Negative", "Positive", "Negative", "Positive", "Negative", "Positive", "Negative", "Positive", "Negative",
-    "Positive", "Negative", "Positive", "Negative", "Positive", "Negative", "Positive", "Negative", "Positive", "Negative",
-    "Positive", "Negative", "Positive"]
-})
-x = ["2020-03-01", "2020-03-02","2020-03-03","2020-03-04","2020-03-05","2020-03-06","2020-03-07","2020-03-08","2020-03-09",
-      "2020-03-10","2020-03-11","2020-03-12","2020-03-13","2020-03-14","2020-03-15","2020-03-16","2020-03-17","2020-03-18",
-      "2020-03-19","2020-03-20","2020-03-21","2020-03-22","2020-03-23","2020-03-24","2020-03-25","2020-03-26","2020-03-27",
-      "2020-03-28","2020-03-29","2020-03-30","2020-03-31"]
+df = db_conn.get_sentiment_hist_df({'start_date': '2020-01-01', 'end_date': '2020-05-01'})
 
-fig_timeline = px.histogram(df, x=x, y="Number of articles", color="Sentiment", barmode="stack",
-                            title="News sentiment on the COVID-19 pandemic in March 2020", nbins=31)
+fig_timeline = px.histogram(df, x="date", y="Number of articles", color="Sentiment", barmode="stack",
+                            title="News sentiment on the COVID-19 pandemic in March 2020")
+
 
 fig_timeline.update_layout(
     xaxis=dict(
