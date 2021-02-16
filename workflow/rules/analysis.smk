@@ -6,7 +6,7 @@ MORAL_SENTIMENT_ALL = [pjoin(ANALYSES, f"moral_sentiment.{lang}.jsonl.zstd") for
 cnf("COVIDSTATEBROADCASTERFILTERED", pjoin(WORK, "covidstatebroadcaster.filtered.jsonl.zstd"))
 
 
-rule get_covid_statebroadcaster:
+rule filter_statebroadcaster:
     input:
         COVIDSTATEBROADCASTER
     output:
