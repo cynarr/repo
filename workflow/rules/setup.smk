@@ -25,7 +25,7 @@ rule get_mft_dictionary:
     output:
         MFD20
     shell:
-        "curl -J -L https://osf.io/whjt2/download > {output}"
+        "wget -o {output} https://osf.io/whjt2/download"
 
 
 rule generate_moral_sentiment_pairs:
