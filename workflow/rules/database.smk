@@ -25,7 +25,7 @@ rule load_mbert_sentiment:
 rule load_moral_sentiment:
     input:
         database = DATABASE,
-        jsonls = dynamic(pjoin(ANALYSES, "moral_sentiment.{lang}.jsonl.zstd"))
+        jsonls = all_moral_sentiments
     output:
         touch(pjoin(DATABASE_DIR, ".moral_sentiment_imported"))
     shell:

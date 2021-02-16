@@ -58,9 +58,9 @@ rule download_news_sentiment_model:
         "wget -nv -O {output} https://a3s.fi/swift/v1/AUTH_d9eb9f26c2514801b54f21e00f15f5d4/mbert_news_sentiment/pytorch_model.bin"
 
 
-rule download_muse:
+checkpoint download_muse:
     output:
-        dynamic(pjoin(MUSE, "wiki.multi.{langcode}.vec"))
+        directory(MUSE)
     run:
         from mmmbgknow.european import LANGDETECT_EURO_LANGAUGES
         shell(f"mkdir -p {MUSE}")

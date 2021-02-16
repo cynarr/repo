@@ -17,7 +17,7 @@ rule get_country_mention:
 rule get_moral_sentiment_one:
     input:
         corpus = COVIDSTATEBROADCASTER,
-        muse = dynamic(pjoin(MUSE, "wiki.multi.{langcode}.vec")),
+        muse = pjoin(MUSE, "wiki.multi.{langcode}.vec"),
         mft_sentiment_word_pairs = MFT_SENTIMENT_WORD_PAIRS
     output:
         pjoin(ANALYSES, "moral_sentiment.{lang}.jsonl.zstd")
@@ -25,9 +25,21 @@ rule get_moral_sentiment_one:
         "zstdcat -T0 {input.corpus} | MFT_SENTIMENT_WORD_PAIRS={input.mft_sentiment_word_pairs} python -m analysis.moral_sentiment_baseline {lang} | zstd -T0 -14 -f - -o {output}"
 
 
+def all_moral_sentiments(wildcards):
+    checkpoint_output = checkpoints.download_muse.get(**wildcards).output[0]
+    langcode = glob_wildcards(pjoin(
+        checkpoint_output.output[0],
+        "wiki.multi.{langcode}.vec"
+    )).langcode
+    return expand(
+        pjoin(ANALYSES, "moral_sentiment.{lang}.jsonl.zstd"),
+        lang=langcode
+    )
+
+
 rule get_moral_sentiment_all:
     input:
-        dynamic(pjoin(ANALYSES, "moral_sentiment.{lang}.jsonl.zstd"))
+        all_moral_sentiments
     output:
         touch(pjoin(ANALYSES, ".moral_sentiment_all"))
 
