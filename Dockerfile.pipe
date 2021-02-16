@@ -35,6 +35,7 @@ RUN mkdir -p analysis mmmbgknow/utils/ && \
 COPY analysis/sentiment_antonym_pair_util.py ./analysis/sentiment_antonym_pair_util.py
 COPY mmmbgknow/european.py ./mmmbgknow/european.py
 COPY mmmbgknow/utils/csv.py ./mmmbgknow/utils/csv.py
+COPY mmmbgknow/data ./mmmbgknow/data/
 
 RUN snakemake --cores 1 setup_all
 
