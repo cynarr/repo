@@ -28,7 +28,11 @@ RUN poetry export -E usenews \
     ./install_rest.sh && \
     rm -rf /root/.cache
 
+# First copy only bare minimum to run setup_all
 COPY workflow/ ./workflow/
+RUN mkdir -p analysis
+RUN touch analysis/__init__.py
+COPY analysis/sentiment_antonym_pair_util.py ./analysis/sentiment_antonym_pair_util.py
 
 RUN snakemake --cores 1 setup_all
 
