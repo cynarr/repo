@@ -41,6 +41,4 @@ COPY analysis/ ./analysis/
 COPY mmmbgknow/ ./mmmbgknow/
 
 RUN echo "/opt/coviddash" > \
-    /usr/local/lib/python3.7/dist-packages/coviddash.pth
-
-RUN ln -sf /usr/bin/python3.7 /usr/bin/python
+    /opt/conda/lib/python3.8/site-packages/coviddash.pth
