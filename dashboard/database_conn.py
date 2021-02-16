@@ -4,7 +4,7 @@ import datetime
 import time
 
 
-def generate_where_conditions(conditions):
+def generate_where_conditions(conditions): # TODO: switch conditions dict to kwargs
     where_parts = []
 
     if 'start_date' in conditions and 'end_date' in conditions:
@@ -12,6 +12,9 @@ def generate_where_conditions(conditions):
         end = int(time.mktime(datetime.datetime.strptime(conditions['end_date'], "%Y-%m-%d").timetuple()))
 
         where_parts.append(f"d.date_publish > {start} AND d.date_publish < {end}")
+
+    if 'language' in conditions and len(conditions['language']) > 0:
+        where_parts.append(f"d.language = '{conditions['language']}'")
 
     if len(where_parts) > 0:
         return "WHERE " + " AND ".join(where_parts)
@@ -33,10 +36,13 @@ def get_sentiment_hist_df(conditions = {}):
         df["Sentiment"] = "Positive" 
     return df
 
-def get_moral_sentiment_hist_df():
+def get_moral_sentiment_hist_df(conditions = {}):
+    where_clause = generate_where_conditions(conditions)
+
     with sqlite3.connect("database/database.db", check_same_thread=False) as conn:
         query = " ".join([
             f"SELECT date_publish, sentiment_type, score FROM documents AS d JOIN moral_sentiment_scores AS m ON d.canon_url = m.canon_url",
+            where_clause,
             "ORDER BY d.date_publish"
         ])
         df = pd.read_sql_query(query, conn)
@@ -47,4 +53,4 @@ def get_moral_sentiment_hist_df():
         .reset_index())
 
 if __name__ == "__main__":
-    print(get_moral_sentiment_hist_df())
+    print(get_moral_sentiment_hist_df({'start_date': "2020-03-01", 'end_date': "2020-03-02"}))
