@@ -164,6 +164,9 @@ if __name__ == '__main__':
         json_obj["proj_sentiment"] = {}
         
         doc_matrix = create_doc_matrix(tokens, src_embeddings, src_word2id)
+
+        if not len(doc_matrix):
+            continue
         enc_doc = encode(doc_matrix, src_embeddings, src_word2id)
         
         try:
