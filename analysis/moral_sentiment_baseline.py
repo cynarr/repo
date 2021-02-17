@@ -6,7 +6,6 @@ import sys
 import os.path
 from os import path
 import pickle
-import scipy.linalg
 from nltk.tokenize import word_tokenize
 import traceback
 
@@ -92,23 +91,6 @@ def multilingual_encode(tokens, src_emb, src_word2id, tgt_emb, tgt_word2id):
     enc = np.array(enc)
     return np.cov(enc.T)
 
-def frobenius_cosine(A, B):
-    """Computes normalized Frobenius inner product"""
-
-    return np.sum(A * B, axis=(1, 2)) / (np.sqrt(np.sum(A * A, axis=(1, 2))) * np.sqrt(np.sum(B * B, axis=(1, 2))))
-
-def bures_distance(A, B):
-    """Computes Bures-Wasserstein distance that should match to word movers distance
-    
-    Implemented following https://arxiv.org/pdf/1712.01504.pdf. Seems to be numerically instabile
-    """
-    
-    A_sqrt = scipy.linalg.sqrtm(A)
-    AB_sqrt = scipy.linalg.sqrtm(A_sqrt @ B @ A_sqrt)
-    distance = np.sqrt(np.trace(A) + np.trace(B) - 2 * np.trace(AB_sqrt))
-
-    return np.real(distance)
-
 if __name__ == '__main__':
     if len(sys.argv) < 2:
         print("Error: Input language code to use e.g. 'de'", file=sys.stderr)
@@ -155,8 +137,6 @@ if __name__ == '__main__':
 
         canon_url = doc["canon_url"]
         json_obj["canon_url"] = canon_url 
-        json_obj["bures_sentiment"] = {}
-        json_obj["frob_sentiment"] = {}
         json_obj["proj_sentiment"] = {}
         
         doc_matrix = create_doc_matrix(tokens, src_embeddings, src_word2id)
@@ -166,12 +146,6 @@ if __name__ == '__main__':
         enc_doc = encode(doc_matrix, src_embeddings, src_word2id)
         
         try:
-            for moral_id in moral_docs:
-                sentiment_score = frobenius_cosine(moral_docs[moral_id][None], enc_doc[None])[0]
-                bures_sentiment_score = bures_distance(moral_docs[moral_id], enc_doc)
-                json_obj["frob_sentiment"][mft_cat[moral_id]] = sentiment_score
-                json_obj["bures_sentiment"][mft_cat[moral_id]] = bures_sentiment_score
-            
             for moral_dim in moral_dims:
                 json_obj["proj_sentiment"][moral_dim] = project_document_to_moral_dim(doc_matrix, moral_dims[moral_dim])
             
