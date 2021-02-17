@@ -4,7 +4,7 @@ import pandas as pd
 import datetime
 import time
 from contextlib import contextmanager
-
+import pycountry
 
 DATABASE_PATH = os.environ.get("DATABASE_PATH", "database/database.db")
 
@@ -33,7 +33,7 @@ def get_available_languages():
         cursor = conn.execute(query)
         for language in cursor:
             language = language[0]
-            proper_language_name = language # TODO: map to proper language name
+            proper_language_name = pycountry.countries.get(alpha_2=language).name
             languages.append((proper_language_name, language))
     return languages
 
@@ -90,7 +90,6 @@ def get_moral_sentiment_hist_df(conditions = {}):
 
 
 def alpha2_to_alpha3(cc2):
-    import pycountry
     return pycountry.countries.get(alpha_2=cc2).alpha_3
 
 
