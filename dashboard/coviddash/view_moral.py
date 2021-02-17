@@ -39,8 +39,9 @@ def update_moral_graph(start_date, end_date, language, sentiment_type):
     fig = px.bar(df, x="date", y="sum", color="sentiment_type", barmode="group")
     return fig
 
+
 @app.callback(
-    dash.dependencies.Output('ms-map-graph', 'figure'),
+    dash.dependencies.Output('ms-maps', 'children'),
     [dash.dependencies.Input('ms-date-picker-range', 'start_date'),
      dash.dependencies.Input('ms-date-picker-range', 'end_date'),
      dash.dependencies.Input('ms-language-dropdown', 'value'),
@@ -61,13 +62,20 @@ def update_moral_map(start_date, end_date, language, sentiment_type):
         'sentiment_type': sentiment_type
     })
 
-    fig = px.choropleth(map_df, locations="country_iso3",
-                            color="doc_count",
-                            hover_name="country", 
-                            scope="europe",
-                            height=1000,
-                            color_continuous_scale=px.colors.sequential.Plasma)
-    return fig
+    figs = []
+    for i, sent in enumerate(map_df['sentiment_type'].unique()):
+        fig = px.choropleth(map_df[map_df['sentiment_type'] == sent], locations="country_iso3",
+                                color="doc_count",
+                                hover_name="country", 
+                                scope="europe",
+                                height=1000,
+                                color_continuous_scale=px.colors.sequential.Plasma,
+                                title=f"{sent} sentiment")      
+
+        figs.append(dcc.Graph(id=f'ms-map-graph{i}', figure=fig))
+
+    return html.Div(figs)
+
 
 layout = html.Div([
     html.H3(children='Filters'),
@@ -96,7 +104,7 @@ layout = html.Div([
     dcc.Graph(
         id='ms-timeline-graph'
     ),
-    dcc.Graph(
-        id='ms-map-graph'
+    html.Div(
+        id='ms-maps'
     )
 ])
