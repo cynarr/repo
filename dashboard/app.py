@@ -96,13 +96,6 @@ fig_map = px.choropleth(locations=["UK", "Finland", "Sweden"], locationmode="ISO
 app.layout = html.Div(children=[
     html.H1(children='COVID-19 European news dashboard'),
 
-    html.Div(children='''
-        EMBEDDIA Hackathon 2021
-    '''),
-
-    html.Div(children='''
-    Mood-Mapping Muppets
-'''),
     html.H3(children='Filters'),
 
     html.Div([
