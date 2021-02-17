@@ -93,38 +93,74 @@ def update_moral_graph(start_date, end_date, value):
 fig_map = px.choropleth(locations=["UK", "Finland", "Sweden"], locationmode="ISO-3", scope="europe",
                         width=1000, height=1000, color_continuous_scale="Blues")
 
-app.layout = html.Div(children=[
-    html.H1(children='COVID-19 European news dashboard'),
+page_layouts = {
+    "/": html.Div([
+        html.H3(children='Filters'),
 
-    html.H3(children='Filters'),
+        html.Div([
+            dcc.DatePickerRange(
+                id='my-date-picker-range',
+                display_format='YYYY-MM-DD',
+                min_date_allowed=config_min_date,
+                max_date_allowed=config_max_date,
+                initial_visible_month=config_min_date,
+                start_date=config_min_date,
+                end_date=config_max_date
+            ), 
+            dcc.Dropdown(
+                id='language-dropdown',
+                options=config_available_languages,
+                value=''
+            )
+        ]),
 
-    html.Div([
-        dcc.DatePickerRange(
-            id='my-date-picker-range',
-            display_format='YYYY-MM-DD',
-            min_date_allowed=config_min_date,
-            max_date_allowed=config_max_date,
-            initial_visible_month=config_min_date,
-            start_date=config_min_date,
-            end_date=config_max_date
-        ), 
-        dcc.Dropdown(
-            id='language-dropdown',
-            options=config_available_languages,
-            value=''
+        dcc.Graph(
+            id='timeline-graph'
+        ),
+        dcc.Graph(
+            id='moral-graph'
+        ),
+        dcc.Graph(
+            id='map-graph',
+            figure=fig_map
         )
     ]),
+    "/mentions/": html.Div([
+        html.H3(children='Filters'),
 
-    dcc.Graph(
-        id='timeline-graph'
+        dcc.Graph(
+            id='map-graph',
+            figure=fig_map
+        )
+    ])
+}
+
+@app.callback(dash.dependencies.Output('page-content', 'children'),
+              [dash.dependencies.Input('url', 'pathname')])
+def page_router(pathname):
+    return page_layouts.get(pathname, page_layouts["/"])
+
+
+app.layout = html.Div(children=[
+    dcc.Location(id='url', refresh=False),
+
+    dbc.NavbarSimple(
+        children=[
+            dbc.NavItem(dbc.NavLink("News from: countries", href="/")),
+            dbc.NavItem(dbc.NavLink("News @mentioning countries", href="/mentions/")),
+        ],
+        brand="COVID-19 mood map",
+        brand_href="/",
+        color="primary",
+        dark=True,
     ),
-    dcc.Graph(
-        id='moral-graph'
-    ),
-    dcc.Graph(
-        id='map-graph',
-        figure=fig_map
-    )
+
+    dbc.Container([html.Div(id="page-content")])
+])
+
+app.validation_layout = html.Div([
+    app.layout,
+    *page_layouts.values(),
 ])
 
 if __name__ == '__main__':
