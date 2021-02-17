@@ -36,8 +36,9 @@ rule get_moral_sentiment_one:
     output:
         moral_sentiment = pjoin(ANALYSES, "moral_sentiment.{lang}.jsonl.zstd")
     log:
-        error_log = pjoin("moral_sentiment.{lang}.error.log")
+        error_log = pjoin(LOG, "moral_sentiment.{lang}.error.log")
     shell:
+        "mkdir -p " + LOG + " && "
         "zstdcat -T0 {input.corpus} | MFT_SENTIMENT_WORD_PAIRS={input.mft_sentiment_word_pairs} MFD20={input.mfd20} MUSE={input.muse_base} ERRORLOG={log.error_log} python -m analysis.moral_sentiment_baseline {wildcards.lang} | zstd -T0 -14 -f - -o {output.moral_sentiment}"
 
 
