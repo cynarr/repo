@@ -1,4 +1,4 @@
-import json 
+import json
 import numpy as np
 import io
 from collections import defaultdict
@@ -7,8 +7,7 @@ import os.path
 from os import path
 import pickle
 import scipy.linalg
-import pickle
-import requests
+from nltk.tokenize import word_tokenize
 
 
 MFT_SENTIMENT_WORD_PAIRS = os.environ.get("MFT_SENTIMENT_WORD_PAIRS", "data/mft_sentiment_word_pairs.pkl")
@@ -70,10 +69,6 @@ def load_mft_dictionary(path):
         items[int(cat_id)].append(word)
 
     return items, categories
-
-def tokenize(text):
-    tokens = text.split()
-    return tokens
 
 def create_doc_matrix(tokens, src_emb, src_word2id):
     return np.array([src_emb[src_word2id[t]] for t in tokens if t in src_word2id])
@@ -153,7 +148,7 @@ if __name__ == '__main__':
         json_obj = {}        
         if doc["language"] != language_code:
             continue
-        tokens = tokenize(maintext)
+        tokens = word_tokenize(maintext)
         if not tokens:
             continue
 

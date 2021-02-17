@@ -31,7 +31,8 @@ rule get_moral_sentiment_one:
         muse = pjoin(MUSE, "wiki.multi.{lang}.vec"),
         mft_sentiment_word_pairs = MFT_SENTIMENT_WORD_PAIRS,
         mfd20 = MFD20,
-        muse_base = MUSE
+        muse_base = MUSE,
+        nltk_res = rules.fetch_nltk_resources.output
     output:
         error_log = pjoin("moral_sentiment.{lang}.error.log"),
         moral_sentiment = pjoin(ANALYSES, "moral_sentiment.{lang}.jsonl.zstd")
