@@ -5,7 +5,7 @@ DATABASE = pjoin(DATABASE_DIR, "database.db")
 
 rule create_db:
     input:
-        DATABASE_SCHEMA 
+        ancient(DATABASE_SCHEMA)  # Must manually delete database to rebuild
     output:
         DATABASE
     shell:

@@ -34,7 +34,7 @@ rule get_mft_dictionary:
 rule generate_moral_sentiment_pairs:
     input:
         mdf = MFD20,
-        nltk_res = rules.fetch_nltk_resources.output
+        nltk_res = ancient(rules.fetch_nltk_resources.output)
     output:
         MFT_SENTIMENT_WORD_PAIRS
     shell:
