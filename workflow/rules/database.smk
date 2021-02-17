@@ -15,56 +15,52 @@ rule create_db:
 
 rule load_documents:
     input:
-        database = DATABASE,
+        prev = rules.create_db.output,
         jsonl = COVIDSTATEBROADCASTERFILTERED
     output:
         touch(pjoin(DATABASE_DIR, ".documents"))
     shell:
-        "zstdcat -T0 {input.jsonl} | python -m database.digest_document_jsonl {input.database}"
+        "zstdcat -T0 {input.jsonl} | python -m database.digest_document_jsonl " + DATABASE
 
 
 
 rule load_mbert_sentiment:
     input:
         prev = rules.load_documents.output,
-        database = DATABASE,
         jsonl = MBERT_SENTIMENT
     output:
         touch(pjoin(DATABASE_DIR, ".mbert_sentiment_imported"))
     shell:
-        "zstdcat -T0 {input.jsonl} | python -m database.digest_mbert_sentiment_jsonl {input.database}"
+        "zstdcat -T0 {input.jsonl} | python -m database.digest_mbert_sentiment_jsonl " + DATABASE
 
 
 rule load_moral_sentiment:
     input:
         prev = rules.load_mbert_sentiment.output,
-        database = DATABASE,
         jsonls = all_moral_sentiments
     output:
         touch(pjoin(DATABASE_DIR, ".moral_sentiment_imported"))
     shell:
-        "zstdcat -T0 {input.jsonls} | python -m database.digest_moral_sentiment_jsonl {input.database}"
+        "zstdcat -T0 {input.jsonls} | python -m database.digest_moral_sentiment_jsonl " + DATABASE
 
 
 rule load_country_mentions:
     input:
         prev = rules.load_moral_sentiment.output,
-        database = DATABASE,
         jsonl = MBERT_SENTIMENT
     output:
         touch(pjoin(DATABASE_DIR, ".country_mentions_imported"))
     shell:
-        "zstdcat -T0 {input.jsonl} | python -m database.digest_country_mentions_jsonl {input.database}"
+        "zstdcat -T0 {input.jsonl} | python -m database.digest_country_mentions_jsonl " + DATABASE
 
 
 rule finalise_db:
     input:
-        prev = rules.load_country_mentions.output,
-        database = DATABASE,
+        prev = rules.load_country_mentions.output
     output:
         touch(pjoin(DATABASE_DIR, ".db_finalised"))
     shell:
-        "echo 'PRAGMA synchronous = NORMAL;' | sqlite3 {output}"
+        "echo 'PRAGMA synchronous = NORMAL;' | sqlite3 " + DATABASE
 
 
 rule database_all:
