@@ -11,9 +11,9 @@ import pickle
 import requests
 
 
-MFT_SENTIMENT_WORD_PAIRS = os.envion.get("MFT_SENTIMENT_WORD_PAIRS", "data/mft_sentiment_word_pairs.pkl")
-MFT20 = os.envion.get("MFT20", "data/mfd2.0.dic")
-MUSE = os.envion.get("MUSE", "data/muse")
+MFT_SENTIMENT_WORD_PAIRS = os.environ.get("MFT_SENTIMENT_WORD_PAIRS", "data/mft_sentiment_word_pairs.pkl")
+MFT20 = os.environ.get("MFT20", "data/mfd2.0.dic")
+MUSE = os.environ.get("MUSE", "data/muse")
 
 
 def load_vec(emb_path, nmax=50000):
