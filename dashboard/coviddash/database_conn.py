@@ -33,7 +33,7 @@ def get_available_languages():
         cursor = conn.execute(query)
         for language in cursor:
             language = language[0]
-            proper_language_name = pycountry.countries.get(alpha_2=language).name
+            proper_language_name = pycountry.languages.get(alpha_2=language).name
             languages.append((proper_language_name, language))
     return languages
 
