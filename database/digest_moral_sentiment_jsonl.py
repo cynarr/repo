@@ -7,8 +7,11 @@ import sys
 if __name__ == '__main__':
     conn = sqlite3.connect(sys.argv[1])
     c = conn.cursor()
+    counter = 0
 
     for line in sys.stdin:
+        counter += 1
+
         doc = json.loads(line.strip())
         canon_url = doc['canon_url']
 
@@ -18,6 +21,9 @@ if __name__ == '__main__':
                 c.execute(f"INSERT INTO moral_sentiment_scores(canon_url, sentiment_type, score) VALUES (?, ?, ?)", (canon_url, sentiment_name, sent_score))
             except sqlite3.IntegrityError:
                 print(f"Duplicate entry for '{canon_url}'")
+
+        if counter % 5000 == 0:  # Commit changes every now and then
+            conn.commit()
     
     conn.commit()
     conn.close()

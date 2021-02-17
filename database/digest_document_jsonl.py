@@ -34,8 +34,8 @@ if __name__ == '__main__':
             print("Error:", err)
             exit()
 
-        if counter % 100: # Commit changes every now and then
-            conn.commit()            
+        if counter % 5000 == 0:  # Commit changes every now and then
+            conn.commit()
 
     conn.commit()
     conn.close()

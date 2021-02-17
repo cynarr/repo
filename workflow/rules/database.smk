@@ -9,7 +9,8 @@ rule create_db:
     output:
         DATABASE
     shell:
-        "cat {input} | sqlite3 {output}"
+        "cat {input} | sqlite3 {output} && "
+        "echo 'PRAGMA journal_mode = WAL; PRAGMA synchronous = OFF;' | sqlite3 {output}"
 
 
 rule load_documents:
@@ -56,9 +57,20 @@ rule load_country_mentions:
         "zstdcat -T0 {input.jsonl} | python -m database.digest_country_mentions_jsonl {input.database}"
 
 
+rule finalise_db:
+    input:
+        prev = rules.load_country_mentions.output,
+        database = DATABASE,
+    output:
+        touch(pjoin(DATABASE_DIR, ".db_finalised"))
+    shell:
+        "echo 'PRAGMA synchronous = NORMAL;' | sqlite3 {output}"
+
+
 rule database_all:
     input:
         rules.load_documents.output,
         rules.load_mbert_sentiment.output,
         rules.load_moral_sentiment.output,
-        rules.load_country_mentions.output
+        rules.load_country_mentions.output,
+        rules.finalise_db.output
