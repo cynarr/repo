@@ -122,8 +122,8 @@ if __name__ == '__main__':
     language_code = sys.argv[1]
 
     # Get multilingual embeddings from https://github.com/facebookresearch/MUSE
-    src_embeddings, src_id2word, src_word2id = load_vec(os.path.join(MUSE, "/wiki.multi.en.vec"), vocab_count)
-    tgt_embeddings, tgt_id2word, tgt_word2id = load_vec(os.path.join(MUSE, f"/wiki.multi.{language_code}.vec"), vocab_count)
+    src_embeddings, src_id2word, src_word2id = load_vec(os.path.join(MUSE, "wiki.multi.en.vec"), vocab_count)
+    tgt_embeddings, tgt_id2word, tgt_word2id = load_vec(os.path.join(MUSE, f"wiki.multi.{language_code}.vec"), vocab_count)
 
     # Compute moral dimensions, compute the .pkl file with with analysis/sentiment_antonym_pair_util.py
     with open(MFT_SENTIMENT_WORD_PAIRS, "rb") as fp:
