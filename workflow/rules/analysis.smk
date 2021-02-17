@@ -28,11 +28,13 @@ rule get_moral_sentiment_one:
     input:
         corpus = COVIDSTATEBROADCASTERFILTERED,
         muse = pjoin(MUSE, "wiki.multi.{lang}.vec"),
-        mft_sentiment_word_pairs = MFT_SENTIMENT_WORD_PAIRS
+        mft_sentiment_word_pairs = MFT_SENTIMENT_WORD_PAIRS,
+        mdf20 = MFD20,
+        muse = MUSE
     output:
         pjoin(ANALYSES, "moral_sentiment.{lang}.jsonl.zstd")
     shell:
-        "zstdcat -T0 {input.corpus} | MFT_SENTIMENT_WORD_PAIRS={input.mft_sentiment_word_pairs} python -m analysis.moral_sentiment_baseline {wildcards.lang} | zstd -T0 -14 -f - -o {output}"
+        "zstdcat -T0 {input.corpus} | MFT_SENTIMENT_WORD_PAIRS={input.mft_sentiment_word_pairs} MFD20={input.mfd20} MUSE={input.muse} python -m analysis.moral_sentiment_baseline {wildcards.lang} | zstd -T0 -14 -f - -o {output}"
 
 
 def all_moral_sentiments(wildcards):

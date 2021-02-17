@@ -11,6 +11,11 @@ import pickle
 import requests
 
 
+MFT_SENTIMENT_WORD_PAIRS = os.envion.get("MFT_SENTIMENT_WORD_PAIRS", "data/mft_sentiment_word_pairs.pkl")
+MFT20 = os.envion.get("MFT20", "data/mfd2.0.dic")
+MUSE = os.envion.get("MUSE", "data/muse")
+
+
 def load_vec(emb_path, nmax=50000):
     vectors = []
     word2id = {}
@@ -117,16 +122,16 @@ if __name__ == '__main__':
     language_code = sys.argv[1]
 
     # Get multilingual embeddings from https://github.com/facebookresearch/MUSE
-    src_embeddings, src_id2word, src_word2id = load_vec("data/muse/wiki.multi.en.vec", vocab_count)
-    tgt_embeddings, tgt_id2word, tgt_word2id = load_vec(f"data/muse/wiki.multi.{language_code}.vec", vocab_count)
+    src_embeddings, src_id2word, src_word2id = load_vec(os.path.join(MUSE, "/wiki.multi.en.vec"), vocab_count)
+    tgt_embeddings, tgt_id2word, tgt_word2id = load_vec(os.path.join(MUSE, f"/wiki.multi.{language_code}.vec"), vocab_count)
 
     # Compute moral dimensions, compute the .pkl file with with analysis/sentiment_antonym_pair_util.py
-    with open(os.envion.get("MFT_SENTIMENT_WORD_PAIRS", "data/mft_sentiment_word_pairs.pkl"), "rb") as fp:
+    with open(MFT_SENTIMENT_WORD_PAIRS, "rb") as fp:
         moral_word_pairs = pickle.load(fp)
         moral_dims = compute_moral_dimensions(moral_word_pairs, src_embeddings, src_word2id, tgt_embeddings, tgt_word2id)
 
     # Get MFT dictionary from https://osf.io/whjt2/
-    mft_dict, mft_cat = load_mft_dictionary("data/mfd2.0.dic")
+    mft_dict, mft_cat = load_mft_dictionary(MFT20)
     moral_docs = {}
 
     if path.exists(f".tmp/moral_doc_cache_{language_code}.pkl"):
