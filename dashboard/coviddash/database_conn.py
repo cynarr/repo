@@ -49,6 +49,9 @@ def generate_where_conditions(conditions): # TODO: switch conditions dict to kwa
     if 'language' in conditions and len(conditions['language']) > 0:
         where_parts.append(f"d.language = '{conditions['language']}'")
 
+    if 'mentions' in conditions:
+        where_parts.append(f"d.mention_country ='{conditions['mentions']}'")
+
     if len(where_parts) > 0:
         return "WHERE " + " AND ".join(where_parts)
 
@@ -84,6 +87,48 @@ def get_moral_sentiment_hist_df(conditions = {}):
     return (df.groupby(['date', 'sentiment_type'])['score']
         .agg(['sum','count'])
         .reset_index())
+
+
+def alpha2_to_alpha3(cc2):
+    import pycountry
+    return pycountry.countries.get(alpha_2=cc2).alpha_3
+
+
+def add_iso3_col(df, country_col, iso3_col="country_iso3"):
+    df[iso3_col] = df[country_col].map(alpha2_to_alpha3)
+
+
+def get_country_pos_neg_sentiment_counts(conditions):
+    where_clause = generate_where_conditions(conditions)
+
+    with db_connection() as conn:
+        query = " ".join([
+            "SELECT country, sentiment, COUNT(d.document_id) AS doc_count",
+            "FROM documents AS d",
+            "JOIN mbert_sentiment AS m ON d.document_id = m.document_id",
+            where_clause,
+            "GROUP BY country, sentiment",
+        ])
+        df = pd.read_sql_query(query, conn)
+    add_iso3_col(df, "country")
+    return df
+
+
+def get_country_mention_pos_neg_sentiment_counts(conditions):
+    where_clause = generate_where_conditions(conditions)
+
+    with db_connection() as conn:
+        query = " ".join([
+            "SELECT mention_country, sentiment, COUNT(d.document_id) AS doc_count",
+            "FROM documents AS d",
+            "JOIN mbert_sentiment AS m ON d.document_id = m.document_id",
+            "JOIN country_mentions as cm ON cm.document_id = m.document_id",
+            where_clause,
+            "GROUP BY mention_country, sentiment",
+        ])
+        df = pd.read_sql_query(query, conn)
+    add_iso3_col(df, "mention_country")
+    return df
 
 
 if __name__ == "__main__":

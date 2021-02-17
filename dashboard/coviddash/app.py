@@ -14,11 +14,7 @@ from datetime import date
 from .base import app
 from . import database_conn as db_conn
 from .mentions import layout as mentions_layout
-
-# Load configs for filters
-config_available_languages = [{'label': 'All', 'value': ''}] 
-config_available_languages += [{'label': pl, 'value': l} for pl, l in db_conn.get_available_languages()]
-config_min_date, config_max_date = [date.fromtimestamp(ts) for ts in db_conn.get_min_and_max_dates()]
+from .common import config_available_languages, config_min_date, config_max_date
 
 __all__ = ["server"]
 
