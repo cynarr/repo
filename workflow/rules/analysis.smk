@@ -32,7 +32,7 @@ rule get_moral_sentiment_one:
     output:
         pjoin(ANALYSES, "moral_sentiment.{lang}.jsonl.zstd")
     shell:
-        "zstdcat -T0 {input.corpus} | MFT_SENTIMENT_WORD_PAIRS={input.mft_sentiment_word_pairs} python -m analysis.moral_sentiment_baseline {lang} | zstd -T0 -14 -f - -o {output}"
+        "zstdcat -T0 {input.corpus} | MFT_SENTIMENT_WORD_PAIRS={input.mft_sentiment_word_pairs} python -m analysis.moral_sentiment_baseline {wildcards.lang} | zstd -T0 -14 -f - -o {output}"
 
 
 def all_moral_sentiments(wildcards):
