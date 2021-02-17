@@ -147,6 +147,9 @@ if __name__ == '__main__':
 
     for line in sys.stdin:
         doc = json.loads(line.strip())
+        maintext = doc["maintext"]
+        if not maintext:
+            continue
         json_obj = {}        
         if doc["language"] == language_code:
             json_obj["canon_url"] = doc["canon_url"]
@@ -154,7 +157,7 @@ if __name__ == '__main__':
             json_obj["frob_sentiment"] = {}
             json_obj["proj_sentiment"] = {}
             
-            doc_matrix = create_doc_matrix(tokenize(doc["maintext"]), src_embeddings, src_word2id)
+            doc_matrix = create_doc_matrix(tokenize(maintext), src_embeddings, src_word2id)
             enc_doc = encode(doc_matrix, src_embeddings, src_word2id)
             
             for moral_id in moral_docs:
