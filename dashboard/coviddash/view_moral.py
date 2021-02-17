@@ -11,16 +11,17 @@ from datetime import date
 from .base import app
 from . import database_conn as db_conn
 from .mentions import layout as mentions_layout
-from .common import config_available_languages, config_min_date, config_max_date
+from .common import config_available_languages, config_min_date, config_max_date, config_available_sentiments
 
 __all__ = ["layout"]
 
 @app.callback(
-    dash.dependencies.Output('moral-graph', 'figure'),
-    [dash.dependencies.Input('my-date-picker-range', 'start_date'),
-     dash.dependencies.Input('my-date-picker-range', 'end_date'),
-     dash.dependencies.Input('language-dropdown', 'value')])
-def update_moral_graph(start_date, end_date, value):
+    dash.dependencies.Output('ms-timeline-graph', 'figure'),
+    [dash.dependencies.Input('ms-date-picker-range', 'start_date'),
+     dash.dependencies.Input('ms-date-picker-range', 'end_date'),
+     dash.dependencies.Input('ms-language-dropdown', 'value'),
+     dash.dependencies.Input('ms-sentiment-dropdown', 'value')])
+def update_moral_graph(start_date, end_date, language, sentiment_type):
     start_date_object = "1970-01-01"
     end_date_object = "2100-01-01"
 
@@ -32,26 +33,48 @@ def update_moral_graph(start_date, end_date, value):
     df = db_conn.get_moral_sentiment_hist_df({
         'start_date': str(start_date_object), 
         'end_date': str(end_date_object),
-        'language': value
+        'language': language,
+        'sentiment_type': sentiment_type
     })
     fig = px.bar(df, x="date", y="sum", color="sentiment_type", barmode="group")
     return fig
 
-map_df = db_conn.get_counts_for_countries()
+@app.callback(
+    dash.dependencies.Output('ms-map-graph', 'figure'),
+    [dash.dependencies.Input('ms-date-picker-range', 'start_date'),
+     dash.dependencies.Input('ms-date-picker-range', 'end_date'),
+     dash.dependencies.Input('ms-language-dropdown', 'value'),
+     dash.dependencies.Input('ms-sentiment-dropdown', 'value')])
+def update_moral_map(start_date, end_date, language, sentiment_type):
+    start_date_object = "1970-01-01"
+    end_date_object = "2100-01-01"
 
-fig_map = px.choropleth(map_df, locations="country_iso3",
-                    color="doc_count",
-                    hover_name="country", 
-                    scope="europe",
-                    height=1000,
-                    color_continuous_scale=px.colors.sequential.Plasma)
+    if start_date is not None:
+        start_date_object = date.fromisoformat(start_date)
+    if end_date is not None:
+        end_date_object = date.fromisoformat(end_date)
+            
+    map_df = db_conn.get_moral_sentiments_for_countries({
+        'start_date': str(start_date_object), 
+        'end_date': str(end_date_object),
+        'language': language,
+        'sentiment_type': sentiment_type
+    })
+
+    fig = px.choropleth(map_df, locations="country_iso3",
+                            color="doc_count",
+                            hover_name="country", 
+                            scope="europe",
+                            height=1000,
+                            color_continuous_scale=px.colors.sequential.Plasma)
+    return fig
 
 layout = html.Div([
     html.H3(children='Filters'),
 
     html.Div([
         dcc.DatePickerRange(
-            id='my-date-picker-range',
+            id='ms-date-picker-range',
             display_format='YYYY-MM-DD',
             min_date_allowed=config_min_date,
             max_date_allowed=config_max_date,
@@ -59,17 +82,21 @@ layout = html.Div([
             end_date=config_max_date
         ), 
         dcc.Dropdown(
-            id='language-dropdown',
+            id='ms-language-dropdown',
             options=config_available_languages,
             value=''
-        )
+        ),
+        dcc.Dropdown(
+            id='ms-sentiment-dropdown',
+            options=config_available_sentiments,
+            value=config_available_sentiments[0]["value"]
+        )        
     ]),
 
     dcc.Graph(
-        id='moral-graph'
+        id='ms-timeline-graph'
     ),
     dcc.Graph(
-        id='map-graph',
-        figure=fig_map
+        id='ms-map-graph'
     )
 ])
