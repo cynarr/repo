@@ -7,6 +7,10 @@ CREATE TABLE documents (
     language TEXT
 );
 
+CREATE INDEX documents_date_publish_idx ON documents (date_publish);
+CREATE INDEX documents_country_idx ON documents (country);
+CREATE INDEX documents_language_idx ON documents (language);
+
 CREATE TABLE moral_sentiment_scores (
     canon_url TEXT NOT NULL,
     sentiment_type TEXT NOT NULL,
@@ -24,3 +28,5 @@ CREATE TABLE country_mentions (
     document_id INTEGER,
     mention_country TEXT
 );
+
+CREATE INDEX country_mentions_document_id_idx ON country_mentions (document_id);
