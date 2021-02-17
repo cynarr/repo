@@ -12,7 +12,6 @@ for line in sys.stdin.buffer:
 
 
 for curl, num in cnt.most_common():
-    print("curl", num, curl)
     if num <= 1:
         continue
     print(num, curl)
