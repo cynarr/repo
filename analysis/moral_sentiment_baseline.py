@@ -151,22 +151,27 @@ if __name__ == '__main__':
         if not maintext:
             continue
         json_obj = {}        
-        if doc["language"] == language_code:
-            json_obj["canon_url"] = doc["canon_url"]
-            json_obj["bures_sentiment"] = {}
-            json_obj["frob_sentiment"] = {}
-            json_obj["proj_sentiment"] = {}
-            
-            doc_matrix = create_doc_matrix(tokenize(maintext), src_embeddings, src_word2id)
-            enc_doc = encode(doc_matrix, src_embeddings, src_word2id)
-            
-            for moral_id in moral_docs:
-                sentiment_score = frobenius_cosine(moral_docs[moral_id][None], enc_doc[None])[0]
-                bures_sentiment_score = bures_distance(moral_docs[moral_id], enc_doc)
-                json_obj["frob_sentiment"][mft_cat[moral_id]] = sentiment_score
-                json_obj["bures_sentiment"][mft_cat[moral_id]] = bures_sentiment_score
-            
-            for moral_dim in moral_dims:
-                json_obj["proj_sentiment"][moral_dim] = project_document_to_moral_dim(doc_matrix, moral_dims[moral_dim])
-            
-            print(json.dumps(json_obj))
+        if doc["language"] != language_code:
+            continue
+        tokens = tokenize(maintext)
+        if not tokens:
+            continue
+
+        json_obj["canon_url"] = doc["canon_url"]
+        json_obj["bures_sentiment"] = {}
+        json_obj["frob_sentiment"] = {}
+        json_obj["proj_sentiment"] = {}
+        
+        doc_matrix = create_doc_matrix(tokens, src_embeddings, src_word2id)
+        enc_doc = encode(doc_matrix, src_embeddings, src_word2id)
+        
+        for moral_id in moral_docs:
+            sentiment_score = frobenius_cosine(moral_docs[moral_id][None], enc_doc[None])[0]
+            bures_sentiment_score = bures_distance(moral_docs[moral_id], enc_doc)
+            json_obj["frob_sentiment"][mft_cat[moral_id]] = sentiment_score
+            json_obj["bures_sentiment"][mft_cat[moral_id]] = bures_sentiment_score
+        
+        for moral_dim in moral_dims:
+            json_obj["proj_sentiment"][moral_dim] = project_document_to_moral_dim(doc_matrix, moral_dims[moral_dim])
+        
+        print(json.dumps(json_obj))
