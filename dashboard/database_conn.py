@@ -3,13 +3,24 @@ import sqlite3
 import pandas as pd
 import datetime
 import time
+from contextlib import contextmanager
 
 
 DATABASE_PATH = os.environ.get("DATABASE_PATH", "database/database.db")
 
 
+@contextmanager
+def db_connection():
+    with sqlite3.connect(
+        f"file:{DATABASE_PATH}?mode=ro",
+        check_same_thread=False,
+        uri=True,
+    ) as conn:
+        yield conn
+
+
 def get_min_and_max_dates():
-    with sqlite3.connect(DATABASE_PATH, check_same_thread=False) as conn:
+    with db_connection() as conn:
         query = "SELECT MIN(date_publish) - 86400, MAX(date_publish) + 86400 FROM documents"
         cursor = conn.execute(query)
         min_date, max_date = next(cursor)
@@ -17,7 +28,7 @@ def get_min_and_max_dates():
 
 def get_available_languages():
     languages = []
-    with sqlite3.connect(DATABASE_PATH, check_same_thread=False) as conn:
+    with db_connection() as conn:
         query = "SELECT DISTINCT language FROM documents"
         cursor = conn.execute(query)
         for language in cursor:
@@ -46,7 +57,7 @@ def generate_where_conditions(conditions): # TODO: switch conditions dict to kwa
 def get_sentiment_hist_df(conditions = {}):
     where_clause = generate_where_conditions(conditions)
 
-    with sqlite3.connect(DATABASE_PATH, check_same_thread=False) as conn:
+    with db_connection() as conn:
         query = f'SELECT date_publish FROM documents AS d {where_clause} ORDER BY d.date_publish'
         df = pd.read_sql_query(query, conn)
         df = (pd.to_datetime(df['date_publish'], unit='s')
@@ -61,7 +72,7 @@ def get_sentiment_hist_df(conditions = {}):
 def get_moral_sentiment_hist_df(conditions = {}):
     where_clause = generate_where_conditions(conditions)
 
-    with sqlite3.connect(DATABASE_PATH, check_same_thread=False) as conn:
+    with db_connection() as conn:
         query = " ".join([
             f"SELECT date_publish, sentiment_type, score FROM documents AS d JOIN moral_sentiment_scores AS m ON d.canon_url = m.canon_url",
             where_clause,
