@@ -12,7 +12,7 @@ import requests
 
 
 MFT_SENTIMENT_WORD_PAIRS = os.environ.get("MFT_SENTIMENT_WORD_PAIRS", "data/mft_sentiment_word_pairs.pkl")
-MFT20 = os.environ.get("MFT20", "data/mfd2.0.dic")
+MFD20 = os.environ.get("MFD20", "data/mfd2.0.dic")
 MUSE = os.environ.get("MUSE", "data/muse")
 
 
@@ -131,7 +131,7 @@ if __name__ == '__main__':
         moral_dims = compute_moral_dimensions(moral_word_pairs, src_embeddings, src_word2id, tgt_embeddings, tgt_word2id)
 
     # Get MFT dictionary from https://osf.io/whjt2/
-    mft_dict, mft_cat = load_mft_dictionary(MFT20)
+    mft_dict, mft_cat = load_mft_dictionary(MFD20)
     moral_docs = {}
 
     if path.exists(f".tmp/moral_doc_cache_{language_code}.pkl"):
