@@ -1,3 +1,4 @@
+cnf("LOG", pjoin(WORK, "LOG"))
 cnf("ANALYSES", pjoin(WORK, "analyses"))
 cnf("COUNTRY_MENTION", pjoin(ANALYSES, "country_mention.jsonl.zstd"))
 cnf("MBERT_SENTIMENT", pjoin(ANALYSES, "mbert_sentiment.jsonl.zstd"))
@@ -32,9 +33,10 @@ rule get_moral_sentiment_one:
         mfd20 = MFD20,
         muse_base = MUSE
     output:
-        pjoin(ANALYSES, "moral_sentiment.{lang}.jsonl.zstd")
+        error_log = pjoin("moral_sentiment.{lang}.error.log"),
+        moral_sentiment = pjoin(ANALYSES, "moral_sentiment.{lang}.jsonl.zstd")
     shell:
-        "zstdcat -T0 {input.corpus} | MFT_SENTIMENT_WORD_PAIRS={input.mft_sentiment_word_pairs} MFD20={input.mfd20} MUSE={input.muse_base} python -m analysis.moral_sentiment_baseline {wildcards.lang} | zstd -T0 -14 -f - -o {output}"
+        "zstdcat -T0 {input.corpus} | MFT_SENTIMENT_WORD_PAIRS={input.mft_sentiment_word_pairs} MFD20={input.mfd20} MUSE={input.muse_base} ERRORLOG={output.error_log} python -m analysis.moral_sentiment_baseline {wildcards.lang} | zstd -T0 -14 -f - -o {output.moral_sentiment}"
 
 
 def all_moral_sentiments(wildcards):
