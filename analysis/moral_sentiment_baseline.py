@@ -8,6 +8,7 @@ from os import path
 import pickle
 import scipy.linalg
 from nltk.tokenize import word_tokenize
+import traceback
 
 
 MFT_SENTIMENT_WORD_PAIRS = os.environ.get("MFT_SENTIMENT_WORD_PAIRS", "data/mft_sentiment_word_pairs.pkl")
