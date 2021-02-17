@@ -74,9 +74,14 @@ def update_moral_graph(start_date, end_date, value):
     fig = px.bar(df, x="date", y="sum", color="sentiment_type", barmode="group")
     return fig
 
+map_df = db_conn.get_counts_for_countries()
 
-fig_map = px.choropleth(locations=["UK", "Finland", "Sweden"], locationmode="ISO-3", scope="europe",
-                        width=1000, height=1000, color_continuous_scale="Blues")
+fig_map = px.choropleth(map_df, locations="country_iso3",
+                    color="doc_count",
+                    hover_name="country", 
+                    scope="europe",
+                    height=1000,
+                    color_continuous_scale=px.colors.sequential.Plasma)
 
 layout = html.Div([
     html.H3(children='Filters'),

@@ -88,6 +88,13 @@ def get_moral_sentiment_hist_df(conditions = {}):
         .agg(['sum','count'])
         .reset_index())
 
+def get_counts_for_countries():
+    languages = []
+    with db_connection() as conn:
+        query = "SELECT country, COUNT(country) AS doc_count FROM documents GROUP BY country"
+        df = pd.read_sql_query(query, conn)
+    add_iso3_col(df, "country")
+    return df    
 
 def alpha2_to_alpha3(cc2):
     return pycountry.countries.get(alpha_2=cc2).alpha_3
@@ -131,5 +138,5 @@ def get_country_mention_pos_neg_sentiment_counts(conditions):
 
 
 if __name__ == "__main__":
-    print(get_available_languages())
+    print(get_counts_for_countries())
     #print(get_moral_sentiment_hist_df({'start_date': "2020-03-01", 'end_date': "2020-03-02"}))
