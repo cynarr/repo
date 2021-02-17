@@ -29,7 +29,7 @@ rule get_moral_sentiment_one:
         corpus = COVIDSTATEBROADCASTERFILTERED,
         muse = pjoin(MUSE, "wiki.multi.{lang}.vec"),
         mft_sentiment_word_pairs = MFT_SENTIMENT_WORD_PAIRS,
-        mdf20 = MFD20,
+        mfd20 = MFD20,
         muse_base = MUSE
     output:
         pjoin(ANALYSES, "moral_sentiment.{lang}.jsonl.zstd")
