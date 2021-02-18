@@ -24,11 +24,9 @@ if __name__ == '__main__':
             rows.append((doc_id, country))
 
         if counter % 50000 == 0:  # Commit changes every now and then
-            conn.commit()
-            c.executemany("INSERT INTO country_mentions(document_id, mention_country) VALUES (?, ?)", rows)
-            rows = []
+            flush_rows(conn, rows)
             conn.begin()
             print(counter)
 
-    conn.commit()
+    flush_rows(conn, rows)
     conn.close()

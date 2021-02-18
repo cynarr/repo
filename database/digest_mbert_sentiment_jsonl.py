@@ -20,11 +20,9 @@ if __name__ == '__main__':
         rows.append((doc_id, doc['sentiment']))
 
         if counter % 50000 == 0:  # Commit changes every now and then
-            conn.commit()
-            c.executemany("INSERT INTO mbert_sentiment(document_id, sentiment) VALUES (?, ?)", rows)
-            rows = []
+            flush_rows(conn, rows)
             conn.begin()
             print(counter)
 
-    conn.commit()
+    flush_rows(conn, rows)
     conn.close()

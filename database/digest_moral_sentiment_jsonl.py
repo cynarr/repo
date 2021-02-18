@@ -1,6 +1,8 @@
 import duckdb
 import json 
 import sys
+from .utils import flush_rows
+
 
 if __name__ == '__main__':
     conn = duckdb.connect(sys.argv[1])
@@ -20,11 +22,10 @@ if __name__ == '__main__':
             sent_score = doc['proj_sentiment'][sentiment_name]
             rows.append((doc_id, sentiment_name, sent_score))
 
-        if counter % 5000 == 0:  # Commit changes every now and then
-            conn.commit()
-            c.executemany(f"INSERT INTO moral_sentiment_scores(document_id, sentiment_type, score) VALUES (?, ?, ?)", rows)
-            rows = []
+        if counter % 50000 == 0:  # Commit changes every now and then
+            flush_rows(conn, rows)
             conn.begin()
+            print(counter)
     
-    conn.commit()
+    flush_rows(conn, rows)
     conn.close()

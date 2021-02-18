@@ -1,16 +1,13 @@
 import duckdb
-import sqlite3
 import json 
 import sys
 import datetime
 import time
-
-# First run "cat database/database_schema.sql | sqlite3 database/database.db" to create the scehma on command line
+from .utils import flush_rows
 
 
 if __name__ == '__main__':
     conn = duckdb.connect(sys.argv[1])
-    cursor = conn.cursor()
     conn.begin()
     counter = 0
     rows = []
@@ -26,14 +23,13 @@ if __name__ == '__main__':
         title = doc['title']
         country = doc['country']
 
-        rows.append((canon_url, date_publish, language, title, country))
+        rows.append((counter, canon_url, date_publish, language, title, country))
 
         if counter % 50000 == 0:  # Commit changes every now and then
-            cursor.executemany("INSERT INTO documents(document_id, canon_url, date_publish, language, title, country) VALUES (nextval('document_id_seq'), ?, ?, ?, ?, ?)", rows)
-            conn.commit()
-            rows = []
+            flush_rows(conn, rows)
             conn.begin()
             print(counter)
 
+    flush_rows(conn, rows)
     conn.commit()
     conn.close()
