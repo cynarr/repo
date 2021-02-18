@@ -166,16 +166,16 @@ def get_language_distribution():
         ])
         df = pd.read_sql_query(query, conn)
         add_language_name_col(df, "lang_code", "Language")  
+        df = df.rename(columns={'count': 'Count'})
     return df[['Language', 'Count']]
 
 def get_language_timeline():
     with db_connection() as conn:
         query = " ".join([
-            "SELECT language AS lang_code, COUNT(language) as count, date_publish FROM documents GROUP BY language, (date_publish / 86400) ORDER BY date_publish",
+            "SELECT language AS lang_code, COUNT(language) as count, date_trunc('week', date_publish) AS date FROM documents GROUP BY language, date",
         ])
         df = pd.read_sql_query(query, conn)
         add_language_name_col(df, "lang_code", "language")  
-        df['date'] = pd.to_datetime(df['date_publish'], unit='s').dt.floor('d')
     return df
 
 if __name__ == "__main__":

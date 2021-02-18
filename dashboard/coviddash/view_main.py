@@ -28,11 +28,11 @@ language_count_table = dash_table.DataTable(
     data=language_count_df.to_dict('records'),
 )
 
-lang_count_fig = px.bar(language_count_df, y="Count", color="Language", barmode="group")
+lang_count_fig = px.pie(language_count_df, values="Count", names="Language")
 
 
 lang_timeline_df = db_conn.get_language_timeline()
-lang_timeline_fig = px.bar(lang_timeline_df, x="date", y="count", color="language", barmode="group")
+lang_timeline_fig = px.bar(lang_timeline_df, x="date", y="count", color="language")
 
 layout = html.Div([
     html.H1("COVID-19 mood map"),
@@ -47,11 +47,16 @@ layout = html.Div([
     ]),
     html.H2("Data stastistics"),
     html.H3("Languages"),
-    dbc.Row([
-        dbc.Col(html.Div(language_count_table)),
-        dbc.Col(html.Div(dcc.Graph(figure=lang_count_fig))),
-    ]),
-    html.Div(
-        dcc.Graph(figure=lang_timeline_fig)
-    )
+    dcc.Loading(
+        id="analyses-section",
+        type="default",
+        children=[    
+            dbc.Row([
+                dbc.Col(html.Div(language_count_table), width=4),
+                dbc.Col(html.Div(dcc.Graph(figure=lang_count_fig))),
+            ]),
+            html.Div(
+                dcc.Graph(figure=lang_timeline_fig)
+            )
+    ])
 ], style={'background': 'white', 'padding': '2em'})

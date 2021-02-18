@@ -16,6 +16,7 @@ from . import database_conn as db_conn
 from .view_mentions import layout as mentions_layout
 from .view_main import layout as main_layout
 from .view_moral import layout as moral_layout
+from .view_news import layout as news_layout
 
 
 from .common import config_available_languages, config_min_date, config_max_date
@@ -26,6 +27,7 @@ server = app.server
 
 page_layouts = {
     "/": main_layout,
+    "/news/": news_layout,
     "/moral/": moral_layout,
     "/mentions/": mentions_layout
 }
@@ -41,7 +43,8 @@ app.layout = html.Div(children=[
 
     dbc.NavbarSimple(
         children=[
-            dbc.NavItem(dbc.NavLink("News from: countries", href="/")),
+            dbc.NavItem(dbc.NavLink("Introduction", href="/")),
+            dbc.NavItem(dbc.NavLink("News from: countries", href="/news/")),
             dbc.NavItem(dbc.NavLink("News @mentioning countries", href="/mentions/")),
             dbc.NavItem(dbc.NavLink("Moral sentiments", href="/moral/")),
         ],
