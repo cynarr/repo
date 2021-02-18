@@ -13,7 +13,7 @@ from datetime import date
 
 from .base import app
 from . import database_conn as db_conn
-from .mentions import layout as mentions_layout
+from .view_mentions import layout as mentions_layout
 from .view_main import layout as main_layout
 from .view_moral import layout as moral_layout
 
