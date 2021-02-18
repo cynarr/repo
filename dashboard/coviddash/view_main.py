@@ -51,7 +51,7 @@ layout = html.Div([
     html.Div([
         html.P("what methods, tools and data are you using")
     ]),
-    html.H2("Data stastistics"),
+    html.H2("Data overview"),
     html.H3("Language distributions"),
     dcc.Loading(
         id="analyses-section",
@@ -64,5 +64,15 @@ layout = html.Div([
             html.Div(
                 dcc.Graph(figure=lang_timeline_fig)
             )
-    ])
+    ]),
+    html.H3("Country distributions"),
+    dbc.Row([
+        dbc.Col(html.H4("News from country X table")),
+        dbc.Col(html.H4("News mentioning country X table"))
+    ]),
+    html.H3("Overall sentiments"),
+    dbc.Row([
+        dbc.Col(html.H4("Overall polar sentiments of the data")),
+        dbc.Col(html.H4("Overall moral sentiments of the data"))
+    ]),    
 ])
