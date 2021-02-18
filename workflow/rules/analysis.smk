@@ -1,4 +1,4 @@
-cnf("LOG", pjoin(WORK, "LOG"))
+cnf("LOG", pjoin(WORK, "log"))
 cnf("ANALYSES", pjoin(WORK, "analyses"))
 cnf("COUNTRY_MENTION", pjoin(ANALYSES, "country_mention.jsonl.zstd"))
 cnf("MBERT_SENTIMENT", pjoin(ANALYSES, "mbert_sentiment.jsonl.zstd"))
