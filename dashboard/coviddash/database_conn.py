@@ -173,7 +173,8 @@ def get_country_mention_pos_neg_sentiment_counts(conditions):
 def get_language_distribution():
     with db_connection() as conn:
         query = " ".join([
-            "SELECT language AS lang_code, COUNT(language) AS Count FROM documents GROUP BY language",
+            "SELECT language AS lang_code, COUNT(language) AS count FROM documents GROUP BY language",
+            "ORDER BY language ASC",
         ])
         df = pd.read_sql_query(query, conn)
         add_language_name_col(df, "lang_code", "Language")  
@@ -183,7 +184,9 @@ def get_language_distribution():
 def get_language_timeline():
     with db_connection() as conn:
         query = " ".join([
-            "SELECT language AS lang_code, COUNT(language) as count, date_trunc('week', date_publish) AS date FROM documents GROUP BY language, date",
+            "SELECT language AS lang_code, COUNT(language) as count, date_trunc('week', date_publish) AS date FROM documents", 
+            "GROUP BY language, date",
+            "ORDER BY language",
         ])
         df = pd.read_sql_query(query, conn)
         add_language_name_col(df, "lang_code", "language")  

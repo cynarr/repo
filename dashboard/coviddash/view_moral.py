@@ -21,8 +21,8 @@ __all__ = ["layout"]
      dash.dependencies.Input('ms-language-dropdown', 'value'),
      dash.dependencies.Input('ms-sentiment-dropdown', 'value')])
 def update_moral_graph(start_date, end_date, language, sentiment_type):
-    start_date_object = "1970-01-01"
-    end_date_object = "2100-01-01"
+    start_date_object = "2020-03-01"
+    end_date_object = "2020-04-01"
 
     if start_date is not None:
         start_date_object = date.fromisoformat(start_date)
@@ -35,7 +35,9 @@ def update_moral_graph(start_date, end_date, language, sentiment_type):
         'language': language,
         'sentiment_type': sentiment_type
     })
-    fig = px.bar(df, x="date", y="sum", color="sentiment_type", barmode="group")
+    fig = px.bar(df, x="date", y="sum", color="sentiment_type", barmode="group", 
+        labels={'date': 'Date', 'sum': 'Strength of moral sentiment', 'sentiment_type': 'Sentiment'}
+    )
     return fig
 
 
@@ -63,13 +65,16 @@ def update_moral_map(start_date, end_date, language, sentiment_type):
 
     figs = []
     for i, sent in enumerate(map_df['sentiment_type'].unique()):
-        fig = px.choropleth(map_df[map_df['sentiment_type'] == sent], locations="country_iso3",
-                                color="doc_count",
-                                hover_name="country", 
-                                scope="europe",
-                                height=700,
-                                color_continuous_scale=px.colors.sequential.Plasma,
-                                title=f"{sent} sentiment")      
+        fig = px.choropleth(
+            map_df[map_df['sentiment_type'] == sent], locations="country_iso3",
+            color="doc_count",
+            hover_name="country", 
+            scope="europe",
+            height=700,
+            color_continuous_scale=px.colors.sequential.Plasma,
+            title=f"{sent.capitalize()} sentiment",
+            labels={'doc_count': 'Sentiment strength'}
+        )      
 
         figs.append(dbc.Col(dcc.Graph(id=f'ms-map-graph{i}', figure=fig)))
 
@@ -88,8 +93,8 @@ layout = html.Div([
             display_format='YYYY-MM-DD',
             min_date_allowed=config_min_date,
             max_date_allowed=config_max_date,
-            start_date=config_min_date,
-            end_date=config_max_date
+            start_date="2020-03-01",
+            end_date="2020-04-01"
         ), 
         dcc.Dropdown(
             id='ms-language-dropdown',
