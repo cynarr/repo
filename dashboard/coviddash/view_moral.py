@@ -90,9 +90,11 @@ layout = html.Div([
         "Moral sentiment measures the amount of moral language used based on the moral foundations theory (see https://moralfoundations.org/ for more details). "
         "It is split into five polar dimensions care/harm, fairness/cheating, loyalty/betrayal, authority/subversion, and sanctity/degradation."
     ),
+    html.H4("Filters"),
     dbc.Row([
         dbc.Col([
-            html.H4("Data date range"),
+            dbc.Label("Date range"),
+            html.Br(),
             dcc.DatePickerRange(
                 id='ms-date-picker-range',
                 display_format='YYYY-MM-DD',
@@ -105,7 +107,7 @@ layout = html.Div([
     ]),
     dbc.Row([
         dbc.Col([
-            html.H4("Language filtering"),
+            dbc.Label("Language"),
             dcc.Dropdown(
                 id='ms-language-dropdown',
                 options=config_available_languages,
@@ -113,7 +115,7 @@ layout = html.Div([
             ),
         ]),
         dbc.Col([
-            html.H4("Sentiment filtering"),
+            dbc.Label("Sentiment"),
             dcc.Dropdown(
                 id='ms-sentiment-dropdown',
                 options=config_available_sentiments,
