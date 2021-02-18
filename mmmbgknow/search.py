@@ -40,7 +40,8 @@ def keyword_stem_regex(tokenizer, keyword, name=None):
         allow_ending = (
             all((tok.isalpha() for tok in word)) and len(word) >= 2
         )
-        do_stem = allow_ending and len(word) >= 3
+        letters_stemmed = len("".join((w.decode("utf-8") for w in word[:-1])))
+        do_stem = allow_ending and len(word) >= 3 and letters_stemmed >= 4
         if do_stem:
             del word[-1]
         joined = b"".join(word)
