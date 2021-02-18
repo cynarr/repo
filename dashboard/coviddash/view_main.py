@@ -37,7 +37,7 @@ def update_sentiment_timeline(start_date, end_date, value):
         'language': value
     })
 
-    fig_timeline = px.histogram(df, x="date", y="Number of articles", color="Sentiment", barmode="stack",
+    fig_timeline = px.histogram(df, x="date", y="articles", color="sentiment", barmode="stack",
                                 title="News sentiment on the COVID-19 pandemic in March 2020", nbins=31)
 
     fig_timeline.update_layout(

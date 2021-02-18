@@ -54,13 +54,16 @@ def generate_where_conditions(conditions): # TODO: switch conditions dict to kwa
         start = datetime.datetime.strptime(conditions['start_date'], "%Y-%m-%d").isoformat()
         end = datetime.datetime.strptime(conditions['end_date'], "%Y-%m-%d").isoformat()
 
-        where_parts.append(f"d.date_publish >= {start} AND d.date_publish =< {end}")
+        where_parts.append(f"d.date_publish >= '{start}' AND d.date_publish <= '{end}'")
 
     if 'language' in conditions and len(conditions['language']) > 0:
         where_parts.append(f"d.language = '{conditions['language']}'")
 
     if 'mentions' in conditions:
         where_parts.append(f"d.mention_country ='{conditions['mentions']}'")
+
+    if 'sentiment' in conditions:
+        where_parts.append(f"m.sentiment= '{conditions['sentiment']}'")
 
     if 'sentiment_type' in conditions and len(conditions['sentiment_type']) > 0:
         where_parts.append(f"m.sentiment_type = '{conditions['sentiment_type']}'")
@@ -74,16 +77,15 @@ def get_sentiment_hist_df(conditions = {}):
     where_clause = generate_where_conditions(conditions)
 
     with db_connection() as conn:
-        query = f'SELECT date_publish FROM documents AS d {where_clause} ORDER BY d.date_publish'
-        df = conn.execute_query(query).fetch_df()
-        df = (
-            df['date_publish']
-            .dt.floor('d')
-            .value_counts()
-            .rename_axis('date')
-            .reset_index(name='Number of articles')
-        )
-        df["Sentiment"] = "Positive"  # TODO: Get actual sentiments
+        query = " ".join([
+            "SELECT date_trunc('day', date_publish) AS date, sentiment, COUNT(sentiment) AS articles",
+            "FROM documents AS d",
+            "JOIN mbert_sentiment AS m ON d.document_id = m.document_id",
+            where_clause,
+            "GROUP BY date, sentiment",
+            "ORDER BY date",
+        ])
+        df = conn.execute(query).fetchdf()
     return df
 
 def get_moral_sentiment_hist_df(conditions = {}):
@@ -91,27 +93,25 @@ def get_moral_sentiment_hist_df(conditions = {}):
 
     with db_connection() as conn:
         query = " ".join([
-            f"SELECT date_publish, sentiment_type, score FROM documents AS d JOIN moral_sentiment_scores AS m ON d.canon_url = m.canon_url",
+            f"SELECT date_trunc('day', date_publish) AS date, sentiment_type, SUM(score) AS sum FROM documents AS d JOIN moral_sentiment_scores AS m ON d.document_id = m.document_id",
             where_clause,
-            "ORDER BY d.date_publish"
+            "GROUP BY date, sentiment_type",
+            "ORDER BY date",
         ])
-        df = conn.execute_query(query).fetch_df()
-        df['date'] = pd.to_datetime(df['date_publish'], unit='s').dt.floor('d')
+        df = conn.execute(query).fetchdf()
 
-    return (df.groupby(['date', 'sentiment_type'])['score']
-        .agg(['sum','count'])
-        .reset_index())
+    return df
 
 def get_moral_sentiments_for_countries(conditions = {}):
     where_clause = generate_where_conditions(conditions)
 
     with db_connection() as conn:
         query = " ".join([
-            "SELECT country, sentiment_type, SUM(score) AS doc_count FROM documents AS d JOIN moral_sentiment_scores AS m ON d.canon_url = m.canon_url",
+            "SELECT country, sentiment_type, SUM(score) AS doc_count FROM documents AS d JOIN moral_sentiment_scores AS m ON d.document_id = m.document_id",
             where_clause,
             "GROUP BY country, sentiment_type"
         ])
-        df = conn.execute_query(query).fetch_df()
+        df = conn.execute(query).fetchdf()
     add_iso3_col(df, "country")
     return df    
 
@@ -134,7 +134,7 @@ def get_country_pos_neg_sentiment_counts(conditions):
             where_clause,
             "GROUP BY country",
         ])
-        df = conn.execute(query).fetch_df()
+        df = conn.execute(query).fetchdf()
     add_iso3_col(df, "country")
     return df
 
@@ -151,7 +151,7 @@ def get_country_mention_pos_neg_sentiment_counts(conditions):
             where_clause,
             "GROUP BY mention_country",
         ])
-        df = conn.execute(query).fetch_df()
+        df = conn.execute(query).fetchdf()
     add_iso3_col(df, "mention_country")
     return df
 

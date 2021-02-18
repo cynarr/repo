@@ -30,9 +30,10 @@ def update_choropleth(start_date, end_date, polarity):
     df = db_conn.get_country_mention_pos_neg_sentiment_counts({
         'start_date': str(start_date_object),
         'end_date': str(end_date_object),
+        'sentiment': polarity,
     })
     return px.choropleth(
-        df[df["sentiment"] == polarity],
+        df,
         locations="country_iso3",
         color="doc_count",
         locationmode="ISO-3",
