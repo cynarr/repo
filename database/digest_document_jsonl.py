@@ -1,9 +1,10 @@
 import duckdb
 import json 
 import sys
-import datetime
-import time
 from .utils import flush_rows
+
+
+SCHEMA = "documents(document_id, canon_url, date_publish, language, title, country)"
 
 
 if __name__ == '__main__':
@@ -26,10 +27,10 @@ if __name__ == '__main__':
         rows.append((counter, canon_url, date_publish, language, title, country))
 
         if counter % 50000 == 0:  # Commit changes every now and then
-            flush_rows(conn, rows)
+            flush_rows(SCHEMA, conn, rows)
             conn.begin()
             print(counter)
 
-    flush_rows(conn, rows)
+    flush_rows(SCHEMA, conn, rows)
     conn.commit()
     conn.close()

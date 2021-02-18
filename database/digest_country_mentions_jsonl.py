@@ -3,6 +3,9 @@ import orjson
 import sys
 
 
+SCHEMA = "country_mentions(document_id, mention_country)"
+
+
 if __name__ == '__main__':
     conn = duckdb.connect(sys.argv[1])
     c = conn.cursor()
@@ -24,9 +27,9 @@ if __name__ == '__main__':
             rows.append((doc_id, country))
 
         if counter % 50000 == 0:  # Commit changes every now and then
-            flush_rows(conn, rows)
+            flush_rows(SCHEMA, conn, rows)
             conn.begin()
             print(counter)
 
-    flush_rows(conn, rows)
+    flush_rows(SCHEMA, conn, rows)
     conn.close()
