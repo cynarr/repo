@@ -14,7 +14,6 @@ CREATE INDEX documents_language_idx ON documents (language);
 
 CREATE TABLE moral_sentiment_scores (
     document_id INTEGER,
-    canon_url TEXT NOT NULL,
     sentiment_type TEXT NOT NULL,
     score REAL NOT NULL
 );

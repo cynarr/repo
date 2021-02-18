@@ -6,7 +6,7 @@ from datetime import date
 
 from .base import app
 from . import database_conn as db_conn
-from .common import config_available_languages, config_min_date, config_max_date
+from .common import config_available_languages, config_min_date, config_max_date, load_wrap
 
 
 __all__ = ["layout"]
@@ -30,9 +30,10 @@ def update_choropleth(start_date, end_date, polarity):
     df = db_conn.get_country_mention_pos_neg_sentiment_counts({
         'start_date': str(start_date_object),
         'end_date': str(end_date_object),
+        'sentiment': polarity,
     })
     return px.choropleth(
-        df[df["sentiment"] == polarity],
+        df,
         locations="country_iso3",
         color="doc_count",
         locationmode="ISO-3",
@@ -68,11 +69,13 @@ layout = html.Div([
         ),
     ]),
 
-    dcc.Graph(
-        id='mention-map',
-        config=dict(
-            scrollZoom=False,
-            modeBarButtonsToRemove=['pan2d'],
-        ),
-    )
+    load_wrap([
+        dcc.Graph(
+            id='mention-map',
+            config=dict(
+                scrollZoom=False,
+                modeBarButtonsToRemove=['pan2d'],
+            ),
+        )
+    ])
 ])
