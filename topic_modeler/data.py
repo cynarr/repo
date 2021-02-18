@@ -1,5 +1,3 @@
-import zstandard
-import pathlib
 import shutil
 import json
 from tqdm import tqdm
@@ -33,7 +31,7 @@ def jsonl_reader(input_file):
         for jstr in tqdm(jlist):
             res = json.loads(jstr)
             l = str(res['language'])
-            if res['maintext'] is not None and res['canon_url'] is not None: 
+            if res['maintext'] is not None: 
                 if l not in textio: 
                     textio[l] = io.StringIO()
                     links[l] = list()
@@ -47,8 +45,8 @@ def jsonl_reader(input_file):
 
 def bert_topic(lang, textblob, links):
     model = SentenceTransformer('distiluse-base-multilingual-cased-v2')
-    print("Generating article embeddings for " + lang + " en:")
-    embeddings = model.encode(textblob[lang].split('\t\t'), 
+    print("Generating article embeddings for " + lang + ":")
+    embeddings = model.encode(textblob[lang].split('\t\t')[:-1], 
             show_progress_bar=True)
 
     umap_embeddings = umap.UMAP(n_neighbors=15, 
@@ -58,17 +56,18 @@ def bert_topic(lang, textblob, links):
             metric='euclidean', 
             cluster_selection_method='eom').fit(umap_embeddings)
     
-    docs_df = pd.DataFrame(textblob[lang].split('\t\t'), 
+    docs_df = pd.DataFrame(textblob[lang].split('\t\t')[:-1], 
             columns=['doc'])
     docs_df['topic'] = cluster.labels_
     docs_df['doc_id'] = range(len(docs_df))
     docs_df['canon_url'] = links[lang]
     docs_per_topic = docs_df.groupby(['topic'], 
             as_index = False).agg({'doc': ' '.join})
+    # print(docs_df)
     return embeddings, cluster, docs_df, docs_per_topic
 
-def c_tf_idf(docs, m, ngram_range = (1, 1)):
-    count = CountVectorizer(ngram_range=ngram_range).fit(docs)
+def c_tf_idf(docs, m, stop_words, ngram_range = (1, 1)):
+    count = CountVectorizer(ngram_range=ngram_range, stop_words=stop_words).fit(docs)
     t = count.transform(docs).toarray()
     w = t.sum(axis=1)
     tf = np.divide(t.T, w)
@@ -79,30 +78,38 @@ def c_tf_idf(docs, m, ngram_range = (1, 1)):
 
 def extract_top_n_words_per_topic(tf_idf, count, docs_per_topic, n=20):
     words = count.get_feature_names()
-    labels = list(docs_per_topic.Topic)
+    labels = list(docs_per_topic.topic)
     tf_idf_transposed = tf_idf.T
     indices = tf_idf_transposed.argsort()[:, -n:]
     top_n_words = {label: [(words[j], tf_idf_transposed[i][j]) for j in indices[i]][::-1] for i, label in enumerate(labels)}
     return top_n_words
 
 def extract_topic_sizes(df):
-    topic_sizes = (df.groupby(['Topic'])
-                     .Doc
+    topic_sizes = (df.groupby(['topic'])
+                     .doc
                      .count()
                      .reset_index()
-                     .rename({"Topic": "Topic", "Doc": "Size"}, axis='columns')
-                     .sort_values("Size", ascending=False))
+                     .rename({"topic": "topic", "doc": "size"}, axis='columns')
+                     .sort_values("size", ascending=False))
     return topic_sizes
 
-def topic_per_link(top_n_words, docs):
-    pass
+def topic_per_link(top_n_words, docs_df):
+    url_topic_mapping = dict()
+    for ix in range(len(docs_df['canon_url'])): url_topic_mapping[docs_df['canon_url'][ix]] = top_n_words[docs_df['topic'][ix]][:5]
+    return url_topic_mapping
 
 if __name__ == '__main__':
     # decompress_zstandard_to_folder('./covidstatebroadcaster.fixed.jsonl.*')
     tb, links = jsonl_reader('./covidstatebroadcaster.fixed.jsonl')
-    em, clusters, docs_df, docs_per_topic = bert_topic('en', tb, links)
-    # print(tb['en'])
-    tf_idf, count = c_tf_idf(docs_per_topic.Doc.values, m=len(data))
-    top_n_words = extract_top_n_words_per_topic(tf_idf, count, docs_per_topic, n=20)
-    topic_sizes = extract_topic_sizes(docs_df); topic_sizes.head(10)
-    print(topic_sizes)
+    stop_words_all = json.loads('./stopwords-all.json')
+    url_topic_dict = dict()
+    for lang in tb:
+        em, clusters, docs_df, docs_per_topic = bert_topic(lang, tb, links)
+        tf_idf, count = c_tf_idf(docs_per_topic.doc.values, m=len(tb[lang]), stop_words_all[lang])
+        top_n_words = extract_top_n_words_per_topic(tf_idf, count, docs_per_topic, n=20)
+        topic_sizes = extract_topic_sizes(docs_df); topic_sizes.head(10)
+        url_topic_lang = topic_per_link(top_n_words, docs_df)
+        url_top_dict.update(url_topic_lang)
+        print(url_topic_lang)
+    with open('url_topic.jsonl', 'w+') as fp:
+            json.dump(url_topic_dict, fp)
