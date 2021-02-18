@@ -50,6 +50,28 @@ def get_available_sentiments():
         for sentiment in cursor.fetchall():
             sentiments.append(sentiment[0])
     return sentiments
+
+
+def get_available_producing_countries():
+    available = []
+    with db_connection() as conn:
+        query = "SELECT DISTINCT country FROM documents"
+        cursor = conn.execute(query)
+        for cc2 in cursor.fetchall():
+            name = pycountry.countries.get(alpha_2=cc2[0]).name
+            available.append((name, cc2[0]))
+    return available
+
+
+def get_available_mentioned_countries():
+    mentioned = []
+    with db_connection() as conn:
+        query = "SELECT DISTINCT mention_country FROM country_mentions"
+        cursor = conn.execute(query)
+        for cc2 in cursor.fetchall():
+            name = pycountry.countries.get(alpha_2=cc2[0]).name
+            mentioned.append((name, cc2[0]))
+    return mentioned
     
 
 def generate_where_conditions(conditions): # TODO: switch conditions dict to kwargs
@@ -64,8 +86,11 @@ def generate_where_conditions(conditions): # TODO: switch conditions dict to kwa
     if 'language' in conditions and len(conditions['language']) > 0:
         where_parts.append(f"d.language = '{conditions['language']}'")
 
-    if 'mentions' in conditions:
-        where_parts.append(f"d.mention_country ='{conditions['mentions']}'")
+    if 'country' in conditions and len(conditions['country']) > 0:
+        where_parts.append(f"d.country ='{conditions['country']}'")
+
+    if 'mentions' in conditions and len(conditions['mentions']) > 0:
+        where_parts.append(f"cm.mention_country ='{conditions['mentions']}'")
 
     if 'sentiment' in conditions:
         where_parts.append(f"m.sentiment= '{conditions['sentiment']}'")
@@ -79,13 +104,17 @@ def generate_where_conditions(conditions): # TODO: switch conditions dict to kwa
     return ""
 
 def get_sentiment_hist_df(conditions = {}):
+    if "mentions" in conditions:
+        join_clause = DOC_SENT_MENTION_JOIN
+    else:
+        join_clause = DOC_SENT_JOIN
     where_clause = generate_where_conditions(conditions)
 
     with db_connection() as conn:
         query = " ".join([
             "SELECT date_trunc('day', date_publish) AS date, sentiment, COUNT(sentiment) AS articles",
-            "FROM documents AS d",
-            "JOIN mbert_sentiment AS m ON d.document_id = m.document_id",
+            "FROM",
+            *join_clause,
             where_clause,
             "GROUP BY date, sentiment",
             "ORDER BY date",
@@ -132,44 +161,6 @@ def add_language_name_col(df, language_code_col, language_col="proper_language")
     df[language_col] = df[language_code_col].map(lambda x: pycountry.languages.get(alpha_2=x).name)
 
 
-def get_country_pos_neg_sentiment_counts(conditions):
-    where_clause = generate_where_conditions(conditions)
-
-    with db_connection() as conn:
-        query = " ".join([
-            "SELECT country, COUNT(d.document_id) AS doc_count",
-            "FROM documents AS d",
-            "JOIN mbert_sentiment AS m ON d.document_id = m.document_id",
-            where_clause,
-            "GROUP BY country",
-        ])
-        df = conn.execute(query).fetchdf()
-    add_iso3_col(df, "country")
-    return df
-
-
-DOC_SENT_MENTION_JOIN = [
-    "documents AS d",
-    "JOIN mbert_sentiment AS m ON d.document_id = m.document_id",
-    "JOIN country_mentions as cm ON cm.document_id = m.document_id",
-]
-
-
-def get_country_mention_pos_neg_sentiment_counts(conditions):
-    where_clause = generate_where_conditions(conditions)
-
-    with db_connection() as conn:
-        query = " ".join([
-            "SELECT mention_country, COUNT(d.document_id) AS doc_count",
-            "FROM",
-            *DOC_SENT_MENTION_JOIN,
-            where_clause,
-            "GROUP BY mention_country",
-        ])
-        df = conn.execute(query).fetchdf()
-    add_iso3_col(df, "mention_country")
-    return df
-
 def get_language_distribution():
     with db_connection() as conn:
         query = " ".join([
@@ -192,24 +183,62 @@ def get_language_timeline():
         add_language_name_col(df, "lang_code", "language")  
     return df
 
-def get_country_mention_summary_counts(conditions):
+DOC_SENT_JOIN = [
+    "documents AS d",
+    "JOIN mbert_sentiment AS m ON d.document_id = m.document_id",
+]
+
+
+DOC_SENT_MENTION_JOIN = [
+    *DOC_SENT_JOIN,
+    "JOIN country_mentions as cm ON cm.document_id = m.document_id",
+]
+
+
+SUM_POLES_PROJ = [
+    "SUM(CASE WHEN sentiment = 'positive' THEN 1 ELSE 0 END) AS positive_cnt,",
+    "SUM(CASE WHEN sentiment = 'neutral' THEN 1 ELSE 0 END) AS neutral_cnt,",
+    "SUM(CASE WHEN sentiment = 'negative' THEN 1 ELSE 0 END) AS negative_cnt",
+]
+
+DOC_COUNT_PROJ = ["COUNT(d.document_id) AS doc_count"]
+
+
+def get_country_grouped_sentiment(mode_is_mention, conditions):
+    if mode_is_mention:
+        join_clause = DOC_SENT_MENTION_JOIN
+        country_col = "mention_country"
+    else:
+        if "mentions" in conditions:
+            join_clause = DOC_SENT_MENTION_JOIN
+        else:
+            join_clause = DOC_SENT_JOIN
+        country_col = "country"
+    if conditions.get("sentiment") == "summary":
+        del conditions["sentiment"]
+        proj = SUM_POLES_PROJ
+        add_summary = True
+    else:
+        proj = DOC_COUNT_PROJ
+        add_summary = False
     where_clause = generate_where_conditions(conditions)
 
     with db_connection() as conn:
         query = " ".join([
-            "SELECT mention_country,",
-            "SUM(CASE WHEN sentiment = 'positive' THEN 1 ELSE 0 END) AS positive_cnt,",
-            "SUM(CASE WHEN sentiment = 'neutral' THEN 1 ELSE 0 END) AS neutral_cnt,",
-            "SUM(CASE WHEN sentiment = 'negative' THEN 1 ELSE 0 END) AS negative_cnt",
+            f"SELECT {country_col},",
+            *proj,
             "FROM",
-            *DOC_SENT_MENTION_JOIN,
+            *join_clause,
             where_clause,
-            "GROUP BY mention_country",
+            f"GROUP BY {country_col}",
         ])
         df = conn.execute(query).fetchdf()
-        df["summary"] = np.log2((df["positive_cnt"] + 0.5 * df["neutral_cnt"]) / (df["positive_cnt"] + df["neutral_cnt"] + df["negative_cnt"]))
+        if add_summary:
+            inner = (df["positive_cnt"] + 0.5 * df["neutral_cnt"]) / (df["positive_cnt"] + df["neutral_cnt"] + df["negative_cnt"])
+            # XXX: TODO handle inner = 0 e.g. clamp value somehow
+            df["summary"] = np.log2(inner)
 
-    add_iso3_col(df, "mention_country")
+    add_iso3_col(df, country_col)
     return df
 
 

@@ -1,12 +1,13 @@
 import dash_core_components as dcc
 import dash_html_components as html
+import dash_bootstrap_components as dbc
 import plotly.express as px
 from dash.dependencies import Input, Output
 from datetime import date
 
 from .base import app
 from . import database_conn as db_conn
-from .common import config_available_languages, config_min_date, config_max_date, load_wrap
+from .common import config_available_languages, config_min_date, config_max_date, load_wrap, mk_date_range_col, language_col, media_country_col, mention_country_col
 
 
 __all__ = ["layout"]
@@ -14,10 +15,14 @@ __all__ = ["layout"]
 
 @app.callback(
     Output('mention-map', 'figure'),
-    [Input('filter-dates', 'start_date'),
-     Input('filter-dates', 'end_date'),
-     Input('polarity-selector', 'value')])
-def update_choropleth(start_date, end_date, polarity):
+    [Input('date-range-filter', 'start_date'),
+     Input('date-range-filter', 'end_date'),
+     Input('mode-selector', 'value'),
+     Input('polarity-selector', 'value'),
+     Input('language-dropdown', 'value'),
+     Input('media-country', 'value'),
+     Input('mention-country', 'value')])
+def update_choropleth(start_date, end_date, mode, polarity, language, producing_country, mention_country):
     start_date_object = "1970-01-01"
     end_date_object = "2100-01-01"
 
@@ -30,15 +35,13 @@ def update_choropleth(start_date, end_date, polarity):
     conditions = {
         'start_date': str(start_date_object),
         'end_date': str(end_date_object),
+        'sentiment': polarity,
+        'language': language,
+        'country': producing_country,
+        'mentions': mention_country,
     }
 
-    if polarity == "summary":
-        df = db_conn.get_country_mention_summary_counts(conditions)
-    else:
-        df = db_conn.get_country_mention_pos_neg_sentiment_counts({
-            **conditions,
-            'sentiment': polarity,
-        })
+    df = db_conn.get_country_grouped_sentiment(mode == "mention", conditions)
     return px.choropleth(
         df,
         locations="country_iso3",
@@ -52,29 +55,76 @@ def update_choropleth(start_date, end_date, polarity):
     )
 
 
-layout = html.Div([
-    html.H3(children='Filters'),
+@app.callback(Output('media-country', 'value'), [Input('mode-selector', 'value')])
+def clear_media_country(value):
+    return ""
 
-    html.Div([
-        dcc.DatePickerRange(
-            id='filter-dates',
-            display_format='YYYY-MM-DD',
-            min_date_allowed=config_min_date,
-            max_date_allowed=config_max_date,
-            initial_visible_month=config_min_date,
-            start_date=config_min_date,
-            end_date=config_max_date
+
+@app.callback(Output('mention-country', 'value'), [Input('mode-selector', 'value')])
+def clear_mention_country(value):
+    return ""
+
+
+@app.callback(
+    Output('media-country-col', 'style'),
+    [Input('mode-selector', 'value')])
+def hide_media_country(mode):
+    if mode == "mention":
+        return {}
+    else:
+        return {"display": "none"}
+
+
+@app.callback(
+    Output('mention-country-col', 'style'),
+    [Input('mode-selector', 'value')])
+def hide_mention_country(mode):
+    if mode == "mention":
+        return {"display": "none"}
+    else:
+        return {}
+
+
+layout = html.Div([
+    dbc.Row([
+        mk_date_range_col(width=4),
+        dbc.Col(
+            dbc.FormGroup(
+                [
+                    dbc.Label("Countries are", html_for="polarity-selector"),
+                    dbc.Select(
+                        id='mode-selector',
+                        options=[
+                            {'label': 'Producing news', 'value': 'produce'},
+                            {'label': 'Mentioned in news', 'value': 'mention'},
+                        ],
+                        value='mentions'
+                    ),
+                ]
+            ),
+            width=2,
         ),
-        dcc.Dropdown(
-            id='polarity-selector',
-            options=[
-                {'label': 'Summary', 'value': 'summary'},
-                {'label': 'Positive', 'value': 'positive'},
-                {'label': 'Neutral', 'value': 'neutral'},
-                {'label': 'Negative', 'value': 'negative'}
-            ],
-            value='positive'
+        dbc.Col(
+            dbc.FormGroup(
+                [
+                    dbc.Label("Sentiment polarity", html_for="polarity-selector"),
+                    dbc.Select(
+                        id='polarity-selector',
+                        options=[
+                            {'label': 'Summary', 'value': 'summary'},
+                            {'label': 'Positive', 'value': 'positive'},
+                            {'label': 'Neutral', 'value': 'neutral'},
+                            {'label': 'Negative', 'value': 'negative'}
+                        ],
+                        value='summary'
+                    ),
+                ]
+            ),
+            width=2,
         ),
+        language_col,
+        media_country_col,
+        mention_country_col,
     ]),
 
     load_wrap([

@@ -10,7 +10,15 @@ from datetime import date
 
 from .base import app
 from . import database_conn as db_conn
-from .common import config_available_languages, config_min_date, config_max_date
+from .common import (
+    config_available_languages,
+    config_min_date,
+    config_max_date,
+    mk_date_range_col,
+    language_col,
+    media_country_col,
+    mention_country_col,
+)
 
 __all__ = ["layout"]
 
@@ -18,8 +26,10 @@ __all__ = ["layout"]
     dash.dependencies.Output('timeline-graph', 'figure'),
     [dash.dependencies.Input('date-range-filter', 'start_date'),
      dash.dependencies.Input('date-range-filter', 'end_date'),
-     dash.dependencies.Input('language-dropdown', 'value')])
-def update_sentiment_timeline(start_date, end_date, value):
+     dash.dependencies.Input('language-dropdown', 'value'),
+     dash.dependencies.Input('media-country', 'value'),
+     dash.dependencies.Input('mention-country', 'value')])
+def update_sentiment_timeline(start_date, end_date, language, producing_country, mention_country):
     start_date_object = "1970-01-01"
     end_date_object = "2100-01-01"
 
@@ -31,7 +41,9 @@ def update_sentiment_timeline(start_date, end_date, value):
     df = db_conn.get_sentiment_hist_df({
         'start_date': str(start_date_object), 
         'end_date': str(end_date_object),
-        'language': value
+        'language': language,
+        'country': producing_country,
+        'mentions': mention_country,
     })
 
     fig_timeline = px.histogram(df, x="date", y="articles", color="sentiment", barmode="stack",
@@ -51,36 +63,10 @@ def update_sentiment_timeline(start_date, end_date, value):
 
 layout = html.Div([
     dbc.Row([
-        dbc.Col(
-            dbc.FormGroup(
-                [
-                    dbc.Label("Date range", html_for="date-range-filter"),
-                    html.Br(),
-                    dcc.DatePickerRange(
-                        id='date-range-filter',
-                        display_format='YYYY-MM-DD',
-                        min_date_allowed=config_min_date,
-                        max_date_allowed=config_max_date,
-                        start_date=config_min_date,
-                        end_date=config_max_date
-                    ),
-                ]
-            ),
-            width=6,
-        ),
-        dbc.Col(
-            dbc.FormGroup(
-                [
-                    dbc.Label("Language", html_for="language-dropdown"),
-                    dbc.Select(
-                        id='language-dropdown',
-                        options=config_available_languages,
-                        value=''
-                    )
-                ]
-            ),
-            width=6,
-        ),
+        mk_date_range_col(),
+        language_col,
+        media_country_col,
+        mention_country_col,
     ], form=True),
 
     dcc.Graph(
