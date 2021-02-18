@@ -83,6 +83,17 @@ optional = false
 python-versions = "*"
 
 [[package]]
+name = "duckdb"
+version = "0.2.4"
+description = "DuckDB embedded database"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+numpy = ">=1.14"
+
+[[package]]
 name = "flask"
 version = "1.1.2"
 description = "A simple framework for building complex web applications."
@@ -248,7 +259,7 @@ watchdog = ["watchdog"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7.1"
-content-hash = "aec97fe2d2505e3d0e71daaf113393b93a63a86363e0230f18dd6826c326d8c4"
+content-hash = "31f34030481405820ccfd30fd08f27b565c9107d0c3b67d61846a769ab9ce6c9"
 
 [metadata.files]
 brotli = [
@@ -307,6 +318,28 @@ dash-renderer = [
 ]
 dash-table = [
     {file = "dash_table-4.11.2.tar.gz", hash = "sha256:90fbdd12eaaf657aa80d429263de4bbeef982649eb5981ebeb2410d67c1d20eb"},
+]
+duckdb = [
+    {file = "duckdb-0.2.4-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:55abffc92dec0264b2480da15a84c9daf59690fc99351828fe25d8fa3b0fa33c"},
+    {file = "duckdb-0.2.4-cp36-cp36m-manylinux2010_i686.whl", hash = "sha256:8328fb40398b9cb58ce9f3d028dff34e280ac8554eea77b4e4f59bd2dea24729"},
+    {file = "duckdb-0.2.4-cp36-cp36m-manylinux2010_x86_64.whl", hash = "sha256:4b6f1c40fc732dc29be06a307cb0597b557e330d59202fccab01f5f1b6739e9f"},
+    {file = "duckdb-0.2.4-cp36-cp36m-win32.whl", hash = "sha256:e49b72ec0668bff7f56dceadf5431da028ac02e33a6d2c79092bd6d3bf1d9823"},
+    {file = "duckdb-0.2.4-cp36-cp36m-win_amd64.whl", hash = "sha256:efaeffdb7777261a3bd3cef675f39eed311d7abccfdb46094e1180c72749487e"},
+    {file = "duckdb-0.2.4-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:74fcfb1d7ac05b50f729dbebbea146c6fbb46d326b4d43dcf6f2e4cc2133731f"},
+    {file = "duckdb-0.2.4-cp37-cp37m-manylinux2010_i686.whl", hash = "sha256:6fa64d5f2044c224af1beacdd3789dc871b530802028d881131ee430e6a36639"},
+    {file = "duckdb-0.2.4-cp37-cp37m-manylinux2010_x86_64.whl", hash = "sha256:40298fc4af2d0967f3d593fc7c4d5449ad23773a1c54591c3676fa5b5d73482f"},
+    {file = "duckdb-0.2.4-cp37-cp37m-win32.whl", hash = "sha256:14e514a45c438d558e9d0f66930105769d26b467f41efe3029cfee3e7212b952"},
+    {file = "duckdb-0.2.4-cp37-cp37m-win_amd64.whl", hash = "sha256:feb5dbc158db9569f5b60e3ce31e7cec97117a7e97fb6b3e6c9b0b08bbc1fe93"},
+    {file = "duckdb-0.2.4-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:27fead4aa1f5ac41d97e28515b76eebc19687aa6dcb7fd9dd952c551183685fe"},
+    {file = "duckdb-0.2.4-cp38-cp38-manylinux2010_i686.whl", hash = "sha256:c1f97c20c98c0e3afcd7c63ea12467a9b9bcc56a82fa7a69e71318c458e31c7a"},
+    {file = "duckdb-0.2.4-cp38-cp38-manylinux2010_x86_64.whl", hash = "sha256:192b07ab9d42ae11e90c89963ea8219dfbe1f3bf45d4cd73cfc8a16984cc3014"},
+    {file = "duckdb-0.2.4-cp38-cp38-win32.whl", hash = "sha256:5e22506054d1537e45f922c1eb015e4f7338e91fec96e66c583b8f79481bcd13"},
+    {file = "duckdb-0.2.4-cp38-cp38-win_amd64.whl", hash = "sha256:b3eacd71f7607a09795e016ae7e696b33916cf0d9e1e7ec9dca74d7019bf673d"},
+    {file = "duckdb-0.2.4-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:64073f9bbf64a03798a9c31a4f6129a7c56d04e164886ac20c0775a60d16fb0f"},
+    {file = "duckdb-0.2.4-cp39-cp39-manylinux2010_i686.whl", hash = "sha256:dec848d53bdbbc0f579c5191d0aeb6ef3e91be366ed7743e2ad6ae363cd09f25"},
+    {file = "duckdb-0.2.4-cp39-cp39-manylinux2010_x86_64.whl", hash = "sha256:3a16f0cb371f307f242b81768ce4e015d65398dc698ca7078dd7a212a47a015e"},
+    {file = "duckdb-0.2.4-cp39-cp39-win32.whl", hash = "sha256:8bb99cb938f7eca6932df1005f2ff84b4013cf675c4e6ab4365b91e2d0f1dfb7"},
+    {file = "duckdb-0.2.4-cp39-cp39-win_amd64.whl", hash = "sha256:46dddd374150d0b6ac2316e4aa34a8f27f9f635534dbad46be1c244e1c580995"},
 ]
 flask = [
     {file = "Flask-1.1.2-py2.py3-none-any.whl", hash = "sha256:8a4fdd8936eba2512e9c85df320a37e694c93945b33ef33c89946a340a238557"},
