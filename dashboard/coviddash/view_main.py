@@ -59,4 +59,4 @@ layout = html.Div([
                 dcc.Graph(figure=lang_timeline_fig)
             )
     ])
-], style={'background': 'white', 'padding': '2em'})
+])

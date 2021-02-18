@@ -16,8 +16,8 @@ __all__ = ["layout"]
 
 @app.callback(
     dash.dependencies.Output('timeline-graph', 'figure'),
-    [dash.dependencies.Input('my-date-picker-range', 'start_date'),
-     dash.dependencies.Input('my-date-picker-range', 'end_date'),
+    [dash.dependencies.Input('date-range-filter', 'start_date'),
+     dash.dependencies.Input('date-range-filter', 'end_date'),
      dash.dependencies.Input('language-dropdown', 'value')])
 def update_sentiment_timeline(start_date, end_date, value):
     start_date_object = "1970-01-01"
@@ -50,23 +50,38 @@ def update_sentiment_timeline(start_date, end_date, value):
 
 
 layout = html.Div([
-    html.H3(children='Filters'),
-
-    html.Div([
-        dcc.DatePickerRange(
-            id='my-date-picker-range',
-            display_format='YYYY-MM-DD',
-            min_date_allowed=config_min_date,
-            max_date_allowed=config_max_date,
-            start_date=config_min_date,
-            end_date=config_max_date
-        ), 
-        dcc.Dropdown(
-            id='language-dropdown',
-            options=config_available_languages,
-            value=''
-        )
-    ]),
+    dbc.Row([
+        dbc.Col(
+            dbc.FormGroup(
+                [
+                    dbc.Label("Date range", html_for="date-range-filter"),
+                    html.Br(),
+                    dcc.DatePickerRange(
+                        id='date-range-filter',
+                        display_format='YYYY-MM-DD',
+                        min_date_allowed=config_min_date,
+                        max_date_allowed=config_max_date,
+                        start_date=config_min_date,
+                        end_date=config_max_date
+                    ),
+                ]
+            ),
+            width=6,
+        ),
+        dbc.Col(
+            dbc.FormGroup(
+                [
+                    dbc.Label("Language", html_for="language-dropdown"),
+                    dbc.Select(
+                        id='language-dropdown',
+                        options=config_available_languages,
+                        value=''
+                    )
+                ]
+            ),
+            width=6,
+        ),
+    ], form=True),
 
     dcc.Graph(
         id='timeline-graph'
