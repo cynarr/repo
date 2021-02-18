@@ -4,18 +4,13 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
-import pandas as pd
 import dash_bootstrap_components as dbc
-import plotly.express as px
-import plotly.graph_objects as go
-import datetime
-from datetime import date
 
 from .base import app
-from . import database_conn as db_conn
-from .mentions import layout as mentions_layout
+from .view_mentions import layout as mentions_layout
 from .view_main import layout as main_layout
 from .view_moral import layout as moral_layout
+from .view_news import layout as news_layout
 
 
 from .common import config_available_languages, config_min_date, config_max_date
@@ -26,6 +21,7 @@ server = app.server
 
 page_layouts = {
     "/": main_layout,
+    "/news/": news_layout,
     "/moral/": moral_layout,
     "/mentions/": mentions_layout
 }
@@ -41,9 +37,19 @@ app.layout = html.Div(children=[
 
     dbc.NavbarSimple(
         children=[
-            dbc.NavItem(dbc.NavLink("News from: countries", href="/")),
-            dbc.NavItem(dbc.NavLink("News @mentioning countries", href="/mentions/")),
-            dbc.NavItem(dbc.NavLink("Moral sentiments", href="/moral/")),
+            dbc.NavItem(dbc.NavLink("Introduction", href="/")),
+            dbc.DropdownMenu(
+                label="😀/😢 Polar sentiments...",
+                children=[
+                    dbc.DropdownMenuItem("...📅 in time", href="/news/"),
+                    dbc.DropdownMenuItem("...🌍 across countries", href="/mentions/"),
+                    dbc.DropdownMenuItem("...⏩ animated", href="/animated/"),
+                ],
+                nav=True,
+                in_navbar=True,
+                color="primary",
+            ),
+            dbc.NavItem(dbc.NavLink("⚖️ Moral sentiments", href="/moral/")),
         ],
         brand="COVID-19 mood map",
         brand_href="/",
@@ -51,7 +57,7 @@ app.layout = html.Div(children=[
         dark=True,
     ),
 
-    dbc.Container([html.Div(id="page-content")])
+    dbc.Container(id="page-content", className="py-md-3")
 ])
 
 app.validation_layout = html.Div([

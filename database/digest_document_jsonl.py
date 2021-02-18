@@ -1,15 +1,17 @@
-import sqlite3
+import duckdb
 import json 
 import sys
-import datetime
-import time
+from .utils import flush_rows
 
-# First run "cat database/database_schema.sql | sqlite3 database/database.db" to create the scehma on command line
+
+SCHEMA = "documents(document_id, canon_url, date_publish, language, title, country)"
+
 
 if __name__ == '__main__':
-    conn = sqlite3.connect(sys.argv[1])
-    c = conn.cursor()
+    conn = duckdb.connect(sys.argv[1])
+    conn.begin()
     counter = 0
+    rows = []
 
     for line in sys.stdin:
         counter += 1
@@ -22,20 +24,13 @@ if __name__ == '__main__':
         title = doc['title']
         country = doc['country']
 
-        # Tranform date into unix time as SQLite does not handle dates
-        dt = datetime.datetime.strptime(date_publish, '%Y-%m-%dT%H:%M:%S')
-        date_publish_unix = int(time.mktime(dt.timetuple()))
+        rows.append((counter, canon_url, date_publish, language, title, country))
 
-        try:
-            c.execute("INSERT INTO documents(canon_url, date_publish, language, title, country) VALUES (?, ?, ?, ?, ?)", (canon_url, date_publish_unix, language, title, country))
-        except sqlite3.IntegrityError as err:
-            print("Warning:", err)
-        except sqlite3.OperationalError as err:
-            print("Error:", err)
-            exit()
+        if counter % 50000 == 0:  # Commit changes every now and then
+            flush_rows(SCHEMA, conn, rows)
+            conn.begin()
+            print(counter)
 
-        if counter % 5000 == 0:  # Commit changes every now and then
-            conn.commit()
-
+    flush_rows(SCHEMA, conn, rows)
     conn.commit()
     conn.close()

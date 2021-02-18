@@ -1,5 +1,12 @@
+import os
+from os.path import join as pjoin
+from ..utils.csv import read_csv_set
 from ..utils.wikidata import Wikidata
-from ..european import EURO_COUNTRIES, EURO_LANGUAGES
+
+
+DIR_PATH = os.path.dirname(os.path.realpath(__file__))
+EURO_COUNTRIES = read_csv_set(pjoin(DIR_PATH, "..", "data/euro_country.csv"))
+EURO_LANGUAGES = read_csv_set(pjoin(DIR_PATH, "..", "data/euro_language.csv"))
 
 wikidata = Wikidata()
 

@@ -10,7 +10,6 @@ from datetime import date
 
 from .base import app
 from . import database_conn as db_conn
-from .mentions import layout as mentions_layout
 from .common import config_available_languages, config_min_date, config_max_date, config_available_sentiments
 
 __all__ = ["layout"]
@@ -68,13 +67,16 @@ def update_moral_map(start_date, end_date, language, sentiment_type):
                                 color="doc_count",
                                 hover_name="country", 
                                 scope="europe",
-                                height=1000,
+                                height=700,
                                 color_continuous_scale=px.colors.sequential.Plasma,
                                 title=f"{sent} sentiment")      
 
-        figs.append(dcc.Graph(id=f'ms-map-graph{i}', figure=fig))
+        figs.append(dbc.Col(dcc.Graph(id=f'ms-map-graph{i}', figure=fig)))
 
-    return html.Div(figs)
+    chunks = reversed([figs[x:x+2] for x in range(0, len(figs), 2)])
+
+    rows = [dbc.Row(t) for t in chunks]
+    return html.Div(rows)
 
 
 layout = html.Div([
@@ -100,11 +102,19 @@ layout = html.Div([
             value=config_available_sentiments[0]["value"]
         )        
     ]),
-
-    dcc.Graph(
-        id='ms-timeline-graph'
-    ),
-    html.Div(
-        id='ms-maps'
+    dcc.Loading(
+        id="analyses-section",
+        type="default",
+        fullscreen=True,
+        style={'backgroundColor': 'rgba(0,0,0,0.5)'},
+        children=[
+            dcc.Graph(
+                id='ms-timeline-graph'
+            ),
+            html.Div(
+                id='ms-maps',
+                style={'backgroundColor': 'white'}
+            )                
+        ]
     )
 ])

@@ -40,7 +40,8 @@ def keyword_stem_regex(tokenizer, keyword, name=None):
         allow_ending = (
             all((tok.isalpha() for tok in word)) and len(word) >= 2
         )
-        do_stem = allow_ending and len(word) >= 3
+        letters_stemmed = len("".join((w.decode("utf-8") for w in word[:-1])))
+        do_stem = allow_ending and len(word) >= 3 and letters_stemmed >= 4
         if do_stem:
             del word[-1]
         joined = b"".join(word)
@@ -61,6 +62,10 @@ def keyword_stem_regex(tokenizer, keyword, name=None):
     )
 
 
+def join_re_bits(re_bits):
+    return br"(?:\A|(?:\s+))(?:" + b"|".join(re_bits) + br")(?:\z|(?:\s+))"
+
+
 class MatchSearcher:
     def __init__(self, keywords, extra_patterns=None):
         tokenizer = get_tokenizer()
@@ -72,28 +77,33 @@ class MatchSearcher:
             re_bits.append(pattern)
         if extra_patterns is not None:
             re_bits.extend(extra_patterns)
-        regex = br"(\A|(\s+))(" + b"|".join(re_bits) + br")(\z|(\s+))"
+        regex = join_re_bits(re_bits)
         self.matcher = re2.compile(regex)
 
     def match(self, haystack):
         return self.matcher.contains(haystack)
 
 
+def get_re_bits(keywords):
+    tokenizer = get_tokenizer()
+    re_bits = []
+    for output, keywords in keywords.items():
+        for idx, keyword in enumerate(keywords):
+            pattern = keyword_stem_regex(
+                tokenizer,
+                keyword,
+                name=f"{output}_{idx}"
+            )
+            if pattern is None:
+                continue
+            re_bits.append(pattern)
+    return re_bits
+
+
 class MapSearcher:
     def __init__(self, keywords):
-        tokenizer = get_tokenizer()
-        re_bits = []
-        for output, keywords in keywords.items():
-            for idx, keyword in enumerate(keywords):
-                pattern = keyword_stem_regex(
-                    tokenizer,
-                    keyword,
-                    name=f"{output}_{idx}"
-                )
-                if pattern is None:
-                    continue
-                re_bits.append(pattern)
-        regex = b"|".join(re_bits)
+        re_bits = get_re_bits(keywords)
+        regex = join_re_bits(re_bits)
         self.matcher = re2.compile(regex)
 
     def match(self, haystack):

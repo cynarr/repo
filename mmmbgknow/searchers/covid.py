@@ -4,7 +4,7 @@ import sys
 import pickle
 
 from ..utils.csv import read_csv_map_set
-from ..european import LANGDETECT_EURO_COUNTRIES
+from ..european import LANGDETECT_EURO_LANGUAGES
 from ..search import MatchSearcher
 
 
@@ -22,7 +22,7 @@ EXTRA_PATTERNS = [
 
 
 searchers = {}
-for lang in LANGDETECT_EURO_COUNTRIES:
+for lang in LANGDETECT_EURO_LANGUAGES:
     assert lang in COVID_LABELS, f"'{lang}' not in {COVID_LABELS.keys()}"
     all_labels = COVID_LABELS[lang]
     if lang != "en":

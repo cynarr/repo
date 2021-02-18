@@ -13,66 +13,50 @@ from datetime import date
 
 from .base import app
 from . import database_conn as db_conn
-from .mentions import layout as mentions_layout
 from .common import config_available_languages, config_min_date, config_max_date
+
+import dash_table
+
 
 __all__ = ["layout"]
 
-@app.callback(
-    dash.dependencies.Output('timeline-graph', 'figure'),
-    [dash.dependencies.Input('my-date-picker-range', 'start_date'),
-     dash.dependencies.Input('my-date-picker-range', 'end_date'),
-     dash.dependencies.Input('language-dropdown', 'value')])
-def update_sentiment_timeline(start_date, end_date, value):
-    start_date_object = "1970-01-01"
-    end_date_object = "2100-01-01"
+language_count_df = db_conn.get_language_distribution()
 
-    if start_date is not None:
-        start_date_object = date.fromisoformat(start_date)
-    if end_date is not None:
-        end_date_object = date.fromisoformat(end_date)
-            
-    df = db_conn.get_sentiment_hist_df({
-        'start_date': str(start_date_object), 
-        'end_date': str(end_date_object),
-        'language': value
-    })
+language_count_table = dash_table.DataTable(
+    id='table',
+    columns=[{"name": i, "id": i} for i in language_count_df.columns],
+    data=language_count_df.to_dict('records'),
+)
 
-    fig_timeline = px.histogram(df, x="date", y="Number of articles", color="Sentiment", barmode="stack",
-                                title="News sentiment on the COVID-19 pandemic in March 2020", nbins=31)
+lang_count_fig = px.pie(language_count_df, values="Count", names="Language")
 
-    fig_timeline.update_layout(
-        xaxis=dict(
-            title='Date',
-            tickmode='linear'),
-        yaxis=dict(
-            title="Number of news articles",
-        )
-    )
 
-    return fig_timeline
-
+lang_timeline_df = db_conn.get_language_timeline()
+lang_timeline_fig = px.bar(lang_timeline_df, x="date", y="count", color="language")
 
 layout = html.Div([
-    html.H3(children='Filters'),
-
+    html.H1("COVID-19 mood map"),
+    html.H2("What is COVID-19 mood map?"),
     html.Div([
-        dcc.DatePickerRange(
-            id='my-date-picker-range',
-            display_format='YYYY-MM-DD',
-            min_date_allowed=config_min_date,
-            max_date_allowed=config_max_date,
-            start_date=config_min_date,
-            end_date=config_max_date
-        ), 
-        dcc.Dropdown(
-            id='language-dropdown',
-            options=config_available_languages,
-            value=''
-        )
+        html.P("COVID-19 mood map is a dashboard that visualizes the general mood of COVID news over time."),
+        html.P("DISCLAIMER: data and analyses represented here might not be accurate and should not be used as XXX")
     ]),
-
-    dcc.Graph(
-        id='timeline-graph'
-    )
+    html.H2("Tools used"),
+    html.Div([
+        html.P("what methods, tools and data are you using")
+    ]),
+    html.H2("Data stastistics"),
+    html.H3("Languages"),
+    dcc.Loading(
+        id="analyses-section",
+        type="default",
+        children=[    
+            dbc.Row([
+                dbc.Col(html.Div(language_count_table), width=4),
+                dbc.Col(html.Div(dcc.Graph(figure=lang_count_fig))),
+            ]),
+            html.Div(
+                dcc.Graph(figure=lang_timeline_fig)
+            )
+    ])
 ])
