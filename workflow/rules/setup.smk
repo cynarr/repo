@@ -63,9 +63,9 @@ checkpoint download_muse:
     output:
         directory(MUSE)
     run:
-        from mmmbgknow.european import LANGDETECT_EURO_LANGAUGES
+        from mmmbgknow.european import LANGDETECT_EURO_LANGUAGES
         shell(f"mkdir -p {MUSE}")
-        for langcode in LANGDETECT_EURO_LANGAUGES:
+        for langcode in LANGDETECT_EURO_LANGUAGES:
             shell(f"cd {MUSE} && wget -nv https://dl.fbaipublicfiles.com/arrival/vectors/wiki.multi.{langcode}.vec || true")
 
 

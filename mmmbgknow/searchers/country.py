@@ -4,7 +4,7 @@ import pickle
 import sys
 
 from ..utils.csv import read_csv_map_map_set
-from ..european import LANGDETECT_EURO_COUNTRIES
+from ..european import LANGDETECT_EURO_LANGUAGES
 from ..search import MapSearcher
 
 
@@ -16,7 +16,7 @@ COUNTRY_LABELS["no"] = {**COUNTRY_LABELS["nb"], **COUNTRY_LABELS["nn"]}
 
 
 searchers = {}
-for lang in LANGDETECT_EURO_COUNTRIES:
+for lang in LANGDETECT_EURO_LANGUAGES:
     assert lang in COUNTRY_LABELS, f"'{lang}' not in {COUNTRY_LABELS.keys()}"
     all_country_labels = COUNTRY_LABELS[lang]
     searchers[lang] = MapSearcher(all_country_labels)
