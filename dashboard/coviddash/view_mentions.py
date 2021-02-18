@@ -65,7 +65,7 @@ layout = html.Div([
             start_date=config_min_date,
             end_date=config_max_date
         ),
-        dcc.RadioItems(
+        dcc.Dropdown(
             id='polarity-selector',
             options=[
                 {'label': 'Summary', 'value': 'summary'},
