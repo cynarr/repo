@@ -27,15 +27,22 @@ def update_choropleth(start_date, end_date, polarity):
     if end_date is not None:
         end_date_object = date.fromisoformat(end_date)
 
-    df = db_conn.get_country_mention_pos_neg_sentiment_counts({
+    conditions = {
         'start_date': str(start_date_object),
         'end_date': str(end_date_object),
-        'sentiment': polarity,
-    })
+    }
+
+    if polarity == "summary":
+        df = db_conn.get_country_mention_summary_counts(conditions)
+    else:
+        df = db_conn.get_country_mention_pos_neg_sentiment_counts({
+            **conditions,
+            'sentiment': polarity,
+        })
     return px.choropleth(
         df,
         locations="country_iso3",
-        color="doc_count",
+        color="summary" if polarity == "summary" else "doc_count",
         locationmode="ISO-3",
         scope="europe",
         width=1000,
@@ -61,6 +68,7 @@ layout = html.Div([
         dcc.RadioItems(
             id='polarity-selector',
             options=[
+                {'label': 'Summary', 'value': 'summary'},
                 {'label': 'Positive', 'value': 'positive'},
                 {'label': 'Neutral', 'value': 'neutral'},
                 {'label': 'Negative', 'value': 'negative'}

@@ -5,6 +5,7 @@ import datetime
 import time
 from contextlib import contextmanager
 import pycountry
+import numpy as np
 
 DATABASE_PATH = os.environ.get("DATABASE_PATH", "database/database.db")
 _connection = None
@@ -147,15 +148,21 @@ def get_country_pos_neg_sentiment_counts(conditions):
     return df
 
 
+DOC_SENT_MENTION_JOIN = [
+    "documents AS d",
+    "JOIN mbert_sentiment AS m ON d.document_id = m.document_id",
+    "JOIN country_mentions as cm ON cm.document_id = m.document_id",
+]
+
+
 def get_country_mention_pos_neg_sentiment_counts(conditions):
     where_clause = generate_where_conditions(conditions)
 
     with db_connection() as conn:
         query = " ".join([
             "SELECT mention_country, COUNT(d.document_id) AS doc_count",
-            "FROM documents AS d",
-            "JOIN mbert_sentiment AS m ON d.document_id = m.document_id",
-            "JOIN country_mentions as cm ON cm.document_id = m.document_id",
+            "FROM",
+            *DOC_SENT_MENTION_JOIN,
             where_clause,
             "GROUP BY mention_country",
         ])
@@ -181,6 +188,27 @@ def get_language_timeline():
         df = pd.read_sql_query(query, conn)
         add_language_name_col(df, "lang_code", "language")  
     return df
+
+def get_country_mention_summary_counts(conditions):
+    where_clause = generate_where_conditions(conditions)
+
+    with db_connection() as conn:
+        query = " ".join([
+            "SELECT mention_country,",
+            "SUM(CASE WHEN sentiment = 'positive' THEN 1 ELSE 0 END) AS positive_cnt,",
+            "SUM(CASE WHEN sentiment = 'neutral' THEN 1 ELSE 0 END) AS neutral_cnt,",
+            "SUM(CASE WHEN sentiment = 'negative' THEN 1 ELSE 0 END) AS negative_cnt",
+            "FROM",
+            *DOC_SENT_MENTION_JOIN,
+            where_clause,
+            "GROUP BY mention_country",
+        ])
+        df = conn.execute(query).fetchdf()
+        df["summary"] = np.log2((df["positive_cnt"] + 0.5 * df["neutral_cnt"]) / (df["positive_cnt"] + df["neutral_cnt"] + df["negative_cnt"]))
+
+    add_iso3_col(df, "mention_country")
+    return df
+
 
 if __name__ == "__main__":
     print(get_language_timeline())
