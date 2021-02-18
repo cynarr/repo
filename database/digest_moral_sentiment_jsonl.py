@@ -1,29 +1,30 @@
-import sqlite3
+import duckdb
 import json 
 import sys
 
-# First run "cat database/database_schema.sql | sqlite3 database/database.db" to create the scehma on command line
-
 if __name__ == '__main__':
-    conn = sqlite3.connect(sys.argv[1])
+    conn = duckdb.connect(sys.argv[1])
     c = conn.cursor()
+    conn.begin()
     counter = 0
+    rows = []
 
     for line in sys.stdin:
         counter += 1
 
         doc = json.loads(line.strip())
         canon_url = doc['canon_url']
+        doc_id = c.execute("SELECT document_id FROM documents WHERE canon_url = ?", (canon_url,)).fetchone()[0]
 
         for sentiment_name in doc['proj_sentiment']:
             sent_score = doc['proj_sentiment'][sentiment_name]
-            try:
-                c.execute(f"INSERT INTO moral_sentiment_scores(canon_url, sentiment_type, score) VALUES (?, ?, ?)", (canon_url, sentiment_name, sent_score))
-            except sqlite3.IntegrityError:
-                print(f"Duplicate entry for '{canon_url}'")
+            rows.append((doc_id, sentiment_name, sent_score))
 
         if counter % 5000 == 0:  # Commit changes every now and then
             conn.commit()
+            c.executemany(f"INSERT INTO moral_sentiment_scores(document_id, sentiment_type, score) VALUES (?, ?, ?)", rows)
+            rows = []
+            conn.begin()
     
     conn.commit()
     conn.close()

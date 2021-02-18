@@ -1,12 +1,14 @@
-import sqlite3
+import duckdb
 import orjson
 import sys
 
 
 if __name__ == '__main__':
-    conn = sqlite3.connect(sys.argv[1])
+    conn = duckdb.connect(sys.argv[1])
     c = conn.cursor()
+    conn.begin()
     counter = 0
+    rows = []
 
     for line in sys.stdin.buffer:
         counter += 1
@@ -19,10 +21,14 @@ if __name__ == '__main__':
 
         doc_id = c.execute("SELECT document_id FROM documents WHERE canon_url = ?", (canon_url,)).fetchone()[0]
         for country in doc['country_mentions']:
-            c.execute("INSERT INTO country_mentions(document_id, mention_country) VALUES (?, ?)", (doc_id, country))
+            rows.append((doc_id, country))
 
-        if counter % 5000 == 0:  # Commit changes every now and then
+        if counter % 50000 == 0:  # Commit changes every now and then
             conn.commit()
+            c.executemany("INSERT INTO country_mentions(document_id, mention_country) VALUES (?, ?)", rows)
+            rows = []
+            conn.begin()
+            print(counter)
 
     conn.commit()
     conn.close()
