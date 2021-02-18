@@ -38,6 +38,7 @@ pyarrow = "^3.0.0"
 vaex-core = "^2.0.3"
 vaex-arrow = "^0.5.1"
 click = "^7.1.2"
+duckdb = "^0.2.4"
 
 [tool.poetry.extras]
 usenews = ["rpy2"]

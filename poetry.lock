@@ -225,6 +225,17 @@ optional = false
 python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
 
 [[package]]
+name = "duckdb"
+version = "0.2.4"
+description = "DuckDB embedded database"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+numpy = ">=1.14"
+
+[[package]]
 name = "filelock"
 version = "3.0.12"
 description = "A platform independent file lock."
@@ -280,10 +291,10 @@ sqlalchemy = {version = ">=1.1,<1.3.7", optional = true, markers = "extra == \"s
 toolz = "*"
 
 [package.extras]
-all = ["google-cloud-bigquery[pandas,bqstorage] (>=1.12.0,<2.0.0dev)", "pydata-google-auth", "tables (>=3.0.0)", "pyarrow (>=0.12.0)", "pyspark (>=2.4.3)", "geoalchemy2", "geopandas", "shapely", "hdfs (>=2.0.16)", "sqlalchemy (>=1.1,<1.3.7)", "requests", "impyla[kerberos] (>=0.15.0)", "psycopg2", "pymapd (==0.24)", "pyarrow", "pymysql", "requests-kerberos", "graphviz", "clickhouse-driver (>=0.1.3)", "clickhouse-cityhash"]
-bigquery = ["google-cloud-bigquery[pandas,bqstorage] (>=1.12.0,<2.0.0dev)", "pydata-google-auth"]
+all = ["google-cloud-bigquery[bqstorage,pandas] (>=1.12.0,<2.0.0dev)", "pydata-google-auth", "tables (>=3.0.0)", "pyarrow (>=0.12.0)", "pyspark (>=2.4.3)", "geoalchemy2", "geopandas", "shapely", "hdfs (>=2.0.16)", "sqlalchemy (>=1.1,<1.3.7)", "requests", "impyla[kerberos] (>=0.15.0)", "psycopg2", "pymapd (==0.24)", "pyarrow", "pymysql", "requests-kerberos", "graphviz", "clickhouse-driver (>=0.1.3)", "clickhouse-cityhash"]
+bigquery = ["google-cloud-bigquery[bqstorage,pandas] (>=1.12.0,<2.0.0dev)", "pydata-google-auth"]
 clickhouse = ["clickhouse-driver (>=0.1.3)", "clickhouse-cityhash"]
-develop = ["hdfs (>=2.0.16)", "sqlalchemy (>=1.1,<1.3.7)", "requests", "impyla[kerberos] (>=0.15.0)", "psycopg2", "pymapd (==0.24)", "pyarrow", "pymysql", "requests-kerberos", "graphviz", "clickhouse-driver (>=0.1.3)", "clickhouse-cityhash", "google-cloud-bigquery[pandas,bqstorage] (>=1.12.0,<2.0.0dev)", "pydata-google-auth", "tables (>=3.0.0)", "pyarrow (>=0.12.0)", "pyspark (>=2.4.3)", "geoalchemy2", "geopandas", "shapely", "black", "click", "pydocstyle (==4.0.1)", "flake8", "isort", "mypy", "pre-commit", "pygit2", "pytest (>=4.5)"]
+develop = ["hdfs (>=2.0.16)", "sqlalchemy (>=1.1,<1.3.7)", "requests", "impyla[kerberos] (>=0.15.0)", "psycopg2", "pymapd (==0.24)", "pyarrow", "pymysql", "requests-kerberos", "graphviz", "clickhouse-driver (>=0.1.3)", "clickhouse-cityhash", "google-cloud-bigquery[bqstorage,pandas] (>=1.12.0,<2.0.0dev)", "pydata-google-auth", "tables (>=3.0.0)", "pyarrow (>=0.12.0)", "pyspark (>=2.4.3)", "geoalchemy2", "geopandas", "shapely", "black", "click", "pydocstyle (==4.0.1)", "flake8", "isort", "mypy", "pre-commit", "pygit2", "pytest (>=4.5)"]
 geospatial = ["geoalchemy2", "geopandas", "shapely"]
 hdf5 = ["tables (>=3.0.0)"]
 impala = ["hdfs (>=2.0.16)", "sqlalchemy (>=1.1,<1.3.7)", "requests", "impyla[kerberos] (>=0.15.0)"]
@@ -1257,7 +1268,7 @@ usenews = ["rpy2"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7.1"
-content-hash = "fcf0fdb9c7f129328e3e34237fc23d13a8c00b995b236288b15f4ad6585712af"
+content-hash = "08669725bf48101ef6bdbd93da04f6cb325548ca85c2f5cb78cb085ac5a3e667"
 
 [metadata.files]
 amply = [
@@ -1488,6 +1499,28 @@ docutils = [
     {file = "docutils-0.15.2-py2-none-any.whl", hash = "sha256:9e4d7ecfc600058e07ba661411a2b7de2fd0fafa17d1a7f7361cd47b1175c827"},
     {file = "docutils-0.15.2-py3-none-any.whl", hash = "sha256:6c4f696463b79f1fb8ba0c594b63840ebd41f059e92b31957c46b74a4599b6d0"},
     {file = "docutils-0.15.2.tar.gz", hash = "sha256:a2aeea129088da402665e92e0b25b04b073c04b2dce4ab65caaa38b7ce2e1a99"},
+]
+duckdb = [
+    {file = "duckdb-0.2.4-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:55abffc92dec0264b2480da15a84c9daf59690fc99351828fe25d8fa3b0fa33c"},
+    {file = "duckdb-0.2.4-cp36-cp36m-manylinux2010_i686.whl", hash = "sha256:8328fb40398b9cb58ce9f3d028dff34e280ac8554eea77b4e4f59bd2dea24729"},
+    {file = "duckdb-0.2.4-cp36-cp36m-manylinux2010_x86_64.whl", hash = "sha256:4b6f1c40fc732dc29be06a307cb0597b557e330d59202fccab01f5f1b6739e9f"},
+    {file = "duckdb-0.2.4-cp36-cp36m-win32.whl", hash = "sha256:e49b72ec0668bff7f56dceadf5431da028ac02e33a6d2c79092bd6d3bf1d9823"},
+    {file = "duckdb-0.2.4-cp36-cp36m-win_amd64.whl", hash = "sha256:efaeffdb7777261a3bd3cef675f39eed311d7abccfdb46094e1180c72749487e"},
+    {file = "duckdb-0.2.4-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:74fcfb1d7ac05b50f729dbebbea146c6fbb46d326b4d43dcf6f2e4cc2133731f"},
+    {file = "duckdb-0.2.4-cp37-cp37m-manylinux2010_i686.whl", hash = "sha256:6fa64d5f2044c224af1beacdd3789dc871b530802028d881131ee430e6a36639"},
+    {file = "duckdb-0.2.4-cp37-cp37m-manylinux2010_x86_64.whl", hash = "sha256:40298fc4af2d0967f3d593fc7c4d5449ad23773a1c54591c3676fa5b5d73482f"},
+    {file = "duckdb-0.2.4-cp37-cp37m-win32.whl", hash = "sha256:14e514a45c438d558e9d0f66930105769d26b467f41efe3029cfee3e7212b952"},
+    {file = "duckdb-0.2.4-cp37-cp37m-win_amd64.whl", hash = "sha256:feb5dbc158db9569f5b60e3ce31e7cec97117a7e97fb6b3e6c9b0b08bbc1fe93"},
+    {file = "duckdb-0.2.4-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:27fead4aa1f5ac41d97e28515b76eebc19687aa6dcb7fd9dd952c551183685fe"},
+    {file = "duckdb-0.2.4-cp38-cp38-manylinux2010_i686.whl", hash = "sha256:c1f97c20c98c0e3afcd7c63ea12467a9b9bcc56a82fa7a69e71318c458e31c7a"},
+    {file = "duckdb-0.2.4-cp38-cp38-manylinux2010_x86_64.whl", hash = "sha256:192b07ab9d42ae11e90c89963ea8219dfbe1f3bf45d4cd73cfc8a16984cc3014"},
+    {file = "duckdb-0.2.4-cp38-cp38-win32.whl", hash = "sha256:5e22506054d1537e45f922c1eb015e4f7338e91fec96e66c583b8f79481bcd13"},
+    {file = "duckdb-0.2.4-cp38-cp38-win_amd64.whl", hash = "sha256:b3eacd71f7607a09795e016ae7e696b33916cf0d9e1e7ec9dca74d7019bf673d"},
+    {file = "duckdb-0.2.4-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:64073f9bbf64a03798a9c31a4f6129a7c56d04e164886ac20c0775a60d16fb0f"},
+    {file = "duckdb-0.2.4-cp39-cp39-manylinux2010_i686.whl", hash = "sha256:dec848d53bdbbc0f579c5191d0aeb6ef3e91be366ed7743e2ad6ae363cd09f25"},
+    {file = "duckdb-0.2.4-cp39-cp39-manylinux2010_x86_64.whl", hash = "sha256:3a16f0cb371f307f242b81768ce4e015d65398dc698ca7078dd7a212a47a015e"},
+    {file = "duckdb-0.2.4-cp39-cp39-win32.whl", hash = "sha256:8bb99cb938f7eca6932df1005f2ff84b4013cf675c4e6ab4365b91e2d0f1dfb7"},
+    {file = "duckdb-0.2.4-cp39-cp39-win_amd64.whl", hash = "sha256:46dddd374150d0b6ac2316e4aa34a8f27f9f635534dbad46be1c244e1c580995"},
 ]
 filelock = [
     {file = "filelock-3.0.12-py3-none-any.whl", hash = "sha256:929b7d63ec5b7d6b71b0fa5ac14e030b3f70b75747cef1b10da9b879fef15836"},
