@@ -10,7 +10,6 @@ from datetime import date
 
 from .base import app
 from . import database_conn as db_conn
-from .mentions import layout as mentions_layout
 from .common import config_available_languages, config_min_date, config_max_date, config_available_sentiments
 
 __all__ = ["layout"]
