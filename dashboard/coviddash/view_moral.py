@@ -85,27 +85,41 @@ def update_moral_map(start_date, end_date, language, sentiment_type):
 
 
 layout = html.Div([
-    html.H3(children='Filters'),
-
-    html.Div([
-        dcc.DatePickerRange(
-            id='ms-date-picker-range',
-            display_format='YYYY-MM-DD',
-            min_date_allowed=config_min_date,
-            max_date_allowed=config_max_date,
-            start_date="2020-03-01",
-            end_date="2020-04-01"
-        ), 
-        dcc.Dropdown(
-            id='ms-language-dropdown',
-            options=config_available_languages,
-            value=''
-        ),
-        dcc.Dropdown(
-            id='ms-sentiment-dropdown',
-            options=config_available_sentiments,
-            value=config_available_sentiments[0]["value"]
-        )        
+    html.H2("Moral sentiments"),
+    html.P(
+        "Moral sentiment measures the amount of moral language used based on the moral foundations theory (see https://moralfoundations.org/ for more details). "
+        "It is split into five polar dimensions care/harm, fairness/cheating, loyalty/betrayal, authority/subversion, and sanctity/degradation."
+    ),
+    dbc.Row([
+        dbc.Col([
+            html.H4("Data date range"),
+            dcc.DatePickerRange(
+                id='ms-date-picker-range',
+                display_format='YYYY-MM-DD',
+                min_date_allowed=config_min_date,
+                max_date_allowed=config_max_date,
+                start_date="2020-03-01",
+                end_date="2020-04-01"
+            )
+        ]),
+    ]),
+    dbc.Row([
+        dbc.Col([
+            html.H4("Language filtering"),
+            dcc.Dropdown(
+                id='ms-language-dropdown',
+                options=config_available_languages,
+                value=''
+            ),
+        ]),
+        dbc.Col([
+            html.H4("Sentiment filtering"),
+            dcc.Dropdown(
+                id='ms-sentiment-dropdown',
+                options=config_available_sentiments,
+                value=config_available_sentiments[0]["value"]
+            )   
+        ])     
     ]),
     dcc.Loading(
         id="analyses-section",
