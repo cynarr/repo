@@ -1,6 +1,7 @@
 import duckdb
 import orjson
 import sys
+from .utils import flush_rows
 
 
 SCHEMA = "country_mentions(document_id, mention_country)"

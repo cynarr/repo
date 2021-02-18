@@ -1,6 +1,7 @@
 import duckdb
 import orjson
 import sys
+from .utils import flush_rows
 
 
 SCHEMA = "mbert_sentiment(document_id, sentiment)"
