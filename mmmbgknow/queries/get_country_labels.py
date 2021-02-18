@@ -1,9 +1,11 @@
+import os
+from os.path import join as pjoin
 from ..utils.csv import read_csv_set
 from ..utils.wikidata import Wikidata
 
 
 DIR_PATH = os.path.dirname(os.path.realpath(__file__))
-LANGDETECT_EURO_LANGUAGES = read_csv_set(pjoin(DIR_PATH, "..", "data/langdetect_euro_language.csv"))
+EURO_COUNTRIES = read_csv_set(pjoin(DIR_PATH, "..", "data/euro_country.csv"))
 EURO_LANGUAGES = read_csv_set(pjoin(DIR_PATH, "..", "data/euro_language.csv"))
 
 wikidata = Wikidata()
@@ -42,11 +44,11 @@ def make_query(ccs, langcodes):
 
 
 results = []
-for lang in LANGDETECT_EURO_LANGUAGES:
+for cc2 in EURO_COUNTRIES:
     # It's a slow query so we just go country at a time to avoid timeouts
     results.extend(
         wikidata.query_tpl(
-            make_query((lang,), EURO_LANGUAGES),
+            make_query((cc2,), EURO_LANGUAGES),
             "langcode",
             "cc2",
             "lab"
