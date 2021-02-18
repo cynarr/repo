@@ -100,11 +100,16 @@ layout = html.Div([
             value=config_available_sentiments[0]["value"]
         )        
     ]),
-
-    dcc.Graph(
-        id='ms-timeline-graph'
+    dcc.Loading(
+        id="analyses-section",
+        type="default",
+        children=[
+            dcc.Graph(
+                id='ms-timeline-graph'
+            ),
+            html.Div(
+                id='ms-maps'
+            )                
+        ]
     ),
-    html.Div(
-        id='ms-maps'
-    )
 ])
