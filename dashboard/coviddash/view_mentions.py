@@ -6,7 +6,7 @@ from datetime import date
 
 from .base import app
 from . import database_conn as db_conn
-from .common import config_available_languages, config_min_date, config_max_date
+from .common import config_available_languages, config_min_date, config_max_date, load_wrap
 
 
 __all__ = ["layout"]
@@ -68,11 +68,13 @@ layout = html.Div([
         ),
     ]),
 
-    dcc.Graph(
-        id='mention-map',
-        config=dict(
-            scrollZoom=False,
-            modeBarButtonsToRemove=['pan2d'],
-        ),
-    )
+    load_wrap([
+        dcc.Graph(
+            id='mention-map',
+            config=dict(
+                scrollZoom=False,
+                modeBarButtonsToRemove=['pan2d'],
+            ),
+        )
+    ])
 ])
