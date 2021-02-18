@@ -122,6 +122,10 @@ def add_iso3_col(df, country_col, iso3_col="country_iso3"):
     df[iso3_col] = df[country_col].map(alpha2_to_alpha3)
 
 
+def add_language_name_col(df, language_code_col, language_col="proper_language"):
+    df[language_col] = df[language_code_col].map(lambda x: pycountry.languages.get(alpha_2=x).name)
+
+
 def get_country_pos_neg_sentiment_counts(conditions):
     where_clause = generate_where_conditions(conditions)
 
@@ -154,7 +158,25 @@ def get_country_mention_pos_neg_sentiment_counts(conditions):
     add_iso3_col(df, "mention_country")
     return df
 
+def get_language_distribution():
+    with db_connection() as conn:
+        query = " ".join([
+            "SELECT language AS lang_code, COUNT(language) AS Count FROM documents GROUP BY language",
+        ])
+        df = pd.read_sql_query(query, conn)
+        add_language_name_col(df, "lang_code", "Language")  
+    return df[['Language', 'Count']]
+
+def get_language_timeline():
+    with db_connection() as conn:
+        query = " ".join([
+            "SELECT language AS lang_code, COUNT(language) as count, date_publish FROM documents GROUP BY language, (date_publish / 86400) ORDER BY date_publish",
+        ])
+        df = pd.read_sql_query(query, conn)
+        add_language_name_col(df, "lang_code", "language")  
+        df['date'] = pd.to_datetime(df['date_publish'], unit='s').dt.floor('d')
+    return df
 
 if __name__ == "__main__":
-    print(get_moral_sentiments_for_countries())
+    print(get_language_timeline())
     #print(get_moral_sentiment_hist_df({'start_date': "2020-03-01", 'end_date': "2020-03-02"}))
