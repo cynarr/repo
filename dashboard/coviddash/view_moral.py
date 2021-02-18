@@ -103,6 +103,8 @@ layout = html.Div([
     dcc.Loading(
         id="analyses-section",
         type="default",
+        fullscreen=True,
+        style={'backgroundColor': 'rgba(0,0,0,0.5)'},
         children=[
             dcc.Graph(
                 id='ms-timeline-graph'
