@@ -7,16 +7,20 @@ from contextlib import contextmanager
 import pycountry
 
 DATABASE_PATH = os.environ.get("DATABASE_PATH", "database/database.db")
+_connection = None
 
 
 @contextmanager
 def db_connection():
-    conn = duckdb.connect(
-        DATABASE_PATH,
-        read_only=True,
-    )
-    yield conn
-    conn.close()
+    global _connection
+    if _connection is None:
+        _connection = duckdb.connect(
+            DATABASE_PATH,
+            read_only=True,
+        )
+    local_connection = _connection.cursor()
+    yield local_connection
+    local_connection.close()
 
 
 def get_min_and_max_dates():
