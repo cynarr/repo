@@ -88,6 +88,7 @@ def hide_mention_country(mode):
 layout = html.Div([
     dbc.Row([
         date_range_col,
+        dbc.Col(width=1),
         *map_sentiments_right_cols,
     ]),
 

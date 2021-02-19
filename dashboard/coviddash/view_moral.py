@@ -10,15 +10,15 @@ from datetime import date
 
 from .base import app
 from . import database_conn as db_conn
-from .common import config_available_languages, config_min_date, config_max_date, config_available_sentiments
+from .common import config_available_languages, config_min_date, config_max_date, config_available_sentiments, language_col, date_range_col
 
 __all__ = ["layout"]
 
 @app.callback(
     dash.dependencies.Output('ms-timeline-graph', 'figure'),
-    [dash.dependencies.Input('ms-date-picker-range', 'start_date'),
-     dash.dependencies.Input('ms-date-picker-range', 'end_date'),
-     dash.dependencies.Input('ms-language-dropdown', 'value'),
+    [dash.dependencies.Input('date-range-filter', 'start_date'),
+     dash.dependencies.Input('date-range-filter', 'end_date'),
+     dash.dependencies.Input('language-dropdown', 'value'),
      dash.dependencies.Input('ms-sentiment-dropdown', 'value')])
 def update_moral_graph(start_date, end_date, language, sentiment_type):
     start_date_object = "2020-03-01"
@@ -43,9 +43,9 @@ def update_moral_graph(start_date, end_date, language, sentiment_type):
 
 @app.callback(
     dash.dependencies.Output('ms-maps', 'children'),
-    [dash.dependencies.Input('ms-date-picker-range', 'start_date'),
-     dash.dependencies.Input('ms-date-picker-range', 'end_date'),
-     dash.dependencies.Input('ms-language-dropdown', 'value'),
+    [dash.dependencies.Input('date-range-filter', 'start_date'),
+     dash.dependencies.Input('date-range-filter', 'end_date'),
+     dash.dependencies.Input('language-dropdown', 'value'),
      dash.dependencies.Input('ms-sentiment-dropdown', 'value')])
 def update_moral_map(start_date, end_date, language, sentiment_type):
     start_date_object = "1970-01-01"
@@ -90,39 +90,19 @@ layout = html.Div([
         "Moral sentiment measures the amount of moral language used based on the moral foundations theory (see https://moralfoundations.org/ for more details). "
         "It is split into five polar dimensions care/harm, fairness/cheating, loyalty/betrayal, authority/subversion, and sanctity/degradation."
     ),
-    html.H4("Filters"),
     dbc.Row([
-        dbc.Col([
-            dbc.Label("Date range"),
-            html.Br(),
-            dcc.DatePickerRange(
-                id='ms-date-picker-range',
-                display_format='YYYY-MM-DD',
-                min_date_allowed=config_min_date,
-                max_date_allowed=config_max_date,
-                start_date="2020-03-01",
-                end_date="2020-04-01"
-            )
-        ]),
-    ]),
-    dbc.Row([
-        dbc.Col([
-            dbc.Label("Language"),
-            dcc.Dropdown(
-                id='ms-language-dropdown',
-                options=config_available_languages,
-                value=''
-            ),
-        ]),
+        date_range_col,
+        dbc.Col(width=5),
+        language_col,
         dbc.Col([
             dbc.Label("Sentiment"),
-            dcc.Dropdown(
+            dbc.Select(
                 id='ms-sentiment-dropdown',
                 options=config_available_sentiments,
                 value=config_available_sentiments[0]["value"]
-            )   
-        ])     
-    ]),
+            ),
+        ], width=2)
+    ], form=True),
     dcc.Loading(
         id="analyses-section",
         type="default",
@@ -135,7 +115,7 @@ layout = html.Div([
             html.Div(
                 id='ms-maps',
                 style={'backgroundColor': 'white'}
-            )                
+            )
         ]
     )
 ])

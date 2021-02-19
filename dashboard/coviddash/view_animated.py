@@ -60,7 +60,7 @@ layout = html.Div([
             width=4,
         ),
         *map_sentiments_right_cols,
-    ]),
+    ], form=True),
 
     load_wrap([
         dcc.Graph(

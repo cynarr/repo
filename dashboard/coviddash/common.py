@@ -45,7 +45,7 @@ date_range_col = dbc.Col(
             ),
         ]
     ),
-    width=4,
+    width=3,
 )
 
 

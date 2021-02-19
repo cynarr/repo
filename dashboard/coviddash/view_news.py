@@ -64,6 +64,7 @@ def update_sentiment_timeline(start_date, end_date, language, producing_country,
 layout = html.Div([
     dbc.Row([
         date_range_col,
+        dbc.Col(width=3),
         language_col,
         media_country_col,
         mention_country_col,
