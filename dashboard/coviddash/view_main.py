@@ -16,15 +16,26 @@ from . import database_conn as db_conn
 from .common import config_available_languages, config_min_date, config_max_date
 
 import dash_table
+from dash_table.Format import Format, Scheme
 
 
 __all__ = ["layout"]
 
 language_count_df = db_conn.get_language_distribution()
 
+num_fmt_dict = dict(type="numeric", format=Format(scheme=Scheme.decimal_integer))
+
 language_count_table = dash_table.DataTable(
     id='table',
-    columns=[{"name": i, "id": i} for i in language_count_df.columns],
+    columns=[
+        {
+            "name": i,
+            "id": i,
+            **(num_fmt_dict if i != "Language" else {})
+        }
+        for i
+        in language_count_df.columns
+    ],
     data=language_count_df.to_dict('records'),
     sort_action="native",
 )
