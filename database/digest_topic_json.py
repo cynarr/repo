@@ -4,7 +4,7 @@ import sys
 from .utils import flush_rows, get_doc_id_map
 
 
-SCHEMA = "document_topics(document_id, canon_url, topics)"
+SCHEMA = "document_topics(document_id, topic)"
 
 
 if __name__ == '__main__':
@@ -24,9 +24,8 @@ if __name__ == '__main__':
         if document_id is None:
             continue
 
-        for sentiment_name in doc['topics']:
-            topics = doc['topics'][sentiment_name]
-            rows.append((document_id, canon_url, topics))
+        for topic in doc['topics']:
+            rows.append((document_id, topic))
 
         if counter % 50000 == 0:  # Commit changes every now and then
             flush_rows(SCHEMA, conn, rows)
