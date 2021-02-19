@@ -128,14 +128,25 @@ sentiment_mentioning_table = dash_table.DataTable(
 
 
 layout = html.Div([
-    html.H2("What is the COVID-19 mood map?"),
+    html.H2("Topic and sentiment modeling of COVID-19 news in Europe"),
     html.Div([
-        html.P("COVID-19 mood map is a dashboard that visualizes the general mood of COVID news over time."),
+        html.P("COVID-19 mood map is a dashboard that visualizes topics and sentiment in pandemic news coverage in different languages."
+               "The dashboard shows analyses how news events have changed over time in news media in different languages."),
         html.P("DISCLAIMER: data and analyses represented here might not be accurate and should not be used as XXX")
     ]),
-    html.H2("Tools used"),
+    html.H2("Tools"),
     html.Div([
-        html.P("what methods, tools and data are you using")
+        html.A("News-Crawl for news extraction.", href="https://github.com/commoncrawl/news-crawl", target="_blank"),
+        html.Br(),
+        html.A("LDA with BERT/RoBERTa embeddings for multilingual topic modeling.", href="https://github.com/mood-mapping-muppets/repo/tree/main/topic_modeler/contextual_topic_identification", target="_blank"),
+        html.Br(),
+        html.A("Multilingual BERT for sentiment analysis of headlines.", href="https://github.com/google-research/bert", target="_blank"),
+        html.Br(),
+        html.A("Moral Foundations Dictionary for moral sentiment analysis.", href="https://osf.io/ezn37/", target="_blank"),
+        html.Br(),
+        html.A("MUSE embeddings for moral sentiment analysis.", href="https://github.com/facebookresearch/MUSE", target="_blank"),
+        html.Br(),
+        html.A("TeMoCo for cross-lingual linking.", href="https://github.com/sfermoy/TeMoCo", target="_blank")
     ]),
     html.H2("Data overview"),
     html.H3("Language distributions"),
