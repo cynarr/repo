@@ -95,10 +95,11 @@ def update_moral_map(start_date, end_date, language, sentiment_type):
 
 layout = html.Div([
     html.H2("Moral sentiment analysis"),
-    html.P(
-        "Moral sentiment measures the amount of moral language used in news coverage based on the moral foundations theory (see https://moralfoundations.org/).\n"
-        "It is split into five polar dimensions care/harm, fairness/cheating, loyalty/betrayal, authority/subversion, and sanctity/degradation."
-    ),
+    html.P([
+        "Moral sentiment measures the amount of moral language used in news coverage based on ",
+        html.A("moral foundations theory", href="https://moralfoundations.org/", target="_blank"),
+        ". It is split into five polar dimensions care/harm, fairness/cheating, loyalty/betrayal, authority/subversion, and sanctity/degradation."
+    ]),
     dbc.Row([
         dbc.Col(    # TODO: fix this back tho use the "date_range_col" from common.py
             dbc.FormGroup(
