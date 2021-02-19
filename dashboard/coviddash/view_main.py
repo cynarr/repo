@@ -38,6 +38,7 @@ language_count_table = dash_table.DataTable(
     ],
     data=language_count_df.to_dict('records'),
     sort_action="native",
+    style_table={'height': '500px', 'overflowY': 'auto'}
 )
 
 lang_count_fig = px.pie(language_count_df, values="Count", names="Language")
@@ -58,6 +59,7 @@ country_news_count_table = dash_table.DataTable(
     columns=[{"name": i, "id": i} for i in country_count_df.columns],
     data=country_count_df.to_dict('records'),
     sort_action="native",
+    style_table={'height': '500px', 'overflowY': 'auto'}
 )
 
 country_mention_count_df = db_conn.get_country_mention_distribution()
@@ -66,6 +68,7 @@ country_mention_count_table = dash_table.DataTable(
     columns=[{"name": i, "id": i} for i in country_mention_count_df.columns],
     data=country_mention_count_df.to_dict('records'),
     sort_action="native",
+    style_table={'height': '500px', 'overflowY': 'auto'}
 )
 
 
