@@ -158,7 +158,7 @@ def add_iso3_col(df, country_col, iso3_col="country_iso3"):
 
 
 def add_language_name_col(df, language_code_col, language_col="proper_language"):
-    df[language_col] = df[language_code_col].map(lambda x: pycountry.languages.get(alpha_2=x).name)
+    df[language_col] = df[language_code_col].map(lambda x: pycountry.languages.get(alpha_2=x).name.rsplit(" (", 1)[0])
 
 
 def get_language_distribution():
