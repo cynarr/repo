@@ -274,7 +274,6 @@ def get_country_mention_distribution():
             "GROUP BY mention_country",
         ])
         df = pd.read_sql_query(query, conn)
-        print(df)
         df["Country"] = df["mention_country"].map(lambda x: pycountry.countries.get(alpha_2=x).name)
         df = df.rename(columns={'count': 'Count'})
     return df[['Country', 'Count']]
