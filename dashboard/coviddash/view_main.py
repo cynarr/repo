@@ -90,7 +90,7 @@ layout = html.Div([
         type="default",
         children=[    
             dbc.Row([
-                dbc.Col(html.Div(language_count_table), width=4),
+                dbc.Col(html.Div(language_count_table), width=5),
                 dbc.Col(html.Div(dcc.Graph(figure=lang_count_fig))),
             ]),
             html.Div(
