@@ -4,6 +4,8 @@ cnf("COUNTRY_MENTION", pjoin(ANALYSES, "country_mention.jsonl.zstd"))
 cnf("MBERT_SENTIMENT", pjoin(ANALYSES, "mbert_sentiment.jsonl.zstd"))
 MUSE_LANGS, = glob_wildcards(MUSE + "/wiki.multi.{lang}.vec")
 MORAL_SENTIMENT_ALL = [pjoin(ANALYSES, f"moral_sentiment.{lang}.jsonl.zstd") for lang in MUSE_LANGS]
+# XXX: No rule to produce this. Must make it and put it in the right place.
+cnf("TOPICS", pjoin(ANALYSES, "topics.jsonl.zstd"))
 cnf("COVIDSTATEBROADCASTERFILTERED", pjoin(WORK, "covidstatebroadcaster.filtered.jsonl.zstd"))
 
 
