@@ -120,17 +120,10 @@ sentiment_mentioning_table = dash_table.DataTable(
     style_table={'height': '500px', 'overflowY': 'auto'}
 )
 
-
-
-
-
-
-
-
 layout = html.Div([
     html.H2("Topic and sentiment modeling of COVID-19 news in Europe"),
     html.Div([
-        html.P("COVID-19 mood map is a dashboard that visualizes topics and sentiment in pandemic news coverage in different languages."
+        html.P("COVID-19 mood map is a dashboard that visualizes topics and sentiment in pandemic news coverage in different languages.\n"
                "The dashboard shows analyses how news events have changed over time in news media in different languages."),
         html.P("DISCLAIMER: data and analyses represented here might not be accurate and should not be used as XXX")
     ]),
