@@ -157,8 +157,20 @@ def add_iso3_col(df, country_col, iso3_col="country_iso3"):
     df[iso3_col] = df[country_col].map(alpha2_to_alpha3)
 
 
+def remove_note(s):
+    return s.rsplit(" (", 1)[0]
+
+
+def country_name(cc2):
+    return remove_note(pycountry.countries.get(alpha_2=cc2).name)
+
+
+def language_name(lc2):
+    return remove_note(pycountry.languages.get(alpha_2=lc2).name)
+
+
 def add_language_name_col(df, language_code_col, language_col="proper_language"):
-    df[language_col] = df[language_code_col].map(lambda x: pycountry.languages.get(alpha_2=x).name.rsplit(" (", 1)[0])
+    df[language_col] = df[language_code_col].map(language_name)
 
 
 def get_language_distribution():
@@ -262,7 +274,7 @@ def get_country_distribution():
             "ORDER BY country ASC",
         ])
         df = pd.read_sql_query(query, conn)
-        df["Country"] = df["country_code"].map(lambda x: pycountry.countries.get(alpha_2=x).name)
+        df["Country"] = df["country_code"].map(country_name)
         df = df.rename(columns={'count': 'Count'})
     return df[['Country', 'Count']]
 
@@ -274,7 +286,7 @@ def get_country_mention_distribution():
             "GROUP BY mention_country",
         ])
         df = pd.read_sql_query(query, conn)
-        df["Country"] = df["mention_country"].map(lambda x: pycountry.countries.get(alpha_2=x).name)
+        df["Country"] = df["mention_country"].map(country_name)
         df = df.rename(columns={'count': 'Count'})
     return df[['Country', 'Count']]
 
@@ -288,7 +300,7 @@ def get_sentiment_country_distribution():
             "GROUP BY country",
         ])
         df = pd.read_sql_query(query, conn)
-        df["country"] = df["country"].map(lambda x: pycountry.countries.get(alpha_2=x).name)
+        df["country"] = df["country"].map(country_name)
 
     return df
 
@@ -302,7 +314,7 @@ def get_sentiment_country_mention_distribution():
             "GROUP BY mention_country",
         ])
         df = pd.read_sql_query(query, conn)
-        df["country"] = df["country"].map(lambda x: pycountry.countries.get(alpha_2=x).name)
+        df["country"] = df["country"].map(country_name)
 
     return df    
 
