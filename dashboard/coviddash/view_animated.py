@@ -39,7 +39,6 @@ def update_choropleth(mode, polarity, language, producing_country, mention_count
         value_col = "doc_count"
         min_val = 0
         max_val = df[value_col].max()
-    print((min_val, max_val))
     return px.choropleth(
         df,
         range_color=(min_val, max_val),
