@@ -31,3 +31,9 @@ CREATE TABLE country_mentions (
 );
 
 CREATE INDEX country_mentions_document_id_idx ON country_mentions (document_id);
+
+CREATE TABLE document_topics (
+  document_id INTEGER PRIMARY KEY,
+  canon_url TEXT UNIQUE,
+  topics TEXT
+);
