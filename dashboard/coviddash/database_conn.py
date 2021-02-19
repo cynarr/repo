@@ -248,7 +248,7 @@ def get_country_grouped_sentiment(mode_is_mention, conditions, week_group=False)
             # XXX: TODO handle inner = 0 e.g. clamp value somehow
             df["summary"] = np.log2(inner)
         if week_group:
-            df["week_num"] = df["week"].map(lambda dt: "-".join((str(x) for x in dt.isocalendar()[:2])))
+            df["week_num"] = df["week"].map(lambda dt: "-W".join((f"{x:02}" for x in dt.isocalendar()[:2])))
 
     add_iso3_col(df, country_col)
     df.replace([np.inf, -np.inf], np.nan, inplace=True)

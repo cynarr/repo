@@ -46,6 +46,7 @@ def update_choropleth(start_date, end_date, mode, polarity, language, producing_
         df,
         locations="country_iso3",
         color="summary" if polarity == "summary" else "doc_count",
+        labels={"summary": "Summary (log-ratio)", "doc_count": "Number of articles"},
         locationmode="ISO-3",
         scope="europe",
         height=1000

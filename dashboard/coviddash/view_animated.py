@@ -44,6 +44,11 @@ def update_choropleth(mode, polarity, language, producing_country, mention_count
         animation_group="week_num",
         locations="country_iso3",
         color=value_col,
+        labels={
+            "summary": "Summary (log-ratio)",
+            "doc_count": "Number of articles",
+            "week_num": "Week number"
+        },
         locationmode="ISO-3",
         scope="europe",
         height=1000
