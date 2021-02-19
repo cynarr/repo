@@ -29,8 +29,6 @@ def update_choropleth(mode, polarity, language, producing_country, mention_count
         conditions,
         week_group=True
     )
-    df.replace([np.inf, -np.inf], np.nan, inplace=True)
-    df.dropna(inplace=True)
     if polarity == "summary":
         value_col = "summary"
         min_val = df[value_col].min()

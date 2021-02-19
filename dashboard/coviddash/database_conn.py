@@ -243,6 +243,8 @@ def get_country_grouped_sentiment(mode_is_mention, conditions, week_group=False)
             df["week_num"] = df["week"].map(lambda dt: "-".join((str(x) for x in dt.isocalendar()[:2])))
 
     add_iso3_col(df, country_col)
+    df.replace([np.inf, -np.inf], np.nan, inplace=True)
+    df.dropna(inplace=True)
     return df
 
 
