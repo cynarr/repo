@@ -46,7 +46,6 @@ def update_choropleth(mode, polarity, language, producing_country, mention_count
         color=value_col,
         locationmode="ISO-3",
         scope="europe",
-        width=1000,
         height=1000
     ).update_layout(
         dragmode=False,

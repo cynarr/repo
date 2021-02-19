@@ -48,7 +48,6 @@ def update_choropleth(start_date, end_date, mode, polarity, language, producing_
         color="summary" if polarity == "summary" else "doc_count",
         locationmode="ISO-3",
         scope="europe",
-        width=1000,
         height=1000
     ).update_layout(
         dragmode=False,
