@@ -42,6 +42,8 @@ language_count_table = dash_table.DataTable(
 )
 
 lang_count_fig = px.pie(language_count_df, values="Count", names="Language")
+lang_count_fig.update_traces(textposition='inside')
+lang_count_fig.update_layout(uniformtext_minsize=12, uniformtext_mode='hide')
 
 
 lang_timeline_df = db_conn.get_language_timeline()
@@ -90,8 +92,8 @@ layout = html.Div([
         type="default",
         children=[    
             dbc.Row([
-                dbc.Col(html.Div(language_count_table), width=5),
-                dbc.Col(html.Div(dcc.Graph(figure=lang_count_fig))),
+                dbc.Col(html.Div(language_count_table), width=6),
+                dbc.Col(html.Div(dcc.Graph(figure=lang_count_fig)), width=6),
             ]),
             html.Div(
                 dcc.Graph(figure=lang_timeline_fig)
