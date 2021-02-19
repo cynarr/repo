@@ -13,7 +13,7 @@ from datetime import date
 
 from .base import app
 from . import database_conn as db_conn
-from .common import config_available_languages, config_min_date, config_max_date
+from .common import config_available_languages, config_min_date, config_max_date, state_data_df
 
 import dash_table
 from dash_table.Format import Format, Scheme
@@ -120,6 +120,18 @@ sentiment_mentioning_table = dash_table.DataTable(
     style_table={'height': '500px', 'overflowY': 'auto'}
 )
 
+
+news_sources_table = dash_table.DataTable(
+    id='table',
+    columns=[{"name": i.capitalize(), "id": i} for i in state_data_df.columns],
+    data=state_data_df.to_dict('records'),
+    sort_action="native",
+    style_table={'height': '300px', 'overflowY': 'auto'},
+)
+
+
+
+
 layout = html.Div([
     html.H2("Sentiment modeling of COVID-19 news in Europe"),
     html.Div([
@@ -137,8 +149,11 @@ layout = html.Div([
         html.Li(html.A("Multilingual BERT for sentiment analysis of headlines.", href="https://github.com/google-research/bert", target="_blank")),
         html.Li(html.A("Moral Foundations Dictionary for moral sentiment analysis.", href="https://osf.io/ezn37/", target="_blank")),
         html.Li(html.A("MUSE embeddings for moral sentiment analysis.", href="https://github.com/facebookresearch/MUSE", target="_blank")),
-        html.Li(html.A("TeMoCo for cross-lingual linking.", href="https://github.com/sfermoy/TeMoCo", target="_blank"))
+        html.Li(html.A("TeMoCo for cross-lingual linking.", href="https://github.com/sfermoy/TeMoCo", target="_blank")),
+    
     ]),
+    html.H4("News sources"),
+    news_sources_table,   
     html.H2("Data overview"),
     html.H3("Language distributions"),
     dcc.Loading(
