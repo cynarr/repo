@@ -135,12 +135,13 @@ news_sources_table = dash_table.DataTable(
 layout = html.Div([
     html.H2("Sentiment modeling of COVID-19 news in Europe"),
     html.Div([
-        html.P("The COVID-19 mood map of Europe is a dashboard that visualizes the sentiment of reporting around COVID-19 news coverage in from different European state broadcasters.\n"
+        html.P("The COVID-19 mood map of Europe* is a dashboard that visualizes the sentiment of reporting around COVID-19 news coverage in from different European state broadcasters.\n"
                "The dashboard shows analyses how reporting has evolved over time and varies over countries different languages."),
         dbc.Alert(
             "Disclaimer: All analyses represented here have been automatically made without thorough evaluation. The analyses themselves may not be entirely accurate, and the resulting plots may therefore be misleading. They should not be used as as a basis for decision making.",
             color="danger",
         ),
+        html.Small(["* A country is defined as European here if it has any land mass in Europe. The underlying data is ultimately countries labeled ", html.A("as in Europe using the continent property (P30) on Wikidata", href="https://www.wikidata.org/wiki/Property:P30", target="_blank"), "."])
     ]),
     html.H2("Tools"),
     dbc.Row([
