@@ -204,7 +204,7 @@ SUM_POLES_PROJ = [
 DOC_COUNT_PROJ = ["COUNT(d.document_id) AS doc_count"]
 
 
-def get_country_grouped_sentiment(mode_is_mention, conditions):
+def get_country_grouped_sentiment(mode_is_mention, conditions, week_group=False):
     if mode_is_mention:
         join_clause = DOC_SENT_MENTION_JOIN
         country_col = "mention_country"
@@ -226,20 +226,26 @@ def get_country_grouped_sentiment(mode_is_mention, conditions):
     with db_connection() as conn:
         query = " ".join([
             f"SELECT {country_col},",
+            "date_trunc('week', date_publish) AS week," if week_group else "",
             *proj,
             "FROM",
             *join_clause,
             where_clause,
             f"GROUP BY {country_col}",
+            ", week ORDER BY week" if week_group else ""
         ])
         df = conn.execute(query).fetchdf()
         if add_summary:
             inner = (df["positive_cnt"] + 0.5 * df["neutral_cnt"]) / (df["positive_cnt"] + df["neutral_cnt"] + df["negative_cnt"])
             # XXX: TODO handle inner = 0 e.g. clamp value somehow
             df["summary"] = np.log2(inner)
+        if week_group:
+            df["week_num"] = df["week"].map(lambda dt: "-".join((str(x) for x in dt.isocalendar()[:2])))
 
     add_iso3_col(df, country_col)
     return df
+
+
 
 
 if __name__ == "__main__":

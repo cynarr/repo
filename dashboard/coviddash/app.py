@@ -7,6 +7,7 @@ import dash_html_components as html
 import dash_bootstrap_components as dbc
 
 from .base import app, TITLE
+from .view_animated import layout as animated_layout
 from .view_mentions import layout as mentions_layout
 from .view_main import layout as main_layout
 from .view_moral import layout as moral_layout
@@ -23,7 +24,8 @@ page_layouts = {
     "/": main_layout,
     "/news/": news_layout,
     "/moral/": moral_layout,
-    "/mentions/": mentions_layout
+    "/mentions/": mentions_layout,
+    "/animated/": animated_layout,
 }
 
 @app.callback(dash.dependencies.Output('page-content', 'children'),

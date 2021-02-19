@@ -49,6 +49,45 @@ def mk_date_range_col(*, width=6):
         width=width,
     )
 
+
+mode_col = dbc.Col(
+    dbc.FormGroup(
+        [
+            dbc.Label("Countries are", html_for="polarity-selector"),
+            dbc.Select(
+                id='mode-selector',
+                options=[
+                    {'label': 'Producing news', 'value': 'produce'},
+                    {'label': 'Mentioned in news', 'value': 'mention'},
+                ],
+                value='mentions'
+            ),
+        ]
+    ),
+    width=2,
+)
+
+
+polarity_col = dbc.Col(
+    dbc.FormGroup(
+        [
+            dbc.Label("Sentiment polarity", html_for="polarity-selector"),
+            dbc.Select(
+                id='polarity-selector',
+                options=[
+                    {'label': 'Summary', 'value': 'summary'},
+                    {'label': 'Positive', 'value': 'positive'},
+                    {'label': 'Neutral', 'value': 'neutral'},
+                    {'label': 'Negative', 'value': 'negative'}
+                ],
+                value='summary'
+            ),
+        ]
+    ),
+    width=2,
+)
+
+
 language_col = dbc.Col(
     dbc.FormGroup(
         [
@@ -92,3 +131,11 @@ mention_country_col = dbc.Col(
     id="mention-country-col",
     width=2,
 )
+
+map_sentiments_right_cols = [
+    mode_col,
+    polarity_col,
+    language_col,
+    media_country_col,
+    mention_country_col,
+]

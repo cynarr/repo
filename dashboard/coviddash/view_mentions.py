@@ -7,7 +7,7 @@ from datetime import date
 
 from .base import app
 from . import database_conn as db_conn
-from .common import config_available_languages, config_min_date, config_max_date, load_wrap, mk_date_range_col, language_col, media_country_col, mention_country_col
+from .common import config_available_languages, config_min_date, config_max_date, load_wrap, mk_date_range_col, language_col, media_country_col, mention_country_col, map_sentiments_right_cols
 
 
 __all__ = ["layout"]
@@ -88,43 +88,7 @@ def hide_mention_country(mode):
 layout = html.Div([
     dbc.Row([
         mk_date_range_col(width=4),
-        dbc.Col(
-            dbc.FormGroup(
-                [
-                    dbc.Label("Countries are", html_for="polarity-selector"),
-                    dbc.Select(
-                        id='mode-selector',
-                        options=[
-                            {'label': 'Producing news', 'value': 'produce'},
-                            {'label': 'Mentioned in news', 'value': 'mention'},
-                        ],
-                        value='mentions'
-                    ),
-                ]
-            ),
-            width=2,
-        ),
-        dbc.Col(
-            dbc.FormGroup(
-                [
-                    dbc.Label("Sentiment polarity", html_for="polarity-selector"),
-                    dbc.Select(
-                        id='polarity-selector',
-                        options=[
-                            {'label': 'Summary', 'value': 'summary'},
-                            {'label': 'Positive', 'value': 'positive'},
-                            {'label': 'Neutral', 'value': 'neutral'},
-                            {'label': 'Negative', 'value': 'negative'}
-                        ],
-                        value='summary'
-                    ),
-                ]
-            ),
-            width=2,
-        ),
-        language_col,
-        media_country_col,
-        mention_country_col,
+        *map_sentiments_right_cols,
     ]),
 
     load_wrap([
