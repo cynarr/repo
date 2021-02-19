@@ -135,7 +135,7 @@ news_sources_table = dash_table.DataTable(
 layout = html.Div([
     html.H2("Sentiment modeling of COVID-19 news in Europe"),
     html.Div([
-        html.P("The COVID-19 mood map of Europe is a dashboard that visualizes the sentiment of reporting around COVID-19 news coverage in from different European broadcasters.\n"
+        html.P("The COVID-19 mood map of Europe is a dashboard that visualizes the sentiment of reporting around COVID-19 news coverage in from different European state broadcasters.\n"
                "The dashboard shows analyses how reporting has evolved over time and varies over countries different languages."),
         dbc.Alert(
             "Disclaimer: All analyses represented here have been automatically made without thorough evaluation. The analyses themselves may not be entirely accurate, and the resulting plots may therefore be misleading. They should not be used as as a basis for decision making.",
@@ -143,14 +143,26 @@ layout = html.Div([
         ),
     ]),
     html.H2("Tools"),
+    html.P([
+        "How did we do it? With a little help from our friends! We used various tools, including those from the ",
+        html.A("Embeddia project", href="http://embeddia.eu/"),
+        " to create a corpus of European reporting about COVID-19 and produce different analyses of it automatically."
+    ]),
+    html.P([
+        "First we created the news corpus of COVID-19 reporting by European state broadcasters using...",
+    ]),
     html.Ul([
-        html.Li(html.A("News-Crawl for news extraction.", href="https://github.com/commoncrawl/news-crawl", target="_blank")),
-        html.Li(html.A("LDA with BERT/RoBERTa embeddings for multilingual topic modeling.", href="https://github.com/mood-mapping-muppets/repo/tree/main/topic_modeler/contextual_topic_identification", target="_blank")),
-        html.Li(html.A("Multilingual BERT for sentiment analysis of headlines.", href="https://github.com/google-research/bert", target="_blank")),
+        html.Li(html.A("Wikidata for obtaining background information like the list of state broadcasters and keywords for COVID-19 and names of different countries in diffferent languages", href="https://www.wikidata.org/", target="_blank")),
+        html.Li(html.A("News-Crawl for the raw news dumps", href="https://github.com/commoncrawl/news-crawl", target="_blank")),
+        html.Li(html.A("News-Please to extract the article texts from the dumps", href="https://github.com/fhamborg/news-please", target="_blank"))
+    ]),
+    html.P([
+        "Then we enriched the corpus with different automatic analyses such as...",
+    ]),
+    html.Ul([
+        html.Li(html.A("The Embeddia multilingual BERT based news sentiment analysis tool for extracting polar sentiments.", href="https://gitlab.com/Andrazp/news_sentiment_tool_mebeddia", target="_blank")),
         html.Li(html.A("Moral Foundations Dictionary for moral sentiment analysis.", href="https://osf.io/ezn37/", target="_blank")),
-        html.Li(html.A("MUSE embeddings for moral sentiment analysis.", href="https://github.com/facebookresearch/MUSE", target="_blank")),
-        html.Li(html.A("TeMoCo for cross-lingual linking.", href="https://github.com/sfermoy/TeMoCo", target="_blank")),
-    
+        html.Li(html.A("MUSE embeddings for performing cross-lingual moral sentiment analysis.", href="https://github.com/facebookresearch/MUSE", target="_blank")),
     ]),
     html.H4("News sources"),
     news_sources_table,   
