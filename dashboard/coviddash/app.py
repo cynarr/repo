@@ -60,8 +60,10 @@ app.layout = html.Div(
             color="primary",
             dark=True,
         ),
-
-        dbc.Container(id="page-content", className="py-md-3")
+        dbc.Container(id="page-content", className="py-md-3"),
+        html.Div([
+            html.A("View our repository on GitHub ❤️", href="https://github.com/mood-mapping-muppets/repo", target="_blank"),
+        ], style={"background-color": "#2d3d50", "padding": "20px", "text-align": "center", "vertical-align": "middle"})
     ]
 )
 
