@@ -91,7 +91,23 @@ layout = html.Div([
         "It is split into five polar dimensions care/harm, fairness/cheating, loyalty/betrayal, authority/subversion, and sanctity/degradation."
     ),
     dbc.Row([
-        date_range_col,
+        dbc.Col(    # TODO: fix this back tho use the "date_range_col" from common.py
+            dbc.FormGroup(
+                [
+                    dbc.Label("Date range", html_for="date-range-filter"),
+                    html.Br(),
+                    dcc.DatePickerRange(
+                        id='date-range-filter',
+                        display_format='YYYY-MM-DD',
+                        min_date_allowed=config_min_date,
+                        max_date_allowed=config_max_date,
+                        start_date="2020-03-01",
+                        end_date="2020-04-01"
+                    ),
+                ]
+            ),
+            width=3,
+        ),
         dbc.Col(width=5),
         language_col,
         dbc.Col([
