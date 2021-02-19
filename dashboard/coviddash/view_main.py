@@ -155,7 +155,7 @@ layout = html.Div([
                 "First we created the news corpus of COVID-19 reporting by European state broadcasters using...",
             ]),
             html.Ul([
-                html.Li(html.A("Wikidata for obtaining background information like the list of state broadcasters and keywords for COVID-19 and names of different countries in diffferent languages", href="https://www.wikidata.org/", target="_blank")),
+                html.Li(html.A("Wikidata for obtaining background information like the list of state broadcasters and keywords for COVID-19 and names of different countries in different languages", href="https://www.wikidata.org/", target="_blank")),
                 html.Li(html.A("News-Crawl for the raw news dumps", href="https://github.com/commoncrawl/news-crawl", target="_blank")),
                 html.Li(html.A("News-Please to extract the article texts from the dumps", href="https://github.com/fhamborg/news-please", target="_blank"))
             ]),
