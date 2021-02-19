@@ -30,24 +30,23 @@ def load_wrap(children):
     )
 
 
-def mk_date_range_col(*, width=6):
-    return dbc.Col(
-        dbc.FormGroup(
-            [
-                dbc.Label("Date range", html_for="date-range-filter"),
-                html.Br(),
-                dcc.DatePickerRange(
-                    id='date-range-filter',
-                    display_format='YYYY-MM-DD',
-                    min_date_allowed=config_min_date,
-                    max_date_allowed=config_max_date,
-                    start_date=config_min_date,
-                    end_date=config_max_date
-                ),
-            ]
-        ),
-        width=width,
-    )
+date_range_col = dbc.Col(
+    dbc.FormGroup(
+        [
+            dbc.Label("Date range", html_for="date-range-filter"),
+            html.Br(),
+            dcc.DatePickerRange(
+                id='date-range-filter',
+                display_format='YYYY-MM-DD',
+                min_date_allowed=config_min_date,
+                max_date_allowed=config_max_date,
+                start_date=config_min_date,
+                end_date=config_max_date
+            ),
+        ]
+    ),
+    width=4,
+)
 
 
 mode_col = dbc.Col(

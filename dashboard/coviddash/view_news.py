@@ -14,7 +14,7 @@ from .common import (
     config_available_languages,
     config_min_date,
     config_max_date,
-    mk_date_range_col,
+    date_range_col,
     language_col,
     media_country_col,
     mention_country_col,
@@ -63,7 +63,7 @@ def update_sentiment_timeline(start_date, end_date, language, producing_country,
 
 layout = html.Div([
     dbc.Row([
-        mk_date_range_col(),
+        date_range_col,
         language_col,
         media_country_col,
         mention_country_col,

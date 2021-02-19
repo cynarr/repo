@@ -7,7 +7,7 @@ from datetime import date
 
 from .base import app
 from . import database_conn as db_conn
-from .common import config_available_languages, config_min_date, config_max_date, load_wrap, mk_date_range_col, language_col, media_country_col, mention_country_col, map_sentiments_right_cols
+from .common import config_available_languages, config_min_date, config_max_date, load_wrap, date_range_col, language_col, media_country_col, mention_country_col, map_sentiments_right_cols
 
 
 __all__ = ["layout"]
@@ -87,7 +87,7 @@ def hide_mention_country(mode):
 
 layout = html.Div([
     dbc.Row([
-        mk_date_range_col(width=4),
+        date_range_col,
         *map_sentiments_right_cols,
     ]),
 
