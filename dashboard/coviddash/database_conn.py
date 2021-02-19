@@ -158,19 +158,27 @@ def add_iso3_col(df, country_col, iso3_col="country_iso3"):
 
 
 def add_language_name_col(df, language_code_col, language_col="proper_language"):
-    df[language_col] = df[language_code_col].map(lambda x: pycountry.languages.get(alpha_2=x).name)
+    df[language_col] = df[language_code_col].map(lambda x: pycountry.languages.get(alpha_2=x).name.rsplit(" (", 1)[0])
 
 
 def get_language_distribution():
     with db_connection() as conn:
         query = " ".join([
-            "SELECT language AS lang_code, COUNT(language) AS count FROM documents GROUP BY language",
+            "SELECT",
+            "language AS lang_code,",
+            "COUNT(language) AS count,",
+            "CAST(COUNT(m.document_id) AS float) / COUNT(language) * 100 AS sentiment_pct,",
+            "CAST(COUNT(ms.document_id) AS float) / COUNT(language) * 100 AS moral_sentiment_pct",
+            "FROM documents AS d",
+            "LEFT JOIN mbert_sentiment AS m ON d.document_id = m.document_id",
+            "LEFT JOIN moral_sentiment_scores AS ms ON d.document_id = ms.document_id",
+            "GROUP BY language",
             "ORDER BY language ASC",
         ])
         df = pd.read_sql_query(query, conn)
         add_language_name_col(df, "lang_code", "Language")  
-        df = df.rename(columns={'count': 'Count'})
-    return df[['Language', 'Count']]
+        df = df.rename(columns={'count': 'Count', "sentiment_pct": "Polar cov %", "moral_sentiment_pct": "Moral cov %"})
+    return df[['Language', 'Count', 'Polar cov %', 'Moral cov %']]
 
 def get_language_timeline():
     with db_connection() as conn:
