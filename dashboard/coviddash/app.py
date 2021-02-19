@@ -39,13 +39,13 @@ app.layout = html.Div(
 
         dbc.NavbarSimple(
             children=[
-                dbc.NavItem(dbc.NavLink("Introduction", href="/")),
+                dbc.NavItem(dbc.NavLink("❓ Introduction", href="/")),
                 dbc.DropdownMenu(
-                    label="😀/😢 Polar sentiments...",
+                    label="😀/😢 Polar sentiments…",
                     children=[
-                        dbc.DropdownMenuItem("...📅 in time", href="/news/"),
-                        dbc.DropdownMenuItem("...🌍 across countries", href="/mentions/"),
-                        dbc.DropdownMenuItem("...⏩ animated", href="/animated/"),
+                        dbc.DropdownMenuItem("📅 …in time", href="/news/"),
+                        dbc.DropdownMenuItem("🌍 …across countries", href="/mentions/"),
+                        dbc.DropdownMenuItem("⏩ …animated", href="/animated/"),
                     ],
                     nav=True,
                     in_navbar=True,
@@ -53,7 +53,7 @@ app.layout = html.Div(
                 ),
                 dbc.NavItem(dbc.NavLink("⚖️ Moral sentiments", href="/moral/")),
             ],
-            brand="COVID-19 mood map",
+            brand="😷　COVID-19 mood map of Europe",
             brand_href="/",
             color="primary",
             dark=True,
