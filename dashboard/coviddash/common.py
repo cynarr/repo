@@ -12,7 +12,7 @@ config_available_languages += [{'label': pl, 'value': l} for pl, l in db_conn.ge
 config_min_date, config_max_date = db_conn.get_min_and_max_dates()
 
 config_available_sentiments = [{'label': 'All', 'value': ''}]
-config_available_sentiments += [{'label': s, 'value': s} for s in db_conn.get_available_sentiments()]
+config_available_sentiments += [{'label': s.title(), 'value': s} for s in db_conn.get_available_sentiments()]
 
 config_available_producing_countries = [{'label': 'All', 'value': ''}]
 config_available_producing_countries += [{'label': n, 'value': s} for n, s in db_conn.get_available_producing_countries()]
