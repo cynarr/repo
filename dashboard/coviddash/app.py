@@ -32,33 +32,36 @@ def page_router(pathname):
     return page_layouts.get(pathname, page_layouts["/"])
 
 
-app.layout = html.Div(children=[
-    dcc.Location(id='url', refresh=False),
+app.layout = html.Div(
+    className="dash-bootstrap",
+    children=[
+        dcc.Location(id='url', refresh=False),
 
-    dbc.NavbarSimple(
-        children=[
-            dbc.NavItem(dbc.NavLink("Introduction", href="/")),
-            dbc.DropdownMenu(
-                label="😀/😢 Polar sentiments...",
-                children=[
-                    dbc.DropdownMenuItem("...📅 in time", href="/news/"),
-                    dbc.DropdownMenuItem("...🌍 across countries", href="/mentions/"),
-                    dbc.DropdownMenuItem("...⏩ animated", href="/animated/"),
-                ],
-                nav=True,
-                in_navbar=True,
-                color="primary",
-            ),
-            dbc.NavItem(dbc.NavLink("⚖️ Moral sentiments", href="/moral/")),
-        ],
-        brand="COVID-19 mood map",
-        brand_href="/",
-        color="primary",
-        dark=True,
-    ),
+        dbc.NavbarSimple(
+            children=[
+                dbc.NavItem(dbc.NavLink("Introduction", href="/")),
+                dbc.DropdownMenu(
+                    label="😀/😢 Polar sentiments...",
+                    children=[
+                        dbc.DropdownMenuItem("...📅 in time", href="/news/"),
+                        dbc.DropdownMenuItem("...🌍 across countries", href="/mentions/"),
+                        dbc.DropdownMenuItem("...⏩ animated", href="/animated/"),
+                    ],
+                    nav=True,
+                    in_navbar=True,
+                    color="primary",
+                ),
+                dbc.NavItem(dbc.NavLink("⚖️ Moral sentiments", href="/moral/")),
+            ],
+            brand="COVID-19 mood map",
+            brand_href="/",
+            color="primary",
+            dark=True,
+        ),
 
-    dbc.Container(id="page-content", className="py-md-3")
-])
+        dbc.Container(id="page-content", className="py-md-3")
+    ]
+)
 
 app.validation_layout = html.Div([
     app.layout,
