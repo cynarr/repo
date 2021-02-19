@@ -76,7 +76,14 @@ def update_moral_map(start_date, end_date, language, sentiment_type):
             labels={'doc_count': 'Sentiment strength'}
         )      
 
-        figs.append(dbc.Col(dcc.Graph(id=f'ms-map-graph{i}', figure=fig)))
+        figs.append(dbc.Col(dcc.Graph(
+            id=f'ms-map-graph{i}',
+            figure=fig,
+            config=dict(
+                scrollZoom=False,
+                modeBarButtonsToRemove=['pan2d'],
+            ),
+        )))
 
     chunks = reversed([figs[x:x+2] for x in range(0, len(figs), 2)])
 
