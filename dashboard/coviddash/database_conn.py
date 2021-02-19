@@ -247,9 +247,31 @@ def get_country_grouped_sentiment(mode_is_mention, conditions, week_group=False)
     df.dropna(inplace=True)
     return df
 
+def get_country_distribution():
+    with db_connection() as conn:
+        query = " ".join([
+            "SELECT country AS country_code, COUNT(country) AS count FROM documents GROUP BY country",
+            "ORDER BY country ASC",
+        ])
+        df = pd.read_sql_query(query, conn)
+        df["Country"] = df["country_code"].map(lambda x: pycountry.countries.get(alpha_2=x).name)
+        df = df.rename(columns={'count': 'Count'})
+    return df[['Country', 'Count']]
 
+def get_country_mention_distribution():
+    with db_connection() as conn:
+        query = " ".join([
+            "SELECT mention_country, COUNT(mention_country) AS count FROM",
+            *DOC_SENT_MENTION_JOIN,
+            "GROUP BY mention_country",
+        ])
+        df = pd.read_sql_query(query, conn)
+        print(df)
+        df["Country"] = df["mention_country"].map(lambda x: pycountry.countries.get(alpha_2=x).name)
+        df = df.rename(columns={'count': 'Count'})
+    return df[['Country', 'Count']]
 
 
 if __name__ == "__main__":
-    print(get_language_timeline())
+    print(get_country_mention_distribution())
     #print(get_moral_sentiment_hist_df({'start_date': "2020-03-01", 'end_date': "2020-03-02"}))

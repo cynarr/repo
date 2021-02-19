@@ -23,7 +23,7 @@ __all__ = ["layout"]
 language_count_df = db_conn.get_language_distribution()
 
 language_count_table = dash_table.DataTable(
-    id='table',
+    id='language-count-table',
     columns=[{"name": i, "id": i} for i in language_count_df.columns],
     data=language_count_df.to_dict('records'),
     sort_action="native",
@@ -40,6 +40,24 @@ lang_timeline_fig = px.bar(
     color="language", 
     labels={'date': 'Week', 'count': 'Count', 'language': 'Languages'}
 )
+
+country_count_df = db_conn.get_country_distribution()
+country_news_count_table = dash_table.DataTable(
+    id='table',
+    columns=[{"name": i, "id": i} for i in country_count_df.columns],
+    data=country_count_df.to_dict('records'),
+    sort_action="native",
+)
+
+country_mention_count_df = db_conn.get_country_mention_distribution()
+country_mention_count_table = dash_table.DataTable(
+    id='table',
+    columns=[{"name": i, "id": i} for i in country_mention_count_df.columns],
+    data=country_mention_count_df.to_dict('records'),
+    sort_action="native",
+)
+
+
 
 layout = html.Div([
     html.H2("What is the COVID-19 mood map?"),
@@ -67,8 +85,14 @@ layout = html.Div([
     ]),
     html.H3("Country distributions"),
     dbc.Row([
-        dbc.Col(html.H4("News from country X table")),
-        dbc.Col(html.H4("News mentioning country X table"))
+        dbc.Col([
+            html.H4("News from country"),
+            country_news_count_table
+        ]),
+        dbc.Col([
+            html.H4("News mentioning country"),
+            country_mention_count_table
+        ])        
     ]),
     html.H3("Overall sentiments"),
     dbc.Row([
