@@ -74,6 +74,58 @@ country_mention_count_table = dash_table.DataTable(
 )
 
 
+df = db_conn.get_sentiment_country_distribution()
+
+sentiment_fig = go.Figure()
+
+for sent_type in ['positive_cnt', 'neutral_cnt', 'negative_cnt']:
+    sentiment_fig.add_trace(go.Bar(
+        y=df['country'],
+        x=df[sent_type] / df['sent_sum'],
+        orientation='h',
+        name=sent_type.split("_")[0].capitalize()
+    ))
+
+sentiment_fig.update_layout(barmode='stack')
+
+df = df[['country', 'positive_cnt', 'neutral_cnt', 'negative_cnt']]
+sentiment_table = dash_table.DataTable(
+    id='table',
+    columns=[{"name": i, "id": i} for i in df.columns],
+    data=df.to_dict('records'),
+    sort_action="native",
+    style_table={'height': '500px', 'overflowY': 'auto'}
+)
+
+
+df = db_conn.get_sentiment_country_mention_distribution()
+
+sentiment_mention_fig = go.Figure()
+
+for sent_type in ['positive_cnt', 'neutral_cnt', 'negative_cnt']:
+    sentiment_mention_fig.add_trace(go.Bar(
+        y=df['country'],
+        x=df[sent_type] / df['sent_sum'],
+        orientation='h',
+        name=sent_type.split("_")[0].capitalize()
+    ))
+
+sentiment_mention_fig.update_layout(barmode='stack')
+df = df[['country', 'positive_cnt', 'neutral_cnt', 'negative_cnt']]
+sentiment_mentioning_table = dash_table.DataTable(
+    id='table',
+    columns=[{"name": i, "id": i} for i in df.columns],
+    data=df.to_dict('records'),
+    sort_action="native",
+    style_table={'height': '500px', 'overflowY': 'auto'}
+)
+
+
+
+
+
+
+
 
 layout = html.Div([
     html.H2("What is the COVID-19 mood map?"),
@@ -112,7 +164,15 @@ layout = html.Div([
     ]),
     html.H3("Overall sentiments"),
     dbc.Row([
-        dbc.Col(html.H4("Overall polar sentiments of the data")),
-        dbc.Col(html.H4("Overall moral sentiments of the data"))
+        dbc.Col([
+            html.H4("Sentiments"),
+            sentiment_table,
+            dcc.Graph(figure=sentiment_fig)
+        ], width=6),
+        dbc.Col([
+            html.H4("Sentiments mentioning"),
+            sentiment_mentioning_table,
+            dcc.Graph(figure=sentiment_mention_fig)
+        ], width=6) 
     ]),    
 ])

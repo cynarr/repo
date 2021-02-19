@@ -278,7 +278,34 @@ def get_country_mention_distribution():
         df = df.rename(columns={'count': 'Count'})
     return df[['Country', 'Count']]
 
+def get_sentiment_country_distribution():
+    with db_connection() as conn:
+        query = " ".join([
+            "SELECT country, COUNT(sentiment) AS sent_sum,",
+            *SUM_POLES_PROJ,
+            "FROM",
+            *DOC_SENT_JOIN,
+            "GROUP BY country",
+        ])
+        df = pd.read_sql_query(query, conn)
+        df["country"] = df["country"].map(lambda x: pycountry.countries.get(alpha_2=x).name)
+
+    return df
+
+def get_sentiment_country_mention_distribution():
+    with db_connection() as conn:
+        query = " ".join([
+            "SELECT mention_country AS country, COUNT(sentiment) AS sent_sum,",
+            *SUM_POLES_PROJ,
+            "FROM",
+            *DOC_SENT_MENTION_JOIN,
+            "GROUP BY mention_country",
+        ])
+        df = pd.read_sql_query(query, conn)
+        df["country"] = df["country"].map(lambda x: pycountry.countries.get(alpha_2=x).name)
+
+    return df    
 
 if __name__ == "__main__":
-    print(get_country_mention_distribution())
+    print(get_sentiment_country_mention_distribution())
     #print(get_moral_sentiment_hist_df({'start_date': "2020-03-01", 'end_date': "2020-03-02"}))
