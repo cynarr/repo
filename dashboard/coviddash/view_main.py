@@ -121,25 +121,23 @@ sentiment_mentioning_table = dash_table.DataTable(
 )
 
 layout = html.Div([
-    html.H2("Topic and sentiment modeling of COVID-19 news in Europe"),
+    html.H2("Sentiment modeling of COVID-19 news in Europe"),
     html.Div([
-        html.P("COVID-19 mood map is a dashboard that visualizes topics and sentiment in pandemic news coverage in different languages.\n"
-               "The dashboard shows analyses how news events have changed over time in news media in different languages."),
-        html.P("DISCLAIMER: data and analyses represented here might not be accurate and should not be used as XXX")
+        html.P("The COVID-19 mood map of Europe is a dashboard that visualizes the sentiment of reporting around COVID-19 news coverage in from different European broadcasters.\n"
+               "The dashboard shows analyses how reporting has evolved over time and varies over countries different languages."),
+        dbc.Alert(
+            "Disclaimer: All analyses represented here have been automatically made without thorough evaluation. The analyses themselves may not be entirely accurate, and the resulting plots may therefore be misleading. They should not be used as as a basis for decision making.",
+            color="danger",
+        ),
     ]),
     html.H2("Tools"),
-    html.Div([
-        html.A("News-Crawl for news extraction.", href="https://github.com/commoncrawl/news-crawl", target="_blank"),
-        html.Br(),
-        html.A("LDA with BERT/RoBERTa embeddings for multilingual topic modeling.", href="https://github.com/mood-mapping-muppets/repo/tree/main/topic_modeler/contextual_topic_identification", target="_blank"),
-        html.Br(),
-        html.A("Multilingual BERT for sentiment analysis of headlines.", href="https://github.com/google-research/bert", target="_blank"),
-        html.Br(),
-        html.A("Moral Foundations Dictionary for moral sentiment analysis.", href="https://osf.io/ezn37/", target="_blank"),
-        html.Br(),
-        html.A("MUSE embeddings for moral sentiment analysis.", href="https://github.com/facebookresearch/MUSE", target="_blank"),
-        html.Br(),
-        html.A("TeMoCo for cross-lingual linking.", href="https://github.com/sfermoy/TeMoCo", target="_blank")
+    html.Ul([
+        html.Li(html.A("News-Crawl for news extraction.", href="https://github.com/commoncrawl/news-crawl", target="_blank")),
+        html.Li(html.A("LDA with BERT/RoBERTa embeddings for multilingual topic modeling.", href="https://github.com/mood-mapping-muppets/repo/tree/main/topic_modeler/contextual_topic_identification", target="_blank")),
+        html.Li(html.A("Multilingual BERT for sentiment analysis of headlines.", href="https://github.com/google-research/bert", target="_blank")),
+        html.Li(html.A("Moral Foundations Dictionary for moral sentiment analysis.", href="https://osf.io/ezn37/", target="_blank")),
+        html.Li(html.A("MUSE embeddings for moral sentiment analysis.", href="https://github.com/facebookresearch/MUSE", target="_blank")),
+        html.Li(html.A("TeMoCo for cross-lingual linking.", href="https://github.com/sfermoy/TeMoCo", target="_blank"))
     ]),
     html.H2("Data overview"),
     html.H3("Language distributions"),
@@ -164,7 +162,7 @@ layout = html.Div([
         dbc.Col([
             html.H4("News mentioning country"),
             country_mention_count_table
-        ])        
+        ])
     ]),
     html.H3("Overall sentiments"),
     dbc.Row([
@@ -178,5 +176,5 @@ layout = html.Div([
             sentiment_mentioning_table,
             dcc.Graph(figure=sentiment_mention_fig)
         ], width=6) 
-    ]),    
+    ]),
 ])
