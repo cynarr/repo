@@ -126,7 +126,7 @@ news_sources_table = dash_table.DataTable(
     columns=[{"name": i.capitalize(), "id": i} for i in state_data_df.columns],
     data=state_data_df.to_dict('records'),
     sort_action="native",
-    style_table={'height': '300px', 'overflowY': 'auto'},
+    style_table={'height': '350px', 'overflowY': 'auto'},
 )
 
 
@@ -143,29 +143,35 @@ layout = html.Div([
         ),
     ]),
     html.H2("Tools"),
-    html.P([
-        "How did we do it? With a little help from our friends! We used various tools, including those from the ",
-        html.A("Embeddia project", href="http://embeddia.eu/"),
-        " to create a corpus of European reporting about COVID-19 and produce different analyses of it automatically."
+    dbc.Row([
+        dbc.Col([
+            html.P([
+                "How did we do it? With a little help from our friends! We used various tools, including those from the ",
+                html.A("Embeddia project", href="http://embeddia.eu/"),
+                " to create a corpus of European reporting about COVID-19 and produce different analyses of it automatically."
+            ]),
+            html.P([
+                "First we created the news corpus of COVID-19 reporting by European state broadcasters using...",
+            ]),
+            html.Ul([
+                html.Li(html.A("Wikidata for obtaining background information like the list of state broadcasters and keywords for COVID-19 and names of different countries in diffferent languages", href="https://www.wikidata.org/", target="_blank")),
+                html.Li(html.A("News-Crawl for the raw news dumps", href="https://github.com/commoncrawl/news-crawl", target="_blank")),
+                html.Li(html.A("News-Please to extract the article texts from the dumps", href="https://github.com/fhamborg/news-please", target="_blank"))
+            ]),
+            html.P([
+                "Then we enriched the corpus with different automatic analyses such as...",
+            ]),
+            html.Ul([
+                html.Li(html.A("The Embeddia multilingual BERT based news sentiment analysis tool for extracting polar sentiments.", href="https://gitlab.com/Andrazp/news_sentiment_tool_mebeddia", target="_blank")),
+                html.Li(html.A("Moral Foundations Dictionary for moral sentiment analysis.", href="https://osf.io/ezn37/", target="_blank")),
+                html.Li(html.A("MUSE embeddings for performing cross-lingual moral sentiment analysis.", href="https://github.com/facebookresearch/MUSE", target="_blank")),
+            ]),
+        ], width=7),
+        dbc.Col([
+            html.H4("News sources"),
+            news_sources_table,   
+        ], width=5),
     ]),
-    html.P([
-        "First we created the news corpus of COVID-19 reporting by European state broadcasters using...",
-    ]),
-    html.Ul([
-        html.Li(html.A("Wikidata for obtaining background information like the list of state broadcasters and keywords for COVID-19 and names of different countries in diffferent languages", href="https://www.wikidata.org/", target="_blank")),
-        html.Li(html.A("News-Crawl for the raw news dumps", href="https://github.com/commoncrawl/news-crawl", target="_blank")),
-        html.Li(html.A("News-Please to extract the article texts from the dumps", href="https://github.com/fhamborg/news-please", target="_blank"))
-    ]),
-    html.P([
-        "Then we enriched the corpus with different automatic analyses such as...",
-    ]),
-    html.Ul([
-        html.Li(html.A("The Embeddia multilingual BERT based news sentiment analysis tool for extracting polar sentiments.", href="https://gitlab.com/Andrazp/news_sentiment_tool_mebeddia", target="_blank")),
-        html.Li(html.A("Moral Foundations Dictionary for moral sentiment analysis.", href="https://osf.io/ezn37/", target="_blank")),
-        html.Li(html.A("MUSE embeddings for performing cross-lingual moral sentiment analysis.", href="https://github.com/facebookresearch/MUSE", target="_blank")),
-    ]),
-    html.H4("News sources"),
-    news_sources_table,   
     html.H2("Data overview"),
     html.H3("Language distributions"),
     dcc.Loading(
