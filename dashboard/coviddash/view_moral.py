@@ -73,8 +73,10 @@ def update_moral_map(start_date, end_date, language, sentiment_type):
             height=700,
             color_continuous_scale=px.colors.sequential.Plasma,
             title=f"{sent.capitalize()} sentiment",
-            labels={'doc_count': 'Sentiment strength'}
-        )      
+            labels={'doc_count': 'Sentiment strength'},
+        ).update_layout(
+            dragmode=False,
+        )
 
         figs.append(dbc.Col(dcc.Graph(
             id=f'ms-map-graph{i}',
