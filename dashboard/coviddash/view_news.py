@@ -51,7 +51,7 @@ def update_sentiment_timeline(start_date, end_date, language, producing_country,
     fig_timeline.update_layout(
         xaxis=dict(
             title='Date',
-            tickmode='linear'),
+        ),
         yaxis=dict(
             title="Number of news articles",
         )
