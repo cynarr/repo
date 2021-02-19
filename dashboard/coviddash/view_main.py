@@ -83,7 +83,7 @@ for sent_type in ['positive_cnt', 'neutral_cnt', 'negative_cnt']:
         y=df['country'],
         x=df[sent_type] / df['sent_sum'],
         orientation='h',
-        name=sent_type.split("_")[0].capitalize()
+        name=sent_type.split("_")[0].capitalize(),
     ))
 
 sentiment_fig.update_layout(barmode='stack')
@@ -91,10 +91,10 @@ sentiment_fig.update_layout(barmode='stack')
 df = df[['country', 'positive_cnt', 'neutral_cnt', 'negative_cnt']]
 sentiment_table = dash_table.DataTable(
     id='table',
-    columns=[{"name": i, "id": i} for i in df.columns],
+    columns=[{"name": i.split("_")[0].capitalize(), "id": i} for i in df.columns],
     data=df.to_dict('records'),
     sort_action="native",
-    style_table={'height': '500px', 'overflowY': 'auto'}
+    style_table={'height': '500px', 'overflowY': 'auto'},
 )
 
 
@@ -114,7 +114,7 @@ sentiment_mention_fig.update_layout(barmode='stack')
 df = df[['country', 'positive_cnt', 'neutral_cnt', 'negative_cnt']]
 sentiment_mentioning_table = dash_table.DataTable(
     id='table',
-    columns=[{"name": i, "id": i} for i in df.columns],
+    columns=[{"name": i.split("_")[0].capitalize(), "id": i} for i in df.columns],
     data=df.to_dict('records'),
     sort_action="native",
     style_table={'height': '500px', 'overflowY': 'auto'}
