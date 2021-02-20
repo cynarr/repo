@@ -33,9 +33,10 @@ CREATE TABLE country_mentions (
 CREATE INDEX country_mentions_document_id_idx ON country_mentions (document_id);
 
 CREATE TABLE document_topics (
-  document_id INTEGER PRIMARY KEY,
+  document_id INTEGER,
   topic TEXT
 );
 
 
+CREATE INDEX document_topics_document_id_idx ON document_topics (document_id);
 CREATE INDEX document_topics_topic_idx ON document_topics (topic);
