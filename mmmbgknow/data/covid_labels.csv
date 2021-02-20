@@ -1,5 +1,4 @@
 langcode,lab
-ab,SARS-CoV-2
 az,COVID-19
 az,Koronavirus
 az,Koronavirus xəstəliyi 2019
@@ -43,11 +42,22 @@ ca,malaltia per coronavirus de 2019
 ca,malaltia respiratòria aguda del 2019-nCoV
 ca,malaltia respiratòria aguda per 2019-nCoV
 cs,2019-nCoV
+cs,COVID-19
+cs,CoV
+cs,Cov-19
+cs,Koronavirová infekce
+cs,Koronavirová nemoc
 cs,Koronavirus
+cs,Kovid
 cs,SARS-CoV-2
+cs,Wuchanská chřipka
+cs,coronavirus
 cs,covid-19
+cs,koronavirus
 cs,koronavirus 2019-nCoV
+cs,nový koronavirus
 cs,wuchanský koronavirus
+cs,Čínská chřipka
 cv,COVID-19 коронавирусла инфекци
 cv,SARS-CoV-2
 cv,Коронавирус
@@ -111,6 +121,7 @@ en,Chinese coronavirus
 en,CoV
 en,Corona
 en,Corona virus
+en,Corona-virus
 en,Coronavirus
 en,Coronavirus SARS-COV2
 en,Coronavirus disease 2019
@@ -195,9 +206,6 @@ hu,COVID
 hu,Covid19
 hu,Koronavírus
 hu,SARS-CoV-2
-hy,2019-nCoV
-hy,SARS-CoV-2
-hy,Կորոնավիրուսային վարակ COVID-19
 is,COVID-19
 is,Kórónaveira
 is,SARS-CoV-2
@@ -213,15 +221,6 @@ it,Wuhan coronavirus
 it,malattia respiratoria acuta da SARS-CoV-2
 it,nuovo Coronavirus
 it,polmonite di Wuhan
-ka,2019-nCoV
-ka,COVID-2019
-ka,კორონავირუსი SARS-CoV-2
-kk,COVID-19
-kk,COVID-19 коронавирус инфекциясы
-kk,COVID-19 коронавирустық инфекция
-kk,Жаңа коронавирус (2019-nCoV)
-kk,Коронавирустар
-kk,коронавирус
 la,2019-nCoV
 la,Coronaviri morbus
 la,Coronavirus

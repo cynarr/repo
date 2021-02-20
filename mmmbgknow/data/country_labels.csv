@@ -1,55 +1,7 @@
 langcode,cc2,lab
-ab,AD,Андора
-ab,AL,Арнауыҭтәыла
-ab,AL,Арнауыҭтәыла Аҳәынҭқарра
-ab,AM,Ермантәыла
-ab,AT,Австриа
-ab,AZ,Азербаиџьан
-ab,BE,Бельгиа
-ab,BG,Былгариа
-ab,BY,Белорустәыла
-ab,CY,Ҟыбрыс
-ab,CZ,Чехиа
-ab,DE,Германиа
-ab,DK,Даниа
-ab,EE,Естониа
-ab,ES,Испаниа
-ab,FI,Суоми
-ab,FR,Франциа
-ab,GB,Англиа
-ab,GB,Британиа Ду
-ab,GE,Қырҭтәыла
-ab,GR,Бырзентәыла
-ab,HR,Хорватиа
-ab,HU,Мадиартәыла
-ab,IE,Ирландиа
-ab,IS,Исландиа
-ab,IT,Италиа
-ab,KZ,Ҟазахсҭан
-ab,LI,Лихтенштаин
-ab,LT,Литва
-ab,LV,Латвиа
-ab,MC,Монако
-ab,MD,Молдова
-ab,ME,Черногориа
-ab,MK,Аҩадатәи Македониа
-ab,NO,Норвегиа
-ab,PL,Польша
-ab,PT,Португалиа
-ab,RS,Сербиа
-ab,RU,Урыстәыла
-ab,SE,Швециа
-ab,SI,Словениа
-ab,SK,Словакиа
-ab,SM,Сан Марино
-ab,TR,Ҭырқтәыла аҳәынҭқарра
-ab,TR,Ҭырқәтәыла
-ab,UA,Украина
 av,AD,Андорра
 av,AL,Албания
-av,AM,ЦIамухъ
 av,AT,Австрия
-av,AZ,Азарбижан
 av,BA,Босния ва Герцеговина
 av,BE,Бельгия
 av,BG,Болгария
@@ -64,14 +16,12 @@ av,ES,Испания
 av,FI,Финляндия
 av,FR,Франсия
 av,GB,КІудабритІания
-av,GE,Гуржи
 av,GR,Греция
 av,HR,Хорватия
 av,HU,Венгрия
 av,IE,Ирландия
 av,IS,Исландия
 av,IT,Италия
-av,KZ,Хъазахъистан
 av,LI,Лихтенштейн
 av,LT,Литва
 av,LU,Люксембург
@@ -92,17 +42,12 @@ av,SE,Швеция
 av,SI,Словения
 av,SK,Словакия
 av,SM,Сан-Марино
-av,TR,Турция
 av,UA,Украина
 av,VA,Ватикан
 az,AD,Andorra
 az,AL,Albaniya
 az,AL,Albaniya Respublikası
-az,AM,Ermənistan
-az,AM,Ermənistan Respublikası
 az,AT,Avstriya
-az,AZ,Azərbaycan
-az,AZ,Azərbaycan Respublikası
 az,BA,Bosniya və Herseqovina
 az,BE,Belçika
 az,BG,Bolqarıstan
@@ -129,7 +74,7 @@ az,GB,Böyük Britaniya
 az,GB,Uels
 az,GB,İngiltərə
 az,GB,Şimali İrlandiya
-az,GE,Gürcüstan
+az,GI,Cəbəli-Tariq
 az,GR,Yunanıstan
 az,HR,Xorvatiya
 az,HU,Macarıstan
@@ -137,7 +82,6 @@ az,IE,İrlandiya
 az,IE,İrlandiya Respublikası
 az,IS,İslandiya
 az,IT,İtaliya
-az,KZ,Qazaxıstan
 az,LI,Lixtenşteyn
 az,LT,Litva
 az,LU,Luksemburq
@@ -168,18 +112,12 @@ az,SE,İsveç
 az,SI,Sloveniya
 az,SK,Slovakiya
 az,SM,San-Marino
-az,TR,T.C.
-az,TR,Türkiyə
-az,TR,Türkiyə Cümhuriyyəti
-az,TR,Türkiyə Respublikası
 az,UA,Ukrayna
 az,VA,Vatikan
 ba,AD,Андорра
 ba,AL,Албания
 ba,AL,Албания Республикаһы
-ba,AM,Әрмәнстан
 ba,AT,Австрия
-ba,AZ,Әзербайжан
 ba,BA,Босния һәм Герцеговина
 ba,BE,Бельгия
 ba,BG,Болгария
@@ -203,14 +141,13 @@ ba,GB,Англия
 ba,GB,Бөйөк Британия
 ba,GB,Төньяҡ Ирландия
 ba,GB,Уэльс
-ba,GE,Грузия
+ba,GI,Гибралтар
 ba,GR,Греция
 ba,HR,Хорватия
 ba,HU,Венгрия
 ba,IE,Ирландия
 ba,IS,Исландия
 ba,IT,Италия
-ba,KZ,Ҡаҙағстан
 ba,LI,Лихтенштейн
 ba,LT,Литва
 ba,LU,Люксембург
@@ -236,15 +173,12 @@ ba,SE,Швеция
 ba,SI,Словения
 ba,SK,Словакия
 ba,SM,Сан-Марино
-ba,TR,Төркиә
 ba,UA,Украина
 ba,VA,Ватикан
 be,AD,Андора
 be,AL,Албанія
 be,AL,Рэспу́бліка Алба́нія
-be,AM,Арменія
 be,AT,Аўстрыя
-be,AZ,Азербайджан
 be,BA,Боснія і Герцагавіна
 be,BE,Бельгія
 be,BG,Балгарыя
@@ -275,7 +209,7 @@ be,GB,Англія
 be,GB,Вялікабрытанія
 be,GB,Паўночная Ірландыя
 be,GB,Уэльс
-be,GE,Грузія
+be,GI,Гібралтар
 be,GR,Грэцыя
 be,HR,Харватыя
 be,HU,Венгрыя
@@ -287,7 +221,6 @@ be,IS,Рэспубліка Ісландыя
 be,IT,Італьянская Рэспубліка
 be,IT,Італія
 be,IT,Рэспубліка Італія
-be,KZ,Казахстан
 be,LI,Ліхтэнштэйн
 be,LT,Літва
 be,LU,Дзяржава Люксембург
@@ -318,20 +251,14 @@ be,SK,Славакія
 be,SK,Славацкая Рэспубліка
 be,SK,Славаччына
 be,SM,Сан-Марына
-be,TR,Турцыя
-be,TR,Турэцкая Рэспубліка
-be,TR,Турэччына
 be,UA,Украіна
 be,VA,Ватыкан
 bg,AD,Андора
 bg,AD,Княжество Андора
 bg,AL,Албания
 bg,AL,Република Албания
-bg,AM,Армения
 bg,AT,Австрия
 bg,AT,Република Австрия
-bg,AZ,Азербайджан
-bg,AZ,Република Азербайджан
 bg,BA,Босна и Херцеговина
 bg,BE,Белгия
 bg,BE,Кралство Белгия
@@ -376,8 +303,7 @@ bg,GB,Обединено кралство Великобритания и Сев
 bg,GB,Обединеното кралство
 bg,GB,Северна Ирландия
 bg,GB,Уелс
-bg,GE,Грузия
-bg,GE,Република Грузия
+bg,GI,Гибралтар
 bg,GR,Гърция
 bg,GR,Република Гърция
 bg,HR,Република Хърватия
@@ -389,8 +315,6 @@ bg,IE,Ирландия
 bg,IS,Исландия
 bg,IT,Италия
 bg,IT,Република Италия
-bg,KZ,Казахстан
-bg,KZ,Република Казахстан
 bg,LI,Лихтенщайн
 bg,LT,Литва
 bg,LT,Република Литва
@@ -440,19 +364,13 @@ bg,SK,Словакия
 bg,SK,Словашка република
 bg,SM,Република Сан Марино
 bg,SM,Сан Марино
-bg,TR,Република Турция
-bg,TR,Турция
 bg,UA,Украйна
 bg,VA,Ватикан
 bg,VA,Ватикана
 bg,VA,Светия престол
 bs,AD,Andora
 bs,AL,Albanija
-bs,AM,Armenija
-bs,AM,Ermenija
-bs,AM,Jermenija
 bs,AT,Austrija
-bs,AZ,Azerbejdžan
 bs,BA,Bosna
 bs,BA,Bosna i Hercegovina
 bs,BE,Belgija
@@ -483,7 +401,7 @@ bs,GB,Ujedinjeno Kraljevstvo
 bs,GB,Ujedinjeno Kraljevstvo Velike Britanije i Sjeverne Irske
 bs,GB,Velika Britanija
 bs,GB,Vels
-bs,GE,Gruzija
+bs,GI,Gibraltar
 bs,GR,Grčka
 bs,HR,Hrvatska
 bs,HU,Mađarska
@@ -492,7 +410,6 @@ bs,IE,Republika Irska
 bs,IE,Éire
 bs,IS,Island
 bs,IT,Italija
-bs,KZ,Kazahstan
 bs,LI,Lihtenštajn
 bs,LT,Litvanija
 bs,LU,Luksemburg
@@ -522,7 +439,6 @@ bs,SE,Švedska
 bs,SI,Slovenija
 bs,SK,Slovačka
 bs,SM,San Marino
-bs,TR,Turska
 bs,UA,Ukrajina
 bs,VA,Vatikan
 ca,AD,Andorra
@@ -531,16 +447,12 @@ ca,AD,Valls d'Andorra
 ca,AD,el país dels Pirineus
 ca,AD,les Valls d'Andorra
 ca,AL,Albània
-ca,AM,Armènia
 ca,AT,Austria
 ca,AT,Ostalriche
 ca,AT,República Federal d'Àustria
 ca,AT,República d'Àustria
 ca,AT,Segona República d'Àustria
 ca,AT,Àustria
-ca,AZ,Azerbaidjan
-ca,AZ,República de l'Azerbaidjan
-ca,AZ,l'Azerbaidjan
 ca,BA,Bòsnia i Hercegovina
 ca,BE,België
 ca,BE,Bèlgica
@@ -615,7 +527,7 @@ ca,GB,Reialme Unit de la Gran Bretanya i Irlanda del Nord
 ca,GB,Ulster
 ca,GB,United Kingdom
 ca,GB,Wales
-ca,GE,Geòrgia
+ca,GI,Gibraltar
 ca,GR,Elláda
 ca,GR,Grècia
 ca,GR,Hellás
@@ -632,7 +544,6 @@ ca,IS,Islàndia
 ca,IT,Estat Italià
 ca,IT,Itàlia
 ca,IT,República Italiana
-ca,KZ,Kazakhstan
 ca,LI,Liechtenstein
 ca,LT,Lituania
 ca,LT,Lituània
@@ -678,19 +589,13 @@ ca,SE,Suècia
 ca,SI,Eslovènia
 ca,SK,Eslovàquia
 ca,SM,San Marino
-ca,TR,República Turca
-ca,TR,República de Turquia
-ca,TR,Turquia
-ca,TR,Türkiye
 ca,UA,Ucraïna
 ca,VA,Ciutat del Vaticà
 ca,VA,Estat de la Ciutat del Vaticà
 ca,VA,Vaticà
 ce,AD,Андорра
 ce,AL,Албани
-ce,AM,Эрмалойчоь
 ce,AT,Австри
-ce,AZ,Азербайджан
 ce,BA,Босни а Герцеговина
 ce,BE,Бельги
 ce,BG,Болгаре
@@ -714,7 +619,6 @@ ce,FR,Франци
 ce,GB,Ингалс
 ce,GB,Йоккха Британи
 ce,GB,Уэльс
-ce,GE,Гуьржийчоь
 ce,GR,Желтойчоь
 ce,HR,Хорвати
 ce,HU,Венгри
@@ -722,7 +626,6 @@ ce,IE,Ирланди
 ce,IE,Ирландий
 ce,IS,Исланди
 ce,IT,Итали
-ce,KZ,Кхазакхстан
 ce,LI,Лихтенштейн
 ce,LT,Литва
 ce,LU,Люксембург
@@ -744,16 +647,13 @@ ce,SE,Швеци
 ce,SI,Словени
 ce,SK,Словаки
 ce,SM,Сан-Марино
-ce,TR,Туркойчоь
 ce,UA,Украина
 ce,VA,Ватикан
 cs,AD,Andorra
 cs,AD,Andorrské knížectví
 cs,AL,Albánie
 cs,AL,Albánská republika
-cs,AM,Arménie
 cs,AT,Rakousko
-cs,AZ,Ázerbájdžán
 cs,BA,Bosna a Hercegovina
 cs,BA,Bosna a Herzegovina
 cs,BE,Belgie
@@ -786,7 +686,7 @@ cs,GB,Spojené království
 cs,GB,Spojené království Velké Británie a Severního Irska
 cs,GB,Velká Británie
 cs,GB,Wales
-cs,GE,Gruzie
+cs,GI,Gibraltar
 cs,GR,Řecko
 cs,HR,Chorvatsko
 cs,HU,Maďarsko
@@ -798,7 +698,6 @@ cs,IE,Republic of Ireland
 cs,IE,Éire
 cs,IS,Island
 cs,IT,Itálie
-cs,KZ,Kazachstán
 cs,LI,Lichtenštejnsko
 cs,LT,Litva
 cs,LU,Lucembursko
@@ -835,7 +734,6 @@ cs,SK,Slovensko
 cs,SK,Slovenská republika
 cs,SK,Slovenský štát
 cs,SM,San Marino
-cs,TR,Turecko
 cs,UA,Malorusko
 cs,UA,Malá Rus
 cs,UA,Ukrajina
@@ -843,9 +741,7 @@ cs,VA,Vatikán
 cv,AD,Андорра
 cv,AL,Албани
 cv,AL,Албани республики
-cv,AM,Эрмени
 cv,AT,Австри
-cv,AZ,Азербайджан
 cv,BA,Босни тата Герцеговина
 cv,BE,Бельги
 cv,BG,Болгари
@@ -866,7 +762,7 @@ cv,GB,Çурçĕр Ирланди
 cv,GB,Англи
 cv,GB,Аслă Британи
 cv,GB,Уэльс
-cv,GE,Грузи
+cv,GI,Гибралтар
 cv,GR,Греци
 cv,HR,Хорвати
 cv,HU,Венгри
@@ -874,7 +770,6 @@ cv,IE,Ирланди
 cv,IE,Ирланди Республики
 cv,IS,Исланди
 cv,IT,Итали
-cv,KZ,Казахстан
 cv,LI,Лихтенштейн
 cv,LT,Литва
 cv,LU,Люксембург
@@ -897,15 +792,11 @@ cv,SE,Швеци
 cv,SI,Словени
 cv,SK,Словаки
 cv,SM,Сан-Марино
-cv,TR,Турци
 cv,UA,Украина
 cv,VA,Ватикан
 cy,AD,Andorra
 cy,AL,Albania
-cy,AM,Armenia
-cy,AM,Gweriniaeth Armenia
 cy,AT,Awstria
-cy,AZ,Azerbaijan
 cy,BA,Bosna a Hertsegofina
 cy,BA,Bosnia a Hercegovina
 cy,BA,Bosnia-Hercegovina
@@ -967,7 +858,7 @@ cy,GB,Teyrnas Unedig Prydain Fawr a Gogledd Iwerddon
 cy,GB,y DG
 cy,GB,y DU
 cy,GB,y Deyrnas Unedig
-cy,GE,Georgia
+cy,GI,Gibraltar
 cy,GR,Gwlad Groeg
 cy,HR,Croatia
 cy,HU,Hwngari
@@ -976,7 +867,6 @@ cy,IE,Iwerddon Rydd
 cy,IE,Éire
 cy,IS,Gwlad yr Iâ
 cy,IT,Yr Eidal
-cy,KZ,Casachstan
 cy,LI,Liechtenstein
 cy,LT,Gweriniaeth Lithwania
 cy,LT,Lithwania
@@ -1012,16 +902,13 @@ cy,SE,Sweden
 cy,SI,Slofenia
 cy,SK,Slofacia
 cy,SM,San Marino
-cy,TR,Twrci
 cy,UA,Wcrain
 cy,UA,Wcráin
 cy,VA,Y Fatican
 da,AD,Andorra
 da,AL,Albanien
 da,AL,Republikken Albanien
-da,AM,Armenien
 da,AT,Østrig
-da,AZ,Aserbajdsjan
 da,BA,Bosnien-Hercegovina
 da,BE,Belgien
 da,BE,Belgique
@@ -1062,7 +949,7 @@ da,GB,Nordirland
 da,GB,Storbritannien
 da,GB,United Kingdom
 da,GB,Wales
-da,GE,Georgien
+da,GI,Gibraltar
 da,GR,Grækenland
 da,HR,Kroatien
 da,HR,Republikken Kroatien
@@ -1070,8 +957,6 @@ da,HU,Ungarn
 da,IE,Irland
 da,IS,Island
 da,IT,Italien
-da,KZ,Kasakhstan
-da,KZ,Republikken Kasakhstan
 da,LI,Liechtenstein
 da,LT,Litauen
 da,LU,Luxembourg
@@ -1106,16 +991,13 @@ da,SE,Sverige
 da,SI,Slovenien
 da,SK,Slovakiet
 da,SM,San Marino
-da,TR,Tyrkiet
 da,UA,Ukraine
 da,VA,Vatikanstaten
 de,AD,Andorra
 de,AL,Albanien
 de,AL,Republik Albanien
-de,AM,Armenien
 de,AT,Republik Österreich
 de,AT,Österreich
-de,AZ,Aserbaidschan
 de,BA,Bosnien und Herzegowina
 de,BA,Bosnien-Herzegowina
 de,BE,Belgien
@@ -1193,9 +1075,7 @@ de,GB,U.K.
 de,GB,Vereinigtes Königreich
 de,GB,Vereinigtes Königreich Großbritannien und Nordirland
 de,GB,Wales
-de,GE,Georgien
-de,GE,Grusien
-de,GE,Grusinien
+de,GI,Gibraltar
 de,GR,Griechenland
 de,GR,Hellas
 de,GR,Hellenische Republik
@@ -1207,7 +1087,6 @@ de,IE,Republik Irland
 de,IS,Island
 de,IT,Italien
 de,IT,Italienische Republik
-de,KZ,Kasachstan
 de,LI,Fürstentum Lichtenstein
 de,LI,Fürstentum Liechtenstein
 de,LI,Liechtenstein
@@ -1265,8 +1144,6 @@ de,SK,Slowakien
 de,SK,Slowakische Republik
 de,SM,Republik San Marino
 de,SM,San Marino
-de,TR,Republik Turkei
-de,TR,Türkei
 de,UA,Ukraine
 de,VA,Staat Vatikanstadt
 de,VA,Staat der Vatikanstadt
@@ -1274,10 +1151,8 @@ de,VA,Vatikan
 de,VA,Vatikanstadt
 el,AD,Ανδόρρα
 el,AL,Αλβανία
-el,AM,Αρμενία
 el,AT,Αυστρία
 el,AT,Δημοκρατία της Αυστρίας
-el,AZ,Αζερμπαϊτζάν
 el,BA,Βοσνία και Ερζεγοβίνη
 el,BE,Βέλγιο
 el,BE,Βασίλειο του Βελγίου
@@ -1330,7 +1205,7 @@ el,GB,Αγγλία
 el,GB,Βόρεια Ιρλανδία
 el,GB,Ηνωμένο Βασίλειο
 el,GB,Ουαλία
-el,GE,Γεωργία
+el,GI,Γιβραλτάρ
 el,GR,Δημοκρατία της Ελλάδας
 el,GR,Δημοκρατία της Ελλάδος
 el,GR,Ελλάδα
@@ -1345,7 +1220,6 @@ el,IS,Δημοκρατία της Ισλανδίας
 el,IS,Ισλανδία
 el,IT,Ιταλία
 el,IT,Ιταλική Δημοκρατία
-el,KZ,Καζακστάν
 el,LI,Λίχτενσταϊν
 el,LT,Λιθουανία
 el,LU,Λουξεμβούργο
@@ -1388,8 +1262,6 @@ el,SI,Σλοβενία
 el,SK,Δημοκρατία της Σλοβακίας
 el,SK,Σλοβακία
 el,SM,Άγιος Μαρίνος
-el,TR,Τουρκία
-el,TR,Τουρκική Δημοκρατία
 el,UA,Ουκρανία
 el,VA,Βατικανό
 en,AD,Andorra
@@ -1399,14 +1271,10 @@ en,AL,Albania
 en,AL,Republic of Albania
 en,AL,Republika e Shqipërisë
 en,AL,Shqipërisë
-en,AM,Armenia
-en,AM,Republic of Armenia
 en,AT,Austria
 en,AT,Republic of Austria
 en,AT,Republik Österreich
 en,AT,Österreich
-en,AZ,Azerbaijan
-en,AZ,Republic of Azerbaijan
 en,BA,Bosnia
 en,BA,Bosnia & Herzegovina
 en,BA,Bosnia and Herzegovina
@@ -1553,9 +1421,8 @@ en,GB,U.K.
 en,GB,United Kingdom
 en,GB,United Kingdom of Great Britain and Northern Ireland
 en,GB,Wales
-en,GE,Georgia
-en,GE,Georgia (country)
-en,GE,Republic of Georgia
+en,GI,Gibraltar
+en,GI,The Rock of Gibraltar
 en,GR,Ellada
 en,GR,Greece
 en,GR,Greek
@@ -1579,9 +1446,6 @@ en,IS,Republic of Iceland
 en,IT,Italia
 en,IT,Italian Republic
 en,IT,Italy
-en,KZ,Kazakhstan
-en,KZ,Qazaqstan
-en,KZ,Republic of Kazakhstan
 en,LI,Liechtenstein
 en,LI,Principality of Liechtenstein
 en,LT,Lietuva
@@ -1676,8 +1540,6 @@ en,SK,Slovak Republic
 en,SK,Slovakia
 en,SM,Most Serene Republic of San Marino
 en,SM,San Marino
-en,TR,Republic of Turkey
-en,TR,Turkey
 en,UA,Ukraine
 en,UA,Ukrainia
 en,VA,Città del Vaticano
@@ -1695,16 +1557,9 @@ es,AD,Principado de Andorra
 es,AL,Albania
 es,AL,Republica de Albania
 es,AL,República de Albania
-es,AM,Armenia
-es,AM,Republica de Armenia
-es,AM,República de Armenia
 es,AT,Austria
 es,AT,Republica de Austria
 es,AT,República de Austria
-es,AZ,Azerbaiyan
-es,AZ,Azerbaiyán
-es,AZ,Republica de Azerbaiyan
-es,AZ,República de Azerbaiyán
 es,BA,Bosnia
 es,BA,Bosnia y Herzegovina
 es,BA,Bosnia-Herzegovia
@@ -1778,7 +1633,8 @@ es,GB,Inglaterra
 es,GB,Irlanda del Norte
 es,GB,Reino Unido
 es,GB,Reino Unido de Gran Bretaña e Irlanda del Norte
-es,GE,Georgia
+es,GI,Gibraltar
+es,GI,la Roca
 es,GR,Grecia
 es,GR,Hellás
 es,GR,Hélade
@@ -1794,12 +1650,6 @@ es,IE,República de Irlanda
 es,IS,Islandia
 es,IT,Italia
 es,IT,República Italiana
-es,KZ,Kazajastán
-es,KZ,Kazajistán
-es,KZ,Kazakstán
-es,KZ,Qazaqstan
-es,KZ,Republica de Kazajstán
-es,KZ,República de Kazajistán
 es,LI,Liechtenstein
 es,LI,Principado de Liechtenstein
 es,LT,Lituania
@@ -1880,11 +1730,6 @@ es,SK,República Eslovaca
 es,SM,San Marino
 es,SM,Serenisima Republica de San Marino
 es,SM,Serenísima República de San Marino
-es,TR,Republica de Turquia
-es,TR,República de Turquía
-es,TR,Turkey
-es,TR,Turquia
-es,TR,Turquía
 es,UA,Ucrania
 es,VA,Ciudad del Vaticano
 es,VA,Estado de la Ciudad del Vaticano
@@ -1892,10 +1737,8 @@ es,VA,Vaticano
 et,AD,Andorra
 et,AL,Albaania
 et,AL,Albaania Vabariik
-et,AM,Armeenia
 et,AT,Austria
 et,AT,Austria Vabariik
-et,AZ,Aserbaidžaan
 et,BA,Bosnia ja Hertsegoviina
 et,BE,Belgia
 et,BG,Bulgaaria
@@ -1930,7 +1773,7 @@ et,GB,Põhja-Iirimaa
 et,GB,Suurbritannia
 et,GB,Wales
 et,GB,Ühendkuningriik
-et,GE,Gruusia
+et,GI,Gibraltar
 et,GR,Kreeka
 et,HR,Horvaatia
 et,HU,Ungari
@@ -1940,7 +1783,6 @@ et,IE,Iirimaa
 et,IS,Island
 et,IT,Itaalia
 et,IT,Itaalia Vabariik
-et,KZ,Kasahstan
 et,LI,Liechtenstein
 et,LT,Leedu
 et,LT,Leedu Vabariik
@@ -1973,14 +1815,11 @@ et,SE,Rootsi
 et,SI,Sloveenia
 et,SK,Slovakkia
 et,SM,San Marino
-et,TR,Türgi
 et,UA,Ukraina
 et,VA,Vatikan
 eu,AD,Andorra
 eu,AL,Albania
-eu,AM,Armenia
 eu,AT,Austria
-eu,AZ,Azerbaijan
 eu,BA,Bosnia-Herzegovina
 eu,BE,Belgika
 eu,BG,Bulgaria
@@ -2006,7 +1845,7 @@ eu,GB,Erresuma Batua
 eu,GB,Gales
 eu,GB,Ingalaterra
 eu,GB,Ipar Irlanda
-eu,GE,Georgia
+eu,GI,Gibraltar
 eu,GR,Grezia
 eu,HR,Kroazia
 eu,HU,Hungaria
@@ -2014,7 +1853,6 @@ eu,IE,Irlandako Errepublika
 eu,IE,Éire
 eu,IS,Islandia
 eu,IT,Italia
-eu,KZ,Kazakhstan
 eu,LI,Liechtenstein
 eu,LT,Lituania
 eu,LU,Luxemburg
@@ -2051,7 +1889,6 @@ eu,SE,Suedia
 eu,SI,Eslovenia
 eu,SK,Eslovakia
 eu,SM,San Marino
-eu,TR,Turkia
 eu,UA,Ukraina
 eu,VA,Vatikano Hiria
 fi,AD,Andorra
@@ -2059,12 +1896,8 @@ fi,AD,Andorran ruhtinaskunta
 fi,AL,Albania
 fi,AL,Albanian tasavalta
 fi,AL,Republika e Shqipërisë
-fi,AM,Armenia
-fi,AM,Armenian tasavalta
 fi,AT,Itävallan tasavalta
 fi,AT,Itävalta
-fi,AZ,Azerbaidžan
-fi,AZ,Azerbaidžanin tasavalta
 fi,BA,Bosnia ja Hertsegovina
 fi,BA,Bosnia-Hertsegovina
 fi,BE,Belgia
@@ -2117,9 +1950,7 @@ fi,GB,Pohjois-Irlanti
 fi,GB,United Kingdom
 fi,GB,Wales
 fi,GB,Yhdistynyt kuningaskunta
-fi,GE,Georgia
-fi,GE,Georgian tasavalta
-fi,GE,Gruusia
+fi,GI,Gibraltar
 fi,GR,Hellas
 fi,GR,Helleenien tasavalta
 fi,GR,Kreikan tasavalta
@@ -2135,8 +1966,6 @@ fi,IS,Islannin tasavalta
 fi,IS,Islanti
 fi,IT,Italia
 fi,IT,Italian tasavalta
-fi,KZ,Kazakstan
-fi,KZ,Kazakstanin tasavalta
 fi,LI,Liechtenstein
 fi,LI,Liechtensteinin ruhtinaskunta
 fi,LT,Liettua
@@ -2184,7 +2013,6 @@ fi,SK,Slovakian tasavalta
 fi,SM,San Marino
 fi,SM,San Marinon seesteinen tasavalta
 fi,SM,San Marinon tasavalta
-fi,TR,Turkki
 fi,UA,Ukraina
 fi,VA,Città del Vaticano
 fi,VA,Civitas Vaticana
@@ -2196,9 +2024,7 @@ fi,VA,Vatikaaninvaltio
 fo,AD,Andorra
 fo,AL,Albania
 fo,AL,Lýðveldið Albaniu
-fo,AM,Armenia
 fo,AT,Eysturríki
-fo,AZ,Aserbadsjan
 fo,BA,Bosnia og Hersegovina
 fo,BE,Belgia
 fo,BG,Bulgaria
@@ -2225,7 +2051,7 @@ fo,GB,Norðurírland
 fo,GB,Ongland
 fo,GB,Stóra Bretland
 fo,GB,Wales
-fo,GE,Georgia
+fo,GI,Gibraltar
 fo,GR,Grikkaland
 fo,HR,Kroatia
 fo,HU,Ungarn
@@ -2234,7 +2060,6 @@ fo,IE,Írsk mentan
 fo,IE,Írska Republikkin
 fo,IS,Ísland
 fo,IT,Italia
-fo,KZ,Kasakstan
 fo,LI,Liktinstein
 fo,LT,Litava
 fo,LU,Luksemborg
@@ -2261,7 +2086,6 @@ fo,SE,Svøríki
 fo,SI,Slovenia
 fo,SK,Slovakia
 fo,SM,San Marino
-fo,TR,Turkaland
 fo,UA,Ukraina
 fo,VA,Vatikanið
 fr,AD,Andorre
@@ -2270,14 +2094,10 @@ fr,AD,la Principauté d’Andorre
 fr,AL,Albanie
 fr,AL,République d'Albanie
 fr,AL,la République d’Albanie
-fr,AM,Arménie
-fr,AM,la République d’Arménie
 fr,AT,Aut.
 fr,AT,Autr.
 fr,AT,Autriche
 fr,AT,la République d’Autriche
-fr,AZ,Azerbaïdjan
-fr,AZ,la République d’Azerbaïdjan
 fr,BA,Bosnie et Herzégovine
 fr,BA,Bosnie-Herzégovine
 fr,BA,Bosnie-et-Herzégovine
@@ -2328,6 +2148,7 @@ fr,DK,Groënland
 fr,DK,Iles Feroe
 fr,DK,Iles Féroé
 fr,DK,Royaume du Danemark
+fr,DK,royaume du Danemark
 fr,DK,îles Féroé
 fr,EE,Esthonie
 fr,EE,Estonie
@@ -2369,10 +2190,7 @@ fr,GB,Royaume-Uni de Grande-Bretagne et d’Irlande du Nord
 fr,GB,Royaume-uni
 fr,GB,le Royaume-Uni de Grande-Bretagne et d’Irlande du Nord
 fr,GB,pays de Galles
-fr,GE,Géorg.
-fr,GE,Géorgie
-fr,GE,Géorgie (Pays)
-fr,GE,république de Géorgie
+fr,GI,Gibraltar
 fr,GR,Grèce
 fr,GR,République hellénique
 fr,HR,Croatie
@@ -2395,11 +2213,6 @@ fr,IT,Italia
 fr,IT,Italie
 fr,IT,République Italienne
 fr,IT,la République italienne
-fr,KZ,Kazakh.
-fr,KZ,Kazakhstan
-fr,KZ,Kazakstan
-fr,KZ,Qazaqstan
-fr,KZ,la République du Kazakhstan
 fr,LI,Liechtenstein
 fr,LI,la Principauté du Liechtenstein
 fr,LI,principauté de Liechtenstein
@@ -2494,11 +2307,6 @@ fr,SM,République de Saint-Marin
 fr,SM,Saint-Marin
 fr,SM,Saint-marin
 fr,SM,la République de Saint-Marin
-fr,TR,République de Turquie
-fr,TR,République turque
-fr,TR,Turq.
-fr,TR,Turquie
-fr,TR,la République de Turquie
 fr,UA,Ukr.
 fr,UA,Ukraine
 fr,VA,Cité du Vatican
@@ -2506,9 +2314,7 @@ fr,VA,Vatican
 fr,VA,État de la Cité du Vatican
 fy,AD,Andorra
 fy,AL,Albaanje
-fy,AM,Armeenje
 fy,AT,Eastenryk
-fy,AZ,Azerbeidzjan
 fy,BA,Bosnje
 fy,BE,Belgje
 fy,BG,Bulgarije
@@ -2533,14 +2339,13 @@ fy,GB,Grut-Brittanje
 fy,GB,Ingelân
 fy,GB,Noard-Ierlân
 fy,GB,Wales
-fy,GE,Geörgje
+fy,GI,Gibraltar
 fy,GR,Grikelân
 fy,HR,Kroaasje
 fy,HU,Hongarije
 fy,IE,Ierlân
 fy,IS,Yslân
 fy,IT,Itaalje
-fy,KZ,Kazakstan
 fy,LI,Lychtenstein
 fy,LT,Litouwen
 fy,LU,Gruthartochdom Lúksemboarch
@@ -2572,15 +2377,12 @@ fy,SE,Sweden
 fy,SI,Sloveenje
 fy,SK,Slowakije
 fy,SM,San Marino
-fy,TR,Turkije
 fy,UA,Oekraïne
 fy,VA,Fatikaan
 fy,VA,Fatikaanstêd
 ga,AD,Andóra
 ga,AL,An Albáin
-ga,AM,An Airméin
 ga,AT,An Ostair
-ga,AZ,An Asarbaiseáin
 ga,BA,An Bhoisnia-Heirseagaivéin
 ga,BE,An Bheilg
 ga,BG,An Bhulgáir
@@ -2610,7 +2412,7 @@ ga,GB,An Ríocht Aontaithe
 ga,GB,Ríocht Aontaithe
 ga,GB,Sasana
 ga,GB,Tuaisceart Éireann
-ga,GE,An tSeoirsia
+ga,GI,Giobráltar
 ga,GR,An Ghréig
 ga,HR,An Chróit
 ga,HU,An Ungáir
@@ -2619,7 +2421,6 @@ ga,IE,na 26 chontae
 ga,IE,Éire
 ga,IS,An Íoslainn
 ga,IT,An Iodáil
-ga,KZ,An Chasacstáin
 ga,LI,Lichtinstéin
 ga,LT,An Liotuáin
 ga,LU,An Lucsamburg
@@ -2650,16 +2451,13 @@ ga,SE,An tSualainn
 ga,SI,An tSlóivéin
 ga,SK,An tSlóvaic
 ga,SM,San Mairíne
-ga,TR,An Tuirc
 ga,UA,An Úcráin
 ga,VA,Cathair na Vatacáine
 gl,AD,Andorra
 gl,AD,Principado de Andorra
 gl,AD,Principat d'Andorra
 gl,AL,Albania
-gl,AM,Armenia
 gl,AT,Austria
-gl,AZ,Acerbaixán
 gl,BA,Bosnia e Hercegovina
 gl,BE,Bélxica
 gl,BG,Bulgaria
@@ -2694,7 +2492,7 @@ gl,GB,Inglaterra
 gl,GB,Irlanda do Norte
 gl,GB,Reino Unido
 gl,GB,Reino Unido de Gran Bretaña e Irlanda do Norte
-gl,GE,Xeorxia
+gl,GI,Xibraltar
 gl,GR,Grecia
 gl,HR,Croacia
 gl,HU,Hungría
@@ -2705,7 +2503,6 @@ gl,IE,Éire
 gl,IS,Islandia
 gl,IT,Italia
 gl,IT,República Italiana
-gl,KZ,Casaquistán
 gl,LI,Liechtenstein
 gl,LT,Lituania
 gl,LU,Luxemburgo
@@ -2737,19 +2534,71 @@ gl,SE,Suecia
 gl,SI,Eslovenia
 gl,SK,Eslovaquia
 gl,SM,San Marino
-gl,TR,República Turca
-gl,TR,República de Turquia
-gl,TR,Turquía
 gl,UA,Ucraína
 gl,VA,Cidade do Vaticano
 gl,VA,Vaticano
+gv,AD,Andorra
+gv,AL,Yn Albaan
+gv,AT,Yn Austeyr
+gv,BA,Bosnia as Herzegovina
+gv,BE,Yn Velg
+gv,BG,Y Vulgeyr
+gv,BG,Yn Vulgeyr
+gv,BY,Yn Velaroosh
+gv,CH,Yn Elveeish
+gv,CY,Yn Cheeprey
+gv,CZ,Yn Phobblaght Çheck
+gv,DE,Yn Ghermaan
+gv,DK,Ellanyn ny Geyrragh
+gv,DK,Greenlynn
+gv,DK,Yn Danvarg
+gv,EE,Yn Estaan
+gv,ES,Yn Chataloan
+gv,ES,Yn Spaainey
+gv,FI,Finnlynn
+gv,FO,Ellanyn ny Geyrragh
+gv,FR,Yn Rank
+gv,GB,Bretyn
+gv,GB,Nerin Hwoaie
+gv,GB,Reeriaght Unnaneysit
+gv,GB,Sostyn
+gv,GI,Gibraaltar
+gv,GR,Yn Ghreag
+gv,HR,Yn Chroit
+gv,HU,Yn Ungaar
+gv,IE,Pobblaght Nerin
+gv,IS,Yn Eeslynn
+gv,IT,Yn Iddaal
+gv,LI,Liechtenstein
+gv,LT,Yn Litaan
+gv,LU,Lucsemburg
+gv,LU,Luxembourg
+gv,LV,Yn Latvey
+gv,MC,Monaco
+gv,MD,Moldova
+gv,ME,Montenegro
+gv,MK,Pobblaght ny Massadoan
+gv,MK,Pobblaght y Vassadoan Hwoaie
+gv,MT,Yn Valta
+gv,NL,Yn Çheer Injil
+gv,NO,Norlynn
+gv,PL,Polska
+gv,PL,Yn Pholynn
+gv,PT,Yn Phortiugal
+gv,RO,Yn Romaan
+gv,RS,Yn Serb
+gv,RU,Yn Roosh
+gv,SE,Yn Toolynn
+gv,SI,Yn Clovean
+gv,SK,Yn Clovack
+gv,SM,San Marino
+gv,UA,Yn Ookraan
+gv,VA,Ard-valley yn Phaab
 hr,AD,Andora
 hr,AL,Albanija
-hr,AM,Armenija
 hr,AT,Austrija
 hr,AT,Republika Austrija
 hr,AT,Österreich
-hr,AZ,Azerbajdžan
 hr,BA,Bosna
 hr,BA,Bosna i Hercegovina
 hr,BE,Belgija
@@ -2795,7 +2644,7 @@ hr,GB,Ujedinjeno Kraljevstvo
 hr,GB,Ujedinjeno Kraljevstvo Velike Britanije i Sjeverne Irske
 hr,GB,Velika Britanija
 hr,GB,Wales
-hr,GE,Gruzija
+hr,GI,Gibraltar
 hr,GR,Grčka
 hr,GR,Republika Grčka
 hr,HR,Hrvatska
@@ -2807,7 +2656,6 @@ hr,IE,Republika Irska
 hr,IS,Island
 hr,IT,Italija
 hr,IT,Republika Italija
-hr,KZ,Kazahstan
 hr,LI,Lihtenštajn
 hr,LT,Litva
 hr,LT,Litvanija
@@ -2847,8 +2695,6 @@ hr,SE,Švedska
 hr,SI,Slovenija
 hr,SK,Slovačka
 hr,SM,San Marino
-hr,TR,Republika Turska
-hr,TR,Turska
 hr,UA,Ukrajina
 hr,VA,Vatikan
 hu,AD,Andorra
@@ -2857,11 +2703,7 @@ hu,AD,Andorrai Hercegség
 hu,AD,Andorrai Völgység
 hu,AL,Albán Köztársaság
 hu,AL,Albánia
-hu,AM,Örmény Köztársaság
-hu,AM,Örményország
 hu,AT,Ausztria
-hu,AZ,Azerbajdzsán
-hu,AZ,Azerbajdzsáni Köztársaság
 hu,BA,Bosznia-Hercegovina
 hu,BE,Belgium
 hu,BG,Bolgár Köztársaság
@@ -2899,7 +2741,10 @@ hu,GB,Nagy-Britannia
 hu,GB,Nagy-Britannia és Észak-Írország Egyesült Királysága
 hu,GB,Wales
 hu,GB,Észak-Írország
-hu,GE,Grúzia
+hu,GI,Dzsabal Tárik
+hu,GI,Gibraltár
+hu,GI,Ţāriq hegye
+hu,GI,جبل طارق
 hu,GR,Görögország
 hu,HR,Horvát Köztársaság
 hu,HR,Horvátország
@@ -2912,8 +2757,6 @@ hu,IE,Írország
 hu,IS,Izland
 hu,IS,Izlandi Köztársaság
 hu,IT,Olaszország
-hu,KZ,Kazah Köztársaság
-hu,KZ,Kazahsztán
 hu,LI,Liechtenstein
 hu,LI,Liechtenstein Hercegség
 hu,LT,Litvánia
@@ -2959,103 +2802,13 @@ hu,SK,Szlovák Köztársaság
 hu,SK,Szlovákia
 hu,SM,San Marino
 hu,SM,San Marino Köztársaság
-hu,TR,Törökország
 hu,UA,Ukrajna
 hu,VA,Vatikán
 hu,VA,Vatikán Állam
 hu,VA,Vatikánváros
-hy,AD,Անդորրա
-hy,AL,Ալբանիա
-hy,AM,Հայաստան
-hy,AM,Հայաստանի Հանրապետություն
-hy,AM,Հայք
-hy,AT,Ավստրիա
-hy,AZ,Ադրբեջան
-hy,BA,Բոսնիա և Հերցեգովինա
-hy,BE,Բելգիա
-hy,BE,Բելգիայի Թագավորություն
-hy,BG,Բուլղարիա
-hy,BY,Բելառուս
-hy,CH,Շվեյցարական Համադաշնություն
-hy,CH,Շվեյցարիա
-hy,CH,Շվեյցարիայի Համադաշնություն
-hy,CY,Կիպրոս
-hy,CZ,Չեխիա
-hy,DE,Գերմանիա
-hy,DE,Գերմանիայի Դաշնային Հանրապետություն
-hy,DK,Գրենլանդիա
-hy,DK,Դանիա
-hy,DK,Ֆարերյան կղզիներ
-hy,EE,Էստոնիա
-hy,ES,Իսպանիա
-hy,ES,Իսպանիայի Թագավորություն
-hy,ES,Կատալոնիա
-hy,FI,Ֆինլանդիա
-hy,FI,Ֆինլանդիայի Հանրապետություն
-hy,FO,Ֆարերյան կղզիներ
-hy,FR,France
-hy,FR,Ֆրանսա
-hy,FR,Ֆրանսիա
-hy,FR,Ֆրանսիական
-hy,FR,Ֆրանսիայի հանրապետություն
-hy,GB,Անգլիա
-hy,GB,Հյուսիսային Իռլանդիա
-hy,GB,Մեծ Բրիտանիա
-hy,GB,Մեծ Բրիտանիայի և Հյուսիսային Իռլանդիայի Միացյալ Թագավորություն
-hy,GB,Միացյալ Թագավորություն
-hy,GB,Ուելս
-hy,GB,Ուելս (վարչաքաղաքական մաս)
-hy,GE,Վրաստան
-hy,GR,Հունաստան
-hy,HR,Խորվաթիա
-hy,HU,Հունգարիա
-hy,IE,Իռլանդիա
-hy,IE,Իռլանդիայի Հանրապետություն
-hy,IE,Իրլանդիա
-hy,IS,Իսլանդիա
-hy,IT,Իտալական Հանրապետություն
-hy,IT,Իտալիա
-hy,KZ,Ղազախստան
-hy,LI,Լիխտենշտայն
-hy,LT,Լիտվա
-hy,LT,Լիտվայի Հանրապետություն
-hy,LU,Լյուքսեմբուրգ
-hy,LU,Լուքսեմբուրգ
-hy,LV,Լատվիա
-hy,MC,Մոնակո
-hy,MD,Մոլդովա
-hy,ME,Չեռնոգորիա
-hy,MK,Հյուսիսային Մակեդոնիա
-hy,MK,Հյուսիսային Մակեդոնիայի Հանրապետություն
-hy,MT,Մալթա
-hy,NL,Արուբա
-hy,NL,Կյուրասաո
-hy,NL,Նիդերլանդներ
-hy,NL,Նիդերլանդների Թագավորություն
-hy,NL,Սինտ Մաարտեն
-hy,NO,Նորվեգիա
-hy,NO,Նորվեգիայի Թագավորություն
-hy,PL,Polska
-hy,PL,Լեհաստան
-hy,PL,Լեհաստանի Հանրապետություն
-hy,PT,Պորտուգալիա
-hy,RO,Ռումինիա
-hy,RS,Սերբիա
-hy,RU,Ռուսաստան
-hy,RU,Ռուսաստանի Դաշնություն
-hy,SE,Շվեդիա
-hy,SE,Շվեդիայի Թագավորություն
-hy,SI,Սլովենիա
-hy,SK,Սլովակիա
-hy,SM,Սան Մարինո
-hy,TR,Թուրքիա
-hy,UA,Ուկրաինա
-hy,VA,Վատիկան
 is,AD,Andorra
 is,AL,Albanía
-is,AM,Armenía
 is,AT,Austurríki
-is,AZ,Aserbaídsjan
 is,BA,Bosnía og Hersegóvína
 is,BE,Belgía
 is,BG,Bulgaria
@@ -3083,7 +2836,7 @@ is,GB,Hið sameinaða konungsríki Stóra-Bretlands og Norður-Írlands
 is,GB,Norður-Írland
 is,GB,Wales
 is,GB,sameinaða konungsríki Stóra-Bretlands og Norður-Írlands
-is,GE,Georgía
+is,GI,Gíbraltar
 is,GR,Grikkland
 is,HR,Króatía
 is,HU,Ungverjaland
@@ -3091,7 +2844,6 @@ is,IE,Írska lýðveldið
 is,IS,Lýðveldið Ísland
 is,IS,Ísland
 is,IT,Ítalía
-is,KZ,Kasakstan
 is,LI,Liechtenstein
 is,LT,Litháen
 is,LU,Luxemburg
@@ -3121,15 +2873,12 @@ is,SE,Svíþjóð
 is,SI,Slóvenía
 is,SK,Slóvakía
 is,SM,San Marínó
-is,TR,Tyrkland
 is,UA,Úkraína
 is,VA,Vatíkanið
 it,AD,Andorra
 it,AL,Albania
 it,AL,Repubblica d'Albania
-it,AM,Armenia
 it,AT,Austria
-it,AZ,Azerbaigian
 it,BA,Bosnia ed Erzegovina
 it,BA,Bosnia-Erzegovina
 it,BE,Belgio
@@ -3201,7 +2950,7 @@ it,GB,Inghilterra
 it,GB,Irlanda del Nord
 it,GB,Regno Unito
 it,GB,Regno Unito di Gran Bretagna e Irlanda del Nord
-it,GE,Georgia
+it,GI,Gibilterra
 it,GR,Grecia
 it,HR,Croazia
 it,HR,Repubblica di Croazia
@@ -3213,11 +2962,6 @@ it,IS,Islanda
 it,IT,Bel Paese
 it,IT,Italia
 it,IT,Repubblica italiana
-it,KZ,Cazachistan
-it,KZ,Cosacchia
-it,KZ,Cosacchistan
-it,KZ,Kazakhstan
-it,KZ,Kazakistan
 it,LI,Liechtenstein
 it,LT,Lituania
 it,LU,Granducato di Lussemburgo
@@ -3265,175 +3009,13 @@ it,SK,Slovacchia
 it,SM,Repubblica di San Marino
 it,SM,San Marino
 it,SM,Serenissima Repubblica di San Marino
-it,TR,Repubblica Turchia
-it,TR,Turchia
 it,UA,Ucraina
 it,VA,Città del Vaticano
 it,VA,Stato della Città del Vaticano
 it,VA,Vaticano
-ka,AD,ანდორა
-ka,AL,ალბანეთი
-ka,AL,ალბანეთის რესპუბლიკა
-ka,AM,სომხეთი
-ka,AT,ავსტრია
-ka,AZ,აზერბაიჯანი
-ka,AZ,აზერბაიჯანის რესპუბლიკა
-ka,BA,ბოსნია და ჰერცეგოვინა
-ka,BE,ბელგია
-ka,BG,ბულგარეთი
-ka,BY,ბელარუსი
-ka,CH,შვეიცარია
-ka,CY,კვიპროსი
-ka,CZ,ჩეხეთი
-ka,DE,გერმანია
-ka,DE,გერმანიის ფედერაციული რესპუბლიკა
-ka,DK,გრენლანდია
-ka,DK,დანია
-ka,DK,დანიის სამეფო
-ka,DK,ფარერები
-ka,DK,ფარერის კუნძულები
-ka,EE,ესტონეთი
-ka,ES,ესპანეთი
-ka,ES,კატალონია
-ka,FI,ფინეთი
-ka,FO,ფარერები
-ka,FO,ფარერის კუნძულები
-ka,FR,საფრანგეთი
-ka,GB,ბრიტანეთი
-ka,GB,გაერთიანებული სამეფო
-ka,GB,დიდი ბრიტანეთი
-ka,GB,დიდი ბრიტანეთისა და ჩრდილოეთ ირლანდიის გაერთიანებული სამეფო
-ka,GB,ინგლისი
-ka,GB,უელსი
-ka,GB,ჩრდილოეთი ირლანდია
-ka,GE,საქართველო
-ka,GE,საქართველოს რესპუბლიკა
-ka,GR,საბერძნეთი
-ka,HR,ხორვატია
-ka,HR,ხორვატიის რესპუბლიკა
-ka,HU,უნგრეთი
-ka,IE,ირლანდია
-ka,IE,ირლანდიის რესპუბლიკა
-ka,IS,ისლანდია
-ka,IT,იტალია
-ka,KZ,ყაზახეთი
-ka,LI,ლიხტენშტაინი
-ka,LT,ლიტვა
-ka,LU,ლუქსემბურგი
-ka,LU,ლუქსემბურგის დიდი საჰერცოგო
-ka,LV,ლატვია
-ka,MC,მონაკო
-ka,MD,მოლდოვა
-ka,ME,მონტენეგრო
-ka,ME,ჩერნოგორია
-ka,MK,მაკედონია
-ka,MK,ყოფილი იუგოსლავიის მაკედონიის რესპუბლიკა
-ka,MK,ყოფილი იუგოსლავიის რესპუბლიკა მაკედონია
-ka,MK,ჩრდილოეთ მაკედონიის რესპუბლიკა
-ka,MK,ჩრდილოეთი მაკედონია
-ka,MT,მალტა
-ka,NL,არუბა
-ka,NL,კიურასაო
-ka,NL,ნიდერლანდები
-ka,NL,ნიდერლანდების სამეფო
-ka,NL,სინტ-მაარტენი
-ka,NL,სინტ-მარტენი
-ka,NO,ნორვეგია
-ka,NO,ნორვეგიის სამეფო
-ka,PL,Polska
-ka,PL,პოლონეთი
-ka,PT,პორტუგალია
-ka,RO,რუმინეთი
-ka,RS,სერბეთი
-ka,RU,რუსეთი
-ka,RU,რუსეთის ფედერაცია
-ka,SE,შვედეთი
-ka,SE,შვედეთის სამეფო
-ka,SI,სლოვენია
-ka,SK,სლოვაკეთი
-ka,SM,სან-მარინო
-ka,TR,თურ.
-ka,TR,თურქეთი
-ka,TR,თურქეთის რესპუბლიკა
-ka,UA,უკრაინა
-ka,VA,ვატიკანი
-kk,AD,Андорра
-kk,AL,Албания
-kk,AL,Албания Республикасы
-kk,AM,Армения
-kk,AT,Аустрия Республикасы
-kk,AZ,Әзірбайжан
-kk,BA,Босния және Герцеговина
-kk,BE,Бельгия
-kk,BG,Болгария
-kk,BG,Бұлғаристан
-kk,BG,Бұлғарстан
-kk,BY,Беларусь
-kk,CH,Швейцария
-kk,CY,Кипр
-kk,CZ,Чехия
-kk,DE,Германия
-kk,DE,Германия Федеративтік Республикасы
-kk,DK,Гренландия
-kk,DK,Дания
-kk,DK,Фарер аралдары
-kk,DK,Фөрөярдар
-kk,DK,Фөрөярлер
-kk,EE,Эстония
-kk,ES,Испания
-kk,ES,Каталония
-kk,FI,Финляндия
-kk,FO,Фарер аралдары
-kk,FO,Фөрөярдар
-kk,FO,Фөрөярлер
-kk,FR,Франция
-kk,GB,Англия
-kk,GB,Солтүстік Ирландия
-kk,GB,Уэльс
-kk,GB,Ұлыбритания
-kk,GE,Грузия
-kk,GR,Грекия
-kk,HR,Хорватия
-kk,HU,Мажарстан
-kk,IE,Ейре
-kk,IE,Ирландия
-kk,IE,Ирландия Республикасы
-kk,IS,Исландия
-kk,IT,Италия
-kk,KZ,Қазақстан
-kk,KZ,Қазақстан Республикасы
-kk,KZ,Қазақстан Республикасы '
-kk,LI,Лихтенштейн
-kk,LT,Литва
-kk,LU,Люксембург
-kk,LU,Лүксембор
-kk,LV,Латвия
-kk,MC,Монако
-kk,MD,Молдова
-kk,ME,Черногория
-kk,MK,Македония Республикасы
-kk,MK,Солтүстік Македония
-kk,MT,Мальта
-kk,NL,Аруба
-kk,NL,Кюрасао
-kk,NL,Нидерланд
-kk,NO,Норвегия
-kk,PL,Польша
-kk,PT,Португалия
-kk,RO,Румыния
-kk,RS,Сербия
-kk,RU,Ресей
-kk,SE,Швеция
-kk,SI,Словения
-kk,SK,Словакия
-kk,SM,Сан-Марино
-kk,TR,Түркия
-kk,UA,Украина
-kk,VA,Ватикан
 kl,AD,Andorra
 kl,AL,Albania
 kl,AT,Østrigi
-kl,AZ,Aserbajdsjan
 kl,BA,Bosnia-Hercegovina
 kl,BE,Belgia
 kl,BG,Bulgaria
@@ -3454,7 +3036,6 @@ kl,FO,Færøerne
 kl,FO,Savalimmiut
 kl,FR,Franskit Nunaat
 kl,GB,Tuluit Nunaat
-kl,GE,Georgia
 kl,GR,Grækerit Nunaat
 kl,HR,Kroatia
 kl,HU,Ungarni
@@ -3462,7 +3043,6 @@ kl,IE,Irland
 kl,IE,Irlandi
 kl,IS,Islandi
 kl,IT,Italia
-kl,KZ,Kasakhstani
 kl,LI,Liechtensteini
 kl,LT,Litaueni
 kl,LU,Luxembourg
@@ -3483,14 +3063,11 @@ kl,SE,Svenskit Nunaat
 kl,SI,Slovenia
 kl,SK,Slovakia
 kl,SM,San Marino
-kl,TR,Tyrkia
 kl,UA,Ukraine
 kl,VA,Vatikani
 kv,AD,Андорра
 kv,AL,Албания
-kv,AM,Армения
 kv,AT,Австрия
-kv,AZ,Азербайджан
 kv,BA,Босния да Герцеговина
 kv,BE,Бельгия
 kv,BG,Болгария
@@ -3508,14 +3085,12 @@ kv,FI,Суоми Му
 kv,FO,Фарер діяс
 kv,FR,Франция
 kv,GB,Ыджыд Британия
-kv,GE,Грузия
 kv,GR,Эллада
 kv,HR,Хорватия
 kv,HU,Мадьяр Му
 kv,IE,Ирландия
 kv,IS,Исландия
 kv,IT,Италия
-kv,KZ,Казахстан
 kv,LI,Лихтенштейн
 kv,LT,Литва
 kv,LU,Люксембург
@@ -3537,14 +3112,11 @@ kv,SE,Швеция
 kv,SI,Словения
 kv,SK,Словакия
 kv,SM,Сан-Марино
-kv,TR,Турция
 kv,UA,Украина
 kv,VA,Ватикан
 la,AD,Andorra
 la,AL,Albania
-la,AM,Armenia
 la,AT,Austria
-la,AZ,Atropatene
 la,BA,Bosnia et Herzegovina
 la,BE,Belgica
 la,BG,Bulgaria
@@ -3571,7 +3143,8 @@ la,GB,Anglia
 la,GB,Britanniarum Regnum
 la,GB,Cambria
 la,GB,Hibernia Septentrionalis
-la,GE,Georgia
+la,GI,Calpe
+la,GI,Gibraltar
 la,GR,Graecia
 la,HR,Croatia
 la,HU,Hungaria
@@ -3580,7 +3153,6 @@ la,IE,Irlandia
 la,IE,Res publica Hiberniae
 la,IS,Islandia
 la,IT,Italia
-la,KZ,Kazachstania
 la,LI,Lichtenstenum
 la,LT,Lituania
 la,LU,Luciliburgum
@@ -3620,17 +3192,14 @@ la,SE,Suecia
 la,SI,Slovenia
 la,SK,Slovacia
 la,SM,Res publica Sancti Marini
-la,TR,Turcia
 la,UA,Ucraina
 la,VA,Civitas Vaticana
 la,VA,Status Civitatis Vaticanae
 la,VA,Status Civitatis Vaticanæ
 lb,AD,Andorra
 lb,AL,Albanien
-lb,AM,Armenien
 lb,AT,Republik Éisträich
 lb,AT,Éisträich
-lb,AZ,Aserbaidschan
 lb,BA,Bosnien-Herzegowina
 lb,BE,Belsch
 lb,BG,Bulgarien
@@ -3652,7 +3221,7 @@ lb,GB,England
 lb,GB,Nordirland
 lb,GB,Vereenegt Kinnekräich
 lb,GB,Wales
-lb,GE,Georgien
+lb,GI,Gibraltar
 lb,GR,Griicheland
 lb,HR,Kroatien
 lb,HU,Ungarn
@@ -3662,7 +3231,6 @@ lb,IE,Éire
 lb,IS,Island
 lb,IT,Italieenesch Republik
 lb,IT,Italien
-lb,KZ,Kasachstan
 lb,LI,Liechtenstein
 lb,LT,Litauen
 lb,LU,Grand-Duché
@@ -3702,15 +3270,12 @@ lb,SE,Schweden
 lb,SI,Slowenien
 lb,SK,Slowakei
 lb,SM,San Marino
-lb,TR,Tierkei
 lb,UA,Ukrain
 lb,VA,Vatikanstad
 lt,AD,Andora
 lt,AL,Albanija
 lt,AL,Albanijos Respublika
-lt,AM,Armėnija
 lt,AT,Austrija
-lt,AZ,Azerbaidžanas
 lt,BA,Bosnija ir Hercegovina
 lt,BE,Belgija
 lt,BG,Bulgarija
@@ -3737,8 +3302,8 @@ lt,GB,Anglija
 lt,GB,Jungtinė Karalystė
 lt,GB,Velsas
 lt,GB,Šiaurės Airija
-lt,GE,Gruzija
-lt,GE,Sakartvelas
+lt,GB,Šiaurės Airijos
+lt,GI,Gibraltaras
 lt,GR,Graikija
 lt,HR,Kroatija
 lt,HU,Vengrija
@@ -3746,7 +3311,6 @@ lt,IE,Airija
 lt,IE,Airijos Respublika
 lt,IS,Islandija
 lt,IT,Italija
-lt,KZ,Kazachstanas
 lt,LI,Lichtenšteinas
 lt,LT,Lietuva
 lt,LT,Lietuvos Respublika
@@ -3774,15 +3338,12 @@ lt,SE,Švedija
 lt,SI,Slovėnija
 lt,SK,Slovakija
 lt,SM,San Marinas
-lt,TR,Turkija
 lt,UA,Ukraina
 lt,VA,Vatikanas
 lv,AD,Andora
 lv,AL,Albānija
 lv,AL,Albānijas Republika
-lv,AM,Armēnija
 lv,AT,Austrija
-lv,AZ,Azerbaidžāna
 lv,BA,Bosnija un Hercegovina
 lv,BE,Beļģija
 lv,BG,Bulgaria
@@ -3817,7 +3378,7 @@ lv,GB,Anglija
 lv,GB,Apvienotā Karaliste
 lv,GB,Velsa
 lv,GB,Ziemeļīrija
-lv,GE,Gruzija
+lv,GI,Gibraltārs
 lv,GR,Grieķija
 lv,HR,Horvātija
 lv,HU,Ungārija
@@ -3825,7 +3386,6 @@ lv,IE,Īrija
 lv,IE,Īrijas republika
 lv,IS,Islande
 lv,IT,Itālija
-lv,KZ,Kazahstāna
 lv,LI,Fürstentum Liechtenstein
 lv,LI,Lihtenšteina
 lv,LI,Lihtenšteinas Firstiste
@@ -3862,16 +3422,12 @@ lv,SE,Zviedrija
 lv,SI,Slovēnija
 lv,SK,Slovākija
 lv,SM,Sanmarīno
-lv,TR,Turcija
-lv,TR,Turcijas Republika
 lv,UA,Ukraina
 lv,VA,Vatikāns
 mk,AD,Андора
 mk,AL,Албанија
 mk,AL,Република Албанија
-mk,AM,Ерменија
 mk,AT,Австрија
-mk,AZ,Азербејџан
 mk,BA,Босна и Херцеговина
 mk,BE,Белгија
 mk,BE,Кралство Белгија
@@ -3897,14 +3453,13 @@ mk,GB,Велс
 mk,GB,Обединето Кралство
 mk,GB,Обединето Кралство на Велика Британија и Северна Ирска
 mk,GB,Северна Ирска
-mk,GE,Грузија
+mk,GI,Гибралтар
 mk,GR,Грција
 mk,HR,Хрватска
 mk,HU,Унгарија
 mk,IE,Ирска
 mk,IS,Исланд
 mk,IT,Италија
-mk,KZ,Казахстан
 mk,LI,Лихтенштајн
 mk,LT,Литванија
 mk,LU,Луксембург
@@ -3955,15 +3510,12 @@ mk,SE,Шведска
 mk,SI,Словенија
 mk,SK,Словачка
 mk,SM,Сан Марино
-mk,TR,Турција
 mk,UA,Украина
 mk,VA,Ватикан
 mt,AD,Andorra
 mt,AL,Albanija
 mt,AL,Repubblika tal-Albanija
-mt,AM,Armenja
 mt,AT,Awstrija
-mt,AZ,Ażerbajġan
 mt,BA,Bożnija u Ħerżegovina
 mt,BE,Belġju
 mt,BG,Bulgarija
@@ -3983,7 +3535,7 @@ mt,FR,Franza
 mt,GB,Ingilterra
 mt,GB,Ir-Renju Unit
 mt,GB,Irlanda ta' Fuq
-mt,GE,Ġeorġja
+mt,GI,Ġibiltà
 mt,GR,Greċja
 mt,HR,Kroazja
 mt,HU,Ungerija
@@ -3992,7 +3544,6 @@ mt,IE,Repubblika ta' l-Irlanda
 mt,IE,Repubblika tal-Irlanda
 mt,IS,Iżlanda
 mt,IT,Italja
-mt,KZ,Każakistan
 mt,LI,Liechtenstein
 mt,LT,Litwanja
 mt,LU,Lussemburgu
@@ -4019,16 +3570,12 @@ mt,SE,Żvezja
 mt,SI,Slovenja
 mt,SK,Slovakkja
 mt,SM,San Marino
-mt,TR,Turkija
 mt,UA,Ukrajna
 mt,VA,Belt tal-Vatikan
 nb,AD,Andorra
 nb,AD,Fyrstedømmet Andorra
 nb,AL,Albania
-nb,AM,Armenia
 nb,AT,Østerrike
-nb,AZ,Aserbajdsjan
-nb,AZ,Republikken Aserbajdsjan
 nb,BA,Bosnia-Hercegovina
 nb,BE,Belgia
 nb,BE,Kongeriket Belgia
@@ -4080,7 +3627,7 @@ nb,GB,England
 nb,GB,Nord-Irland
 nb,GB,Storbritannia
 nb,GB,Wales
-nb,GE,Georgia
+nb,GI,Gibraltar
 nb,GR,Den hellenske republikk
 nb,GR,Grekenland
 nb,GR,Hellas
@@ -4093,8 +3640,6 @@ nb,IE,Éire
 nb,IS,Island
 nb,IT,Den italienske republikk
 nb,IT,Italia
-nb,KZ,Kasakhstan
-nb,KZ,Republikken Kasakhstan
 nb,LI,Fyrstedømmet Liechtenstein
 nb,LI,Liechtenstein
 nb,LT,Litauen
@@ -4147,17 +3692,13 @@ nb,SK,Den slovakiske republikk
 nb,SK,Slovakia
 nb,SM,Republikken San Marino
 nb,SM,San Marino
-nb,TR,Tyrkia
 nb,UA,Ukraina
 nb,VA,Vatikanet
 nb,VA,Vatikanstaten
 nl,AD,Andorra
 nl,AL,Albanie
 nl,AL,Albanië
-nl,AM,Armenie
-nl,AM,Armenië
 nl,AT,Oostenrijk
-nl,AZ,Azerbeidzjan
 nl,BA,Bosnie en Herzegovina
 nl,BA,Bosnië en Herzegovina
 nl,BA,Bosnië-Herzegovina
@@ -4260,8 +3801,7 @@ nl,GB,Verenigd Konkrijk
 nl,GB,Verenigde Koningrijk
 nl,GB,Wales
 nl,GB,Y Deyrnas Unedig
-nl,GE,Georgie
-nl,GE,Georgië
+nl,GI,Gibraltar
 nl,GR,Griekenland
 nl,HR,Kroatie
 nl,HR,Kroatië
@@ -4276,8 +3816,6 @@ nl,IT,Italiaanse Republiek
 nl,IT,Italie
 nl,IT,Italië
 nl,IT,Republiek Italië
-nl,KZ,Kazachstan
-nl,KZ,Qazaqstan
 nl,LI,Liechtenstein
 nl,LT,Litouwen
 nl,LU,Luxembourg
@@ -4324,18 +3862,14 @@ nl,SI,Slovenie
 nl,SI,Slovenië
 nl,SK,Slowakije
 nl,SM,San Marino
-nl,TR,Republiek Turkije
-nl,TR,Turkije
 nl,UA,Oekraiene
 nl,UA,Oekraine
 nl,UA,Oekraïne
 nl,VA,Vaticaanstad
 nn,AD,Andorra
 nn,AL,Albania
-nn,AM,Armenia
 nn,AT,Austerrike
 nn,AT,Republikken Austerrike
-nn,AZ,Aserbajdsjan
 nn,BA,Bosnia
 nn,BA,Bosnia-Hercegovina
 nn,BE,Belgia
@@ -4376,7 +3910,7 @@ nn,GB,England
 nn,GB,Nord-Irland
 nn,GB,Storbritannia
 nn,GB,Wales
-nn,GE,Georgia
+nn,GI,Gibraltar
 nn,GR,Hellas
 nn,HR,Kroatia
 nn,HU,Ungarn
@@ -4385,7 +3919,6 @@ nn,IE,Eire
 nn,IE,Irland
 nn,IS,Island
 nn,IT,Italia
-nn,KZ,Kasakhstan
 nn,LI,Liechtenstein
 nn,LT,Litauen
 nn,LU,Luxembourg
@@ -4416,15 +3949,12 @@ nn,SE,Sverige
 nn,SI,Slovenia
 nn,SK,Slovakia
 nn,SM,San Marino
-nn,TR,Tyrkia
 nn,UA,Ukraina
 nn,VA,Vatikanet
 nn,VA,Vatikanstaten
 oc,AD,Andòrra
 oc,AL,Albania
-oc,AM,Armenia
 oc,AT,Àustria
-oc,AZ,Azerbaitjan
 oc,BA,Bòsnia e Ercegovina
 oc,BE,Belgica
 oc,BG,Bulgaria
@@ -4450,7 +3980,7 @@ oc,GB,Anglatèrra
 oc,GB,Irlanda del Nòrd
 oc,GB,País de Galas
 oc,GB,Reialme Unit
-oc,GE,Georgia
+oc,GI,Gibartar
 oc,GR,Grècia
 oc,HR,Croàcia
 oc,HU,Ongria
@@ -4460,7 +3990,6 @@ oc,IS,Islàndia
 oc,IT,Estat italian
 oc,IT,Itàlia
 oc,IT,Republica italiana
-oc,KZ,Cazacstan
 oc,LI,Liechtenstein
 oc,LT,Lituània
 oc,LU,Luxemborg
@@ -4486,14 +4015,11 @@ oc,SE,Suècia
 oc,SI,Eslovènia
 oc,SK,Eslovaquia
 oc,SM,Sant Marin
-oc,TR,Turquia
 oc,UA,Ucraïna
 oc,VA,Vatican
 os,AD,Андоррæ
 os,AL,Албани
-os,AM,Сомих
 os,AT,Австри
-os,AZ,Азербайджан
 os,BA,Босни æмæ Герцеговинæ
 os,BE,Бельги
 os,BG,Болгари
@@ -4520,14 +4046,13 @@ os,GB,Англис
 os,GB,Стыр Британи
 os,GB,Уэльс
 os,GB,Цæгат Ирланди
-os,GE,Гуырдзыстон
+os,GI,Гибралтар
 os,GR,Грекъ
 os,HR,Хорвати
 os,HU,Венгри
 os,IE,Ирланди
 os,IS,Исланди
 os,IT,Итали
-os,KZ,Хъазахстан
 os,LI,Лихтенштейн
 os,LT,Литва
 os,LU,Люксембург
@@ -4553,15 +4078,12 @@ os,SE,Швеци
 os,SI,Словени
 os,SK,Словаки
 os,SM,Сан-Марино
-os,TR,Турк
 os,UA,Украинæ
 os,VA,Ватикан
 pl,AD,Andora
 pl,AD,Księstwo Andory
 pl,AL,Albania
-pl,AM,Armenia
 pl,AT,Austria
-pl,AZ,Azerbejdżan
 pl,BA,Bośnia i Hercegowina
 pl,BE,Belgia
 pl,BE,Królestwo Belgii
@@ -4615,7 +4137,7 @@ pl,GB,Wales
 pl,GB,Walia
 pl,GB,Wielka Brytania
 pl,GB,Zjednoczone Królestwo Wielkiej Brytanii i Irlandii Północnej
-pl,GE,Gruzja
+pl,GI,Gibraltar
 pl,GR,Grecja
 pl,GR,Hellada
 pl,GR,Republika Grecka
@@ -4626,7 +4148,6 @@ pl,HU,Węgry
 pl,IE,Irlandia
 pl,IS,Islandia
 pl,IT,Włochy
-pl,KZ,Kazachstan
 pl,LI,Księstwo Liechtensteinu
 pl,LI,Liechtenstein
 pl,LT,Litwa
@@ -4668,19 +4189,14 @@ pl,SI,Słowenia
 pl,SK,Slovensko
 pl,SK,Słowacja
 pl,SM,San Marino
-pl,TR,Turcja
 pl,UA,Ukraina
 pl,UA,Україна
 pl,VA,Watykan
 pt,AD,Andorra
 pt,AL,Albânia
 pt,AL,República da Albânia
-pt,AM,Armenia
-pt,AM,Arménia
-pt,AM,Categoria:Armênia
 pt,AT,República da Áustria
 pt,AT,Áustria
-pt,AZ,Azerbaijão
 pt,BA,Bósnia e Herzegovina
 pt,BE,Bélgica
 pt,BG,Bulgaria
@@ -4759,7 +4275,7 @@ pt,GB,Irlanda do Norte
 pt,GB,País de Gales
 pt,GB,Reino Unido
 pt,GB,Reino Unido da Grã-Bretanha e Irlanda do Norte
-pt,GE,Geórgia
+pt,GI,Gibraltar
 pt,GR,Grécia
 pt,HR,Croacia
 pt,HR,Croácia
@@ -4769,10 +4285,6 @@ pt,IE,Irlanda
 pt,IE,República da Irlanda
 pt,IS,Islândia
 pt,IT,Itália
-pt,KZ,Cazaquistao
-pt,KZ,Cazaquistão
-pt,KZ,Republica do Cazaquistao
-pt,KZ,República do Cazaquistão
 pt,LI,Liechtenstein
 pt,LT,Categoria:Lituânia
 pt,LT,Lituânia
@@ -4836,8 +4348,6 @@ pt,SI,Eslovenia
 pt,SI,Eslovénia
 pt,SK,Eslováquia
 pt,SM,San Marino
-pt,TR,República da Turquia
-pt,TR,Turquia
 pt,UA,Ucrânia
 pt,VA,Cidade do Vaticano
 pt,VA,Civitas Vaticana
@@ -4848,9 +4358,7 @@ pt,VA,Stato della Città del Vaticano
 pt,VA,Vaticano
 rm,AD,Andorra
 rm,AL,Albania
-rm,AM,Armenia
 rm,AT,Austria
-rm,AZ,Aserbeidschan
 rm,BA,Bosnia-Erzegovina
 rm,BE,Belgia
 rm,BG,Bulgaria
@@ -4878,7 +4386,6 @@ rm,HU,Ungaria
 rm,IE,Republica da l'Irlanda
 rm,IS,Islanda
 rm,IT,Italia
-rm,KZ,Kasachstan
 rm,LI,Liechtenstein
 rm,LT,Lituania
 rm,LU,Luxemburg
@@ -4899,15 +4406,12 @@ rm,SE,Svezia
 rm,SI,Slovenia
 rm,SK,Slovachia
 rm,SM,San Marino
-rm,TR,Tirchia
 rm,UA,Ucraina
 rm,VA,Citad dal Vatican
 ro,AD,Andorra
 ro,AL,Albania
 ro,AL,Republica Albania
-ro,AM,Armenia
 ro,AT,Austria
-ro,AZ,Azerbaidjan
 ro,BA,Bosnia și Herțegovina
 ro,BE,Belgia
 ro,BG,Bulgaria
@@ -4948,7 +4452,7 @@ ro,GB,Irlanda de Nord
 ro,GB,Regatul Unit
 ro,GB,Regatul Unit al Marii Britanii și al Irlandei de Nord
 ro,GB,Țara Galilor
-ro,GE,Georgia
+ro,GI,Gibraltar
 ro,GR,Grecia
 ro,HR,Croația
 ro,HU,Ungaria
@@ -4958,7 +4462,6 @@ ro,IE,Republica irlanda
 ro,IS,Islanda
 ro,IT,Italia
 ro,IT,Republica Italiană
-ro,KZ,Kazahstan
 ro,LI,Liechtenstein
 ro,LI,Principatul Liechtenstein
 ro,LT,Lituania
@@ -5004,7 +4507,6 @@ ro,SE,Suedia
 ro,SI,Slovenia
 ro,SK,Slovacia
 ro,SM,San Marino
-ro,TR,Turcia
 ro,UA,Ucraina
 ro,VA,Cetatea Vaticanului
 ro,VA,Statul Cetății Vaticanului
@@ -5015,14 +4517,10 @@ ru,AD,Княжество Андорра
 ru,AL,Албания
 ru,AL,Республика Албания
 ru,AL,Шкиприя
-ru,AM,Армения
-ru,AM,Республика Армения
 ru,AT,Österreich
 ru,AT,Австрийская Республика
 ru,AT,Австрия
 ru,AT,Республика Австрия
-ru,AZ,Азербайджан
-ru,AZ,Азербайджанская Республика
 ru,BA,Bosna i Hercegovina
 ru,BA,Босния
 ru,BA,Босния и Герцеговина
@@ -5088,9 +4586,7 @@ ru,GB,Соединённое Королевство
 ru,GB,Соединённое Королевство Великобритании и Северной Ирландии
 ru,GB,Туманный Альбион
 ru,GB,Уэльс
-ru,GE,Грузия
-ru,GE,Республика Грузия
-ru,GE,Сакартвело
+ru,GI,Гибралтар
 ru,GR,Греция
 ru,GR,Греческая Республика
 ru,HR,Республика Хорватия
@@ -5103,8 +4599,6 @@ ru,IS,Исландия
 ru,IS,Республика Исландия
 ru,IT,Италия
 ru,IT,Итальянская Республика
-ru,KZ,Казахстан
-ru,KZ,Республика Казахстан
 ru,LI,Liechtenstein
 ru,LI,Княжество Лихтенштейн
 ru,LI,Лихтенштейн
@@ -5184,8 +4678,6 @@ ru,SM,San Marino
 ru,SM,Республика Сан-Марино
 ru,SM,Сан-Марино
 ru,SM,Светлейшая Республика Сан-Марино
-ru,TR,Турецкая Республика
-ru,TR,Турция
 ru,UA,Украина
 ru,VA,Città del Vaticano
 ru,VA,Civitas Vaticana
@@ -5193,9 +4685,7 @@ ru,VA,Ватикан
 ru,VA,Государство-город Ватикан
 sk,AD,Andorra
 sk,AL,Albánsko
-sk,AM,Arménsko
 sk,AT,Rakúsko
-sk,AZ,Azerbajdžan
 sk,BA,Bosna a Hercegovina
 sk,BE,Belgicko
 sk,BG,Bulharsko
@@ -5222,7 +4712,7 @@ sk,GB,Anglicko
 sk,GB,Severné Írsko
 sk,GB,Spojené kráľovstvo
 sk,GB,Wales
-sk,GE,Gruzínsko
+sk,GI,Gibraltár
 sk,GR,Grécko
 sk,HR,Chorvátsko
 sk,HU,Maďarsko
@@ -5230,7 +4720,6 @@ sk,IE,Írska republika
 sk,IE,Írsko
 sk,IS,Island
 sk,IT,Taliansko
-sk,KZ,Kazachstan
 sk,LI,Lichtenštajnsko
 sk,LT,Litva
 sk,LU,Luxembursko
@@ -5258,14 +4747,11 @@ sk,SI,Slovinsko
 sk,SK,Slovensko
 sk,SK,Slovenská republika
 sk,SM,San Maríno
-sk,TR,Turecko
 sk,UA,Ukrajina
 sk,VA,Vatikán
 sl,AD,Andora
 sl,AL,Albanija
-sl,AM,Armenija
 sl,AT,Avstrija
-sl,AZ,Azerbajdžan
 sl,BA,Bosna i Hercegovina
 sl,BA,Bosna in Hercegovina
 sl,BE,Belgija
@@ -5294,7 +4780,7 @@ sl,GB,Severna Irska
 sl,GB,Wales
 sl,GB,Združeno kraljestvo
 sl,GB,Združeno kraljestvo Velike Britanije in Severne Irske
-sl,GE,Gruzija
+sl,GI,Gibraltar
 sl,GR,Grčija
 sl,HR,Hrvaška
 sl,HU,Madžarska
@@ -5302,7 +4788,6 @@ sl,IE,Irska
 sl,IE,Republika Irska
 sl,IS,Islandija
 sl,IT,Italija
-sl,KZ,Kazahstan
 sl,LI,Lihtenštajn
 sl,LT,Litva
 sl,LU,Luksemburg
@@ -5331,16 +4816,13 @@ sl,SI,Republika Slovenija
 sl,SI,Slovenija
 sl,SK,Slovaška
 sl,SM,San Marino
-sl,TR,Turčija
 sl,UA,Ukrajina
 sl,VA,Vatikan
 sq,AD,Andorra
 sq,AL,Republika e Shqipërisë
 sq,AL,Shqipëri
 sq,AL,Shqipëria
-sq,AM,Armenia
 sq,AT,Austria
-sq,AZ,Azerbajxhani
 sq,BA,Bosnja dhe Hercegovina
 sq,BE,Belgjika
 sq,BG,Bulgaria
@@ -5371,7 +4853,7 @@ sq,GB,Anglia
 sq,GB,Britania e Madhe
 sq,GB,Irlanda Veriore
 sq,GB,Uellsi
-sq,GE,Gjeorgjia
+sq,GI,Gjibraltari
 sq,GR,Greqia
 sq,HR,Kroacia
 sq,HU,Hungaria
@@ -5380,7 +4862,6 @@ sq,IE,Irland
 sq,IE,Republika e Irlandës
 sq,IS,Islanda
 sq,IT,Italia
-sq,KZ,Kazakistani
 sq,LI,Lihtenshtajni
 sq,LT,Lituania
 sq,LU,Luksemburg
@@ -5411,18 +4892,13 @@ sq,SE,Suedia
 sq,SI,Sllovenia
 sq,SK,Sllovakia
 sq,SM,San Marino
-sq,TR,Turqia
 sq,UA,Ukraina
 sq,VA,Vatikani
 sr,AD,Андора
 sr,AD,Кнежевина Андора
 sr,AL,Албанија
 sr,AL,Република Албанија
-sr,AM,Јерменија
 sr,AT,Аустрија
-sr,AZ,Азербајџан
-sr,AZ,Азербејџан
-sr,AZ,Република Азербејџан
 sr,BA,Босна
 sr,BA,Босна и Херцеговина
 sr,BE,Белгија
@@ -5481,8 +4957,7 @@ sr,GB,Енглеска
 sr,GB,Северна Ирска
 sr,GB,Сјеверна Ирска
 sr,GB,Уједињено Краљевство
-sr,GE,Грузија
-sr,GE,Република Грузија
+sr,GI,Гибралтар
 sr,GR,Грчка
 sr,HR,Република Хрватска
 sr,HR,Хрватска
@@ -5501,8 +4976,6 @@ sr,IE,Република Ирска
 sr,IE,Хибернија
 sr,IS,Исланд
 sr,IT,Италија
-sr,KZ,Казахстан
-sr,KZ,Република Казахстан
 sr,LI,Кнежевина Лихтенштајн
 sr,LI,Лихтенштајн
 sr,LT,Литванија
@@ -5562,7 +5035,6 @@ sr,SK,Република Словачка
 sr,SK,Словачка
 sr,SK,Словачка Република
 sr,SM,Сан Марино
-sr,TR,Турска
 sr,UA,Украјина
 sr,VA,Ватикан
 sv,AD,Andorra
@@ -5571,11 +5043,8 @@ sv,AL,Albanien
 sv,AL,Republika e Shqipërisë
 sv,AL,Republiken Albanien
 sv,AL,Shqipërisë
-sv,AM,Armenien
-sv,AM,Republiken Armenien
 sv,AT,Österreich
 sv,AT,Österrike
-sv,AZ,Azerbajdzjan
 sv,BA,Bosnien och Hercegovina
 sv,BE,Belgien
 sv,BG,Bulgaria
@@ -5627,7 +5096,7 @@ sv,GB,Stora Britannien
 sv,GB,Storbritannien
 sv,GB,Storbritannien och Nordirland
 sv,GB,Wales
-sv,GE,Georgien
+sv,GI,Gibraltar
 sv,GR,Grekland
 sv,GR,Hellas
 sv,GR,Hellenska republiken
@@ -5643,9 +5112,6 @@ sv,IS,Island
 sv,IT,Italia
 sv,IT,Italien
 sv,IT,Republiken Italien
-sv,KZ,Kazakstan
-sv,KZ,Qazaqstan
-sv,KZ,Republiken Kazakstan
 sv,LI,Furstendömet Liechtenstein
 sv,LI,Liechtenstein
 sv,LT,Lietuva
@@ -5707,7 +5173,6 @@ sv,SK,Slovakien
 sv,SK,Slovakiska republiken
 sv,SM,Republiken San Marino
 sv,SM,San Marino
-sv,TR,Turkiet
 sv,UA,Ukraina
 sv,VA,Città del Vaticano
 sv,VA,Civitas Vaticana
@@ -5718,10 +5183,8 @@ sv,VA,Vatikanstaten
 tr,AD,Andorra
 tr,AL,Arnavutluk
 tr,AL,Arnavutluk Cumhuriyeti
-tr,AM,Ermenistan
 tr,AT,Avusturya
 tr,AT,Avusturya Cumhuriyeti
-tr,AZ,Azerbaycan
 tr,BA,Bosna
 tr,BA,Bosna Hersek
 tr,BA,Bosna-Hersek
@@ -5763,7 +5226,7 @@ tr,GB,Birleşik Krallık
 tr,GB,Galler
 tr,GB,Kuzey İrlanda
 tr,GB,İngiltere
-tr,GE,Gürcistan
+tr,GI,Cebelitarık
 tr,GR,Helen Cumhuriyeti
 tr,GR,Yunanistan
 tr,GR,Yunanistan Cumhuriyeti
@@ -5774,7 +5237,6 @@ tr,IE,İrlanda Cumhuriyeti
 tr,IS,İzlanda
 tr,IT,İtalya
 tr,IT,İtalyan Cumhuriyeti
-tr,KZ,Kazakistan
 tr,LI,Lihtenştayn
 tr,LT,Litvanya
 tr,LT,Litvanya Cumhuriyeti
@@ -5812,17 +5274,11 @@ tr,SE,İsveç Krallığı
 tr,SI,Slovenya
 tr,SK,Slovakya
 tr,SM,San Marino
-tr,TR,T. C.
-tr,TR,T.C.
-tr,TR,Türkiye
-tr,TR,Türkiye Cumhuriyeti
 tr,UA,Ukrayna
 tr,VA,Vatikan
 tt,AD,Андорра
 tt,AL,Албания
-tt,AM,Әрмәнстан
 tt,AT,Австрия
-tt,AZ,Азәрбайҗан
 tt,BA,Бүснә-Һәрсәк
 tt,BE,Билгия
 tt,BG,Болгария
@@ -5866,7 +5322,7 @@ tt,GB,Бөекбритания һәм Төньяк Ирландия Берләш
 tt,GB,Велс
 tt,GB,Төньяк Ирландия
 tt,GB,Уэльс
-tt,GE,Гөрҗистан
+tt,GI,Гибралтар
 tt,GR,Греция
 tt,HR,Хорватия
 tt,HU,Маҗарстан
@@ -5875,9 +5331,6 @@ tt,IE,Ирландия Җөмһүрияте
 tt,IE,Республика Ирландия
 tt,IS,Исландия
 tt,IT,Италия
-tt,KZ,Казакъстан
-tt,KZ,Казакъстан Республикасы
-tt,KZ,Казакъстан Җөмһүрияте
 tt,LI,Лихтенштейн
 tt,LT,Литва
 tt,LU,Лүксимбур
@@ -5910,17 +5363,14 @@ tt,SE,Швеция
 tt,SI,Словения
 tt,SK,Словакия
 tt,SM,Сан-Марино
-tt,TR,Төркия
 tt,UA,Украина
 tt,VA,Ватикан
 uk,AD,Андорра
 uk,AL,Албанія
 uk,AL,Республіка Албанія
-uk,AM,Вірменія
 uk,AT,Австрійська республіка
 uk,AT,Австрія
 uk,AT,Республіка Австрія
-uk,AZ,Азербайджан
 uk,BA,Боснія й Герцеґовина
 uk,BA,Боснія та Герцеговина
 uk,BA,Боснія та Герцеґовина
@@ -5978,7 +5428,7 @@ uk,GB,Північна Ірландія
 uk,GB,Сполучене Королівство
 uk,GB,Сполучене Королівство Великої Британії та Північної Ірландії
 uk,GB,Уельс
-uk,GE,Грузія
+uk,GI,Гібралтар
 uk,GR,Греція
 uk,HR,Хорватія
 uk,HU,Мадярщина
@@ -5989,7 +5439,6 @@ uk,IE,Ірляндія
 uk,IE,Республіка Ірландія
 uk,IS,Ісландія
 uk,IT,Італія
-uk,KZ,Казахстан
 uk,LI,Ліхтенштейн
 uk,LT,Литва
 uk,LU,Велике герцогство Люксембург
@@ -6028,9 +5477,6 @@ uk,SI,Словенія
 uk,SK,Словаччина
 uk,SM,Найсвітліша республіка Сан-Марино
 uk,SM,Сан-Марино
-uk,TR,Турецька Республіка
-uk,TR,Туреччина
-uk,TR,Турція
 uk,UA,Ukraina
 uk,UA,Вкраїна
 uk,UA,Україна
@@ -6042,9 +5488,7 @@ uk,VA,Престол Святого Петра
 uk,VA,Святі́йший Престі́л
 yi,AD,אנדארע
 yi,AL,אלבאניע
-yi,AM,ארמעניע
 yi,AT,עסטרייך
-yi,AZ,אזערביידזשאן
 yi,BA,באסניע און הערצעגאווינע
 yi,BE,בעלגיע
 yi,BG,בולגאַריע
@@ -6067,7 +5511,7 @@ yi,GB,וויילס
 yi,GB,ענגלאנד
 yi,GB,פאראייניגטע קעניגרייך
 yi,GB,צפון אירלאנד
-yi,GE,גרוזיע
+yi,GI,גיבראלטאר
 yi,GR,גריכנלאנד
 yi,HR,קראאטיע
 yi,HU,אונגארן
@@ -6077,7 +5521,6 @@ yi,IE,אירלאנד
 yi,IE,אירענלאנד
 yi,IS,איסלאנד
 yi,IT,איטאליע
-yi,KZ,קאזאכסטאן
 yi,LI,ליכטנשטיין
 yi,LT,ליטע
 yi,LU,לוקסעמבורג
@@ -6099,6 +5542,5 @@ yi,SE,שוועדן
 yi,SI,סלאוועניע
 yi,SK,סלאוואקיי
 yi,SM,סאן מארינא
-yi,TR,טערקיי
 yi,UA,אוקראינע
 yi,VA,וואטיקאן
