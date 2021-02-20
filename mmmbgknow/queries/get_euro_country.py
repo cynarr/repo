@@ -1,24 +1,26 @@
-from ..utils.wikidata import Wikidata
+import pycountry
+from pycountry_convert.convert_country_alpha2_to_continent_code import country_alpha2_to_continent_code
 
-wikidata = Wikidata()
 
-QUERY = """
-SELECT (SAMPLE(?cc2) AS ?cc2s)
-WHERE
-{
-  # is a country
-  ?country wdt:P31/wdt:P279* wd:Q6256 .
-  # not a historical country
-  FILTER NOT EXISTS {?country wdt:P31/wdt:P279* wd:Q3024240}
-  # has continent: Europe
-  ?country wdt:P30 wd:Q46 .
-  # has 2-letter country code
-  ?country wdt:P297 ?cc2 .
-}
-GROUP BY ?cc2
-"""
+europe = []
+
+
+for c in pycountry.countries:
+    try:
+        continent = country_alpha2_to_continent_code(c.alpha_2)
+    except KeyError:
+        continue
+    if continent != "EU":
+        continue
+    europe.append(c.alpha_2)
+
+
+# Not sure why Vatican City is left out
+europe.append("VA")
+# Let's put in Cyrpus too
+europe.append("CY")
 
 
 print("cc2")
-for cc2, in sorted(wikidata.query_tpl(QUERY, "cc2s")):
+for cc2 in sorted(europe):
     print(cc2)

@@ -1,7 +1,12 @@
+import os
+from os.path import join as pjoin
 import tldextract
 
-from ..european import EURO_COUNTRIES
 from ..utils.wikidata import Wikidata
+from ..utils.csv import read_csv_set
+
+DIR_PATH = os.path.dirname(os.path.realpath(__file__))
+EURO_COUNTRIES = read_csv_set(pjoin(DIR_PATH, "..", "data/euro_country.csv"))
 
 MANUAL_ENTRIES = [
     ("LI", "radio.li"),

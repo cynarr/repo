@@ -1,6 +1,13 @@
+import os
+from os.path import join as pjoin
 import tldextract
 
+from ..utils.csv import read_csv_set
 from ..utils.wikidata import Wikidata
+
+
+DIR_PATH = os.path.dirname(os.path.realpath(__file__))
+EURO_COUNTRIES = read_csv_set(pjoin(DIR_PATH, "..", "data/euro_country.csv"))
 
 wikidata = Wikidata()
 
@@ -18,12 +25,14 @@ WHERE
   ?item wdt:P159 ?hqLoc .
   # headquaters has a country
   ?hqLoc wdt:P17 ?country .
-  # has continent: Europe
-  ?country wdt:P30 wd:Q46 .
   # has 2-letter country code
   ?country wdt:P297 ?cc
+  # cc in my set of values
+  VALUES ?cc { %s }
 }
-"""
+""" % (
+    " ".join(('"{}"'.format(cc2) for cc2 in EURO_COUNTRIES)),
+)
 
 
 result = {}
