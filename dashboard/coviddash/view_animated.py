@@ -29,29 +29,27 @@ def update_choropleth(mode, polarity, language, producing_country, mention_count
         conditions,
         week_group=True
     )
+    kwargs = {}
     if polarity == "summary":
-        value_col = "summary"
-        min_val = df[value_col].min()
-        max_val = df[value_col].max()
+        kwargs["color"] = "summary"
+        kwargs["range_color"] = (-1, 1)
     else:
-        value_col = "doc_count"
-        min_val = 0
-        max_val = df[value_col].max()
+        kwargs["color"] = "doc_count"
+        kwargs["range_color"] = (0, df["doc_count"].max())
     return px.choropleth(
         df,
-        range_color=(min_val, max_val),
         animation_frame="week_num",
         animation_group="week_num",
         locations="country_iso3",
-        color=value_col,
         labels={
-            "summary": "Summary (log-ratio)",
+            "summary": "Summary",
             "doc_count": "Number of articles",
             "week_num": "Week number"
         },
         locationmode="ISO-3",
         scope="europe",
-        height=1000
+        height=1000,
+        **kwargs
     ).update_layout(
         dragmode=False,
     )
