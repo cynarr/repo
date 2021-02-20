@@ -256,9 +256,7 @@ def get_country_grouped_sentiment(mode_is_mention, conditions, week_group=False)
         ])
         df = conn.execute(query).fetchdf()
         if add_summary:
-            inner = (df["positive_cnt"] + 0.5 * df["neutral_cnt"]) / (df["positive_cnt"] + df["neutral_cnt"] + df["negative_cnt"])
-            # XXX: TODO handle inner = 0 e.g. clamp value somehow
-            df["summary"] = np.log2(inner)
+            df["summary"] = 2 * (df["positive_cnt"] + 0.5 * df["neutral_cnt"]) / (df["positive_cnt"] + df["neutral_cnt"] + df["negative_cnt"]) - 1
         if week_group:
             df["week_num"] = df["week"].map(lambda dt: "-W".join((f"{x:02}" for x in dt.isocalendar()[:2])))
 
